@@ -1,0 +1,8 @@
+// Set overlay over video only in designer mode
+html[data-op3-layer="designer"] {
+    .op3-element[data-op3-element-type="videothumbnail"] {
+        [data-op3-code] {
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+html[data-jquery-mmdnd-dragging],
+html[data-jquery-mmdnd-dragging] * { cursor: move !important; cursor: -webkit-grabbing !important; cursor: -moz-grabbing !important; cursor: grabbing !important; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-user-drag: none; user-drag: none; }
+html[data-jquery-mmdnd-dragging] [data-jquery-mmdnd-dragging] { pointer-events: all !important; }
+[data-jquery-mmdnd-draggable] { cursor: pointer; cursor: -webkit-grab; cursor: -moz-grab; cursor: grab; }
+[data-jquery-mmdnd-draggable] *:not([data-jquery-mmdnd-draggable]) { pointer-events: none; }
+[data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover],
+[data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] * { cursor: copy !important; }
+[data-jquery-mmdnd-ghost] { position: fixed; display: block; z-index: 999999; opacity: 0.75; pointer-events: none; }
+[data-jquery-mmdnd-ghost] * { pointer-events: none !important; }

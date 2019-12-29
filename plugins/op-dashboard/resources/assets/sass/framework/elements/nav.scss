@@ -1,0 +1,76 @@
+.ops-nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    font-size: 13px;
+
+    &.ops-nav-center {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ops-nav-item {
+        padding: 0 15px 20px 15px;
+    }
+
+    .ops-nav-item-more {
+        display: none;
+
+        a {
+            color: $color__ops-logoBlue !important;
+        }
+    }
+
+    .ops-nav-item-less {
+        display: none;
+
+        a {
+            color: $color__ops-logoBlue !important;
+        }
+    }
+
+    .ops-nav-link {
+        display: block;
+        padding: 12px 30px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+
+        &:hover {
+            color: $color__ops-white !important;
+            border-color: $color__ops-logoBlue;
+            background-color: $color__ops-logoBlue;
+            text-decoration: none;
+        }
+
+        // Disabled state lightens text
+        &.disabled {
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+
+    .ops-nav-item.ops-active .ops-nav-link {
+        color: $color__ops-white !important;
+        border-color: $color__ops-logoBlue;
+        background-color: $color__ops-logoBlue;
+    }
+
+    &.ops-nav-pills {
+        .nav-link {
+            //@include border-radius($nav-pills-border-radius);
+        }
+
+        .nav-link.active,
+        .show > .nav-link {
+            color: $color__ops-gray;
+            background-color: $color__ops-white;
+        }
+    }
+
+    .ops-hidden {
+        display: none;
+    }
+}

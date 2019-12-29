@@ -1,0 +1,11 @@
+// Overriding user css display  property with !important
+// (skipping popoverlay)
+// Note: by default we're using block, but it is possible
+// that element's default display property isn't block, so
+// we need to override it in op3-designer.scss (for example
+// see resources/elements/section/sass/op3-designer.scss)
+[data-op3-force-visibility] {
+    .op3-element:not([data-op3-element-type="popoverlay"]) {
+        display: block !important;
+    }
+}

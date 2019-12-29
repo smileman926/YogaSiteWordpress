@@ -1,0 +1,9 @@
+.op3-element[data-op3-element-type="treemenu"] {
+    [data-op3-children]:empty::before {
+        content: "\f312";
+    }
+
+    .op3-element[data-op3-element-type="treemenuitem"] .op3-treemenuitem-link {
+        pointer-events: none;
+    }
+}

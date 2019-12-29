@@ -1,0 +1,186 @@
+form[data-op3-element-options-type="treemenu"] {
+    .op3-element-options-property[data-op3-element-options-property-id="justifyContent"] {
+        .jquery-select-buttons-widget {
+            [data-jquery-select-buttons-option-value="normal"] {
+                display: none;
+            }
+
+            [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f481"; }
+            [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f485"; }
+            [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f482"; }
+            [data-jquery-select-buttons-option-value="space-between"] .jquery-select-buttons-option-icon::before { content: "\f48c"; }
+            [data-jquery-select-buttons-option-value="space-around"] .jquery-select-buttons-option-icon::before { content: "\f48b"; }
+            [data-jquery-select-buttons-option-value="space-evenly"] .jquery-select-buttons-option-icon::before { content: "\f48a"; }
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIcon"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerJustifyContent"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerTextVisible"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerTextLabel"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconOrder"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerFontSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerColor"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerMarginRight"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerMarginLeft"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerSidebarWidth"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerBackgroundColor"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconClose"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseFontSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseColor"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconVisible"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseHorizontalOffset"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseVerticalOffset"],
+    .op3-element-options-property[data-op3-element-options-property-id="treeMenuStyling"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleVisible"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleSize"],
+    // .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleLeft"],
+    // .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleMarginRight"],
+    // .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleMarginBottom"],
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerTriangleTop"] {
+        display: none;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="stackColumnsTablet"][data-op3-element-options-property-value="1"],
+    .op3-element-options-property[data-op3-element-options-property-id="stackColumnsMobile"][data-op3-element-options-property-value="1"],
+    .op3-element-options-property[data-op3-element-options-property-id="stackColumnsDesktop"][data-op3-element-options-property-value="1"] {
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIcon"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerJustifyContent"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerTextVisible"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerFontSize"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerColor"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerSidebarWidth"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerBackgroundColor"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconClose"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseFontSize"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseColor"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconVisible"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseHorizontalOffset"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconCloseVerticalOffset"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="treeMenuStyling"] {
+            display: flex;
+        }
+
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerTextVisible"][data-op3-element-options-property-value="1"] {
+            ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerTextLabel"],
+            ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconOrder"] {
+                display: flex;
+            }
+        }
+
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconOrder"] {
+            &[data-op3-element-options-property-value="0"] ~ [data-op3-element-options-property-id="hamburgerMarginLeft"] {
+                display: flex;
+            }
+
+            &[data-op3-element-options-property-value="1"] ~ [data-op3-element-options-property-id="hamburgerMarginRight"] {
+                display: flex;
+            }
+        }
+
+        ~ .op3-element-options-property[data-op3-element-options-property-id="hamburgerIconVisible"][data-op3-element-options-property-value="0"] {
+            ~ [data-op3-element-options-property-id="hamburgerIcon"],
+            ~ [data-op3-element-options-property-id="hamburgerIconOrder"],
+            ~ [data-op3-element-options-property-id="hamburgerMarginRight"],
+            ~ [data-op3-element-options-property-id="hamburgerMarginLeft"] {
+                display: none !important;
+            }
+        }
+
+        ~ [data-op3-element-options-property-id="treeMenuStyling"][data-op3-element-options-property-value="dropdown"] {
+            ~ [data-op3-element-options-property-id="hamburgerIconClose"],
+            ~ [data-op3-element-options-property-id="hamburgerIconCloseFontSize"],
+            ~ [data-op3-element-options-property-id="hamburgerIconCloseHorizontalOffset"],
+            ~ [data-op3-element-options-property-id="hamburgerIconCloseVerticalOffset"],
+            ~ [data-op3-element-options-property-id="hamburgerIconCloseColor"] {
+                display: none;
+            }
+
+            ~ [data-op3-element-options-property-id="hamburgerTriangleVisible"] {
+                display: flex;
+            }
+
+            ~ [data-op3-element-options-property-id="hamburgerTriangleVisible"][data-op3-element-options-property-value="1"] {
+                ~ [data-op3-element-options-property-id="hamburgerTriangleSize"],
+                // ~ [data-op3-element-options-property-id="hamburgerTriangleLeft"],
+                // ~ [data-op3-element-options-property-id="hamburgerTriangleMarginRight"],
+                // ~ [data-op3-element-options-property-id="hamburgerTriangleMarginBottom"]
+                ~ [data-op3-element-options-property-id="hamburgerTriangleTop"] {
+                    display: flex;
+                }
+            }
+        }
+
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="hamburgerJustifyContent"] {
+        .jquery-select-buttons-option {
+            &[data-jquery-select-buttons-option-value="normal"] {
+                display: none;
+            }
+
+            &[data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f481"; }
+            &[data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f485"; }
+            &[data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f482"; }
+        }
+    }
+
+    // Hide alignment options when items are stretched
+    &[data-op3-child-options-property-value-flexgrow="1"] {
+        [data-op3-toolbar-nav-id="alignment"] {
+            display: none;
+        }
+    }
+
+    // Tweak and streamline sidebar design
+    .op3-options-group-header {
+        ~ [data-op3-element-options-property-id="stackColumnsTablet"],
+        ~ [data-op3-element-options-property-id="stackColumnsMobile"],
+        // ~ [data-op3-element-options-property-id="hamburgerFontSize"],
+        ~ [data-op3-element-options-property-id="hamburgerColor"],
+        ~ [data-op3-element-options-property-id="hamburgerJustifyContent"],
+        // ~ [data-op3-element-options-property-id="hamburgerIconVisible"],
+        ~ [data-op3-element-options-property-id="hamburgerIcon"],
+        // ~ [data-op3-element-options-property-id="hamburgerTextVisible"],
+        ~ [data-op3-element-options-property-id="hamburgerTextLabel"],
+        ~ [data-op3-element-options-property-id="hamburgerIconOrder"],
+        ~ [data-op3-element-options-property-id="hamburgerMarginLeft"],
+        ~ [data-op3-element-options-property-id="hamburgerMarginRight"],
+        // ~ [data-op3-element-options-property-id="treeMenuStyling"],
+        ~ [data-op3-element-options-property-id="hamburgerSidebarWidth"],
+        ~ [data-op3-element-options-property-id="hamburgerBackgroundColor"],
+        // ~ [data-op3-element-options-property-id="hamburgerIconClose"],
+        ~ [data-op3-element-options-property-id="hamburgerIconCloseFontSize"],
+        ~ [data-op3-element-options-property-id="hamburgerIconCloseHorizontalOffset"],
+        ~ [data-op3-element-options-property-id="hamburgerIconCloseVerticalOffset"],
+        ~ [data-op3-element-options-property-id="hamburgerIconCloseColor"],
+        // ~ [data-op3-element-options-property-id="hamburgerTriangleVisible"],
+        ~ [data-op3-element-options-property-id="hamburgerTriangleSize"],
+        ~ [data-op3-element-options-property-id="hamburgerTriangleTop"] {
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="treemenuitem"] {
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"],
+        .op3-context-menu-list-item[data-op3-action="delete"],
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+#op3-designer-toolbar {
+    position: absolute;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    z-index: 5000;
+    background-color: $op-blue;
+    border-radius: 4px 4px 0 0;
+    transform: translate(-50%, -100%);
+    box-shadow: 0 -7px 12px -5px rgba(0, 0, 0, 0.2);
+
+    .op3-element[data-op3-element-toolbar-position="after"] > & {
+        top: auto;
+        bottom: 0;
+        transform: translate(-50%, 100%);
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 7px 12px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .op3-element[data-op3-element-toolbar-position="inside"] > & {
+        top: 0;
+        bottom: auto;
+        transform: translate(-50%, 0);
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 7px 12px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        flex: 1;
+        display: block;
+        margin: 0.125em;
+        padding: 0;
+
+        &.parent { display: none; }
+        &.row { display: none; }
+        &.column { display: none; }
+    }
+
+    &[data-op3-element-toolbar-type="row"] .row,
+    &[data-op3-element-toolbar-type="column"] .column { display: block; }
+
+    a {
+        position: relative;
+        display: block;
+        width: 2em;
+        height: 2em;
+        color: #fff;
+        background-color: $op-blue;
+        box-shadow: none;
+        font: normal normal normal 14px/1 'op3-icons';
+        text-align: center;
+        overflow: hidden;
+        outline: 0 none;
+        z-index: 100;
+
+        .op3-element-thumb {
+            display: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        &::before {
+            display: block;
+            line-height: 2;
+        }
+
+        &[data-jquery-mmdnd-draggable]::before { content: "\f047"; }
+        &[data-method="parent"]::before { content: "\f148"; }
+        &[data-method="clone"]::before { content: "\f24d"; }
+        &[data-method="addrow"]::before { content: "\f067"; }
+        &[data-method="addcolumn"]::before { content: "\f067"; }
+        &[data-method="remove"]::before { content: "\f1f8"; }
+    }
+}

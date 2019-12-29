@@ -1,0 +1,18 @@
+html:not([data-op3-global-element-edit]) form[data-op3-element-options-gid]:not([data-op3-element-options-gid=""]) {
+    .tab-heading-button-wrapper,
+    .tab-heading-select-parent-element,
+    .op3-tabs,
+    .tab-content {
+        display: none !important;
+    }
+
+    .tab-content[data-tab="global-element"] {
+        display: block !important;
+    }
+}
+
+html[data-op3-global-element-edit] form[data-op3-element-options-gid]:not([data-op3-element-options-gid=""]) {
+    .op3-element-options-group[data-op3-element-options-group-id="export"] {
+        display: none !important;
+    }
+}

@@ -1,0 +1,9 @@
+[data-op3-element-options-property-name="timerCheck"] {
+
+    // When timercheck is off, we hide the timer slider
+    &[data-op3-element-options-property-value="0"] {
+        & ~ [data-op3-element-options-property-name="timer"] {
+            display: none;
+        }
+    }
+}

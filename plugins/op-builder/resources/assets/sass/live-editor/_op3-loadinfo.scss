@@ -1,0 +1,124 @@
+.op3-loadinfo {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    background: rgba(0, 97, 214, 0.93);
+    text-align: center;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+
+    --op3-progressbar-start:0;
+    --op3-progressbar-stop:1;
+    --op3-progressbar-status:0;
+
+    &.op3-loadinfo-init {
+        background: $op-blue;
+
+        .op3-loadinfo-close {
+            display: block;
+        }
+    }
+
+    .op3-loadinfo-wrapper {
+        min-width: 64px;
+        min-height: 64px;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto;
+            background: url("../img/logo-white.svg") no-repeat center center;
+            background-size: 100% 100%;
+            animation: none;
+        }
+    }
+
+    .op3-loadinfo-message {
+        margin: 1em 0;
+        font-size: 0.75em;
+    }
+
+    .op3-loadinfo-progressbar {
+        display: inline-block;
+        width: 10em;
+        height: 1em;
+        border-radius: 0.25em;
+        border: 2px solid $op-dark-blue;
+        background: $op-dark-blue;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            display: block;
+            background: currentColor;
+            height: 100%;
+            width: calc(100% * (var(--op3-progressbar-start) + var(--op3-progressbar-status) * (var(--op3-progressbar-stop) - var(--op3-progressbar-start))));
+        }
+    }
+
+    &.op3-loadinfo-active {
+        visibility: visible;
+        opacity: 1;
+
+        .op3-loadinfo-wrapper::before {
+            animation: loadinfo 2.5s infinite;
+
+            // for testing asyncworker
+            //animation: moverightleft 1s linear infinite alternate;
+            //left: 0;
+            //margin-left: 0
+        }
+    }
+
+    .op3-loadinfo-close {
+        position: absolute;
+        display: none;
+        top: 15px;
+        right: 15px;
+        font-weight: bold;
+        color: $op-white;
+        font-size: 20px;
+
+        &:hover {
+            color: $op-dark-blue;
+        }
+    }
+}
+
+@keyframes loadinfo {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes moverightleft {
+    from {
+        margin-left: 2em;
+    }
+    to {
+        margin-left: calc(100% - 2em - 64px);
+    }
+}

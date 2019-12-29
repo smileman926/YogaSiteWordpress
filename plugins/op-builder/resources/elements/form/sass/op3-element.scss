@@ -1,0 +1,163 @@
+.op3-element[data-op3-element-type="form"] {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-width: 0;
+
+    .visually-hidden {
+        visibility: hidden;
+        display: block;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    [data-op3-children] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        // make sure show_all_elements doesn't
+        // override input hidden
+        .op3-element[data-op3-element-spec="hidden"] {
+            display: none !important;
+        }
+
+        [data-op3-element-type="input"] {
+            margin: 0;
+            width: 100%;
+        }
+
+        // button element (submit)
+        [data-op3-element-type="button"] {
+            margin: 0;
+            width: 100%;
+
+            & > a {
+                height: 68px;
+                padding: 0.6em 1em;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    // gdpr full width
+    [data-op3-children] {
+        .op3-element[data-op3-element-spec="gdpr1"],
+        .op3-element[data-op3-element-spec="gdpr2"] {
+            width: 100%;
+        }
+    }
+
+    // hide gdpr checkboxes when
+    // "Show to EU visitors only" is selected
+    // but visitor is not from EU
+    [data-op3-gdpr-disabled] [data-op3-children] {
+        .op3-element[data-op3-element-spec="gdpr1"],
+        .op3-element[data-op3-element-spec="gdpr2"] {
+            display: none !important;
+        }
+    }
+
+    // hide gdpr checkboxes when gdpr is off
+    [name="optin-gdpr-activate"][value="off"] ~ [data-op3-children] {
+        .op3-element[data-op3-element-spec="gdpr1"],
+        .op3-element[data-op3-element-spec="gdpr2"] {
+            display: none !important;
+        }
+    }
+
+    // stacked or inline
+    [data-op3-optin-field-layout] {
+        flex-direction: column;
+        align-items: center;
+
+        &[data-op3-optin-field-layout="inline"] {
+            flex-direction: row;
+            align-items: flex-end;
+
+            .op3-element[data-op3-element-spec="gdpr1"],
+            .op3-element[data-op3-element-spec="gdpr2"] {
+                order: 9999;
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .op3-element {
+                margin: 0 !important;
+            }
+        }
+
+        &[data-op3-optin-field-layout="stacked"] {
+            .op3-element {
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+
+                &:first-child {
+                    margin-top: 0 !important;
+                }
+
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+
+                &[data-op3-element-type="button"] > a,
+                label {
+                    margin: 0 !important;
+                }
+            }
+
+            // left align checkboxes on stacked layout
+            [data-op3-element-type="checkbox"] {
+                margin-right: auto;
+            }
+        }
+    }
+
+    .op3-element-input-edit-error {
+        color: red;
+        font-family: inherit;
+        font-size: 14px;
+        padding-top: 5px;
+        margin-bottom: 0;
+
+        &::before {
+            content: '* ';
+        }
+    }
+}
+
+.op3-form-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e3fbe5;
+    color: #298258;
+    border: 1px solid #58c583;
+    border-radius: 5px;
+
+    &.warning-notification {
+        background-color: #fff3cd;
+        color: #856404;
+        border-color: #ffeeba;
+        margin-bottom: 25px;
+    }
+
+    &.error-notification {
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        margin-bottom: 25px;
+    }
+}

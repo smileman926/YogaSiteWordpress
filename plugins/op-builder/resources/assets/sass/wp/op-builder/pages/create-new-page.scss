@@ -1,0 +1,15 @@
+.opb-create-new-page {
+    margin-top: 20px;
+
+    h1 {
+        i {
+            color: $color__ops-logoBlue;
+        }
+    }
+
+    p {
+        &.opd-teaser {
+            margin-bottom: 40px;
+        }
+    }
+}

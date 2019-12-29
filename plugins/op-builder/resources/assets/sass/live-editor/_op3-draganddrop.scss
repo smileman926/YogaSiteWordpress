@@ -1,0 +1,37 @@
+html[data-jquery-mmdnd-dragging] {
+    .element-item {
+        &:hover .op3-element-thumb {
+            border-color: $op-grey-border;
+        }
+
+        &[data-jquery-mmdnd-dragging] .op3-element-thumb {
+            border-color: $op-light-grey;
+        }
+    }
+
+    .block-item {
+        &:hover .op3-block-thumb {
+            border-color: $op-grey-border;
+        }
+
+        &[data-jquery-mmdnd-dragging] .op3-block-thumb {
+            border-color: $op-light-grey;
+        }
+    }
+
+    &#op3-live-editor {
+        #header,
+        #sidebar {
+            pointer-events: none;
+        }
+    }
+}
+
+[data-jquery-mmdnd-ghost] {
+    z-index: 9000999;
+
+    .op3-element-thumb,
+    .op3-block-thumb {
+        border-color: $op-light-grey;
+    }
+}

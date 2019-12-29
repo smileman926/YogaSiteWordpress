@@ -1,0 +1,78 @@
+.op3-countdown-timer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        margin-right: 0.7em;
+
+        &:last-child {
+            margin-right: 0 !important;
+
+            .units::after {
+                display: none;
+            }
+        }
+
+        &:first-child {
+            border: 0 !important;
+        }
+
+        &::after {
+            display: none;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 125%;
+            font-size: inherit;
+            line-height: inherit;
+            transform: translateY(-5%);
+            color: inherit;
+        }
+
+        &.sec::after {
+            display: none !important;
+        }
+
+        .digits {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: inherit;
+            border-color: currentColor;
+
+            &::after {
+                display: none;
+                content: "";
+                height: 1px;
+                width: 100%;
+                background: #000;
+                position: absolute;
+                top: 50%;
+                left: 0;
+            }
+        }
+
+        .units {
+            display: flex;
+            font-weight: inherit !important;
+
+            &::after {
+                display: none;
+            }
+
+            &.sec::after {
+                display: none !important;
+            }
+        }
+    }
+
+    h1 {
+        white-space: pre-wrap;
+    }
+}

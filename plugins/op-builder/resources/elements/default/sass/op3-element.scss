@@ -1,0 +1,100 @@
+.op3-element {
+    position: relative;
+    background: none transparent center center no-repeat;
+    transition: all 0s ease;
+
+    &.op3-element-hidden {
+        display: none !important;
+    }
+
+    * {
+        transition: all 0s ease;
+    }
+
+    // Border & Background
+    [data-op3-element-container] {
+        border-color: transparent !important;
+    }
+
+    [data-op3-border] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    /* We need this data attr to be available
+       both on frontend and admin.
+       Attr is placed here because section element
+       is wrapper around all op3 elements */
+    [data-op3-background] {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: inherit;
+        pointer-events: none;
+
+        /* Transition not working on gradients, so
+           we gonna let css handle transitions:
+           real image is on ::before element, transient
+           image on ::after, hovering over op3 element
+           is changing opacity of ::before and ::after
+           giving us the wanted effect */
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: inherit;
+            pointer-events: none;
+        }
+
+        &::before {
+            opacity: 1;
+        }
+
+        &::after {
+            opacity: 0;
+        }
+    }
+
+    [data-op3-background="video"],
+    [data-op3-background="map"] {
+        display: none;
+    }
+
+    .op3-background-ancestor,
+    .op3-background-parent {
+        position: relative;
+    }
+
+    &:hover {
+        > [data-op3-background],
+        > .op3-background-ancestor > [data-op3-background],
+        > .op3-background-parent > [data-op3-background],
+        > .op3-background-ancestor > [data-op3-border] > [data-op3-background],
+        > .op3-background-parent > [data-op3-border] > [data-op3-background],
+        > .op3-background-ancestor > [data-op3-element-container] > [data-op3-border] > [data-op3-background],
+        > .op3-background-parent > [data-op3-element-container] > [data-op3-border] > [data-op3-background],
+        > [data-op3-element-container] > [data-op3-border] > [data-op3-background] {
+            &::before {
+                opacity: 0;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}

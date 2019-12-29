@@ -1,0 +1,48 @@
+/**
+ * Core styles that are used
+ * throuought all layers
+ * and on frontend
+ */
+
+// Making font rendering antialiased (OP3-480)
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // Set default font-family
+    // only for OP3 blank template
+    &.page-template-op_builder_blank,
+    &.opf_funnel-template-op_builder_blank {
+        font-family: 'IBM Plex Sans', sans-serif;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Poppins, sans-serif;
+        }
+    }
+}
+
+// Making sure nothing overflows so horizontal
+// scrollbars don't ever appear
+#op3-designer-element {
+    overflow-x: hidden;
+}
+
+// Ensuring images are properly scaled
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Contenteditable links with color wrapper
+[data-op3-contenteditable] {
+    [style^="color:"] a,
+    [style*=";color:"] a,
+    [style*="; color:"] a {
+        color: inherit;
+    }
+}

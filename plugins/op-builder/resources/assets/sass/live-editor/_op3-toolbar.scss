@@ -1,0 +1,615 @@
+.op3-toolbar {
+    position: fixed;
+    display: none;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    z-index: 4500;
+    pointer-events: none;
+    transition: 0.4s ease all;
+    --context-offset: 0px;
+
+    form {
+        // styles-and-presets is visible only for elements
+        // that have styles or presets
+        .op3-toolbar-list-item[data-op3-toolbar-nav-id="styles-and-presets"] {
+            display: none;
+        }
+
+        &[data-op3-element-options-has-styles="1"],
+        &[data-op3-element-options-has-presets="1"] {
+            .op3-toolbar-list-item[data-op3-toolbar-nav-id="styles-and-presets"] {
+                display: block;
+            }
+        }
+
+        // lock is visible only for children that has
+        // link defined in OP3.LinkProperties
+        .op3-toolbar-list-item[data-op3-toolbar-nav-id="lock"] {
+            display: none;
+        }
+
+        &:not([data-op3-parent-options-property-length-linkproperties="0"]):not([data-op3-parent-options-property-length-linkproperties="1"]) {
+            .op3-toolbar-list-item[data-op3-toolbar-nav-id="lock"] {
+                display: block;
+            }
+        }
+
+        // highlight and change icon according to lockProperties value
+        &[data-op3-parent-options-property-value-linkproperties="1"] {
+            .op3-toolbar-list-item[data-op3-toolbar-nav-id="lock"] {
+                color: $op-blue;
+
+                .op3-icon.op3-icon-lock-circle-open-1::before {
+                    content: "\f1fa";
+                }
+            }
+        }
+
+        // add item is hidden by default (display it in element's
+        // op3-live-editor.scss)
+        .op3-toolbar-list-item[data-op3-toolbar-nav-id="add"] {
+            display: none;
+        }
+
+        // global elements
+        .op3-toolbar-list-item[data-op3-toolbar-nav-id="global-element"] {
+            display: none;
+        }
+
+        .op3-toolbar-header-section-global-label {
+            display: none;
+        }
+    }
+
+    &.op3-toolbar-active {
+        display: block;
+    }
+
+    .op3-toolbar-main::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        display: none;
+        top: 50%;
+        left: 50%;
+        width: 0.5em;
+        height: 0.5em;
+        background: #fff;
+        border: 1px solid #ddd;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &[data-op3-toolbar-point="top"] {
+        .op3-toolbar-main {
+            &::before {
+                top: 0;
+                border-width: 1px 0 0 1px;
+                background: $op-blue;
+                border: none;
+                display: block;
+            }
+        }
+    }
+
+    &[data-op3-toolbar-point="bottom"] {
+        .op3-toolbar-main {
+            &::before {
+                display: block;
+                top: 100%;
+                border-width: 0 1px 1px 0;
+            }
+        }
+    }
+
+    &[data-op3-toolbar-point="left"] {
+        .op3-toolbar-main {
+            &::before {
+                left: 0;
+                border-width: 0 0 1px 1px;
+                display: block;
+            }
+        }
+    }
+
+    &[data-op3-toolbar-point="right"] {
+        .op3-toolbar-main {
+            &::before {
+                display: block;
+                left: 100%;
+                border-width: 1px 1px 0 0 ;
+            }
+        }
+    }
+
+    &[data-op3-toolbar-point-adjust="left"] {
+        .op3-toolbar-main::before {
+            left: 20px;
+        }
+    }
+
+    &[data-op3-toolbar-point-adjust="right"] {
+        .op3-toolbar-main::before {
+            left: auto;
+            right: 12px;
+        }
+    }
+
+    &[data-op3-toolbar-point-adjust="top"] {
+        .op3-toolbar-main::before {
+            top: 12px;
+            background: $op-blue;
+            border: none;
+        }
+    }
+
+    &[data-op3-toolbar-point-adjust="bottom"] {
+        .op3-toolbar-main::before {
+            top: calc(100% - 12px);
+        }
+    }
+
+    &[data-op3-toolbar-context-position="none"] {
+        .op3-toolbar-context {
+            .op3-toolbar-wrapper {
+                display: none !important;
+            }
+        }
+    }
+
+    &[data-op3-toolbar-context-position="right"] {
+        .op3-toolbar-context {
+            left: 100%;
+            margin-left: 0;
+        }
+    }
+
+    &[data-op3-toolbar-context-position="left"] {
+        .op3-toolbar-context {
+            right: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &[data-op3-toolbar-context-position="bottom"] {
+        .op3-toolbar-context {
+            top: 100%;
+            margin-top: 0;
+        }
+    }
+
+    &[data-op3-toolbar-context-position="top"] {
+        .op3-toolbar-context {
+            bottom: 100%;
+            margin-bottom: 0;
+            top: auto;
+        }
+    }
+
+    &[data-op3-toolbar-context-position="right"],
+    &[data-op3-toolbar-context-position="left"],
+    &[data-op3-toolbar-context-position="bottom"],
+    &[data-op3-toolbar-context-position="top"] {
+        .op3-toolbar-context {
+            display: block;
+        }
+    }
+
+    .op3-toolbar-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 0 0 1px #ddd inset;
+    }
+
+    .op3-toolbar-header {
+        font-size: 0.7em;
+        text-align: center;
+        color: #fff;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+        @at-root #toolbar .op3-toolbar-main .op3-toolbar-header {
+            background: $op-blue;
+        }
+
+        @at-root #toolbar .op3-toolbar-context .op3-toolbar-header {
+            box-shadow: inset 0 -2px 0 -1px #ddd;
+        }
+    }
+
+    .op3-toolbar-header-section {
+        display: flex;
+        height: 24px;
+        margin: 0 2px;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        cursor: default;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &.op3-toolbar-header-section-left {
+            position: absolute;
+            top: 0;
+            left: 2px;
+        }
+
+        &.op3-toolbar-header-section-right {
+            position: absolute;
+            top: 0;
+            right: 2px;
+        }
+    }
+
+    .op3-toolbar-header-button {
+        margin: 0 1px;
+        padding: 0;
+        height: 15px;
+        width: 15px;
+        font-size: 10px;
+        line-height: inherit;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.6;
+        border: none;
+        background: none;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        .op3-icon.op3-icon-pin-2 {
+            display: inline-block;
+            transform: rotate(-45deg);
+        }
+    }
+
+    // Hide Select Parent Element button on topmost element
+    form[data-op3-element-options-path="/section"] .op3-toolbar-parent,
+    form[data-op3-element-options-path="/popoverlay/section"] .op3-toolbar-parent {
+        display: none;
+    }
+
+    .op3-toolbar-draggable {
+        pointer-events: none;
+    }
+
+    &:not(.op3-toolbar-sticky) {
+        transition: none;
+
+        .op3-toolbar-draggable {
+            pointer-events: all;
+            cursor: move;
+        }
+
+        .op3-toolbar-header-button {
+            .op3-icon.op3-icon-pin-2 {
+                display: inline-block;
+                transform: none;
+            }
+        }
+    }
+
+    .op3-toolbar-list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+        &.op3-toolbar-icon-list {
+            padding: 0.125em;
+
+            .op3-toolbar-list-item {
+                margin: 0.125em;
+                border: none;
+
+                .op3-icon {
+                    color: #444;
+                    opacity: 0.666;
+                }
+
+                &:hover .op3-icon {
+                    opacity: 1;
+                }
+
+                &.op3-toolbar-active,
+                &.op3-toolbar-active:hover {
+                    background-color: transparent;
+
+                    .op3-icon {
+                        opacity: 1;
+                        color: $op-blue;
+                    }
+                }
+
+            }
+        }
+
+        .op3-toolbar-list-item {
+            display: block;
+            flex: 1;
+            flex-basis: auto;
+            margin: 0;
+            padding: 0;
+            line-height: 3;
+            color: #888;
+            border-right: 1px solid $op-grey-border;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &:hover {
+                color: #444;
+            }
+
+            &.op3-toolbar-active,
+            &.op3-toolbar-active:hover {
+                background: $op-blue;
+                color: #fff;
+            }
+
+            .op3-toolbar-link {
+                display: block;
+                overflow: hidden;
+                color: inherit;
+                text-align: center;
+                text-decoration: none;
+                text-transform: capitalize;
+                transition: 0.2s ease all;
+
+                .op3-icon {
+                    display: block;
+                    width: 2em;
+                    height: 2em;
+                    line-height: 2em;
+                    font-size: 1.1em;
+                }
+            }
+        }
+
+        .op3-toolbar-list-item:first-child {
+            border-top-left-radius: inherit;
+
+            a {
+                border-top-left-radius: inherit;
+            }
+        }
+
+        .op3-toolbar-list-item:last-child {
+            border-top-right-radius: inherit;
+
+            a {
+                border-top-right-radius: inherit;
+            }
+        }
+    }
+
+    .op3-toolbar-context,
+    .op3-toolbar-main {
+        align-self: center;
+        filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.1));
+    }
+
+    .op3-toolbar-main {
+        position: relative;
+        margin: 12px;
+    }
+
+    .op3-toolbar-context {
+        align-self: center;
+        position: absolute;
+        max-width: 480px;
+        border-radius: 4px;
+        top: calc(var(--context-offset) * -1);
+        transform: translateY(0);
+        margin: 12px;
+        transition: 0.4s ease top;
+
+        .op3-toolbar-wrapper {
+            display: none;
+
+            &.op3-toolbar-active {
+                display: block;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    top: calc(var(--context-offset) + 46px);
+                    width: 0.5em;
+                    height: 0.5em;
+                    background: #fff;
+                    border: 1px solid #ddd;
+                    z-index: 1;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    //transition: 0.4s ease top;
+                }
+
+                @at-root #toolbar[data-op3-toolbar-context-position="right"] .op3-toolbar-context .op3-toolbar-wrapper.op3-toolbar-active::before {
+                    left: 0;
+                    border-width: 0 0 1px 1px;
+                    display: block;
+                }
+
+                @at-root #toolbar[data-op3-toolbar-context-position="left"] .op3-toolbar-context .op3-toolbar-wrapper.op3-toolbar-active::before {
+                    left: 100%;
+                    border-width: 1px 1px 0 0;
+                    display: block;
+                }
+
+                @at-root #toolbar[data-op3-toolbar-context-position="bottom"] .op3-toolbar-context .op3-toolbar-wrapper.op3-toolbar-active::before {
+                    top: 0;
+                    left: 12px;
+                    border-width: 1px 0 0 1px;
+                    display: block;
+                }
+
+                @at-root #toolbar[data-op3-toolbar-context-position="top"] .op3-toolbar-context .op3-toolbar-wrapper.op3-toolbar-active::before {
+                    top: 100%;
+                    left: 12px;
+                    border-width: 0 1px 1px 0;
+                    display: block;
+                }
+
+                @at-root #toolbar[data-op3-toolbar-context-position="bottom"][data-op3-toolbar-context-tab-index="0"] .op3-toolbar-context .op3-toolbar-wrapper.op3-toolbar-active::before {
+                    background: $op-blue;
+                    border: none;
+                }
+            }
+        }
+
+        .op3-toolbar-content-item {
+            position: relative;
+            display: none;
+            width: 295px;
+            min-height: 48px;
+            padding-bottom: 16px;
+
+            &.op3-toolbar-active {
+                display: block;
+            }
+        }
+    }
+
+    form:not([data-op3-element-options-render-status="ready"]) {
+        .op3-toolbar-context .op3-toolbar-content-item.op3-toolbar-active {
+            > *,
+            .op3-options-group-actions-reset {
+                display: none !important;
+            }
+
+            &::before {
+                content: "\eb8a";
+                position: absolute;
+                display: block;
+                top: 50%;
+                left: 50%;
+                width: 1em;
+                height: 1em;
+                margin: -0.5em 0 0 -0.5em;
+                line-height: 1em;
+                font-family: "op3-icons";
+                text-align: center;
+                color: #888;
+                animation: op3-icon-spin 2s infinite linear;
+            }
+        }
+    }
+
+    .op3-toolbar-disabled {
+        opacity: 0.2;
+        color: inherit;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    .op3-toolbar-button {
+        background: $op-blue;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        margin: 16px 22px 0px;
+        padding: 10px 0px;
+        width: calc(100% - 44px);
+        font-size: 12px;
+        cursor: pointer;
+        outline: none;
+        box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.2);
+
+        &:active {
+            box-shadow: none;
+            transform: translateY(1px);
+        }
+
+        i {
+            margin-right: 7px;
+            top: 1px;
+            position: relative;
+        }
+    }
+
+    .op3-element-options-property,
+    .op3-element-options-container {
+        padding: 16px 22px 0;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+
+    .op3-toolbar-context,
+    .op3-toolbar-main,
+    .select2-container,
+    .jquery-colorpicker-widget {
+        pointer-events: all;
+    }
+}
+
+// hide toolbar on element layouts display
+body[data-op3-element-layouts-is-active] {
+    #toolbar {
+        display: none;
+    }
+}
+
+// hide toolbar on icefloatbar display
+html.op3-icefloatbar {
+    #toolbar {
+        display: none;
+    }
+}
+
+// global element
+html:not([data-op3-global-element-edit]) .op3-toolbar form[data-op3-element-options-gid]:not([data-op3-element-options-gid=""]) {
+    .op3-toolbar-header-section-element-title {
+        display: none;
+    }
+    .op3-toolbar-header-section-global-label {
+        display: flex;
+    }
+
+    .op3-toolbar-list-item {
+        &:not([data-op3-toolbar-nav-id="up"]):not([data-op3-toolbar-nav-id="down"]):not([data-op3-toolbar-nav-id="move"]):not([data-op3-toolbar-nav-id="clone"]):not([data-op3-toolbar-nav-id="delete"]):not([data-op3-toolbar-nav-id="global-element"]) {
+            display: none;
+        }
+
+        &[data-op3-toolbar-nav-id="global-element"] {
+            display: block;
+
+            .op3-icon {
+                color: $op-blue;
+                //opacity: 1;
+            }
+        }
+    }
+}
+
+html[data-op3-global-element-edit] .op3-toolbar form[data-op3-element-options-gid]:not([data-op3-element-options-gid=""]) {
+    .op3-toolbar-list-item {
+        &[data-op3-toolbar-nav-id="up"],
+        &[data-op3-toolbar-nav-id="down"],
+        &[data-op3-toolbar-nav-id="move"],
+        &[data-op3-toolbar-nav-id="clone"],
+        &[data-op3-toolbar-nav-id="delete"],
+        &[data-op3-toolbar-nav-id="global-element"] {
+            display: none;
+        }
+    }
+}

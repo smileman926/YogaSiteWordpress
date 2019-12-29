@@ -1,0 +1,24 @@
+.op3-element-options-property {
+    .jquery-select-buttons-widget.jquery-select-buttons-listed-widget {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+
+        .jquery-select-buttons-option {
+            height: 48px;
+            border-radius: 0;
+
+            &.jquery-select-buttons-option-selected {
+                background-color: inherit;
+                color: inherit;
+            }
+        }
+    }
+
+    &[data-op3-element-options-property-id="ratingSvgPattern"] {
+        .jquery-select-buttons-widget.jquery-select-buttons-listed-widget {
+            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        }
+    }
+}

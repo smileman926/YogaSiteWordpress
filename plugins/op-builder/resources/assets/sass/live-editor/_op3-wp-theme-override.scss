@@ -1,0 +1,19 @@
+/**
+ * Some Wordpress themes have css which
+ * do not appear nice in Live Editor Designer.
+ */
+
+html[data-op3-layer="designer"] {
+    // Disable twentysixteen theme
+    // white bar in Live Editor
+    body::before {
+        height: 0;
+    }
+
+    //Reset twentyseventeen theme
+    //header top position
+    .admin-bar .site-navigation-fixed.navigation-top {
+        top: 0;
+        z-index: 5001;
+    }
+}

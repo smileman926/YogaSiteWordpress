@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            * { box-sizing: border-box; }
+            html, body { position: relative; padding: 0; }
+            html { margin: 1em; }
+            body { width: 800px; margin: 0 auto; color: #333; text-align: center; }
+            div.draggable-container { margin: 0; padding: 0.5em; }
+            [data-jquery-mmdnd-draggable] { display: inline-block; margin: 0.5em; padding: 0.5em 1em; border-radius: 0.25em; color: #666; border: 1px solid #999; }
+            [data-jquery-mmdnd-draggable="00f"] { background: #00f; }
+            [data-jquery-mmdnd-draggable="0f0"] { background: #0f0; }
+            [data-jquery-mmdnd-draggable="0ff"] { background: #0ff; }
+            [data-jquery-mmdnd-draggable="f00"] { background: #f00; }
+            [data-jquery-mmdnd-draggable="f0f"] { background: #f0f; }
+            [data-jquery-mmdnd-draggable="ff0"] { background: #ff0; }
+            [data-jquery-mmdnd-droppable] { margin: 0.5em; padding: 0.5em; background: rgba(0,0,0,0.25); transition: 0.2s ease all; }
+            [data-jquery-mmdnd-droppable="00f"] { background: rgba(0,0,255,0.25); }
+            [data-jquery-mmdnd-droppable="0f0"] { background: rgba(0,255,0,0.25); }
+            [data-jquery-mmdnd-droppable="0ff"] { background: rgba(0,255,255,0.25); }
+            [data-jquery-mmdnd-droppable="f00"] { background: rgba(255,0,0,0.25); }
+            [data-jquery-mmdnd-droppable="f0f"] { background: rgba(255,0,255,0.25); }
+            [data-jquery-mmdnd-droppable="ff0"] { background: rgba(255,255,0,0.25); }
+            [data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] { box-shadow: 0 0 2px 2px rgba(0,0,0,0.5); }
+        </style>
+    </head>
+    <body>
+        <h1>Testing...</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ad inventore consectetur quasi fugit soluta tenetur reiciendis voluptas possimus atque illo praesentium nam deserunt quis, aperiam similique odio quibusdam minima?</p>
+        <p>Nisi enim nulla sed libero hic repellendus repudiandae, a cumque vitae! Iure voluptas dolor officia culpa rem aperiam officiis. Alias laudantium, accusamus enim minus blanditiis sequi aspernatur! Reiciendis, eius, dolor.</p>
+        <p>Error at praesentium, qui nemo, tempore temporibus modi, dolor et alias recusandae illum itaque. Minus dolorem quod, amet ipsa sed eligendi optio et accusamus voluptates ullam eum repellendus saepe repudiandae!</p>
+        <p>Tempore autem, atque rem officia laboriosam dolorem molestias quis totam sunt. Repellat, ratione nisi animi aliquid itaque iste mollitia corporis quia! Vitae, totam sunt, architecto autem quae provident assumenda mollitia.</p>
+        <p>Nihil totam dolore possimus at, quaerat voluptates odio reprehenderit, aut ea voluptatem dolorem, atque vel hic in, fugit dolorum sequi amet blanditiis veritatis accusantium pariatur itaque ut. Aperiam libero, repellendus?</p>
+        <div class="draggable-container">
+            <span class="draggable" data-jquery-mmdnd-draggable="00f"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="0f0"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="0ff"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="f00"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="f0f"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="ff0"><b>Drag Me!!!</b></span>
+        </div>
+        <p data-jquery-mmdnd-droppable="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo pariatur architecto sit, dolor, consectetur ipsum. Perferendis laborum, quisquam necessitatibus molestias ea repellendus, ab repellat architecto error tempore! Dolorem asperiores, possimus.</p>
+        <p data-jquery-mmdnd-droppable="00f">Quae a, delectus, consequatur dolorem dolorum nam nihil, aliquid ratione doloremque nobis repudiandae quidem alias eum sunt architecto itaque id quaerat vero! Quidem tempore ullam, repellat dignissimos modi illo. Recusandae.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Numquam aliquid, deserunt rerum dignissimos temporibus impedit reprehenderit quidem, similique necessitatibus aperiam nobis, praesentium id accusamus. Repudiandae soluta, tempore deserunt ipsam aperiam sit commodi. Consectetur saepe aliquam nemo officiis dolorum?</p>
+        <p data-jquery-mmdnd-droppable="0ff">Tempora architecto minima natus rem aliquid nemo fugit nostrum pariatur, voluptate ullam voluptatum itaque doloremque eveniet molestias libero officia id vitae, minus hic aspernatur asperiores ab inventore sunt cumque! Officiis.</p>
+        <p data-jquery-mmdnd-droppable="f00">Iusto et voluptatum natus numquam eaque sed modi nisi saepe atque? Recusandae quod delectus omnis porro at dignissimos magnam praesentium, sit dolorum illo rem, id aperiam beatae, earum, odit ut.</p>
+        <p data-jquery-mmdnd-droppable="f0f">Ullam illum est dolorem vitae nisi adipisci debitis molestiae totam molestias, aspernatur ea eligendi eius asperiores dolore quia tempora et exercitationem a, sequi, dolores dolor. Voluptate impedit fuga a unde.</p>
+        <p data-jquery-mmdnd-droppable="ff0">Deleniti dignissimos culpa quos nostrum iusto ipsam, molestias itaque eum, sunt quia, vitae eligendi, molestiae asperiores ducimus deserunt! Odio rem itaque voluptate error vel harum sint, accusamus molestias recusandae amet!</p>
+        <p data-jquery-mmdnd-droppable="">Laudantium repellendus adipisci alias quasi ipsam quis blanditiis veniam sed accusantium qui minus, soluta, amet similique nostrum libero ratione architecto cupiditate dignissimos, natus delectus inventore. Soluta mollitia officiis dolorem possimus.</p>
+        <p data-jquery-mmdnd-droppable="00f">Optio culpa corporis laboriosam, fuga fugiat inventore voluptatum in dolorum a magni libero atque repellat at ratione accusantium nesciunt quisquam omnis reprehenderit. Velit vel, porro vitae libero, necessitatibus minima. Praesentium?</p>
+        <p data-jquery-mmdnd-droppable="0f0">Eligendi tempora quas fugiat velit sequi reiciendis non molestias saepe aspernatur nam ipsam ducimus, voluptate modi, obcaecati mollitia sit provident pariatur praesentium ullam dicta dignissimos quae perferendis eum unde. Sit.</p>
+        <p data-jquery-mmdnd-droppable="0ff">Odio saepe esse similique eveniet officiis distinctio, fugit sed eos quam autem? Odit porro eveniet ipsam totam suscipit soluta repellat dolore! Esse veniam, tempora incidunt ad voluptas ipsa, vel. Ratione.</p>
+        <p data-jquery-mmdnd-droppable="f00">Doloremque dicta aspernatur reprehenderit sed pariatur at eius harum laborum veniam deserunt! Dolorum, amet possimus voluptas magnam nostrum reiciendis ad, earum tenetur harum optio cum ut consequuntur error eveniet voluptatibus?</p>
+        <p data-jquery-mmdnd-droppable="f0f">Quis rerum reprehenderit atque, molestias, nam laudantium mollitia. Optio officiis cumque tempora qui libero, excepturi perferendis inventore aspernatur modi nulla mollitia dolores maiores rerum laboriosam, quos accusantium. Ratione, obcaecati, fugiat!</p>
+        <p data-jquery-mmdnd-droppable="ff0">Voluptates ullam laudantium veniam, aliquam animi a amet rem perferendis reiciendis, itaque aspernatur adipisci velit distinctio. Cumque impedit accusamus quaerat, maxime? Voluptatum quasi beatae, animi ad nostrum impedit laboriosam adipisci!</p>
+        <p data-jquery-mmdnd-droppable="">Harum vitae ipsa officiis, quo! Necessitatibus repellat error dolores labore dolore nobis est laboriosam temporibus tempora, expedita sapiente dolorum, repellendus, rerum commodi quia doloremque dignissimos blanditiis sit deleniti porro et.</p>
+        <p data-jquery-mmdnd-droppable="00f">Laborum, voluptatibus? Sit excepturi sunt, natus quas possimus repellendus earum consequatur sint ut dignissimos deleniti voluptatum reprehenderit, dicta ipsa porro tempora minima quisquam, ducimus voluptates dolorum illo vitae nesciunt! Similique.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Nulla sint voluptate, aliquid. Vitae, dignissimos, quae. Obcaecati soluta voluptate molestiae quis laudantium laborum rem tempora quisquam odit officiis nobis iure enim molestias tempore aut porro, asperiores eligendi, illum officia!</p>
+        <p data-jquery-mmdnd-droppable="0ff">Laboriosam voluptatem quaerat quos, eaque dignissimos odio laudantium eius placeat neque similique sunt voluptas doloremque totam nobis unde fuga ex animi ipsum quasi sequi hic voluptatibus repudiandae odit. Perferendis, at.</p>
+        <p data-jquery-mmdnd-droppable="f00">Magnam maxime tenetur dolores natus libero vero necessitatibus ipsum culpa rerum voluptate sunt nihil cupiditate tempore nam qui, impedit reiciendis possimus perferendis, molestiae, deserunt itaque. Sequi tempora quos sed, pariatur.</p>
+        <p data-jquery-mmdnd-droppable="f0f">Dicta ratione, quos veniam nostrum placeat, quod velit harum ducimus expedita nihil quis itaque voluptate reprehenderit. Sit deleniti velit repudiandae, magni autem ea praesentium inventore perferendis ducimus facere soluta! Eum!</p>
+        <p data-jquery-mmdnd-droppable="ff0">Vero adipisci tempore enim deserunt consequatur est amet ipsam, officia ad ut sequi inventore labore in quos perferendis. Dignissimos inventore omnis dolorum delectus voluptates, ex ducimus ab sequi harum totam!</p>
+        <p data-jquery-mmdnd-droppable="">Magni nihil tempora quaerat repudiandae dolor odio ex repellat non deleniti autem maiores, consectetur culpa. Delectus in at incidunt voluptates, quod inventore deserunt amet veritatis impedit nam cumque facere nulla!</p>
+        <p data-jquery-mmdnd-droppable="00f">Consectetur mollitia, odit culpa beatae, rem incidunt magni debitis quisquam, quidem error veritatis eos dolor natus quod eum accusamus eveniet dolorem possimus praesentium odio quas rerum consequatur dolore. Provident, tenetur.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Ut reiciendis laudantium, qui! Ipsam nulla aperiam odio, ipsum, fugiat omnis voluptatum aut dicta tempora voluptates ea fuga natus velit incidunt eius veniam facilis nobis, dolorem dignissimos cum, voluptatem temporibus.</p>
+        <p data-jquery-mmdnd-droppable="0ff">Nostrum sequi magnam illo explicabo optio consequatur ab. Alias sit numquam accusantium ratione, itaque doloribus nesciunt laborum mollitia recusandae dolorem aut veritatis, autem placeat culpa dolores facere soluta, eos est.</p>
+        <p data-jquery-mmdnd-droppable="f00">Culpa cum ratione, quis molestiae totam hic assumenda delectus, perferendis et animi. Blanditiis labore odit corrupti iste incidunt quo beatae optio mollitia deleniti, dolorum consequatur ad veritatis, similique ab veniam.</p>
+        <p data-jquery-mmdnd-droppable="f0f">Molestiae eum dolores, totam veritatis omnis, explicabo, pariatur cumque maxime fugiat repudiandae unde! Quod minus dicta asperiores cum, aut aperiam ex nulla sint veniam, expedita, architecto voluptate fugiat eligendi provident.</p>
+        <p data-jquery-mmdnd-droppable="ff0">Iure nam ipsa sapiente dolores repellendus aliquid accusamus consequatur corporis voluptatibus. Assumenda dolor molestiae, eos facilis consectetur repudiandae consequuntur amet consequatur, eligendi corporis placeat quaerat id culpa exercitationem veniam nam!</p>
+        <p data-jquery-mmdnd-droppable="">At dignissimos, ullam, inventore repellendus eius eos, reprehenderit ex tenetur fuga iusto ratione id incidunt, minima perspiciatis vel facere placeat. Quam dolores quae labore unde voluptatum accusantium quidem cumque velit.</p>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(document)
+                .on("mmdnddragstart", function(e) {
+                    e.setData("foo", $(e.target).attr("data-jquery-mmdnd-draggable"));
+                    console.log("dragstart", e.target);
+                })
+                .on("mmdnddrop", function(e) {
+                    console.log("drop", e.target, e.getData("foo"));
+                })
+                .on("mmdnddragenter", function(e) {
+                    console.log("dragenter", e.target);
+                })
+                .on("mmdnddragover", function(e) {
+                    console.log("dragover", e.target);
+                })
+                .on("mmdnddragleave", function(e) {
+                    console.log("dragleave", e.target);
+                })
+                .on("mmdnddragend", function(e) {
+                    console.log("dragend", e.target);
+                });
+        </script>
+    </body>
+</html>

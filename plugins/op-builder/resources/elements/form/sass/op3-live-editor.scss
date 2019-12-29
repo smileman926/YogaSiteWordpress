@@ -1,0 +1,119 @@
+form[data-op3-element-options-type="form"] {
+
+    // children property
+    .op3-element-options-property[data-op3-element-options-property-name="children"] {
+        .op3-element-options-property-children-list {
+            &:empty::after {
+                content: "Empty Children List";
+                display: block;
+                font-size: 12px;
+                color: #8e8e8e;
+            }
+        }
+
+        .op3-element-options-property-children-list-item-clone,
+        .op3-element-options-property-children-list-item-remove {
+            display: none;
+        }
+
+        .op3-element-options-property-children-list-item-visible {
+            display: flex;
+        }
+    }
+
+    // Field Layout Inline/Stacked
+    // [data-op3-element-options-property-name="optinFieldLayout"],
+    [data-op3-element-options-property-id="verticalSpacing"],
+    [data-op3-element-options-property-id="horizontalSpacing"],
+    [data-op3-element-options-property-id="labelSpacing"],
+    [data-op3-element-options-property-id="labelFontSize"],
+    [data-op3-element-options-property-id="labelColor"] {
+        display: none;
+    }
+
+    [data-op3-element-options-property-name="optinFieldLayout"] {
+        &[data-op3-element-options-property-value="stacked"] {
+            ~ [data-op3-element-options-property-id="verticalSpacing"] {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="inline"] {
+            ~ [data-op3-element-options-property-id="horizontalSpacing"],
+            ~ [data-op3-element-options-property-id="verticalSpacing"] {
+                display: flex;
+            }
+
+            ~ [data-op3-element-options-property-id="alignItems"] {
+                display: none;
+            }
+        }
+    }
+
+    // Label Spacing
+    [data-op3-element-options-property-id="labelVisible"][data-op3-element-options-property-value="1"] {
+        ~ [data-op3-element-options-property-id="labelSpacing"],
+        ~ [data-op3-element-options-property-id="labelFontSize"],
+        ~ [data-op3-element-options-property-id="labelColor"] {
+            display: flex;
+        }
+    }
+
+    .op3-element-options-container {
+        &::before {
+            display: none;
+        }
+    }
+
+    // Default Field Width in Optin Form is related
+    // to Field Layout value (OP3-784, OP3-785)
+    &[data-op3-parent-options-property-value-optinfieldlayout="stacked"] {
+        [data-op3-element-options-property-id="fieldWidthDefaultInline"] { display: none; }
+        [data-op3-element-options-property-id="fieldWidthDefault"] { display: flex; }
+    }
+
+    &[data-op3-parent-options-property-value-optinfieldlayout="inline"] {
+        [data-op3-element-options-property-id="fieldWidthDefaultInline"] { display: flex; }
+        [data-op3-element-options-property-id="fieldWidthDefault"] { display: none; }
+    }
+}
+
+// hide some properties for form children (fields/button)
+form[data-op3-element-options-path*="/form/"] {
+    .op3-element-options-group[data-op3-element-options-group-id="responsive"],
+    [data-op3-element-options-property-name="href"],
+    [data-op3-element-options-property-name="target"],
+    [data-op3-element-options-property-name="action"],
+    [data-op3-element-options-property-name="name"] {
+        display: none;
+    }
+}
+
+// sidebar tweaks
+#sidebar form[data-op3-element-options-type="form"] {
+    .op3-element-options-container {
+        margin: 0;
+        padding-top: 0;
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-path*="/form/"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"],
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+}

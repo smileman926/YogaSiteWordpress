@@ -1,0 +1,24 @@
+.op3-wizard.op3-wizard-global-elements {
+
+    .op3-wizard-message:not(:empty) {
+        ~ [data-field] {
+            display: none;
+        }
+    }
+
+    &[data-wizard-step="1"] {
+        .op3-wizard-steps:not([data-title]),
+        .op3-wizard-steps[data-title=""] {
+            .op3-wizard-steps-item:nth-child(1) .op3-wizard-button-next-step {
+                pointer-events: none;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .op3-wizard-steps-item:nth-child(2) .op3-wizard-steps-item-content {
+        .op3-wizard-message.op3-wizard-message-error + .op3-wizard-summary {
+            display: none;
+        }
+    }
+}

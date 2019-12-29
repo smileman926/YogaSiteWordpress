@@ -1,0 +1,65 @@
+.jquery-paddingdrag {
+    position: relative;
+}
+
+[data-jquery-paddingdrag] {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    cursor: ns-resize;
+    min-height: 5px;
+    z-index: 100;
+    transition: background 0.4s ease;
+    background: transparent;
+}
+
+[data-jquery-paddingdrag]::before {
+    content: attr(data-jquery-padding);
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    font-style: normal;
+    font-weight: normal;
+    color: #8e8e8e;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 0.4s ease, background 0.4s ease;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+[data-jquery-paddingdrag]:hover,
+.jquery-paddingdrag-dragging-top [data-jquery-paddingdrag="top"],
+.jquery-paddingdrag-dragging-bottom [data-jquery-paddingdrag="bottom"] {
+    background: rgba(1, 117, 255, 0.1);
+    transition: background 0.4s ease 0.5s;
+}
+
+[data-jquery-paddingdrag]:hover::before,
+.jquery-paddingdrag-dragging-top [data-jquery-paddingdrag="top"]::before,
+.jquery-paddingdrag-dragging-bottom [data-jquery-paddingdrag="bottom"]::before {
+    color: #fff;
+    transition: color 0.4s ease 0.5s, background 0.4s ease 0.5s;
+    background: #0175ff;
+}
+
+[data-jquery-paddingdrag="top"] {
+    top: 0;
+}
+
+[data-jquery-paddingdrag="bottom"] {
+    bottom: 0;
+}
+
+/* Disabling user-select site-wide - when dragging */
+.jquery-paddingdrag-dragging {
+    user-select: none;
+}

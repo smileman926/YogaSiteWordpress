@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=latin-ext');
+
+// Dependencies
+@import 'core/op3-variables';
+@import 'core/op3-core';
+@import 'core/op3-icons-base';
+@import 'core/op3-icons';
+
+// Wrapper styles
+@import 'wp/op3-wrapper-base';
+
+// draganddrop should be on top frame which is
+// wrapper. in some special cases live editor
+// can be called from other sources, so we are
+// designing op3 to have live editor as top frame
+// and copying style to wrapper
+@import 'core/op3-element-thumb';
+@import 'core/op3-block-thumb';
+@import 'live-editor/op3-draganddrop';

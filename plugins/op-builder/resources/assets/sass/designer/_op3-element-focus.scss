@@ -1,0 +1,98 @@
+.op3-element {
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        transition: all 0.1s ease;
+        z-index: 100;
+    }
+
+    &:hover::before {
+        border: 1px dashed $op-light-grey;
+        border-radius: inherit;
+    }
+
+    &.op3-link-properties::before {
+        border: 1px solid $op-blue;
+        opacity: 0.5;
+        border-radius: inherit;
+    }
+
+    &.op3-focus::before {
+        border: 2px solid $op-blue;
+        box-shadow: 0 0 2px transparentize($op-blue, 0.1);
+        opacity: 1;
+        border-radius: inherit;
+    }
+
+    // element specifics
+    &[data-op3-element-type="column"],
+    &[data-op3-element-type="featureblockitem"],
+    &[data-op3-element-type="numberblockitem"],
+    &[data-op3-element-type="membershipcontentlistitem"],
+    &[data-op3-element-type="testimonialitem"] {
+        &:hover::before,
+        &::before,
+        &.op3-focus::before {
+            border: none;
+            box-shadow: none;
+        }
+    }
+
+    &[data-op3-element-type="column"] > .op3-column-content,
+    &[data-op3-element-type="featureblockitem"] > .op3-column-content,
+    &[data-op3-element-type="numberblockitem"] > .op3-column-content,
+    &[data-op3-element-type="membershipcontentlistitem"] > .op3-column-content,
+    &[data-op3-element-type="testimonialitem"] > .op3-column-content {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            transition: all 0.1s ease;
+            z-index: 100;
+        }
+
+        &:hover::before {
+            border: 1px dashed $op-light-grey;
+            border-radius: inherit;
+        }
+    }
+
+    &[data-op3-element-type="column"].op3-link-properties > .op3-column-content,
+    &[data-op3-element-type="featureblockitem"].op3-link-properties > .op3-column-content,
+    &[data-op3-element-type="numberblockitem"].op3-link-properties > .op3-column-content,
+    &[data-op3-element-type="membershipcontentlistitem"].op3-link-properties > .op3-column-content,
+    &[data-op3-element-type="testimonialitem"].op3-link-properties > .op3-column-content {
+        &::before {
+            border: 1px solid $op-blue;
+            box-shadow: 0 0 2px transparentize($op-blue, 0.1);
+            opacity: 1;
+            border-radius: inherit;
+        }
+    }
+
+    &[data-op3-element-type="column"].op3-focus > .op3-column-content,
+    &[data-op3-element-type="featureblockitem"].op3-focus > .op3-column-content,
+    &[data-op3-element-type="numberblockitem"].op3-focus > .op3-column-content,
+    &[data-op3-element-type="membershipcontentlistitem"].op3-focus > .op3-column-content,
+    &[data-op3-element-type="testimonialitem"].op3-focus > .op3-column-content {
+        &::before {
+            border: 2px solid $op-blue;
+            box-shadow: 0 0 2px transparentize($op-blue, 0.1);
+            opacity: 1;
+            border-radius: inherit;
+        }
+    }
+}

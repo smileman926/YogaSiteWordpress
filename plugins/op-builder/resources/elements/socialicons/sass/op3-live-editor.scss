@@ -1,0 +1,96 @@
+#sidebar [data-op3-element-options-type="icon"][data-op3-element-options-path*="/socialicons/"] {
+    .op3-boxmodel {
+        .op3-boxmodel-margin-top,
+        .op3-boxmodel-margin-bottom,
+        .op3-boxmodel-margin-left,
+        .op3-boxmodel-margin-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+}
+
+#toolbar {
+    [data-op3-element-options-type="socialicons"] {
+        &[data-op3-element-options-path*="socialicons"] {
+            .op3-element-options-property[data-op3-element-options-property-id="gutter"] {
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    [data-op3-element-options-type="socialicons"],
+    [data-op3-element-options-type="icon"][data-op3-element-options-path*="/socialicons/"] {
+        [data-op3-toolbar-nav-id="add"] {
+            display: block;
+        }
+
+        &[data-op3-element-options-row-children-count="15"] {
+            [data-op3-toolbar-nav-id="add"] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+
+    [data-op3-element-options-type="icon"][data-op3-element-options-path*="/socialicons/"] {
+        [data-op3-toolbar-nav-id="alignment"] {
+            display: none;
+        }
+
+        &[data-op3-element-options-row-children-count="15"] {
+            [data-op3-toolbar-nav-id="clone"] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="socialicons"],
+    &[data-op3-element-type="icon"][data-op3-element-path*="/socialicons/"] {
+        .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="socialicons"] {
+            display: block;
+        }
+
+        &[data-op3-element-row-children-count="15"] {
+            .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="socialicons"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // socialicons children
+    &[data-op3-element-path*="/socialicons/"] {
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+
+    // socialicons and children
+    &[data-op3-element-path*="/socialicons"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"] {
+            display: none;
+        }
+    }
+}

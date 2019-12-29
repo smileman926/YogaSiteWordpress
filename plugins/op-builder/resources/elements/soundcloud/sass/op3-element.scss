@@ -1,0 +1,11 @@
+.op3-element[data-op3-element-type="soundcloud"] {
+    .op3-soundcloud-wrapper {
+        height: 166px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+    }
+}

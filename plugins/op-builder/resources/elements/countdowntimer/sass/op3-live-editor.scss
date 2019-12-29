@@ -1,0 +1,51 @@
+[data-op3-element-options-type="countdowntimer"],
+[data-op3-toolbar-element-type="countdowntimer"] {
+    div[data-op3-element-options-property-name="redirectUrl"],
+    div[data-op3-element-options-property-name="text"],
+    div[data-op3-element-options-property-id="digitsBackgroundColor"],
+    div[data-op3-element-options-property-id="wrapperBackgroundColor"] {
+        display: none;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="spacingBetweenBlocks"] {
+        flex-direction: column;
+
+        .op3-element-options-label-group {
+            margin-bottom: 10px;
+        }
+    }
+
+    // Display digitBackgroundColor property only for style-6
+    &[data-op3-element-options-style="style-6"],
+    &[data-op3-toolbar-element-style="style-6"] {
+        div[data-op3-element-options-property-id="digitsBackgroundColor"] {
+            display: flex;
+        }
+    }
+
+    // Display wrapperBackgroundColor property only for style-8
+    &[data-op3-element-options-style="style-8"],
+    &[data-op3-toolbar-element-style="style-8"] {
+        div[data-op3-element-options-property-id="wrapperBackgroundColor"] {
+            display: flex;
+        }
+    }
+
+    /* Display redirectUrl or text property
+       base of countdownFinishAction property */
+    div[data-op3-element-options-property-name="countdownFinishAction"] {
+        &[data-op3-element-options-property-value="redirect"] {
+            ~ div[data-op3-element-options-property-name="redirectUrl"],
+            ~ div[data-op3-element-options-property-name="redirectUrl"] input {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="text"] {
+            ~ div[data-op3-element-options-property-name="text"],
+            ~ div[data-op3-element-options-property-name="text"] textarea {
+                display: flex;
+            }
+        }
+    }
+}

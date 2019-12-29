@@ -1,0 +1,33 @@
+/**
+ * All the styling used with OP Suite plugins
+ */
+
+// Vendor
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/utilities';
+// @import '~font-awesome/scss/font-awesome';
+// @import '~alertify.js/src/sass/alertify';
+
+// Variables
+@import "framework/variables/variables";
+
+// Fonts
+@import "framework/fonts";
+
+// Vendor styles and overrides
+@import "~wallop/css/wallop.css";
+@import "~wallop/css/wallop--slide.css";
+@import "~wallop/css/wallop--fade.css";
+@import "~jquery-confirm/css/jquery-confirm.css";
+@import "framework/vendor/jconfirm-optimizepress";
+@import "framework/vendor/notifications";
+
+// UI
+@import "framework/layout/layout";
+@import "framework/header/header";
+@import "framework/elements/elements";
+@import "framework/forms";
+@import "framework/alerts";
+

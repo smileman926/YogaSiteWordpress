@@ -1,0 +1,24 @@
+.op-builder-admin {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $color__ops-grayLight;
+    min-height: 100vh;
+    font-size: 16px;
+    color: $color__ops-blue;
+
+    p {
+        font-size: inherit;
+
+        &.opd-teaser {
+            font-size: 14px;
+            color: $color__ops-gray;
+        }
+    }
+
+    a {
+        outline: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

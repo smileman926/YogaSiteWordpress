@@ -1,0 +1,11 @@
+.op3-element[data-op3-element-type="input"] {
+    input {
+        // Prevent CSS hack defined in op3-element.scss to enable color preview in live editor
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            transition-delay: 0s !important;
+        }
+    }
+}

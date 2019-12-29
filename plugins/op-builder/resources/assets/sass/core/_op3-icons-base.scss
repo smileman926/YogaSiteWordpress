@@ -1,0 +1,148 @@
+$op3-icon-font-path: "../fonts" !default;
+$op3-icon-background-color: #eee !default;
+$op3-icon-li-margin-right: 0.4em !default;
+
+@mixin op3-icon-rotate($degrees, $rotation) {
+    transform: rotate($degrees);
+}
+
+@mixin op3-icon-flip($horiz, $vert, $rotation) {
+    transform: scale($horiz, $vert);
+}
+
+/* --------------------------------
+
+op3-icons Web Font
+Generated using nucleoapp.com
+
+-------------------------------- */
+
+@font-face {
+    font-family: 'op3-icons';
+    // Version is related to the version of the font,
+    // defined in Nucleo app export settings
+    src: url('#{$op3-icon-font-path}/op3-icons.eot?ver=1.7.0');
+    src:
+        url('#{$op3-icon-font-path}/op3-icons.eot?ver=1.7.0') format('embedded-opentype'),
+        url('#{$op3-icon-font-path}/op3-icons.woff2?ver=1.7.0') format('woff2'),
+        url('#{$op3-icon-font-path}/op3-icons.woff?ver=1.7.0') format('woff'),
+        url('#{$op3-icon-font-path}/op3-icons.ttf?ver=1.7.0') format('truetype'),
+        url('#{$op3-icon-font-path}/op3-icons.svg?ver=1.7.0') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ------------------------
+    base class definition
+------------------------- */
+
+.op3-icon {
+    display: inline-block;
+    font: normal normal normal 1em/1 'op3-icons';
+    speak: none;
+    text-transform: none;
+
+    /* Better Font Rendering */
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------
+   change icon size
+------------------------- */
+
+/* relative units */
+
+.op3-icon-sm {
+    font-size: 0.8em;
+}
+
+.op3-icon-lg {
+    font-size: 1.2em;
+}
+
+/* absolute units */
+
+.op3-icon-16 {
+    font-size: 16px;
+}
+
+.op3-icon-32 {
+    font-size: 32px;
+}
+
+/* ----------------------------------
+   add a square/circle background
+----------------------------------- */
+
+.op3-icon-bg-square,
+.op3-icon-bg-circle {
+    padding: 0.35em;
+    background-color: $op3-icon-background-color;
+}
+
+.op3-icon-bg-circle {
+    border-radius: 50%;
+}
+
+/* ------------------------------------
+   use icons as list item markers
+------------------------------------- */
+
+.op3-icon-ul {
+    padding-left: 0;
+    list-style-type: none;
+
+    > li {
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.4;
+    }
+
+    > li > .op3-icon {
+        margin-right: $op3-icon-li-margin-right;
+        line-height: inherit;
+    }
+}
+
+/* ------------------------
+   spinning icons
+------------------------- */
+
+.op3-icon-is-spinning {
+    animation: op3-icon-spin 2s infinite linear;
+}
+
+@keyframes op3-icon-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ------------------------
+   rotated/flipped icons
+------------------------- */
+
+.op3-icon-rotate-90 {
+    @include op3-icon-rotate(90deg, 1);
+}
+
+.op3-icon-rotate-180 {
+    @include op3-icon-rotate(180deg, 2);
+}
+
+.op3-icon-rotate-270 {
+    @include op3-icon-rotate(270deg, 3);
+}
+
+.op3-icon-flip-y {
+    @include op3-icon-flip(-1, 1, 0);
+}
+
+.op3-icon-flip-x {
+    @include op3-icon-flip(1, -1, 2);
+}

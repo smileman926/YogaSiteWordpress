@@ -1,0 +1,73 @@
+/**
+ * Sidebar bullet block sortable list
+ */
+form[data-op3-element-options-type="bulletblock"] {
+    .op3-element-options-group[data-op3-element-options-group-id="bullet-block-order"] {
+        ul {
+            margin: 0 0 10px 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+        }
+
+        li {
+            margin: 4px 0 0 0;
+            display: flex;
+            width: 100%;
+            line-height: 40px;
+            color: $op-grey;
+            border: 1px solid $op-grey-border;
+            font-size: 0.9em;
+            cursor: move;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:hover {
+                border-color: $op-blue;
+            }
+
+            [data-op3-contenteditable] {
+                display: flex;
+                flex-grow: 1;
+
+                div {
+                    width: 136px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .op3-icon {
+                display: flex;
+                line-height: inherit;
+                justify-content: center;
+
+                &:first-child {
+                    width: 2em;
+                }
+
+                &:not(:first-child) {
+                    width: 40px;
+                    cursor: pointer;
+                    border-left-width: 1px;
+                    border-left-color: inherit;
+                    border-left-style: inherit;
+
+                    &:hover {
+                        color: $op-blue;
+                    }
+                }
+            }
+        }
+
+        ul li:first-child:last-child {
+            [data-op3-contenteditable] div {
+                width: 176px;
+            }
+        }
+    }
+}

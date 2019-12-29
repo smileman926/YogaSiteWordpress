@@ -1,0 +1,345 @@
+.op3-element {
+    &.op3-element-style-transform-rotate-0deg-media-all {
+        img,
+        svg {
+            transform: none;
+        }
+    }
+
+    &.op3-element-style-transform-rotate-90deg-media-all {
+        img,
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    &.op3-element-style-transform-rotate-180deg-media-all {
+        img,
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.op3-element-style-transform-rotate-270deg-media-all {
+        img,
+        svg {
+            transform: rotate(270deg);
+        }
+    }
+
+    &.op3-element-style-transform-flip-none-media-all.op3-element-style-transform-rotate-0deg-media-all {
+        img,
+        svg {
+            transform: none;
+        }
+    }
+
+    &.op3-element-style-transform-flip-none-media-all.op3-element-style-transform-rotate-90deg-media-all {
+        img,
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    &.op3-element-style-transform-flip-none-media-all.op3-element-style-transform-rotate-180deg-media-all {
+        img,
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.op3-element-style-transform-flip-none-media-all.op3-element-style-transform-rotate-270deg-media-all {
+        img,
+        svg {
+            transform: rotate(270deg);
+        }
+    }
+
+    &.op3-element-style-transform-flip-horizontal-media-all.op3-element-style-transform-rotate-0deg-media-all {
+        img,
+        svg {
+            transform: scaleX(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-horizontal-media-all.op3-element-style-transform-rotate-90deg-media-all {
+        img,
+        svg {
+            transform: rotate(90deg) scaleX(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-horizontal-media-all.op3-element-style-transform-rotate-180deg-media-all {
+        img,
+        svg {
+            transform: rotate(180deg) scaleX(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-horizontal-media-all.op3-element-style-transform-rotate-270deg-media-all {
+        img,
+        svg {
+            transform: rotate(270deg) scaleX(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-vertical-media-all.op3-element-style-transform-rotate-0deg-media-all {
+        img,
+        svg {
+            transform: scaleY(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-vertical-media-all.op3-element-style-transform-rotate-90deg-media-all {
+        img,
+        svg {
+            transform: rotate(90deg) scaleY(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-vertical-media-all.op3-element-style-transform-rotate-180deg-media-all {
+        img,
+        svg {
+            transform: rotate(180deg) scaleY(-1);
+        }
+    }
+
+    &.op3-element-style-transform-flip-vertical-media-all.op3-element-style-transform-rotate-270deg-media-all {
+        img,
+        svg {
+            transform: rotate(270deg) scaleY(-1);
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .op3-element {
+        &.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: none;
+            }
+        }
+
+        &.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(270deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: none;
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(270deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(90deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(180deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(270deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(90deg) scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(180deg) scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-tablet}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-tablet} {
+            img,
+            svg {
+                transform: rotate(270deg) scaleY(-1);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .op3-element {
+        &.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: none;
+            }
+        }
+
+        &.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(270deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: none;
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-none-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(270deg);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(90deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(180deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-horizontal-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(270deg) scaleX(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-0deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-90deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(90deg) scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-180deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(180deg) scaleY(-1);
+            }
+        }
+
+        &.op3-element-style-transform-flip-vertical-media-screen-and-max-width-#{$breakpoint-mobile}.op3-element-style-transform-rotate-270deg-media-screen-and-max-width-#{$breakpoint-mobile} {
+            img,
+            svg {
+                transform: rotate(270deg) scaleY(-1);
+            }
+        }
+    }
+}

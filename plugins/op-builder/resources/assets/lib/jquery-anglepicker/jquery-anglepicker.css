@@ -1,0 +1,14 @@
+.jquery-anglepicker { display: none; }
+.jquery-anglepicker-widget { display: flex; position: relative; width: 7.5em; margin: 0; padding: 1.125em 0 0 0; font-size: 16px; font-family: inherit; justify-content: center; align-items: center; color: #8e8e8e; box-sizing: border-box; }
+.jquery-anglepicker-dragarea { position: relative; width: calc(3em - 1px); height: calc(3em - 1px); border: 1px solid #8e8e8e; border-radius: 50%; cursor: pointer; }
+.jquery-anglepicker-handle { display: block; width: 100%; height: 100%; }
+.jquery-anglepicker-handle::before { content: ""; position: absolute; display: block; top: 0; left: 50%; width: 1px; height: 50%; background: gray; margin-left: -1px; }
+.jquery-anglepicker-handle::after { content: ""; position: absolute; display: block; top: 50%; left: 50%; width: 3px; height: 3px; margin-top: -2px; margin-left: -2px; background: black; border-radius: 50%; }
+.jquery-anglepicker-numeric { width: 4em; margin: 0 0 0 1em; padding: 0.5em 0.25em; font-size: 0.75em; font-family: inherit; text-align: right; color: #333; border: 1px solid #e8e8e8; border-radius: 4px; outline: 0 none; align-self: center; }
+.jquery-anglepicker-numeric:focus { border-color: gray; outline: 0 none; }
+.jquery-anglepicker-unit-container { position: absolute; top: 0; right: 0; font-size: 0.8em; line-height: 1.5; }
+.jquery-anglepicker-unit-item { margin-left: 0.5em; font-size: 0.8em; font-family: inherit; color: inherit; text-decoration: none; -webkit-user-drag: none; user-drag: none; }
+.jquery-anglepicker-unit-item, .jquery-anglepicker-unit-item:active, .jquery-anglepicker-unit-item:focus { outline: none; }
+.jquery-anglepicker-unit-item.jquery-anglepicker-unit-item-selected { color: #0175ff; }
+html.jquery-anglepicker-dragarea-dragging,
+html.jquery-anglepicker-dragarea-dragging * { cursor: pointer !important; }

@@ -1,0 +1,27 @@
+{
+  "name": "oleksandr-torosh/demio-php-sdk",
+  "version": "1.0",
+  "title": "Demio API PHP SDK",
+  "description": "Demio API PHP SDK",
+  "type": "project",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oleksandr-torosh/demio-php-sdk"
+  },
+  "autoload": {
+    "psr-4": {
+      "Demio\\": "src/Demio/"
+    }
+  },
+  "require": {
+    "php": ">=5.5.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "php-di/php-di": "*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "composer dump-autoload --optimize"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+.ops-button {
+    display: inline-block;
+    position: relative;
+    line-height: 1.5;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: $color__ops-white;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: $transition__color-bg-color-border-color-linear;
+    cursor: pointer;
+    width: auto;
+    white-space: nowrap;
+    padding: 1.1rem 1.5rem;
+    font-size: 13px;
+    min-width: 200px;
+    @include linear-gradient(to top right, #0175FF, #0061D4);
+
+    &:hover {
+        color: $color__ops-white;
+        @include linear-gradient(to top right, #0061D4, #0061D4);
+    }
+
+    &:active, &:focus {
+        color: $color__ops-white;
+    }
+
+    &.ops-min-width-auto {
+        min-width: auto;
+    }
+
+    &.ops-full-width {
+        min-width: auto;
+        width: 100%;
+    }
+
+    &.ops-button-block {
+        display: block;
+        min-width: auto;
+        width: 100%;
+    }
+
+    &.ops-transparent {
+        background: none;
+        color: $color__ops-logoBlue;
+        border: 1px solid $color__ops-borderLight;
+
+        &:hover {
+            color: $color_op-blueDark;
+            border-color: $color_op-blueDark;
+        }
+    }
+
+    &.ops-button-icon {
+        padding: 6px 12px 4px 12px;
+        width: auto;
+        min-width: 0;
+        text-align: center;
+    }
+
+    &.ops-button-lg {
+        font-size: 18px;
+    }
+
+    &.ops-button-primary {
+        color: #fff !important;
+    }
+
+    &.ops-button-success {
+        background: $color__ops-green;
+
+        &:hover {
+            color: $color__ops-white;
+            background: #00b668;
+        }
+    }
+
+    &.ops-button-light {
+        color: #8A96A0;
+        background: #fbfbfb;
+        border: 1px solid #e6eaee;
+    }
+
+    &.ops-button-danger {
+        background: $color__ops-red;
+    }
+
+    &.ops-button-disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &.pull-right {
+        float: right;
+    }
+}
+
+.ops-button-group {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.ops-icon-button-group {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

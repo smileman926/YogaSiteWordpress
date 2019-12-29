@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery PaddingDrag</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="jquery-paddingdrag.css" />
+	<style type="text/css">
+		body {
+		    font-family: 'Open Sans', sans-serif;
+		}
+
+		.section {
+			margin: 2em;
+			background: lightgrey;
+			padding: 50px;
+			text-align: center;
+		}
+
+		.section .section {
+			background: navajowhite;
+		}
+
+		.section .section .section {
+			background: royalblue;
+		}
+
+		.section-target {
+			background: yellowgreen;
+			padding: 2em;
+			margin: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="section" data-id="1">
+		This is an element
+		<div class="section" data-id="2">
+			This is an inner element
+			<div class="section-target">This is the section target</div>
+			<div class="section" data-id="3">
+				This is an inner inner element
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="jquery-paddingdrag.js"></script>
+	<script>
+		$('[data-id="1"]').paddingdrag({
+			// positions: ["top", "bottom"],
+		});
+
+		$('[data-id="2"]').paddingdrag({
+			// positions: ["top", "bottom"],
+		});
+
+		$('[data-id="3"]').paddingdrag({
+			// positions: ["top", "bottom"],
+		});
+
+		$('.section-target').paddingdrag({
+			// positions: ["top", "bottom"],
+		});
+
+		// $(".section").on("jquerypaddingdragend", function(e) {
+		// 	console.log('target', e.target);
+		// 	console.log('this', this)
+		// 	e.stopPropagation();
+		// })
+
+		$('[data-id="1"]').on("jquerypaddingdragchange", function(e) {
+			console.log('target1', e.target);
+			console.log('currenttarget1', e.currentTarget);
+			console.log('this1', this)
+			e.stopPropagation();
+		});
+
+		$('[data-id="2"]').on("jquerypaddingdragchange", function(e) {
+			console.log('target2', e.target);
+			console.log('currenttarget2', e.currentTarget);
+			console.log('this2', this)
+			e.stopPropagation();
+		});
+
+		$('[data-id="3"]').on("jquerypaddingdragchange", function(e) {
+			console.log('target3', e.target);
+			console.log('currenttarget3', e.currentTarget);
+			console.log('this3', this)
+			e.stopPropagation();
+		});
+
+		$('.section-target').on("jquerypaddingdragchange", function(e) {
+			console.log('section-target', e.target);
+			console.log('section-currenttarget', e.currentTarget);
+			console.log('section-this', this)
+			// e.stopPropagation();
+		});
+	</script>
+</body>
+</html>

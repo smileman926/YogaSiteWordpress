@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.375 0 1 1">
+    <pattern id="p" viewBox="0 0 100 86.6" height="1" width="1.75" patternUnits="userSpaceOnUse">
+        <polygon points="25,0 75,0 100,43.3 75,86.6 25,86.6 0,43.3" fill="currentColor" />
+    </pattern>
+    <rect fill="url(#p)" x="-1920" y="0" width="3840" height="1" />
+</svg>

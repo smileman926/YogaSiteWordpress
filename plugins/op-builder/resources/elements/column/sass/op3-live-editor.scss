@@ -1,0 +1,26 @@
+// Lock margin & margin handles to prevent layout breaking
+form[data-op3-element-options-type="column"] {
+    .op3-boxmodel {
+        .op3-boxmodel-margin-top,
+        .op3-boxmodel-margin-bottom,
+        .op3-boxmodel-margin-left,
+        .op3-boxmodel-margin-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+}
+
+#toolbar {
+    form[data-op3-element-options-type="column"] {
+        .op3-element-options-property.jquery-filter-button-content {
+            .op3-element-options-label-group {
+                display: none;
+            }
+        }
+    }
+}

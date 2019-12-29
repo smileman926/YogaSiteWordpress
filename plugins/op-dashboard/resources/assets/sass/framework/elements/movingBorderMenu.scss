@@ -1,0 +1,15 @@
+.ops_movingBorderMenu {
+    position: relative;
+
+    .ops_movingBorderMenuHover {
+        width: 0;
+        height: 3px;
+        display: block;
+        background-color: $color__ops-logoBlue;
+        transition: $transition__width-left-linear;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+    }
+}

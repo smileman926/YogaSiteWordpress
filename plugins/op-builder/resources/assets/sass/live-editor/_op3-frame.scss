@@ -1,0 +1,56 @@
+.op3-frame {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    height: calc(100% - #{$header-height});
+    margin: 0;
+    z-index: 2000;
+    background: #fbfbfd;
+    transition: all 0.2s;
+    overflow: hidden;
+
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        border: 0 none;
+        background: #fff;
+        transition: all 0.4s;
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        [data-op3-device="tablet"] &,
+        [data-op3-device="mobile"] & {
+            background: #000;
+        }
+    }
+
+    body[data-op3-device="tablet"] &,
+    body[data-op3-device="mobile"] & {
+        overflow-x: auto !important;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0 none;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-width: $page-min-width;
+        background: #fff;
+
+        [data-op3-device="tablet"] & {
+            min-width: $page-min-width-tablet;
+        }
+
+        [data-op3-device="mobile"] & {
+            min-width: $page-min-width-mobile;
+        }
+    }
+}

@@ -1,0 +1,255 @@
+.op3-element[data-op3-element-type="progressbar"] {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+
+    .op3-background-ancestor,
+    .op3-background-parent {
+        position: relative;
+    }
+
+    [data-op3-background="base"],
+    [data-op3-background="overlay"] {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: inherit;
+            pointer-events: none;
+        }
+
+        &::before { opacity: 1; }
+        &::after { opacity: 0; }
+    }
+
+    &:hover {
+        [data-op3-background="overlay"],
+        [data-op3-background="base"] {
+            &::before { opacity: 0; }
+            &::after { opacity: 1; }
+        }
+    }
+
+    .op3-progressbar-content {
+        display: flex;
+        flex-basis: 100%;
+        position: relative;
+    }
+
+    .op3-progressbar {
+        display: flex;
+        flex-basis: 100%;
+    }
+
+    .op3-progressbar-container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    [data-op3-background="base-border"] { z-index: 10; }
+    [data-op3-background="overlay-border"] { z-index: 20; }
+
+    [data-op3-background="base"] {
+        z-index: 0;;
+    }
+
+    .op3-progressbar-progress {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 5;
+    }
+
+    .op3-progressbar-label {
+        min-width: fit-content;
+        padding: 0 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 6;
+    }
+
+    // Animate progress width
+    .op3-progressbar-content[data-op3-animation-toggle="1"] {
+        .op3-progressbar-progress [data-op3-background] {
+            will-change: width;
+            animation: width 1s ease-in-out;
+        }
+
+        @keyframes width {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        // Animate opacity after the width animation is finished
+        // but only when label placement is inside of the bar
+        &[data-op3-label-placement="inside"] .op3-progressbar-label {
+            opacity: 0;
+            animation: opacity 0.2s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes opacity {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    }
+
+    // Label placement
+    .op3-progressbar-content {
+        &[data-op3-label-placement="hide"] {
+            .op3-progressbar-label {
+                display: none;
+            }
+        }
+
+        &[data-op3-label-placement="inside"] {
+            .op3-progressbar-label {
+                // Force margin, since we want
+                // the label always centered
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+        }
+
+        &[data-op3-label-placement="above"] {
+            flex-direction: column;
+
+            .op3-progressbar-label {
+                position: relative;
+                transform: none;
+                padding-left: 0;
+                padding-right: 0;
+
+                // Force opposite margin value to 0
+                // to ensure a gap doesn't
+                // appear in the element
+                margin-top: 0 !important;
+
+                // Force top positioning to 0
+                // since this is only used on
+                // the inside placement
+                top: 0 !important;
+
+                // Forced to 100% because we want alignment options to
+                // work based on the entire element and not just
+                // progress width for this placement (OP3-895)
+                width: 100% !important;
+            }
+        }
+
+        &[data-op3-label-placement="below"] {
+            flex-direction: column-reverse;
+
+            .op3-progressbar-label {
+                color: inherit;
+                position: relative;
+                transform: none;
+                padding-left: 0;
+                padding-right: 0;
+
+                // Force opposite top values to 0
+                // to ensure a gap doesn't
+                // appear in the element
+                margin-bottom: 0 !important;
+
+                // Force top positioning to 0
+                // since this is only used on
+                // the inside placement
+                top: 0 !important;
+
+                // Forced to 100% because we want alignment options to
+                // work based on the entire element and not just
+                // progress width for this placement (OP3-895)
+                width: 100% !important;
+            }
+        }
+    }
+
+    // Stripes
+    .op3-progressbar-content {
+        $narrowSize: 10px;
+        $narrowBackgroundSize: 28px;
+        $wideSize: 20px;
+        $wideBackgroundSize: 56px;
+
+        // Stripes are set to ::before element so that
+        // we can animate both stripes and width
+        // at the sime time
+        [data-op3-background="overlay-stripes"] {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+
+        &[data-op3-stripes="forward"] [data-op3-background="overlay-stripes"]::before {
+            background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) $narrowSize, transparent $narrowSize, transparent 20px);
+        }
+
+        // Stripes Backward
+        &[data-op3-stripes="backward"] [data-op3-background="overlay-stripes"]::before {
+            background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) $narrowSize, transparent $narrowSize, transparent 20px);
+        }
+
+        // Stripes Wide
+        &[data-op3-stripes="wide-forward"] [data-op3-background="overlay-stripes"]::before {
+            background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) $wideSize, transparent $wideSize, transparent 40px);
+        }
+
+        // Stripes Wide Backward
+        &[data-op3-stripes="wide-backward"] [data-op3-background="overlay-stripes"]::before {
+            background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) $wideSize, transparent $wideSize, transparent 40px);
+        }
+
+        &[data-op3-animation-toggle-2="1"] .op3-progressbar-progress [data-op3-background="overlay-stripes"]::before {
+            background-size: $narrowBackgroundSize;
+            animation: narrow 1s linear infinite;
+        }
+
+        &[data-op3-animation-toggle-2="1"][data-op3-stripes^="wide-"] .op3-progressbar-progress [data-op3-background="overlay-stripes"]::before {
+            background-size: $wideBackgroundSize;
+            animation: wide 1s linear infinite;
+        }
+
+        @keyframes narrow {
+            from { background-position: 0 0; }
+            to { background-position: $narrowBackgroundSize 0; }
+        }
+
+        @keyframes wide {
+            from { background-position: 0 0; }
+            to { background-position: $wideBackgroundSize 0; }
+        }
+    }
+
+    // Stop width animation by default, enable it
+    // with js when element is in viewport
+    &.op3-progressbar-no-animaton .op3-progressbar-content[data-op3-animation-toggle="1"] {
+        .op3-progressbar-label {
+            animation: none;
+            opacity: 0;
+        }
+
+        .op3-progressbar-progress [data-op3-background] {
+            animation: none;
+            width: 0;
+        }
+    }
+}

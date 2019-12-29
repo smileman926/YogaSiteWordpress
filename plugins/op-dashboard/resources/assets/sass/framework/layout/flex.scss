@@ -1,0 +1,17 @@
+.ops-vertical-flex {
+    height: 100%;
+
+    & > div {
+        height: 100%;
+
+        & > div {
+            width: 100%;
+        }
+    }
+}
+
+.ops-two-column-flex {
+    & > div {
+        width: 50%;
+    }
+}

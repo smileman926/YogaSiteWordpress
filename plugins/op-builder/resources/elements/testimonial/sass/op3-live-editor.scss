@@ -1,0 +1,220 @@
+#toolbar {
+    form[data-op3-element-options-type="testimonial"] {
+
+        .op3-element-options-property.jquery-filter-button-content {
+            .op3-element-options-label-group {
+                display: none;
+            }
+        }
+
+        // Hide custom option for the flex basis columns (2/3/4)
+        [data-op3-element-options-property-id="flexBasisSteps"] {
+            [data-jquery-select-buttons-option-value="none"] {
+                display: none;
+            }
+        }
+
+         // Block layout dektop/tablet/mobile
+         .op3-element-options-property[data-op3-element-options-property-id^="blockLayout"] {
+            display: none;
+        }
+
+        [data-op3-device="desktop"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutDesktop"] {
+            display: flex;
+        }
+
+        [data-op3-device="tablet"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutTablet"] {
+            display: flex;
+        }
+
+        [data-op3-device="mobile"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutMobile"] {
+            display: flex;
+        }
+
+        // Block layout/margin logic
+        [data-op3-element-options-property-id^="blockLayout"] {
+            // Layout Previews
+            .jquery-select-buttons-option {
+                position: relative;
+            }
+
+            .jquery-select-buttons-option-text {
+                display: none;
+            }
+
+            .jquery-select-buttons-option-icon {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+            }
+
+            [data-jquery-select-buttons-option-value="0"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-0.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="1"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-1.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="2"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-2.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="3"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-3.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="4"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-4.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="5"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-5.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="6"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-6.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="7"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-7.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="8"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-8.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="9"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-9.svg");
+            }
+
+            [data-jquery-select-buttons-option-value="10"] .jquery-select-buttons-option-icon {
+                background-image: url("../img/elements/testimonial/layouts/testimonial-layout-10.svg");
+            }
+        }
+    }
+
+    form[data-op3-element-options-type="testimonial"],
+    form[data-op3-element-options-type="testimonialitem"] {
+        [data-op3-toolbar-nav-id="add"] {
+            display: block;
+        }
+    }
+}
+
+form[data-op3-element-options-type="testimonial"],
+form[data-op3-element-options-type="testimonialitem"] {
+    &[data-op3-element-options-row-children-count="12"] {
+        [data-op3-toolbar-nav-id="add"] {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    // No need to equalize columns, columns always
+    // have same width
+    .op3-element-options-property[data-op3-element-options-property-id="gutter"] {
+        button {
+            display: none;
+        }
+    }
+
+    // Show/hide flex-basis (min column width)
+    // option based on wrapColumns value
+    [data-op3-element-options-property-name="flexBasis"],
+    [data-op3-element-options-property-name="flexBasisColumn"],
+    [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+    [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+        display: none;
+    }
+
+    [data-op3-element-options-property-name="wrapColumns"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="flexBasis"],
+        & + [data-op3-element-options-property-name="flexBasisColumn"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+
+    [data-op3-element-options-property-name="stackColumnsTablet"][data-op3-element-options-property-value="1"],
+    [data-op3-element-options-property-name="stackColumnsMobile"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+        & + [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+}
+
+form[data-op3-element-options-type="testimonialitem"] {
+    &[data-op3-element-options-row-children-count="12"] {
+        [data-op3-toolbar-nav-id="clone"] {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+}
+
+form[data-op3-element-options-path*="/testimonialitem/"] {
+    .op3-element-options-group[data-op3-element-options-group-id="responsive"] {
+        display: none;
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="testimonial"],
+    &[data-op3-element-type="testimonialitem"] {
+        .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="testimonial"] {
+            display: block;
+        }
+
+        &[data-op3-element-row-children-count="12"] {
+            .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="testimonial"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &[data-op3-element-type="testimonialitem"] {
+        &[data-op3-element-row-children-count="12"] {
+            .op3-context-menu-list-item[data-op3-action="clone"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &[data-op3-element-path*="/testimonialitem/"] {
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+
+    &[data-op3-element-path*="/testimonialitem"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"] {
+            display: none;
+        }
+    }
+}

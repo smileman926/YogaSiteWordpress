@@ -1,0 +1,33 @@
+.op3-element[data-op3-element-type="form"] {
+
+    // no drop
+    #op3-designer-element > [data-op3-children].op3-element-dragstart & {
+        pointer-events: none;
+    }
+
+    [data-op3-children]:empty,
+    [data-op3-children="1"] {
+        &::before {
+            content: "\efc3";
+            position: relative;
+            display: block;
+            left: auto;
+            top: auto;
+            font-family: "op3-icons";
+            font-size: 2em;
+            line-height: 2;
+            text-align: center;
+            color: rgba(200,200,200,0.5);
+            transform: none;
+        }
+
+        .op3-element {
+            display: none !important;
+        }
+    }
+
+    #op3-designer-element > [data-op3-children].op3-element-dragstart & {
+        pointer-events: none;
+    }
+
+}

@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Google AdWords conversion tracking tag\n"
+"POT-Creation-Date: 2015-07-02 06:51+0200\n"
+"PO-Revision-Date: 2015-07-02 06:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wgact.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: wgact.php:76
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: wgact.php:83
+msgid "AdWords Conversion Tracking"
+msgstr "AdWords Konversions-Messung"
+
+#: wgact.php:100
+msgid "AdWords Conversion Tracking Settings"
+msgstr "AdWords Konversions-Messung Einstellungen"
+
+#: wgact.php:109
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: wgact.php:121
+msgid "Donation"
+msgstr "Spenden"
+
+#: wgact.php:126
+msgid "This plugin was developed by"
+msgstr "Dieses Plugin wurde entwickelt von"
+
+#: wgact.php:126
+msgid "Buy me a beer if you like the plugin."
+msgstr "Kauf mir ein Bier, wenn du das Plugin magst."
+
+#: wgact.php:127
+msgid ""
+"If you want me to continue developing the plugin buy me a few more beers. "
+"Although, I probably will continue to develop the plugin anyway. It would be "
+"just much more fun if I had a few beers to celebrate my milestones."
+msgstr ""
+"Falls Du möchtest, dass ich das Plugin weiterentwickle kauf mir noch mehr "
+"Bier. Allerdings werde ich das Plugin so oder so weiterentwickeln. Es wär "
+"nur schön wenn jeden Meilenstein mit ein paar Bier feiern könnte."
+
+#: wgact.php:151
+msgid "Main Settings"
+msgstr "Haupt-Einstellungen"
+
+#: wgact.php:152
+msgid "Conversion ID"
+msgstr "Konversions ID"
+
+#: wgact.php:153
+msgid "Conversion Label"
+msgstr "Konversions Label"
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce Google AdWords conversion tracking tag"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://wordpress.org/plugins/woocommerce-google-adwords-conversion-tracking-"
+"tag/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Google AdWords dynamic conversion value tracking for WooCommerce."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Wolf & Bär GmbH"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.wolfundbaer.ch"
+msgstr ""

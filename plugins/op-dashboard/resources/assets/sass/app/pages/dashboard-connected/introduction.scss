@@ -1,0 +1,51 @@
+.opd-dashboard-connected-introduction {
+    margin-bottom: 35px;
+
+    p {
+        &.opd-welcome {
+            text-transform: uppercase;
+            color: $color__ops-logoBlue;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: initial;
+        }
+
+        &.opd-customer {
+            font-weight: 300;
+            font-size: 45px;
+            color: $color__ops-darkBlue;
+            margin-bottom: 25px;
+            line-height: initial;
+        }
+
+        &.opd-licenseValidation {
+            position: relative;
+            @include wp-mobile() {
+                padding-left: 20px;
+            }
+
+            &:before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                background-color: #7dc855;
+                display: block;
+                position: absolute;
+                top: 6px;
+                left: -10px;
+                transform: translateX(-100%);
+                border-radius: 100%;
+                @include wp-mobile() {
+                    left: 10px;
+                }
+            }
+
+            &.ops-danger {
+                &:before {
+                    background-color: #ff0000;
+                }
+            }
+        }
+    }
+}

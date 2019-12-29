@@ -1,0 +1,368 @@
+
+// Hide all border properties
+.op3-element-options-property[data-op3-element-options-property-name="borderTopWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderTopStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderTopColor"],
+.op3-element-options-property[data-op3-element-options-property-name="borderBottomWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderBottomStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderBottomColor"],
+.op3-element-options-property[data-op3-element-options-property-name="borderLeftWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderLeftStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderLeftColor"],
+.op3-element-options-property[data-op3-element-options-property-name="borderRightWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderRightStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderRightColor"],
+.op3-element-options-property[data-op3-element-options-property-name="borderAllWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderAllStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderAllColor"],
+.op3-element-options-property[data-op3-element-options-property-name="borderWidth"],
+.op3-element-options-property[data-op3-element-options-property-name="borderStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderColor"] {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .op3-element-options-label-group,
+    .jquery-input-range-unit-container,
+    .jquery-input-range-slider {
+        display: none;
+    }
+
+    .jquery-input-range-numeric {
+        position: absolute;
+        top: 121px;
+        left: 120px;
+        width: 96px;
+        padding: 8px;
+    }
+
+    a.jquery-colorpicker-preview-css {
+        left: 257px;
+        top: 117px;
+        position: absolute;
+    }
+
+    &::before {
+        display: none;
+    }
+}
+
+/* Border box for choosing
+   active border */
+.op3-element-options-property[data-op3-element-options-property-name="borderActive"] {
+    .jquery-select-buttons-widget {
+        position: relative;
+        height: 60px;
+        width: 60px;
+
+        button {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px dotted $op-grey-border;
+            cursor: pointer;
+            transition: border 200ms ease;
+            border-radius: 0;
+            border-color: #fff;
+            margin: 0;
+
+            span {
+                display: none;
+            }
+
+            &.jquery-select-buttons-option-selected {
+                background-color: #fff;
+            }
+
+            &[data-jquery-select-buttons-option-value="top"] {
+                border-top: 2px solid $op-light-grey;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+
+                &:hover,
+                &.jquery-select-buttons-option-selected {
+                    border-top: 4px solid $op-blue;
+                }
+            }
+
+            &[data-jquery-select-buttons-option-value="bottom"] {
+                border-bottom: 2px solid $op-light-grey;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+
+                &:hover,
+                &.jquery-select-buttons-option-selected {
+                    border-bottom: 4px solid $op-blue;
+                }
+            }
+
+            &[data-jquery-select-buttons-option-value="all"] {
+                border: 2px solid $op-light-grey;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 16px;
+                height: 16px;
+
+                &:hover,
+                &.jquery-select-buttons-option-selected {
+                    border: 4px solid $op-blue;
+                }
+            }
+
+            &[data-jquery-select-buttons-option-value="left"] {
+                border-left: 2px solid $op-light-grey;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+
+                &:hover,
+                &.jquery-select-buttons-option-selected {
+                    border-left: 4px solid $op-blue;
+                }
+            }
+
+            &[data-jquery-select-buttons-option-value="right"] {
+                border-right: 2px solid $op-light-grey;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+
+                &:hover,
+                &.jquery-select-buttons-option-selected {
+                    border-right: 4px solid $op-blue;
+                }
+            }
+        }
+    }
+
+    /* Display border properties
+       base on active border */
+    &[data-op3-element-options-property-value="all"] {
+        ~ [data-op3-element-options-property-name="borderAllWidth"],
+        ~ [data-op3-element-options-property-name="borderAllStyle"],
+        ~ [data-op3-element-options-property-name="borderAllColor"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="top"] {
+        ~ [data-op3-element-options-property-name="borderTopWidth"],
+        ~ [data-op3-element-options-property-name="borderTopStyle"],
+        ~ [data-op3-element-options-property-name="borderTopColor"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="bottom"] {
+        ~ [data-op3-element-options-property-name="borderBottomWidth"],
+        ~ [data-op3-element-options-property-name="borderBottomStyle"],
+        ~ [data-op3-element-options-property-name="borderBottomColor"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="left"] {
+        ~ [data-op3-element-options-property-name="borderLeftWidth"],
+        ~ [data-op3-element-options-property-name="borderLeftStyle"],
+        ~ [data-op3-element-options-property-name="borderLeftColor"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="right"] {
+        ~ [data-op3-element-options-property-name="borderRightWidth"],
+        ~ [data-op3-element-options-property-name="borderRightStyle"],
+        ~ [data-op3-element-options-property-name="borderRightColor"] {
+            display: flex;
+        }
+    }
+}
+
+// jquery-select-buttons
+.op3-element-options-property[data-op3-element-options-property-name="borderStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderAllStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderTopStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderBottomStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderLeftStyle"],
+.op3-element-options-property[data-op3-element-options-property-name="borderRightStyle"] {
+    .jquery-select-buttons-widget {
+        position: absolute;
+        top: 89px;
+        width: 132px;
+        left: 156px;
+    }
+
+    .jquery-select-buttons-option {
+        margin-left: 15px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid darken($op-grey-border, 10%);
+        border-radius: 0;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+            border-color: $op-light-grey;
+        }
+
+        &.jquery-select-buttons-option-selected {
+            border-color: $op-blue;
+            background: none;
+        }
+    }
+
+    .jquery-select-buttons-option-text,
+    .jquery-select-buttons-option-icon {
+        display: none;
+    }
+
+    [data-jquery-select-buttons-option-value="none"] {
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 24px;
+            position: absolute;
+            right: -1px;
+            top: 0;
+            transform-origin: 0 0;
+            transform: rotate(45deg);
+            background: darken($op-grey-border, 10%);
+        }
+
+        &:hover::before {
+            background: $op-light-grey;
+        }
+
+        &.jquery-select-buttons-option-selected::before {
+            background: $op-blue;
+        }
+    }
+
+    [data-jquery-select-buttons-option-value="solid"] {
+        // already solid
+    }
+
+    [data-jquery-select-buttons-option-value="dashed"] {
+        border-style: dashed;
+    }
+
+    [data-jquery-select-buttons-option-value="dotted"] {
+        border-style: dotted;
+    }
+}
+
+// Special changes for toolbar editor.
+.op3-toolbar {
+    div[data-op3-element-options-property-name="borderTopWidth"],
+    div[data-op3-element-options-property-name="borderTopStyle"],
+    div[data-op3-element-options-property-name="borderTopColor"],
+    div[data-op3-element-options-property-name="borderBottomWidth"],
+    div[data-op3-element-options-property-name="borderBottomStyle"],
+    div[data-op3-element-options-property-name="borderBottomColor"],
+    div[data-op3-element-options-property-name="borderLeftWidth"],
+    div[data-op3-element-options-property-name="borderLeftStyle"],
+    div[data-op3-element-options-property-name="borderLeftColor"],
+    div[data-op3-element-options-property-name="borderRightWidth"],
+    div[data-op3-element-options-property-name="borderRightStyle"],
+    div[data-op3-element-options-property-name="borderRightColor"],
+    div[data-op3-element-options-property-name="borderAllWidth"],
+    div[data-op3-element-options-property-name="borderAllStyle"],
+    div[data-op3-element-options-property-name="borderAllColor"],
+    div[data-op3-element-options-property-name="borderWidth"],
+    div[data-op3-element-options-property-name="borderStyle"],
+    div[data-op3-element-options-property-name="borderColor"] {
+        .op3-element-options-label-group,
+        .jquery-input-range-unit-container,
+        .jquery-input-range-slider {
+            display: none;
+        }
+
+        .jquery-input-range-numeric {
+            top: 84px;
+            left: 94px;
+        }
+
+        .jquery-select-buttons-widget {
+            top: 43px;
+            left: 128px;
+        }
+
+        a.jquery-colorpicker-preview-css {
+            top: 75px;
+            left: 228px;
+        }
+
+        .jquery-colorpicker-widget {
+            top: 104px;
+            left: 13px !important;
+        }
+    }
+}
+
+/* Make sure that borderTop properties
+   are visible for horizontaline element */
+[data-op3-element-options-type="horizontalline"] {
+    div[data-op3-element-options-property-name="borderTopWidth"],
+    div[data-op3-element-options-property-name="borderTopStyle"],
+    div[data-op3-element-options-property-name="borderAllColor"],
+    div[data-op3-element-options-property-name="borderTopColor"] {
+        display: flex;
+        position: relative;
+
+        .op3-element-options-label-group,
+        .jquery-input-range-unit-container,
+        .jquery-input-range-slider {
+            display: flex;
+        }
+
+        .jquery-input-range-numeric,
+        .jquery-select-buttons-widget,
+        a.jquery-colorpicker-preview-css {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .jquery-input-range-numeric {
+            width: 76px;
+        }
+    }
+}
+
+.op3-toolbar {
+    [data-op3-element-options-type="button"],
+    [data-op3-element-options-type="treemenuitem"] {
+        div[data-op3-element-options-property-id="borderAllColorHover"],
+        div[data-op3-element-options-property-id="borderBottomColorHover"] {
+            display: flex;
+            position: relative;
+
+            .op3-element-options-label-group,
+            .jquery-input-range-unit-container,
+            .jquery-input-range-slider {
+                display: flex;
+            }
+
+            .jquery-input-range-numeric,
+            .jquery-select-buttons-widget,
+            a.jquery-colorpicker-preview-css {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .jquery-input-range-numeric {
+                width: 76px;
+            }
+        }
+    }
+}

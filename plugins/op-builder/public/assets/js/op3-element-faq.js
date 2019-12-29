@@ -1,0 +1,1 @@
+!function(e,t,a){"use strict";e(function(){e('[data-op3-element-type="faq"]').each(function(){var t=e(this),a=t.find(".op3-faq-wrapper").attr("data-op3-close-other-tabs")||0;t.accordion({questionClass:".op3-faqitem-header",answerClass:".op3-faqitem-content",itemClass:'.op3-element[data-op3-element-type="faqitem"]',closeOthers:parseInt(a)})})})}(jQuery,window,document);

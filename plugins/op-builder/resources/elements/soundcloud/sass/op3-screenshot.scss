@@ -1,0 +1,11 @@
+html.op3-screenshot #op3-designer-element .op3-element[data-op3-element-type="soundcloud"] {
+    .op3-element-iframe-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        &::before {
+            content: "\f04e";
+        }
+    }
+}

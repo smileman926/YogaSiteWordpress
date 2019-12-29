@@ -1,0 +1,10 @@
+.jquery-filter-button { display: flex; font-size: 16px; }
+.jquery-filter-button-item { display: block; flex-grow: 1; margin: 0; padding: 0.5em 0.25em; background: transparent; color: #999; border: 1px solid #999; border-right-width: 0; outline: none; cursor: pointer; }
+.jquery-filter-button-item:last-child { border-right-width: 1px;  }
+.jquery-filter-button-item:hover:not(.jquery-filter-button-active) { color: #888;  }
+.jquery-filter-button-item.jquery-filter-button-active { background: #999; color: #fff; }
+.jquery-filter-button-item-icon {}
+.jquery-filter-button-item-label {}
+.jquery-filter-button-content { display: none; }
+.jquery-filter-button-hidden { display: none !important; }
+.jquery-filter-button-content.jquery-filter-button-active { display: block; }

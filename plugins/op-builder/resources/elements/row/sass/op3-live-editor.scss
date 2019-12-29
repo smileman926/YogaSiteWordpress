@@ -1,0 +1,44 @@
+// Show/hide flex-basis (min column width)
+// option based on wrapColumns value
+// and show/hide Reverse Columns Order option
+// based on Stack Columns value
+form[data-op3-element-options-type="row"],
+form[data-op3-element-options-type="column"] {
+    [data-op3-element-options-property-name="flexBasis"],
+    [data-op3-element-options-property-name="flexBasisColumn"],
+    [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+    [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+        display: none;
+    }
+
+    [data-op3-element-options-property-name="wrapColumns"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="flexBasis"],
+        & + [data-op3-element-options-property-name="flexBasisColumn"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+
+    [data-op3-element-options-property-name="stackColumnsTablet"][data-op3-element-options-property-value="1"],
+    [data-op3-element-options-property-name="stackColumnsMobile"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+        & + [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+}
+
+#toolbar {
+    form[data-op3-element-options-type="row"] {
+        .op3-element-options-property.jquery-filter-button-content {
+            .op3-element-options-label-group {
+                display: none;
+            }
+        }
+    }
+}

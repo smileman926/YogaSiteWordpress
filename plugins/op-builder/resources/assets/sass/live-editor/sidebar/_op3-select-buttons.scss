@@ -1,0 +1,377 @@
+.op3-element-options-property {
+    .jquery-select-buttons {
+        display: none;
+    }
+
+    .jquery-select-buttons-option {
+        width: auto;
+        height: auto;
+        margin: 0 2px;
+        padding: 5px;
+        font-size: 11px;
+        color: $op-light-grey;
+        background: $op-white;
+        border: 1px solid $op-grey-border;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            border-color: darken($op-grey-border, 10%);
+            background: $op-white;
+            color: $op-grey;
+        }
+
+        &.jquery-select-buttons-option-selected {
+            background-color: $op-blue;
+            border-color: $op-blue;
+            color: $op-white;
+        }
+
+        &::before {
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    // inline display
+    &[data-op3-element-options-property-name="deviceVisibility"],
+    &[data-op3-element-options-property-name="alignItems"],
+    &[data-op3-element-options-property-name="alignSelf"],
+    &[data-op3-element-options-property-name="marginAlign"],
+    &[data-op3-element-options-property-name="buttonSize"],
+    &[data-op3-element-options-property-name="fontStyle"],
+    &[data-op3-element-options-property-name="justifyContent"],
+    &[data-op3-element-options-property-name="ratingSvgPreserveAspectRatio"],
+    &[data-op3-element-options-property-name="textAlign"],
+    &[data-op3-element-options-property-name="textDecoration"],
+    &[data-op3-element-options-property-name="textTransform"],
+    &[data-op3-element-options-property-id="zIndexSeparatorTop"],
+    &[data-op3-element-options-property-id="zIndexSeparatorBottom"],
+    &[data-op3-element-options-property-name="optinFieldSize"],
+    &[data-op3-element-options-property-id="progressWidthSteps"],
+    &[data-op3-element-options-property-id="submenuAlign"],
+    &[data-op3-element-options-property-id="faqItemIconPosition"] {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        .op3-element-options-label-group {
+            margin: 0;
+        }
+
+        .jquery-select-buttons-option-text {
+            display: block;
+        }
+
+        .jquery-select-buttons-option-icon {
+            display: none;
+        }
+    }
+
+    // grid display
+    &[data-op3-element-options-property-name="fontWeight"] {
+        flex-direction: column;
+        align-items: stretch;
+
+        .op3-element-options-label-group {
+            margin-bottom: 10px;
+        }
+
+        .jquery-select-buttons-widget {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+            grid-row-gap: 5px;
+            grid-column-gap: 5px;
+        }
+
+        .jquery-select-buttons-option {
+            margin: 0;
+        }
+    }
+
+    // icons display
+    &[data-op3-element-options-property-name="deviceVisibility"],
+    &[data-op3-element-options-property-name="alignItems"],
+    &[data-op3-element-options-property-name="alignSelf"],
+    &[data-op3-element-options-property-name="marginAlign"],
+    &[data-op3-element-options-property-name="fontStyle"],
+    &[data-op3-element-options-property-name="justifyContent"],
+    &[data-op3-element-options-property-name="textAlign"],
+    &[data-op3-element-options-property-name="textDecoration"],
+    &[data-op3-element-options-property-name="textTransform"],
+    &[data-op3-element-options-property-name="zIndex"],
+    &[data-op3-element-options-property-name="ratingSvgPreserveAspectRatio"],
+    &[data-op3-element-options-property-id="zIndexSeparatorTop"],
+    &[data-op3-element-options-property-id="zIndexSeparatorBottom"],
+    &[data-op3-element-options-property-id="submenuAlign"] {
+        .jquery-select-buttons-option {
+            width: 28px;
+            height: 24px;
+        }
+
+        .jquery-select-buttons-option-text {
+            display: none;
+        }
+
+        .jquery-select-buttons-option-icon {
+            display: block;
+        }
+
+        .jquery-select-buttons-option-icon::before {
+            display: inline-block;
+            font-family: 'op3-icons';
+            font-weight: bold;
+        }
+    }
+
+    // icons
+    [data-jquery-select-buttons-option-value="none"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="inherit"] .jquery-select-buttons-option-icon::before { content: "\f261"; } // ban-1
+
+    [data-jquery-select-buttons-option-value="left"] .jquery-select-buttons-option-icon::before { content: "\f2a8"; } // menu-left-2
+
+    [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f405"; } // align-center-1
+
+    [data-jquery-select-buttons-option-value="right"] .jquery-select-buttons-option-icon::before { content: "\f1f1"; } // menu-right-1
+
+    [data-jquery-select-buttons-option-value="justify"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="stretch"] .jquery-select-buttons-option-icon::before { content: "\f404"; } // align-justify-1
+
+    [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before {
+        content: "\f47d";
+    } // align-horizontal-left
+
+    [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before {
+        content: "\f47c";
+    } // align-horizontal-right
+
+    // Margin Align
+    &[data-op3-element-options-property-name="marginAlign"] {
+        [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before {
+            content: "\f485";
+        } // align-horizontal-middle
+
+        [data-jquery-select-buttons-option-value="left"] .jquery-select-buttons-option-icon::before {
+            content: "\f481";
+        } // align-horizontal-left
+
+        [data-jquery-select-buttons-option-value="right"] .jquery-select-buttons-option-icon::before {
+            content: "\f482";
+        } // align-horizontal-right
+    }
+
+    &[data-op3-element-options-property-name="alignItems"] {
+        [data-jquery-select-buttons-option-value="stretch"] {
+            display: none;
+        }
+
+        [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before {
+            content: "\f485";
+        } // align-horizontal-middle
+
+        [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before {
+            content: "\f481";
+        } // align-horizontal-left
+
+        [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before {
+            content: "\f482";
+        } // align-horizontal-right
+    }
+
+    &[data-op3-element-options-property-name="ratingSvgPreserveAspectRatio"] {
+        [data-jquery-select-buttons-option-value="xMidYMid meet"] .jquery-select-buttons-option-icon::before {
+            content: "\f485";
+        }
+
+        [data-jquery-select-buttons-option-value="xMinYMax meet"] .jquery-select-buttons-option-icon::before {
+            content: "\f481";
+        }
+
+        [data-jquery-select-buttons-option-value="xMaxYMin meet"] .jquery-select-buttons-option-icon::before {
+            content: "\f482";
+        }
+    }
+
+    [data-jquery-select-buttons-option-value="capitalize"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="lowercase"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="uppercase"] .jquery-select-buttons-option-icon::before {
+        font-size: 13px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+    }
+
+    [data-jquery-select-buttons-option-value="capitalize"] .jquery-select-buttons-option-icon::before { content: "Tt"; }
+    [data-jquery-select-buttons-option-value="lowercase"] .jquery-select-buttons-option-icon::before { content: "tt"; }
+    [data-jquery-select-buttons-option-value="uppercase"] .jquery-select-buttons-option-icon::before { content: "TT"; }
+    [data-jquery-select-buttons-option-value="italic"] .jquery-select-buttons-option-icon::before { content: "\f424"; } // italic-2
+
+    [data-jquery-select-buttons-option-value="underline"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="overline"] .jquery-select-buttons-option-icon::before,
+    [data-jquery-select-buttons-option-value="line-through"] .jquery-select-buttons-option-icon::before {
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+    }
+
+    [data-jquery-select-buttons-option-value="underline"] .jquery-select-buttons-option-icon::before { content: "O"; text-decoration: underline; }
+    [data-jquery-select-buttons-option-value="overline"] .jquery-select-buttons-option-icon::before { content: "O"; text-decoration: overline; }
+    [data-jquery-select-buttons-option-value="line-through"] .jquery-select-buttons-option-icon::before { content: "O"; text-decoration: line-through; }
+
+    [data-jquery-select-buttons-option-value="0deg"] .jquery-select-buttons-option-icon::before { content: "\f447"; } // simple-up
+    [data-jquery-select-buttons-option-value="90deg"] .jquery-select-buttons-option-icon::before { content: "\f444"; } // simple-right
+    [data-jquery-select-buttons-option-value="180deg"] .jquery-select-buttons-option-icon::before { content: "\f446"; } // simple-down
+    [data-jquery-select-buttons-option-value="270deg"] .jquery-select-buttons-option-icon::before { content: "\f445"; } // simple-left
+    [data-jquery-select-buttons-option-value="vertical"] .jquery-select-buttons-option-icon::before { content: "\f469"; transform: rotate(90deg); } // enlarge-horizontal
+    [data-jquery-select-buttons-option-value="horizontal"] .jquery-select-buttons-option-icon::before { content: "\f469"; } // enlarge-horizontal
+
+    // more icons (property specific)
+    &[data-op3-element-options-property-id="deviceVisibility"] [data-jquery-select-buttons-option-value="all"] .jquery-select-buttons-option-icon::before { content: "\f15a"; } // desktop-screen-2
+    &[data-op3-element-options-property-id="deviceVisibility"] [data-jquery-select-buttons-option-value="screen and (max-width: 1023px)"] .jquery-select-buttons-option-icon::before { content: "\f13c"; } // tablet-2-2
+    &[data-op3-element-options-property-id="deviceVisibility"] [data-jquery-select-buttons-option-value="screen and (max-width: 767px)"] .jquery-select-buttons-option-icon::before { content: "\f144"; } // mobile-2
+    &[data-op3-element-options-property-name="alignSelf"] [data-jquery-select-buttons-option-value="stretch"] .jquery-select-buttons-option-icon::before { content: "\f404"; transform: rotate(90deg); } // align-justify-1
+    &[data-op3-element-options-property-name="alignSelf"] [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f1f2"; transform: rotate(90deg); } // menu-left-1
+    &[data-op3-element-options-property-name="alignSelf"] [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f405"; transform: rotate(90deg); } // align-center-1
+    &[data-op3-element-options-property-name="alignSelf"] [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f1f1"; transform: rotate(90deg); } // menu-right-1
+    &[data-op3-element-options-property-name="fontStyle"] [data-jquery-select-buttons-option-value="normal"] .jquery-select-buttons-option-icon::before { content: "\ebfe"; } // text-2
+    &[data-op3-element-options-property-name="justifyContent"] [data-jquery-select-buttons-option-value="normal"] .jquery-select-buttons-option-icon::before { content: "\f261"; } // ban-1
+    // &[data-op3-element-options-property-name="justifyContent"] [data-jquery-select-buttons-option-value="stretch"] .jquery-select-buttons-option-icon::before { content: "\f404"; transform: rotate(90deg); } // align-justify-1
+    &[data-op3-element-options-property-name="justifyContent"] [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f479"; } // align-vertical-top
+    &[data-op3-element-options-property-name="justifyContent"] [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f47a"; } // align-vertical-middle
+    &[data-op3-element-options-property-name="justifyContent"] [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f477"; } // align-vertical-bottom
+
+    // more icons (element/property specific)
+    [data-op3-element-options-type="button"] &[data-op3-element-options-property-name="justifyContent"] {
+        [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before,
+        [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before,
+        [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { transform: none; }
+    }
+
+    // more specific property rules
+    &[data-op3-element-options-property-name="buttonSize"] {
+        .jquery-select-buttons-option {
+            width: 28px;
+            height: 24px;
+
+            &[data-jquery-select-buttons-option-value="none"] {
+                display: none;
+            }
+        }
+    }
+
+    &[data-op3-element-options-property-name="borderStyle"] {
+        .jquery-select-buttons-widget {
+            position: absolute;
+            top: 58px;
+            right: 22px;
+            z-index: 50;
+        }
+
+        .jquery-select-buttons-option {
+            margin-left: 15px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid darken($op-grey-border, 10%);
+            border-radius: 0;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                border-color: $op-light-grey;
+            }
+
+            &.jquery-select-buttons-option-selected {
+                border-color: $op-blue;
+                background: none;
+            }
+        }
+
+        .jquery-select-buttons-option-text,
+        .jquery-select-buttons-option-icon {
+            display: none;
+        }
+
+        [data-jquery-select-buttons-option-value="none"] {
+            // content: "\f3b2";
+            // transform: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 2px;
+                height: 24px;
+                position: absolute;
+                right: -1px;
+                top: 0;
+                transform-origin: 0 0;
+                transform: rotate(45deg);
+                background: darken($op-grey-border, 10%);
+            }
+
+            &:hover::before {
+                background: $op-light-grey;
+            }
+
+            &.jquery-select-buttons-option-selected::before {
+                background: $op-blue;
+            }
+        }
+
+        [data-jquery-select-buttons-option-value="solid"] {
+            // already solid
+        }
+
+        [data-jquery-select-buttons-option-value="dashed"] {
+            border-style: dashed;
+        }
+
+        [data-jquery-select-buttons-option-value="dotted"] {
+            border-style: dotted;
+        }
+    }
+
+    &[data-op3-element-options-property-id="deviceVisibility"] {
+        .jquery-select-buttons-description {
+            width: 100%;
+            margin: 0.5em 0 0 0;
+            font-size: 0.75em;
+            color: $op-light-grey;
+            text-align: right;
+        }
+    }
+
+    &[data-op3-element-options-property-name="marginAlign"] [data-jquery-select-buttons-option-value="none"] { display: none; }
+
+    &[data-op3-element-options-property-name="zIndex"] {
+        .jquery-select-buttons-option-icon { font-size: 14px; }
+        [data-jquery-select-buttons-option-value="10"] .jquery-select-buttons-option-icon::before { content: "\eb85"; }
+        [title="Auto"] .jquery-select-buttons-option-icon::before { content: "\eb84"; }
+    }
+
+    &[data-op3-element-options-property-name="optinFieldSize"] {
+        .jquery-select-buttons-option {
+            width: 28px;
+            height: 24px;
+
+            &[data-jquery-select-buttons-option-value="none"] {
+                display: none;
+            }
+        }
+    }
+
+    &[data-op3-element-options-property-id="progressWidthSteps"] {
+        .jquery-select-buttons-option[data-jquery-select-buttons-option-value="none"] {
+            display: none;
+        }
+    }
+}

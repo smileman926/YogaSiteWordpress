@@ -1,0 +1,6 @@
+.jquery-select-buttons-widget { display: flex; font-size: 16px; color: #8e8e8e; }
+.jquery-select-buttons-option { display: flex; margin: 0 0.25em; padding: 0.25em; line-height: 1; font-size: inherit; color: inherit; align-self: center; flex-grow: 1; justify-content: center; color: inherit; border: 1px solid #e8e8e8; background: #fff; border-radius: 3px; cursor: pointer; transition: all .1s ease; outline: 0; }
+.jquery-select-buttons-option:first-child { margin-left: 0; }
+.jquery-select-buttons-option:last-child { margin-right: 0; }
+.jquery-select-buttons-option:hover { color: #424242; border-color: #cfcfcf; }
+.jquery-select-buttons-option.jquery-select-buttons-option-selected { background-color: #0175ff; border-color: #0175ff; color: #fff; }

@@ -1,0 +1,11 @@
+{
+  "name": "generalsoftwareinc/sendreach-php-sdk",
+  "description": "The official SendReach PHP SDK. Just hosted by GSI on GitHub.",
+  "homepage": "http://setup.sendreach.com/integrations/sendreach-api-documntation/",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "classmap": ["src/MailWizzApi/Autoloader.php"]
+  }
+}

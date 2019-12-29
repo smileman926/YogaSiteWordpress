@@ -1,0 +1,141 @@
+.op3-breadcrumbs {
+    /*
+    // absolute position (from the time the breadcrumbs
+    were below header!?!?)
+
+    position: absolute;
+    top: 0;
+    left: 235px;
+    height: 100%;
+    background: $op-white;
+    width: calc(100% - 760px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-size: 12px;
+    border-left: 1px solid $op-grey-border;
+
+    &:empty {
+        display: none;
+    }
+    */
+
+    position: relative;
+    flex: 1;
+    height: 100%;
+    margin: 0 32px 0 0;
+    background: $op-white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-size: 12px;
+
+    .breadcrumbs-back {
+        height: 100%;
+        border-right: 1px solid #efeff9;
+
+        .op3-icon {
+            color: $op-grey;
+            font-size: 10px;
+            margin-right: 0;
+
+            // Vertical center to text
+            // in the breadcrumbs
+            transform: translateY(2px);
+        }
+    }
+
+    ul {
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+        justify-content: flex-end;
+        border-left: 1px solid $op-grey-border;
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    li::after {
+        content: '\000BB';
+        display: block;
+        color: $op-light-grey;
+    }
+
+    a {
+        height: 100%;
+        padding: 0 22px;
+        display: flex;
+        align-items: center;
+        color: $op-light-grey;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            color: $op-grey;
+        }
+    }
+
+    li:last-child::after,
+    li:nth-last-child(2)::after {
+        content: none;
+    }
+
+    li:last-child {
+        background: #f9f9f9;
+        padding-right: 20px;
+
+        a {
+            padding: 0 5px 0 27px;
+            color: $op-grey;
+        }
+
+        a::before {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top: ($header-height / 2) solid transparent;
+            border-bottom: ($header-height / 2) solid transparent;
+            border-left: 15px solid $op-white;
+        }
+
+        a::after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top: ($header-height / 2) solid $op-white;
+            border-bottom: ($header-height / 2) solid $op-white;
+            border-left: 15px solid transparent;
+        }
+
+        &:first-child {
+            margin-left: -5px;
+
+            a {
+                padding-right: 15px;
+
+                &::before {
+                    border: none;
+                }
+            }
+        }
+    }
+}

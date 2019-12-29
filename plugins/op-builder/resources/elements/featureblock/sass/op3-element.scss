@@ -1,0 +1,282 @@
+.op3-element[data-op3-element-type="featureblock"] {
+    display: flex;
+    flex-direction: column;
+    width: 1140px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 0;
+    border-width: 0;
+
+    > [data-op3-element-container] > [data-op3-children] {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$op-gutter;
+        margin-right: -$op-gutter;
+
+        // We only allow grow/shrink when wrapping is enabled
+        &[data-op3-wrap-columns="1"] > [data-op3-element-type="featureblockitem"] {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        // Show/hide children
+        .op3-element[data-op3-element-spec="image"],
+        .op3-element[data-op3-element-spec="icon"],
+        .op3-element[data-op3-element-spec="subtitle"],
+        .op3-element[data-op3-element-spec="text"],
+        .op3-element[data-op3-element-spec="button"] {
+            display: none;
+        }
+
+        &[data-op3-block-display-media="image"] .op3-element[data-op3-element-spec="image"],
+        &[data-op3-block-display-subtitle="1"] .op3-element[data-op3-element-spec="subtitle"],
+        &[data-op3-block-display-text="1"] .op3-element[data-op3-element-spec="text"] {
+            display: block;
+        }
+
+        &[data-op3-block-display-media="icon"] .op3-element[data-op3-element-spec="icon"] {
+            display: table;
+            align-self: baseline;
+        }
+
+        &[data-op3-block-display-button="1"] .op3-element[data-op3-element-spec="button"] {
+            display: flex;
+        }
+    }
+
+    .op3-element[data-op3-element-type="featureblockitem"] {
+        margin-bottom: 20px;
+
+        > .op3-column-content {
+            > [data-op3-element-container] > [data-op3-children] {
+                display: grid;
+                grid-template:
+                    "image"
+                    "title"
+                    "subtitle"
+                    "text"
+                    "button" / auto;
+                grid-gap: 0 10px;
+                grid-auto-columns: minmax(0, 100%);
+                text-align: left;
+
+                // Overflow ensures that images don't fall out of the layout
+                // when sized in pixels to a value that's bigger from 100%
+                overflow: hidden;
+                overflow-wrap: break-word;
+
+                .op3-element {
+                    &[data-op3-element-spec="image"] {
+                        grid-area: image;
+                    }
+
+                    &[data-op3-element-spec="icon"] {
+                        grid-area: image;
+                    }
+
+                    &[data-op3-element-spec="title"] {
+                        grid-area: title;
+                    }
+
+                    &[data-op3-element-spec="subtitle"] {
+                        grid-area: subtitle;
+                    }
+
+                    &[data-op3-element-spec="text"] {
+                        grid-area: text;
+                    }
+
+                    &[data-op3-element-spec="button"] {
+                        grid-area: button;
+                        margin-left: 0;
+                        margin-right: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Code shared among desktop, tablet, & mobile media queries
+@mixin featureBlockLayout($device) {
+    .op3-element[data-op3-element-type="featureblock"] {
+        [data-op3-block-layout-#{$device}="0"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template-areas:
+                "image"
+                "title"
+                "subtitle"
+                "text"
+                "button";
+            text-align: center;
+
+            .op3-element {
+                &[data-op3-element-spec="button"] {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="1"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template-areas:
+                "image"
+                "subtitle"
+                "title"
+                "text"
+                "button";
+            text-align: center;
+
+            .op3-element {
+                &[data-op3-element-spec="button"] {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="2"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template-areas:
+                "title"
+                "subtitle"
+                "image"
+                "text"
+                "button";
+            text-align: center;
+
+            .op3-element {
+                &[data-op3-element-spec="button"] {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="3"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template-areas:
+                "subtitle"
+                "title"
+                "image"
+                "text"
+                "button";
+            text-align: center;
+
+            .op3-element {
+                &[data-op3-element-spec="button"] {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="4"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "image title"
+                "image subtitle"
+                "text text"
+                "button button"
+                / auto 1fr;
+        }
+
+        [data-op3-block-layout-#{$device}="5"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "image subtitle"
+                "image title"
+                "text text"
+                "button button"
+                / auto 1fr;
+        }
+
+        [data-op3-block-layout-#{$device}="6"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "title image"
+                "subtitle image"
+                "text text"
+                "button button"
+                / auto 1fr;
+
+            .op3-element[data-op3-element-spec="icon"] {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="7"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "subtitle image"
+                "title image"
+                "text text"
+                "button button"
+                / auto 1fr;
+
+            .op3-element[data-op3-element-spec="icon"] {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="8"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "image title"
+                "image subtitle"
+                "image text"
+                "image button"
+                / auto 1fr;
+        }
+
+        [data-op3-block-layout-#{$device}="9"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "image subtitle"
+                "image title"
+                "image text"
+                "image button"
+                / auto 1fr;
+        }
+
+        [data-op3-block-layout-#{$device}="10"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "title image"
+                "subtitle image"
+                "text image"
+                "button image"
+                / auto 1fr;
+
+            .op3-element[data-op3-element-spec="icon"] {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="11"] .op3-element[data-op3-element-type="featureblockitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+            grid-template:
+                "subtitle image"
+                "title image"
+                "text image"
+                "button image"
+                / auto 1fr;
+
+            .op3-element[data-op3-element-spec="icon"] {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@include featureBlockLayout(desktop);
+
+@media (max-width: $breakpoint-tablet) {
+    @include featureBlockLayout(tablet);
+    .op3-element[data-op3-element-type="featureblock"] {
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    @include featureBlockLayout(mobile);
+    .op3-element[data-op3-element-type="featureblock"] {
+        padding: 15px 30px;
+    }
+}

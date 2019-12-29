@@ -1,0 +1,134 @@
+.opd-dashboard-connected-products {
+
+    .opd-product-list {
+        display: flex;
+        flex-wrap: wrap;
+        //justify-content: space-between;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+
+        &.ops-box-size-max {
+            max-width: calc(1120px + 30px);
+        }
+
+        .opd-product-list-item {
+            width: 33.3%;
+            margin-bottom: 30px;
+
+            @include wp-columnMax() {
+                width: 50%;
+            }
+
+            @include wp-mobile() {
+                width: 100%;
+            }
+
+            &.opd-product-list-item-op-builder {
+                .opd-product-icon {
+                    &:before {
+                        content: "\43";
+                    }
+                }
+            }
+
+            &.opd-product-list-item-op-funnels {
+                .opd-product-icon {
+                    &:before {
+                        content: "D";
+                    }
+                }
+            }
+
+            &.opd-product-list-item-op-smart-theme3 {
+                .opd-product-icon {
+                    &:before {
+                        content: "M";
+                    }
+                }
+            }
+
+            &.opd-product-list-item-op-cart {
+                .opd-product-icon {
+                    &:before {
+                        content: "L";
+                    }
+                }
+            }
+
+            &.opd-product-list-item-op-test-plugin {
+                .opd-product-icon {
+                    &:before {
+                        content: "i";
+                    }
+                }
+            }
+
+            &.opd-product-list-item-op-urgency-3 {
+                .opd-product-icon {
+                    &:before {
+                        content: "N";
+                    }
+                }
+            }
+
+            .ops-white-box {
+                margin: 0 15px;
+                padding: 25px;
+                height: 100%;
+
+                .opd-product-name {
+                    margin-bottom: 20px;
+
+                    .opd-product-icon {
+                        &:before {
+                            font-family: "ops-font" !important;
+                            font-style: normal !important;
+                            font-weight: normal !important;
+                            font-variant: normal !important;
+                            text-transform: none !important;
+                            speak: none;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            margin: 5px 20px 0 0;
+                            font-size: 50px;
+                            line-height: 50px;
+                            color: $color__ops-logoBlue;
+                        }
+                    }
+
+                    .opd-product-type {
+                        color: $color__ops-logoBlue;
+                        font-size: 11px;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        line-height: 11px;
+                        display: block;
+
+                    }
+
+                    h4 {
+                        font-size: 21px;
+                        font-weight: 600;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+
+                    &.opd-product-description {
+                        margin-bottom: 0;
+                    }
+
+                    &.opd-version-availability {
+                        opacity: 0.5;
+                        padding-top: 20px;
+                        margin-top: 20px;
+                        border-top: 1px solid $color__ops-borderLight;
+                    }
+
+                }
+
+            }
+        }
+    }
+}

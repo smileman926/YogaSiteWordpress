@@ -1,0 +1,19 @@
+.op3-element[data-op3-element-type="textarea"] {
+    label {
+        display: block;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    textarea {
+        display: block;
+    }
+
+    &[data-op3-style-id="flat"] label {
+        color: red;
+    }
+
+    &[data-op3-style-id="raised"] label {
+        color: blue;
+    }
+}

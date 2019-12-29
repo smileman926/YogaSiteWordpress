@@ -1,0 +1,43 @@
+#toolbar {
+    [data-op3-element-options-type="numberblockitem"] {
+        .op3-element-options-property.jquery-filter-button-content {
+            .op3-element-options-label-group {
+                display: none;
+            }
+        }
+        // Hide column gutter in advanced options when
+        // Arrangement in Number Block Styling
+        // is set to vertical
+        &[data-op3-parent-options-property-value-block-arrangement="1"] {
+            [data-op3-element-options-property-id="gutter"] {
+                display: none;
+            }
+        }
+    }
+
+    // restrict numberblockitem children
+    [data-op3-element-options-path*="/numberblockitem/"] {
+        [data-op3-toolbar-nav-id="clone"],
+        [data-op3-toolbar-nav-id="delete"],
+        [data-op3-toolbar-nav-id="move"] {
+            display: none;
+        }
+    }
+}
+
+// Lock margin & margin handles to prevent layout breaking
+form[data-op3-element-options-type="numberblockitem"] {
+    .op3-boxmodel {
+        .op3-boxmodel-margin-top,
+        .op3-boxmodel-margin-bottom,
+        .op3-boxmodel-margin-left,
+        .op3-boxmodel-margin-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,2 @@
+.jquery-simple-nav-tree-li > .jquery-simple-nav-tree-ul { display: none; }
+.jquery-simple-nav-tree-li.jquery-simple-nav-tree-expand > .jquery-simple-nav-tree-ul { display: block; }

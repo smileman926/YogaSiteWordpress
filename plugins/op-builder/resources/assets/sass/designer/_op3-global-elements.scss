@@ -1,0 +1,36 @@
+.op3-global-element-overlay {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 75ms background-color ease;
+    backdrop-filter: blur(1px) grayscale(100%);
+
+    &.op3-global-element-overlay-mousedown,
+    &.op3-global-element-overlay-mousedown ~ .op3-global-element-overlay {
+        background: rgba(0, 0, 0, 0.25);
+    }
+}
+
+html[data-op3-global-element-edit] {
+
+    .op3-global-element-overlay {
+        display: block;
+    }
+
+    .op3-element.op3-global-element-unlocked {
+        .op3-element,
+        [data-op3-contenteditable],
+        [data-jquery-paddingdrag] {
+            pointer-events: all;
+        }
+    }
+}
+
+.op3-element[data-op3-gid]:not([data-op3-gid=""]) {
+    .op3-element,
+    [data-op3-contenteditable],
+    [data-jquery-paddingdrag] {
+        pointer-events: none;
+    }
+}
+

@@ -1,0 +1,33 @@
+html {
+  &.wp-toolbar {
+    body {
+      &.ops_isFullScreen {
+        margin-top: -32px;
+      }
+    }
+  }
+
+  body {
+    &.ops_isFullScreen {
+      #wpadminbar,
+      #adminmenumain,
+      #wpfooter {
+        display: none;
+      }
+
+      #wpcontent {
+        margin: 0;
+      }
+
+      #wpbody-content {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.op-dashboard-admin-app {
+    #wpcontent {
+        padding-left: 0;
+    }
+}

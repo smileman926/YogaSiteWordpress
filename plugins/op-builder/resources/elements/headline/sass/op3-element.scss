@@ -1,0 +1,28 @@
+.op3-element[data-op3-element-type="headline"] {
+    width: 100%;
+    margin: 0 0 0.75em 0;
+    text-align: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    &:first-child:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child:last-child {
+        margin-bottom: 0;
+    }
+
+    .op3-headline-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+}

@@ -1,0 +1,206 @@
+form[data-op3-element-options-type="treemenuitem"] {
+    .op3-element-options-property[data-op3-element-options-property-id="justifyContent"] {
+        .jquery-select-buttons-widget {
+            [data-jquery-select-buttons-option-value="normal"] {
+                display: none;
+            }
+
+            [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f481"; }
+            [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f485"; }
+            [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f482"; }
+            [data-jquery-select-buttons-option-value="space-between"] .jquery-select-buttons-option-icon::before { content: "\f48c"; }
+            [data-jquery-select-buttons-option-value="space-around"] .jquery-select-buttons-option-icon::before { content: "\f48b"; }
+            [data-jquery-select-buttons-option-value="space-evenly"] .jquery-select-buttons-option-icon::before { content: "\f48a"; }
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="submenuAlign"] {
+        .jquery-select-buttons-widget {
+            [data-jquery-select-buttons-option-value="none"] {
+                display: none;
+            }
+
+            [data-jquery-select-buttons-option-value="left"] .jquery-select-buttons-option-icon::before { content: "\f481"; }
+            [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f485"; }
+            [data-jquery-select-buttons-option-value="right"] .jquery-select-buttons-option-icon::before { content: "\f482"; }
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="op3Icon"],
+    .op3-element-options-property[data-op3-element-options-property-id="iconFontSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="iconSpacing"],
+    .op3-element-options-property[data-op3-element-options-property-id="dropdownIcon"],
+    .op3-element-options-property[data-op3-element-options-property-id="dropdownIconFontSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="dropdownIconSpacing"],
+    .op3-element-options-property[data-op3-element-options-property-id="dropdownIconSpacingTop"] {
+        display: none;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="iconVisible"][data-op3-element-options-property-value="1"] {
+        ~ .op3-element-options-property[data-op3-element-options-property-id="op3Icon"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="iconFontSize"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="iconSpacing"] {
+            display: flex;
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="dropdownIconVisible"][data-op3-element-options-property-value="1"] {
+        ~ .op3-element-options-property[data-op3-element-options-property-id="dropdownIcon"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="dropdownIconFontSize"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="dropdownIconSpacing"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="dropdownIconSpacingTop"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-children-count="0"] {
+        .op3-element-options-group[data-op3-element-options-group-id="childwrap-positioning"],
+        .op3-toolbar-list-item[data-op3-toolbar-nav-id="childwrap"],
+        .op3-toolbar-list-item[data-op3-content-item-name="simple-menu-dropdown-icon"] {
+            display: none;
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="triangleSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="triangleTop"],
+    .op3-element-options-property[data-op3-element-options-property-id="triangleLeft"],
+    .op3-element-options-property[data-op3-element-options-property-id="triangleMarginRight"],
+    .op3-element-options-property[data-op3-element-options-property-id="triangleMarginBottom"] {
+        display: none;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="triangleVisible"][data-op3-element-options-property-value="1"] {
+        ~ .op3-element-options-property[data-op3-element-options-property-id="triangleSize"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="triangleTop"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="triangleLeft"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="triangleMarginRight"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="triangleMarginBottom"] {
+            display: flex;
+        }
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="gutter"] {
+        button {
+            display: none;
+        }
+    }
+
+    &[data-op3-element-options-path$="/treemenu/treemenuitem"] {
+        .op3-element-options-property[data-op3-element-options-property-id="triangleTop"],
+        .op3-element-options-property[data-op3-element-options-property-id="triangleMarginRight"] {
+            display: none !important;
+        }
+    }
+
+    &[data-op3-element-options-path$="/treemenuitem/treemenuitem"] {
+        .op3-element-options-property[data-op3-element-options-property-id="gutter"],
+        .op3-element-options-property[data-op3-element-options-property-id="triangleLeft"],
+        .op3-element-options-property[data-op3-element-options-property-id="triangleMarginBottom"] {
+            display: none !important;
+        }
+    }
+
+    &[data-op3-element-options-path$="/treemenuitem/treemenuitem"] {
+        .op3-element-options-property[data-op3-element-options-property-id="submenuAlign"],
+        .op3-element-options-property[data-op3-element-options-property-id="flexGrow"] {
+            display: none;
+        }
+    }
+
+    [data-op3-element-options-property-id="flexGrow"][data-op3-element-options-property-value="1"] {
+        ~ [data-op3-element-options-property-id="justifyContent"] {
+            display: flex !important;
+        }
+    }
+}
+
+// @mixin hamburger($device) {
+[data-op3-device="desktop"] {
+    form[data-op3-element-options-type="treemenuitem"] {
+        &[data-op3-parent-options-property-value-stackcolumnsdesktop="1"] {
+            [data-op3-toolbar-nav-id="alignment"] {
+                display: flex;
+            }
+
+            [data-op3-element-options-property-id="width"],
+            [data-op3-element-options-property-id="widthAuto"] {
+                display: none;
+            }
+
+            [data-op3-element-options-group-id="triangle"] {
+                display: none;
+            }
+        }
+
+        // Hide text align option when item width is set to auto (except when hamburger is active)
+        &[data-op3-parent-options-property-value-width-auto="1"][data-op3-parent-options-property-value-stackcolumnsdesktop="0"] {
+            [data-op3-element-options-property-id="justifyContent"] {
+                display: none;
+            }
+        }
+    }
+}
+
+[data-op3-device="tablet"] {
+    form[data-op3-element-options-type="treemenuitem"] {
+        &[data-op3-parent-options-property-value-stackcolumnstablet="1"] {
+            [data-op3-toolbar-nav-id="alignment"] {
+                display: flex;
+            }
+
+            [data-op3-element-options-property-id="width"],
+            [data-op3-element-options-property-id="widthAuto"] {
+                display: none;
+            }
+
+            [data-op3-element-options-group-id="triangle"] {
+                display: none;
+            }
+        }
+
+        // Hide text align option when item width is set to auto (except when hamburger is active)
+        &[data-op3-parent-options-property-value-width-auto="1"][data-op3-parent-options-property-value-stackcolumnstablet="0"] {
+            .op3-toolbar-content [data-op3-element-options-property-id="justifyContent"] {
+                display: none;
+            }
+        }
+    }
+}
+
+[data-op3-device="mobile"] {
+    form[data-op3-element-options-type="treemenuitem"] {
+        &[data-op3-parent-options-property-value-stackcolumnsmobile="1"] {
+            [data-op3-toolbar-nav-id="alignment"] {
+                display: flex;
+            }
+
+            [data-op3-element-options-property-id="width"],
+            [data-op3-element-options-property-id="widthAuto"] {
+                display: none;
+            }
+
+            [data-op3-element-options-group-id="triangle"] {
+                display: none;
+            }
+        }
+
+        // Hide text align option when item width is set to auto (except when hamburger is active)
+        &[data-op3-parent-options-property-value-width-auto="1"][data-op3-parent-options-property-value-stackcolumnsmobile="0"] {
+            .op3-toolbar-content [data-op3-element-options-property-id="justifyContent"] {
+                display: none;
+            }
+        }
+    }
+}
+
+.op3-toolbar {
+    form[data-op3-element-options-type="treemenuitem"] {
+        .op3-toolbar-list-item {
+            &[data-op3-toolbar-nav-id="clone"],
+            &[data-op3-toolbar-nav-id="move"],
+            &[data-op3-toolbar-nav-id="delete"] {
+                display: none;
+            }
+        }
+    }
+}

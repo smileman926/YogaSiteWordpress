@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            body { text-align: center; }
+            p.draggable-container { margin: 0; padding: 0.5em; }
+            [data-jquery-mmdnd-draggable] { display: inline-block; margin: 0.5em; padding: 0.5em 1em; border-radius: 0.25em; color: #666; border: 1px solid #999; }
+            [data-jquery-mmdnd-draggable="00f"] { background: #00f; }
+            [data-jquery-mmdnd-draggable="0f0"] { background: #0f0; }
+            [data-jquery-mmdnd-draggable="f00"] { background: #f00; }
+            [data-jquery-mmdnd-droppable] { margin: 0.5em; padding: 0.5em; background: rgba(0,0,0,0.25); transition: 0.2s ease all; }
+            [data-jquery-mmdnd-droppable="00f"] { background: rgba(0,0,255,0.25); }
+            [data-jquery-mmdnd-droppable="0f0"] { background: rgba(0,255,0,0.25); }
+            [data-jquery-mmdnd-droppable="f00"] { background: rgba(255,0,0,0.25); }
+            [data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] { box-shadow: 0 0 2px 2px rgba(0,0,0,0.5); }
+        </style>
+    </head>
+    <body>
+        <p data-jquery-mmdnd-droppable="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, esse possimus numquam quo vitae quisquam tenetur id asperiores animi at error cupiditate libero, aut, autem, quos vero amet! Deserunt, tenetur.</p>
+        <div class="draggable-container">
+            <span class="draggable" data-jquery-mmdnd-draggable="00f"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="0f0"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="f00"><b>Drag Me!!!</b></span>
+        </div>
+        <p data-jquery-mmdnd-droppable="00f">Quibusdam sed doloremque vel maiores facere exercitationem vero reprehenderit, culpa quam sapiente error iusto sunt earum molestias nostrum fugiat ratione minus corporis eaque laudantium. Reprehenderit suscipit eius perferendis aspernatur minus.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Officiis cum, tenetur aperiam recusandae nostrum numquam, pariatur veritatis quasi ipsa accusamus enim libero in eos tempora hic perferendis iste sint reiciendis laborum fugit molestiae voluptatem. Quo facere harum officia.</p>
+        <p data-jquery-mmdnd-droppable="f00">Repudiandae nulla a vero, quibusdam minus, placeat accusantium possimus corporis consequatur explicabo, eos perferendis et, dignissimos repellendus quod magni deserunt cupiditate ut iste? Consequuntur autem fugit dolorem, recusandae tempora modi!</p>
+        <p data-jquery-mmdnd-droppable="">Maiores veritatis eum quam iusto aliquam deserunt nam sed accusamus, numquam nemo dolor quo recusandae incidunt, architecto eius, dolore soluta facilis amet officia at rem praesentium? Animi ea quo odit?</p>
+        <p data-jquery-mmdnd-droppable="00f">Recusandae quisquam nesciunt ipsa dolore numquam, a ipsam, culpa tempore tenetur ad. Voluptates magni unde accusamus sed laborum, itaque quis sit quos necessitatibus, numquam fugiat magnam, ducimus tempore maxime repellat.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Suscipit voluptatibus et at ea deserunt facilis, nulla dolorum repellendus obcaecati natus molestias asperiores. In voluptatum tenetur eligendi deleniti, similique esse reiciendis architecto, quis delectus illo excepturi voluptatem possimus sapiente!</p>
+        <p data-jquery-mmdnd-droppable="f00">Excepturi perspiciatis porro similique nostrum consectetur laborum temporibus odit, optio, numquam, nobis assumenda, ab deleniti quis dolore tenetur asperiores quisquam ducimus voluptatum. Aut velit id dicta, magnam quidem, sed unde.</p>
+        <p data-jquery-mmdnd-droppable="">Id voluptates ad eos facilis iusto neque quisquam expedita soluta incidunt voluptatibus quo assumenda delectus eius, at quos repudiandae aliquam laboriosam laborum possimus excepturi quia suscipit amet sequi quas. Quod!</p>
+        <p data-jquery-mmdnd-droppable="00f">Consequatur voluptatibus ea inventore vitae ex, doloribus accusamus, et nostrum sequi eius sed consectetur facere laborum quo mollitia. Quaerat beatae laboriosam incidunt accusantium, ducimus nobis harum architecto dicta et voluptatem.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Aliquam minima, eaque nihil molestiae hic. Repellat, quisquam perferendis vel eveniet unde! Incidunt fugiat sit error repellat aspernatur saepe aperiam dolores sapiente optio asperiores vero, repellendus dignissimos cumque provident sint?</p>
+        <p data-jquery-mmdnd-droppable="f00">Quibusdam id eius dolorum repellat cumque. Assumenda totam expedita repellat corporis eligendi obcaecati architecto, sapiente accusamus, nobis doloremque numquam vitae itaque quisquam quo neque. Perspiciatis eum modi blanditiis, sed ipsam.</p>
+        <p data-jquery-mmdnd-droppable="">Eveniet cumque consectetur atque, consequuntur ratione modi repellat error debitis similique iusto id sed pariatur nostrum, nemo maxime. Quaerat non illum eveniet sed voluptatibus adipisci dolores odio provident assumenda, alias?</p>
+        <p data-jquery-mmdnd-droppable="00f">Sit numquam facilis ex vitae, minima vero officiis, ea at quasi, ipsum cupiditate. Fugit, a quidem corporis repellendus at? Sit et maxime alias consequuntur ipsa odit adipisci, quos veniam velit?</p>
+        <p data-jquery-mmdnd-droppable="0f0">Eius illo asperiores modi nulla, quo ipsum incidunt illum voluptatibus impedit, aut voluptatum quasi saepe provident quod eligendi voluptates! Facere nulla dolorum, molestiae quas deleniti earum voluptates ducimus saepe natus.</p>
+        <p data-jquery-mmdnd-droppable="f00">Commodi id voluptate alias eligendi, suscipit laboriosam sed fugit maiores sapiente ullam obcaecati eos deserunt qui fugiat beatae, aperiam totam eveniet omnis perferendis vitae delectus, quisquam. Minima rerum, voluptates. Reprehenderit.</p>
+        <p data-jquery-mmdnd-droppable="">Voluptates ipsa, quae, ratione nihil inventore quidem autem reprehenderit in, eveniet perferendis mollitia. Perspiciatis in omnis, unde animi aliquam explicabo! Cumque, laudantium nobis autem pariatur. Quidem praesentium, ratione accusamus. Optio.</p>
+        <p data-jquery-mmdnd-droppable="00f">Magnam earum esse facere minima, in ratione a. Dignissimos esse veritatis porro tempora fugit modi minus quia id numquam laboriosam veniam illo repellat, quisquam recusandae, nihil odio doloribus odit enim.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Quaerat harum beatae soluta rem magnam quos dolores, earum sint numquam nesciunt quia facere incidunt aspernatur alias eveniet quasi asperiores labore. Perferendis voluptates sunt reprehenderit nobis perspiciatis aspernatur minima, iste.</p>
+        <p data-jquery-mmdnd-droppable="f00">Nisi commodi minima iusto sed quasi consectetur. Incidunt repellat at sequi tempora cumque quibusdam molestiae quasi velit repudiandae, enim doloremque facilis similique iste, voluptatem a commodi eligendi, est officia culpa!</p>
+        <p data-jquery-mmdnd-droppable="">Fugiat, debitis? Laudantium hic assumenda consequatur harum velit nulla, modi natus nesciunt officia quisquam iste pariatur rerum. Adipisci numquam, expedita neque eius voluptas nesciunt odit est odio, corporis praesentium omnis.</p>
+        <p data-jquery-mmdnd-droppable="00f">Aliquid mollitia minima, voluptatibus sint, quo consectetur exercitationem? Est rem odit possimus amet nihil incidunt rerum ipsam ullam esse, repudiandae ea perspiciatis qui consectetur voluptatem neque libero hic similique laboriosam.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Rem, laudantium. Architecto eligendi earum enim nulla veniam natus neque ducimus, alias illum nihil voluptatem! Voluptates nesciunt voluptas laudantium aspernatur molestias odit itaque. Modi distinctio, similique maiores cum harum exercitationem.</p>
+        <p data-jquery-mmdnd-droppable="f00">Iusto, et ut quia odit fugit id, voluptatem quis voluptates nam ipsa explicabo hic ea vel exercitationem nobis eveniet laudantium corporis perspiciatis sit eum blanditiis neque itaque necessitatibus! Modi, cumque!</p>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(document)
+                .on("mmdnddragstart", function(e) {
+                    e.setData("foo", $(e.target).attr("data-jquery-mmdnd-draggable"));
+                    console.log("dragstart", e.target);
+                })
+                .on("mmdnddrop", function(e) {
+                    console.log("drop", e.target, e.getData("foo"));
+                })
+                .on("mmdnddragenter", function(e) {
+                    console.log("dragenter", e.target);
+                })
+                .on("mmdnddragover", function(e) {
+                    console.log("dragover", e.target);
+                })
+                .on("mmdnddragleave", function(e) {
+                    console.log("dragleave", e.target);
+                })
+                .on("mmdnddragend", function(e) {
+                    console.log("dragend", e.target);
+                });
+        </script>
+    </body>
+</html>

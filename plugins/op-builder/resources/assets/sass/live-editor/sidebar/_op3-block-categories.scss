@@ -1,0 +1,78 @@
+.op3-sidebar {
+    .blocks {
+        &.op3-block-categories-loadinfo {
+            .content::after {
+                content: "\eb8a";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 14px;
+                height: 14px;
+                margin: 0 auto;
+                line-height: 1;
+                font-size: 14px;
+                font-family: "op3-icons";
+                overflow: hidden;
+                text-align: center;
+                color: #0175ff;
+                animation: op3-icon-spin 1s infinite linear;
+                margin-top: 22px;
+            }
+
+            .op3-tabs,
+            .block-categories {
+                pointer-events: none;
+            }
+        }
+
+        .op3-tabs {
+            position: static;
+
+            .op3-icon {
+                pointer-events: none;
+            }
+        }
+
+        .block-categories,
+        .blocks-search {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 22px;
+        }
+
+        label {
+            color: #333;
+            font-size: 12px;
+            margin: 0 0 10px;
+        }
+
+        input {
+            padding: 10px;
+            display: flex;
+            align-self: stretch;
+            font-size: 12px;
+            text-align: left;
+            text-decoration: none;
+            color: #333;
+            background: #fff;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #e8e8e8;
+            transition: all 0.2s ease;
+            box-shadow: inset;
+        }
+
+        .content {
+            position: relative;
+            // preloader
+
+            &[data-blocks="0"]::before {
+                content: "No sections in this category.";
+                font-size: 12px;
+                padding: 0 1.25em;
+                color: #333;
+            }
+        }
+    }
+}

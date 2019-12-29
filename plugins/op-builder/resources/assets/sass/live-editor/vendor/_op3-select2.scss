@@ -1,0 +1,256 @@
+// OP3 Select2
+.select2-container {
+    // transition: all .3s ease-in-out;
+    background-color: $op-white;
+
+    .select2-selection__arrow {
+        display: none;
+    }
+
+    .select2-dropdown {
+        z-index: 3001;
+        border: 1px solid $op-grey-border;
+        border-radius: 0;
+    }
+
+    .select2-selection::after {
+        content: "\f441";
+        font-family: "op3-icons";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        top: calc(50% + 2px);
+        transform: translateY(-50%);
+        font-size: 1em;
+    }
+
+    &.select2-container--open .select2-selection::after {
+        content: "\f43e";
+    }
+
+    .select2-selection--single {
+        margin: 0;
+        padding: 10px 20px 10px 10px;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+        text-align: left;
+        text-decoration: none;
+        color: $op-light-grey;
+        background-color: $op-white;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid $op-grey-border;
+        box-shadow: inset 0 2px 0 0 rgba(241, 241, 241, 0.37);
+
+        .select2-selection__rendered {
+            padding: 0;
+            line-height: normal;
+            font-size: inherit;
+            overflow: visible;
+
+            img {
+                vertical-align: middle;
+                height: 24px;
+                width: auto;
+                margin: -6px 0 -5px;
+            }
+        }
+    }
+
+    .select2-results__option {
+        padding: 7px 10px;
+        font-size: 12px;
+
+        img {
+            height: 20px;
+            margin: -6px 0 -5px;
+        }
+    }
+
+    .select2-results__option[aria-selected=true] {
+        background-color: $op-grey-border;
+        color: $op-grey;
+    }
+
+    .select2-results__option--highlighted[aria-selected] {
+        background-color: lighten($op-light-grey, 25%);
+        color: $op-grey;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        outline: none;
+        border: none;
+        margin: 0 7px;
+        padding: 0 0 3px;
+        font-size: 12px;
+        border-bottom: 1px dashed $op-grey-border;
+        width: calc(100% - 14px);
+    }
+
+    .select2-search.select2-search--dropdown {
+        position: relative;
+
+        &::after {
+            content: "\eb8c";
+            position: absolute;
+            right: 10px;
+            top: calc(50% - 1px);
+            transform: translateY(-50%);
+            font-family: "op3-icons";
+            font-size: 12px;
+            color: $op-grey;
+        }
+    }
+
+    .select2-simple {
+        .select2-search {
+            display: none;
+        }
+    }
+}
+
+.select2-dropdown.op3Icon [role="tree"],
+.select2-dropdown.op3Icon2 [role="tree"],
+.select2-dropdown.dropdownIcon [role="tree"],
+.select2-dropdown.faIcon [role="tree"] {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+
+    [role="treeitem"] {
+        width: 38px;
+        height: 35px;
+        margin: 0;
+
+        span {
+            text-align: center;
+            display: block;
+            visibility: collapse;
+            font-size: 15px;
+        }
+
+        .op3-icon {
+            visibility: visible;
+            vertical-align: middle;
+        }
+
+        &.select2-results__message {
+            white-space: nowrap;
+        }
+    }
+}
+
+/**
+ * Font family selector
+ */
+.select2-dropdown.headlineFontFamily li,
+.select2-dropdown.bodyFontFamily li,
+.select2-dropdown.titleFontFamily li,
+.select2-dropdown.linkFontFamily li,
+.select2-dropdown.fieldFontFamily li,
+.select2-dropdown.fontFamily li {
+    overflow: hidden;
+    position: relative;
+}
+
+.op3-iconfont-text {
+    height: 30px;
+    width: 100%;
+}
+
+/* Once the sprite is loaded, we want to hide the text */
+.op3-font-preview-loaded .op3-iconfont-text {
+    opacity: 0;
+}
+
+.op3-iconfont {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+// Specific changes for fontFamily property
+[data-op3-element-options-property-name="fontFamily"] {
+    .select2-container .select2-selection--single {
+        overflow-x: hidden;
+    }
+
+    // Because there is global page font-family property we need
+    // some indicator that specific element font-family property
+    // inherit value from global page settings
+    &[data-op3-element-options-property-default="1"] {
+        .select2-container .select2-selection .select2-selection__rendered {
+            color: #8e8e8e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 15px;
+
+            &[title="(Default)"] {
+                &::after {
+                    content: "";
+                }
+            }
+
+            img {
+                margin: -4px 0 -5px;
+            }
+
+            &::after {
+                content: "Default";
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+// Specific changes for codeHtmlSeparatorType property
+[data-op3-element-options-property-name="codeHtmlSeparatorType"] {
+    .select2-selection {
+        padding: 5px 5px 5px 5px;
+
+        .select2-selection__rendered {
+            display: flex;
+            align-items: center;
+            min-height: 25px;
+        }
+    }
+
+    svg {
+        color: #d8d8d8;
+        height: 25px;
+        width: 100%;
+    }
+}
+
+// Specific changes for separatorHtmlSeparatorBottomType select2 selected value
+[data-op3-element-options-property-id="separatorHtmlSeparatorBottomType"] {
+    svg {
+        transform: scaleY(-1);
+    }
+}
+
+// Specific changes for linkEvergreen select2 selected value
+[data-op3-element-options-property-id="linkEvergreen"] {
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        overflow: hidden;
+    }
+}
+
+// Specific changes for select2 dropdown
+.select2-container .select2-dropdown {
+    &.separatorHtmlSeparatorBottomType svg,
+    &.codeHtmlSeparatorTopType svg {
+        height: 25px;
+        width: 100%;
+        color: #777777;
+    }
+
+    &.separatorHtmlSeparatorBottomType svg {
+        transform: scaleY(-1);
+    }
+}

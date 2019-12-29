@@ -1,0 +1,72 @@
+@import "op-builder/op-builder";
+
+#adminmenu #toplevel_page_op-builder {
+    .wp-menu-image {
+        position: relative;
+        top: 6px;
+        left: 8px;
+        background: url("../img/logo-white.svg") no-repeat top left !important;
+        background-size: 22px 22px !important;
+
+        img {
+            display: none;
+        }
+    }
+
+    &:hover {
+        .wp-menu-image {
+            background-image: url("../img/logo-blue.svg") !important;
+        }
+    }
+
+    .wp-menu-image::before {
+        content: "";
+        display: none;
+    }
+}
+
+.template-picker {
+    .card { padding: 0; }
+}
+
+// Reseting font-smoothing for FireFox and WP admin,
+// because it makes the menu fonts very (too) thin
+#wpwrap {
+    -moz-osx-font-smoothing: auto;
+}
+
+// The Gutenberg button
+#editor .op-editor-gutenberg-wrapper {
+    .button {
+        margin: 2px;
+        position: relative;
+        height: 33px;
+        line-height: 33px;
+        padding-left: 40px;
+        background: #0070fa;
+        border-color: #0070fa;
+        transition: .4s all ease;
+
+        &:hover {
+            background: #0060e9;
+        }
+
+        img {
+            position: absolute;
+            top: 4px;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+.op-editor-active {
+    .edit-post-visual-editor {
+        //display: none;
+    }
+}
+
+.opb-preview-template-btn, .opb-preview-link-template-btn {
+    margin-bottom: 10px;
+}

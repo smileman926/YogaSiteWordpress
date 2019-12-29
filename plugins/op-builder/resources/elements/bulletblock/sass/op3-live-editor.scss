@@ -1,0 +1,52 @@
+form[data-op3-element-options-type="bulletblock"] {
+    .op3-element-options-property[data-op3-element-options-property-name="children"] {
+        .op3-element-options-property-children-list-item:first-child:last-child {
+            .op3-element-options-property-children-list-item-remove {
+                display: none;
+            }
+        }
+
+        .op3-property-type-children-add-new {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+
+    [data-op3-element-options-property-name="boxModel"] {
+        .op3-boxmodel-align-container {
+            display: none !important;
+        }
+    }
+}
+
+#toolbar {
+    [data-op3-element-options-type="bulletblock"],
+    [data-op3-element-options-type="bulletlist"] {
+        [data-op3-toolbar-nav-id="add"] {
+            display: block;
+        }
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="bulletblock"],
+    &[data-op3-element-type="bulletlist"] {
+        .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="bulletblock"] {
+            display: block;
+        }
+    }
+
+    &[data-op3-element-type="bulletlist"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,4016 @@
+# Copyright (C) 2016 Nick
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Users/Customers Import/Export for WooCommerce\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2019-01-12 15:53+0100\n"
+"PO-Revision-Date: 2019-01-17 12:18+0530\n"
+"Last-Translator: FreePixel <contact@freepixel.net>\n"
+"Language-Team: FreePixel\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Basepath: users-customers-import-export-for-wp-woocommerce\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: esc_html_e;esc_html__;__;_e\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: customer-import-export.php\n"
+"X-Poedit-SearchPath-1: includes/class-wf-customerimpexpcsv-admin-screen.php\n"
+"X-Poedit-SearchPath-2: includes/class-wf-customerimpexpcsv-ajax-handler.php\n"
+"X-Poedit-SearchPath-3: includes/class-wt-userimport-uninstall-feedback.php\n"
+"X-Poedit-SearchPath-4: includes/exporter/class-wf-customerimpexpcsv-exporter."
+"php\n"
+"X-Poedit-SearchPath-5: includes/exporter/data/data-wf-post-columns.php\n"
+"X-Poedit-SearchPath-6: includes/importer/class-wf-csv-parser.php\n"
+"X-Poedit-SearchPath-7: includes/importer/class-wf-customerimpexpcsv-customer-"
+"import.php\n"
+"X-Poedit-SearchPath-8: includes/importer/class-wf-customerimpexpcsv-importer."
+"php\n"
+"X-Poedit-SearchPath-9: includes/importer/data/data-wf-reserved-fields-pair."
+"php\n"
+"X-Poedit-SearchPath-10: includes/importer/views/html-wf-import-greeting.php\n"
+"X-Poedit-SearchPath-11: includes/importer/views/html-wf-import-options.php\n"
+"X-Poedit-SearchPath-12: includes/importer/views/market.php\n"
+"X-Poedit-SearchPath-13: includes/settings/class-wf-customerimpexpcsv-"
+"settings.php\n"
+"X-Poedit-SearchPath-14: includes/views/html-wf-admin-screen.php\n"
+"X-Poedit-SearchPath-15: includes/views/html-wf-help-guide.php\n"
+"X-Poedit-SearchPath-16: includes/views/export/html-wf-export-customers.php\n"
+"X-Poedit-SearchPath-17: includes/views/export/market.php\n"
+"X-Poedit-SearchPath-18: includes/views/import/html-wf-import-customers.php\n"
+
+#: customer-import-export.php:28
+msgid ""
+"You already have the Premium version installed. For any issues, kindly "
+"contact our <a target='_blank' href='https://www.webtoffee.com/"
+"support/'>support</a>."
+msgstr ""
+"Vous avez déjà la version Premium installée. Pour toute question, veuillez "
+"contacter notre <a target='_blank' href='https://www.webtoffee.com/"
+"support/'>support</a>."
+
+#: customer-import-export.php:95
+msgid "Import Export Users"
+msgstr "Importer des utilisateurs"
+
+#: customer-import-export.php:96
+msgid "Premium Upgrade"
+msgstr "Mise à niveau Premium"
+
+#: customer-import-export.php:97 includes/views/html-wf-help-guide.php:46
+msgid "Support"
+msgstr "Support"
+
+#: customer-import-export.php:98
+msgid "Review"
+msgstr "Avis"
+
+#: customer-import-export.php:157
+msgid "Import <strong>users/customers</strong> to your site via a csv file."
+msgstr ""
+"Importer des <strong>utilisateurs/clients</strong> dans votre site via un "
+"fichier CSV."
+
+#: customer-import-export.php:184
+msgid "<h3>Save Time, Money & Hassle on Your WooCommerce Data Migration?</h3>"
+msgstr ""
+"<h3>Vous souhaitez gagner du temps et de l’argent sur votre migration de "
+"données WooCommerce ?</h3>"
+
+#: customer-import-export.php:185
+msgid "<h3>Use StoreFrog Migration Services.</h3>"
+msgstr "<h3>Utilisez les services de migration StoreFrog.</h3>"
+
+#: customer-import-export.php:188
+msgid "Dismiss this notice."
+msgstr "Ignorer cette notification."
+
+#: customer-import-export.php:220
+#, php-format
+msgid "If you like the plugin please leave us a %1$s review."
+msgstr "Si vous aimez l’extension merci de nous laisser un avis %1$s."
+
+#: customer-import-export.php:232
+msgid "Thank you for your review."
+msgstr "Merci pour votre avis."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:22
+msgid ""
+"User/Customer CSV Import Export requires the function "
+"<code>mb_detect_encoding</code> to import and export CSV files. Please ask "
+"your hosting provider to enable this function."
+msgstr ""
+"Importation/exportation CSV utilisateur/client requiert la fonction "
+"<code>mb_detect_encoding</code> pour importer et exporter des fichiers CSV. "
+"Veuillez demander à votre fournisseur d’hébergement pour activer cette "
+"fonction."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:30
+msgid "User Import Export"
+msgstr "Import/export d’utilisateurs"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:31
+msgid "Customer Import Export"
+msgstr "Exportation/importation de clients"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:19
+msgid "Used it successfully. Don't need anymore."
+msgstr "Utilisé avec succès. Je n’en ai plus besoin."
+
+#: includes/class-wt-userimport-uninstall-feedback.php:21
+msgid "Have used it successfully and aint in need of it anymore"
+msgstr "Je l’ai utilisé avec succès et je n’en ai plus besoin"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:25
+msgid "I couldn't understand how to make it work"
+msgstr "Je ne comprenais pas comment la faire fonctionner"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:27
+msgid "Would you like us to assist you?"
+msgstr "Voulez-vous que nous vous assistions ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:31
+msgid "I found a better plugin"
+msgstr "J’ai trouvé une meilleure extension"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:33
+msgid "Which plugin?"
+msgstr "Avec qu’elle extension ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:37
+msgid "The plugin is great, but I need specific feature that you don't support"
+msgstr ""
+"L’extension est géniale, mais il me faut une fonctionnalité spécifique que "
+"vous ne supportez pas"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:39
+msgid "Could you tell us more about that feature?"
+msgstr "Pourriez-vous nous en dire plus sur cette fonctionnalité ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:43
+msgid "The plugin is not working"
+msgstr "L’extension ne fonctionne pas"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:45
+msgid "Could you tell us a bit more whats not working?"
+msgstr "Pourriez-vous nous en dire un peu plus ce qui ne fonctionne pas ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:49
+msgid "It's not what I was looking for"
+msgstr "Ce n’est pas ce que je cherchais"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:55
+msgid "The plugin didn't work as expected"
+msgstr "L’extension n’a pas fonctionné comme prévu"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:57
+msgid "What did you expect?"
+msgstr "Qu’est-ce que vous attendiez ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:61
+msgid "Other"
+msgstr "Autre"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:63
+msgid "Could you tell us a bit more?"
+msgstr "Pourriez-vous nous en dire un peu plus ?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:81
+msgid "If you have a moment, please let us know why you are deactivating:"
+msgstr ""
+"Si vous avez un moment, merci de nous expliquer pourquoi vous désactivez :"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:93
+msgid "I rather wouldn't say"
+msgstr "Je préfère ne pas dire"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:94
+msgid "Submit & Deactivate"
+msgstr "Soumettre & désactiver"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:95
+msgid "Cancel"
+msgstr "Annuler"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:174
+msgid "Deactivate and leave a review"
+msgstr "Désactiver et laisser un commentaire"
+
+#: includes/importer/class-wf-csv-parser.php:193
+#, php-format
+msgid "> Row %s - skipped due to record offset."
+msgstr "> Ligne %s - ignoré en raison du décalage d’enregistrement."
+
+#: includes/importer/class-wf-csv-parser.php:199
+#, php-format
+msgid "> Row %s - skipped: cannot insert user without email."
+msgstr ""
+"> Ligne %s - ignoré : impossible d’insérer un utilisateur sans adresse "
+"courriel."
+
+#: includes/importer/class-wf-csv-parser.php:204
+#, php-format
+msgid "> Row %s - skipped: Email is not valid."
+msgstr "> Ligne %s - ignoré : l’adresse courriel n’est pas valide."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:117
+msgid "Error with handle_upload!"
+msgstr "Erreur avec handle_upload !"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:142
+msgid "Row"
+msgstr "Rangée"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:143
+msgid "User ID"
+msgstr "ID de l’utilisateur"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:144
+msgid "User Status"
+msgstr "Statut de l'utilisateur"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:145
+msgid "Status Msg"
+msgstr "Message d’état"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:214
+msgid "AJAX Error"
+msgstr "Erreur AJAX"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:307
+msgid "Error finding uploaded file!"
+msgstr "Erreur lors de la recherche du fichier téléchargé !"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:374
+msgid "Step 1..."
+msgstr "Étape 1…"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:379
+msgid "Step 2..."
+msgstr "Étape 2…"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:383
+msgid "Finalizing..."
+msgstr "Finalisation…"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:386
+msgid "Finished. Import complete."
+msgstr "Terminé. Importation complète."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:456
+msgid ""
+"Columns are pre-selected using the Mapping file: \"<b style=\"color:gray\">"
+msgstr ""
+"Les colonnes sont présélectionnées à l’aide du fichier de mappage : \"<b "
+"style=\"color:gray\">"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:475
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:600
+msgid "Processing users."
+msgstr "Traitement des utilisateurs."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:493
+msgid "Finished processing Users."
+msgstr "Traitement des utilisateurs terminé."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:516
+msgid "Parsing products CSV."
+msgstr "Analyse des produits CSV."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:523
+msgid "Finished parsing products CSV."
+msgstr "Analyse syntaxique des produits au format CSV."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:563
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:578
+msgid "Sorry, there has been an error."
+msgstr "Désolé, il y a eu une erreur."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:604
+msgid "Cannot insert user without email"
+msgstr "Impossible d’insérer un utilisateur sans adresse courriel"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:608
+msgid "skipped: Email is not valid."
+msgstr "ignoré : l’adresse courriel n’est pas valide."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:624
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:657
+#, php-format
+msgid "> &#8220;%s&#8221;"
+msgstr "> &#8220;%s&#8221;"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:634
+#, php-format
+msgid "> Error inserting %s: %s"
+msgstr "> Erreur d’insertion %s : %s"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:641
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:642
+msgid "An error occurred with the customer information provided."
+msgstr "Une erreur s’est produite avec les informations client fournies."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:660
+#, php-format
+msgid "> Finished importing user %s"
+msgstr "> Importation terminée de l’utilisateur %s"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:661
+msgid "Finished processing users."
+msgstr "Traitement des utilisateurs terminé."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:767
+msgid "User could not be created without Email."
+msgstr "L’utilisateur n’a pas pu être créé sans adresse courriel."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:800
+msgid "Import"
+msgstr "Importer"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:800
+msgid "Merge Users"
+msgstr "Fusionner les utilisateurs"
+
+#: includes/importer/views/html-wf-import-greeting.php:5
+#: includes/views/html-wf-admin-screen.php:4
+msgid "User/Customer Export"
+msgstr "Export utilisateur/client"
+
+#: includes/importer/views/html-wf-import-greeting.php:6
+#: includes/views/html-wf-admin-screen.php:5
+msgid "User/Customer Import"
+msgstr "Import utilisateur/client"
+
+#: includes/importer/views/html-wf-import-greeting.php:7
+#: includes/views/html-wf-admin-screen.php:6
+msgid "Help"
+msgstr "Aide"
+
+#: includes/importer/views/html-wf-import-greeting.php:8
+#: includes/views/html-wf-admin-screen.php:7
+msgid "Upgrade to Premium for More Features"
+msgstr "Mettre à niveau vers Premium pour plus de fonctionnalités"
+
+#: includes/importer/views/html-wf-import-greeting.php:16
+#: includes/views/import/html-wf-import-customers.php:2
+msgid "Import Users in CSV Format:"
+msgstr "Importer des utilisateurs au format CSV :"
+
+#: includes/importer/views/html-wf-import-greeting.php:17
+msgid ""
+"Import Users in CSV format from your computer.You can import users/customers "
+"(in CSV format) in to the shop."
+msgstr ""
+"Importer des utilisateurs au format CSV à partir de votre ordinateur. Vous "
+"pouvez importer des utilisateurs/clients (au format CSV) dans la boutique."
+
+#: includes/importer/views/html-wf-import-greeting.php:19
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr ""
+"Avant de pouvoir télécharger votre fichier d’importation, vous devez "
+"corriger l’erreur suivante :"
+
+#: includes/importer/views/html-wf-import-greeting.php:28
+msgid "Select a file from your computer"
+msgstr "Sélectionnez un fichier dans votre ordinateur"
+
+#: includes/importer/views/html-wf-import-greeting.php:34
+#, php-format
+msgid "Maximum size: %s"
+msgstr "Taille maximum : %s"
+
+#: includes/importer/views/market.php:89 includes/views/export/market.php:94
+msgid "Upgrade to Premium Version"
+msgstr "Mise à niveau vers la version Premium"
+
+#: includes/importer/views/market.php:92 includes/views/export/market.php:97
+msgid "Your Business is precious! Go Premium!"
+msgstr "Votre entreprise est précieuse ! Passer en Premium !"
+
+#: includes/importer/views/market.php:94 includes/views/export/market.php:99
+msgid ""
+"HikeForce Import Export Users Plugin Premium version helps you to seamlessly "
+"import/export Customer details into your Woocommerce Store."
+msgstr ""
+"L’extension Premium Import/export Utilisateurs HikeForce vous permet "
+"d’importer/exporter en toute transparence les détails du client dans votre "
+"boutique Woocommerce."
+
+#: includes/importer/views/market.php:96 includes/views/export/market.php:101
+msgid "Export/Import WooCommerce Customer details into a CSV file."
+msgstr "Exporter/importer les détails du client dans un fichier CSV. "
+
+#: includes/importer/views/market.php:96 includes/views/export/market.php:101
+msgid "( Basic version supports only WordPress User details )"
+msgstr ""
+"(La version de base ne prend en charge que les détails de l’utilisateur "
+"WordPress)"
+
+#: includes/importer/views/market.php:97 includes/views/export/market.php:102
+msgid "Various Filter options for exporting Customers."
+msgstr "Diverses options de filtrage pour exporter des clients."
+
+#: includes/importer/views/market.php:98 includes/views/export/market.php:103
+msgid "Map and Transform fields while Importing Customers."
+msgstr "Mappez et transformez les champs lors de l’importation de clients."
+
+#: includes/importer/views/market.php:99 includes/views/export/market.php:104
+msgid "Change values while importing Customers using Evaluation Fields."
+msgstr ""
+"Modifiez les valeurs lors de l’importation de clients à l’aide des champs "
+"d’évaluation."
+
+#: includes/importer/views/market.php:100 includes/views/export/market.php:105
+msgid "Choice to Update or Skip existing imported Customers."
+msgstr "Choix de mettre à jour ou ignorer les clients importés existants."
+
+#: includes/importer/views/market.php:101 includes/views/export/market.php:106
+msgid "Choice to Send or Skip Emails for newly imported Customers."
+msgstr ""
+"Choix d’envoyer ou de ignorer des courriels pour les clients nouvellement "
+"importés."
+
+#: includes/importer/views/market.php:102 includes/views/export/market.php:107
+msgid ""
+"Import/Export file from/to a remote server via FTP in Scheduled time "
+"interval with Cron Job."
+msgstr ""
+"Importer/exporter un fichier depuis/vers un serveur distant via FTP dans un "
+"intervalle de temps planifié avec un travail cron."
+
+#: includes/importer/views/market.php:103 includes/views/export/market.php:108
+msgid "Excellent Support for setting it up!"
+msgstr "Excellent support pour la mise en place !"
+
+#: includes/importer/views/market.php:108 includes/views/export/market.php:113
+#: includes/views/html-wf-help-guide.php:39
+#: includes/views/html-wf-help-guide.php:41
+msgid "Documentation"
+msgstr "Documentation"
+
+#: includes/importer/views/market.php:112 includes/views/export/market.php:90
+#, php-format
+msgid ""
+"<div class=\"\"><p><i>If you like the plugin please leave us a %1$s review!</"
+"i><p></div>"
+msgstr ""
+"<div class=\"\"><p><i>Si vous aimez l’extension merci de nous laisser un "
+"avis %1$s !</i><p></div>"
+
+#: includes/views/export/html-wf-export-customers.php:4
+msgid "Export Users in CSV Format:"
+msgstr "Exporter des utilisateurs au format CSV :"
+
+#: includes/views/export/html-wf-export-customers.php:5
+msgid ""
+"Export and download your Users in CSV format. This file can be used to "
+"import users back into your Website."
+msgstr ""
+"Exportez et téléchargez vos utilisateurs au format CSV. Ce fichier peut être "
+"utilisé pour importer des utilisateurs dans votre site Web."
+
+#: includes/views/export/html-wf-export-customers.php:11
+msgid "User Roles"
+msgstr "Rôles de l’utilisateur"
+
+#: includes/views/export/html-wf-export-customers.php:14
+msgid "All Roles"
+msgstr "Tous les rôles"
+
+#: includes/views/export/html-wf-export-customers.php:25
+msgid "Users with these roles will be exported."
+msgstr "Les utilisateurs avec ces rôles seront exportés."
+
+#: includes/views/export/html-wf-export-customers.php:30
+msgid "Offset"
+msgstr "Décalage"
+
+#: includes/views/export/html-wf-export-customers.php:33
+msgid "0"
+msgstr "0"
+
+#: includes/views/export/html-wf-export-customers.php:34
+msgid "The number of users to skip before returning."
+msgstr "Nombre d’utilisateurs à ignorer avant le traitement."
+
+#: includes/views/export/html-wf-export-customers.php:39
+msgid "Limit"
+msgstr "Limite"
+
+#: includes/views/export/html-wf-export-customers.php:42
+msgid "Unlimited"
+msgstr "Illimitée"
+
+#: includes/views/export/html-wf-export-customers.php:43
+msgid "The number of users to return."
+msgstr "Nombre d’utilisateurs à traiter."
+
+#: includes/views/export/html-wf-export-customers.php:53
+msgid "Columns"
+msgstr "Colonnes"
+
+#: includes/views/export/html-wf-export-customers.php:57
+msgid "Column"
+msgstr "Colonne"
+
+#: includes/views/export/html-wf-export-customers.php:60
+msgid "Column Name"
+msgstr "Nom de la colonne"
+
+#: includes/views/export/html-wf-export-customers.php:87
+msgid "Export Users"
+msgstr "﻿Exporter les utilisateurs"
+
+#: includes/views/html-wf-help-guide.php:31
+msgid "How-to-setup"
+msgstr "Comment configurer"
+
+#: includes/views/html-wf-help-guide.php:32
+msgid "Get to know about our produt in 3 minutes with this video"
+msgstr "Découvrez notre produit en 3 minutes avec cette vidéo"
+
+#: includes/views/html-wf-help-guide.php:34
+msgid "Setup Guide"
+msgstr "Guide de configuration"
+
+#: includes/views/html-wf-help-guide.php:40
+msgid "Refer to our documentation to set and get started"
+msgstr "Reportez-vous à notre documentation pour définir et commencer"
+
+#: includes/views/html-wf-help-guide.php:47
+msgid "We would love to help you on any queries or issues."
+msgstr ""
+"Nous serions ravis de vous aider si vous avez des questions ou des problèmes."
+
+#: includes/views/html-wf-help-guide.php:49
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: includes/views/import/html-wf-import-customers.php:3
+msgid "Import Users in CSV format from your computer"
+msgstr "Importer des utilisateurs au format CSV à partir de votre ordinateur"
+
+#: includes/views/import/html-wf-import-customers.php:6
+msgid "Import Users"
+msgstr "Importer des utilisateurs"
+
+#~ msgid "This page could not be found!"
+#~ msgstr "Oups, cette page n’existe pas !"
+
+#~ msgid "We are sorry. But the page you are looking for is not available."
+#~ msgstr "Nous sommes désolés, mais la page que vous cherchez n’existe plus."
+
+#~ msgid "Perhaps you can try a new searching."
+#~ msgstr "Peut-être vous pouvez essayer une nouvelle recherche."
+
+#~ msgid "Back To Homepage"
+#~ msgstr "Revenir à l’accueil"
+
+#~ msgid "This Post Has One Comment"
+#~ msgstr "Cet article a %d commentaire"
+
+#~ msgid "This Post Has %s Comments"
+#~ msgstr "Cet article a %s commentaires"
+
+#~ msgid "Previous"
+#~ msgstr "Article précédent"
+
+#~ msgid "Next"
+#~ msgstr "Suiv."
+
+#~ msgid "Comments are closed."
+#~ msgstr "Les commentaires sont fermés."
+
+#~ msgid "You must be %1$slogged in%2$s to post a comment."
+#~ msgstr "Vous devez être %1$sidentifié%2$s pour poster un commentaire."
+
+#~ msgid "Logged in as"
+#~ msgstr "Connecté en tant que"
+
+#~ msgid "Log out of this account"
+#~ msgstr "Se déconnecter de ce compte"
+
+#~ msgid "Log out &raquo;"
+#~ msgstr "Déconnexion &raquo;"
+
+#~ msgid "Your Comment Here..."
+#~ msgstr "Votre Commentaire Ici…"
+
+#~ msgid "Post Comment"
+#~ msgstr "Poster le commentaire"
+
+#~ msgid "Top Bar"
+#~ msgstr "Barre du haut"
+
+#~ msgid "Main"
+#~ msgstr "Principal"
+
+#~ msgid "Footer"
+#~ msgstr "Pied de page"
+
+#~ msgid "Mobile (optional)"
+#~ msgstr "Mobile (optionnel)"
+
+#~ msgid "Right Sidebar"
+#~ msgstr "Barre latérale à droite"
+
+#, fuzzy
+#~| msgid "Widgets in this area are used in the sidebar region."
+#~ msgid "Widgets in this area are used in the right sidebar region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la région de la barre "
+#~ "latérale."
+
+#, fuzzy
+#~| msgid "After Sidebar"
+#~ msgid "Left Sidebar"
+#~ msgstr "Barre latérale gauche"
+
+#, fuzzy
+#~| msgid "Widgets in this area are used in the sidebar region."
+#~ msgid "Widgets in this area are used in the left sidebar region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la région de la barre "
+#~ "latérale."
+
+#, fuzzy
+#~| msgid "Search Results Found"
+#~ msgid "Search Results Sidebar"
+#~ msgstr "Barre latérale de la page de résultats de recherche"
+
+#~ msgid "Widgets in this area are used in the search result page."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la page des résultats de "
+#~ "recherche."
+
+#~ msgid "Footer 1"
+#~ msgstr "Pied de page 1"
+
+#~ msgid "Widgets in this area are used in the first footer region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la première zone de bas de "
+#~ "page."
+
+#~ msgid "Footer 2"
+#~ msgstr "Pied de page 2"
+
+#~ msgid "Widgets in this area are used in the second footer region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la deuxième zone de bas de "
+#~ "page."
+
+#~ msgid "Footer 3"
+#~ msgstr "Pied de page 3"
+
+#~ msgid "Widgets in this area are used in the third footer region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la troisième zone de bas "
+#~ "de page."
+
+#~ msgid "Footer 4"
+#~ msgstr "Pied de page 4"
+
+#~ msgid "Widgets in this area are used in the fourth footer region."
+#~ msgstr ""
+#~ "Les widgets dans cette zone sont utilisés dans la quatrième partie du "
+#~ "pied de page."
+
+#~ msgid "Home"
+#~ msgstr "Accueil"
+
+#~ msgid "404 Not Found"
+#~ msgstr "Erreur 404 Introuvable"
+
+#~ msgid "Archives"
+#~ msgstr "Archives"
+
+#~ msgid "Page %s"
+#~ msgstr "Page %s"
+
+#~ msgid "Minute %s"
+#~ msgstr "Minute %s"
+
+#~ msgid "Week %s"
+#~ msgstr "Semaine %s"
+
+#~ msgid "Link values together"
+#~ msgstr "Valeurs de lien globales"
+
+#~ msgid "Select"
+#~ msgstr "Sélectionner"
+
+#~ msgid "Font Family"
+#~ msgstr "Famille de Police"
+
+#~ msgid "Font Size"
+#~ msgstr "Taille de police (px)"
+
+#~ msgid "Font Weight"
+#~ msgstr "Graisse de la police"
+
+#~ msgid "Font Style"
+#~ msgstr "Style de la police"
+
+#~ msgid "Text Transform"
+#~ msgstr "Transformation du texte"
+
+#~ msgid "Line Height"
+#~ msgstr "Interlignage "
+
+#~ msgid "Letter Spacing"
+#~ msgstr "Interlettrage (px)"
+
+#~ msgid "px - em - rem"
+#~ msgstr "px - em - rem"
+
+#~ msgid "Default"
+#~ msgstr "Par défaut"
+
+#~ msgid "Thin: 100"
+#~ msgstr "Thin - 100"
+
+#~ msgid "Light: 200"
+#~ msgstr "Light - 200"
+
+#~ msgid "Book: 300"
+#~ msgstr "Book - 300"
+
+#~ msgid "Normal: 400"
+#~ msgstr "Normal - 400"
+
+#~ msgid "Medium: 500"
+#~ msgstr "Medium - 500"
+
+#~ msgid "Semibold: 600"
+#~ msgstr "Semibold - 600"
+
+#~ msgid "Bold: 700"
+#~ msgstr "Bold - 700"
+
+#~ msgid "Extra Bold: 800"
+#~ msgstr "Extra Bold - 800"
+
+#~ msgid "Black: 900"
+#~ msgstr "Black - 900"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Italic"
+#~ msgstr "Italique"
+
+#~ msgid "Capitalize"
+#~ msgstr "1er lettre en majuscule"
+
+#~ msgid "Lowercase"
+#~ msgstr "Minuscule"
+
+#~ msgid "Uppercase"
+#~ msgstr "Majuscule"
+
+#~ msgid "Custom Fonts"
+#~ msgstr "Polices personnalisées"
+
+#~ msgid "Standard Fonts"
+#~ msgstr "Polices standards"
+
+#~ msgid "Google Fonts"
+#~ msgstr "Polices Google"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Blog Entries"
+#~ msgstr "Entrées du blog"
+
+#~ msgid "Archives & Entries Layout"
+#~ msgstr "Mise en page des archives et entrées"
+
+#~ msgid "Both Sidebars: Style"
+#~ msgstr "Deux barres latérales : style"
+
+#~ msgid "Sidebar / Sidebar / Content"
+#~ msgstr "Barre latérale + barre latérale + contenu"
+
+#~ msgid "Sidebar / Content / Sidebar"
+#~ msgstr "Barre latérale + contenu + barre latérale"
+
+#~ msgid "Content / Sidebar / Sidebar"
+#~ msgstr "Contenu / barre latérale / barre latérale"
+
+#~ msgid "Both Sidebars: Content Width (%)"
+#~ msgstr "Deux barres latérales : largeur de contenu (%)"
+
+#~ msgid "Both Sidebars: Sidebars Width (%)"
+#~ msgstr "Deux barres latérales : largeur de barre latérale (%)"
+
+#~ msgid "Heading Tag"
+#~ msgstr "Balise de titre"
+
+#~ msgid "H1"
+#~ msgstr "Titre h1"
+
+#~ msgid "H2"
+#~ msgstr "Titre h2"
+
+#~ msgid "H3"
+#~ msgstr "Titre h3"
+
+#~ msgid "H4"
+#~ msgstr "Titre h4"
+
+#~ msgid "H5"
+#~ msgstr "Titre h5"
+
+#~ msgid "H6"
+#~ msgstr "Titre h6"
+
+#~ msgid "div"
+#~ msgstr "div"
+
+#~ msgid "span"
+#~ msgstr "span"
+
+#~ msgid "p"
+#~ msgstr "p"
+
+#~ msgid "Add Overlay On image Hover"
+#~ msgstr "Ajouter une superposition au survol de l'image"
+
+#~ msgid "Blog Style"
+#~ msgstr "Style du Blog"
+
+#~ msgid "Large Image"
+#~ msgstr "Image large"
+
+#~ msgid "Grid"
+#~ msgstr "Grille"
+
+#~ msgid "Thumbnail"
+#~ msgstr "Vignette"
+
+#~ msgid "Images Size"
+#~ msgstr "Taille des images"
+
+#~ msgid "Medium"
+#~ msgstr "Moyen"
+
+#~ msgid "Medium Large"
+#~ msgstr "Entête large"
+
+#~ msgid "Large"
+#~ msgstr "Large"
+
+#~ msgid "Grid Columns"
+#~ msgstr "Colonnes de la grille"
+
+#~ msgid "Grid Style"
+#~ msgstr "Style de grille"
+
+#~ msgid "Fit Rows"
+#~ msgstr "Ajuster les lignes"
+
+#~ msgid "Masonry"
+#~ msgstr "Maçonnerie"
+
+#~ msgid "Equal Heights"
+#~ msgstr "Hauteurs égales"
+
+#~ msgid "Image Position"
+#~ msgstr "Position de l’image"
+
+#~ msgid "Left"
+#~ msgstr "À gauche"
+
+#~ msgid "Right"
+#~ msgstr "À droite"
+
+#~ msgid "Vertical Position"
+#~ msgstr "Position verticale"
+
+#~ msgid "Top"
+#~ msgstr "En haut"
+
+#~ msgid "Center"
+#~ msgstr "Centré"
+
+#~ msgid "Bottom"
+#~ msgstr "En bas"
+
+#~ msgid "Custom Image Width (px)"
+#~ msgstr "Largeur d'image personnalisée (px)"
+
+#~ msgid "Custom Image Height (px)"
+#~ msgstr "Hauteur d'image personnalisée (px)"
+
+#~ msgid "Category Color"
+#~ msgstr "Couleur de catégorie"
+
+#~ msgid "Category Hover Color"
+#~ msgstr "Couleur au survol de la catégorie"
+
+#~ msgid "Comments Color"
+#~ msgstr "Couleur des commentaires"
+
+#~ msgid "Comments Hover Color"
+#~ msgstr "Couleur des commentaires au survol"
+
+#~ msgid "Excerpt Length"
+#~ msgstr "Longueur de l’extrait"
+
+#~ msgid "Add 500 to display full content"
+#~ msgstr "Ajouter 500 pour afficher le contenu complet"
+
+#~ msgid "Blog Pagination Style"
+#~ msgstr "Style de pagination du blog"
+
+#~ msgid "Standard"
+#~ msgstr "Standard"
+
+#~ msgid "Infinite Scroll"
+#~ msgstr "Défilement infini"
+
+#~ msgid "Next/Prev"
+#~ msgstr "Suiv./Préc."
+
+#~ msgid "Infinite Scroll: Spinners Color"
+#~ msgstr "Défilement infini : couleur des animations"
+
+#~ msgid "End of content"
+#~ msgstr "Fin du contenu"
+
+#~ msgid "Infinite Scroll: Last Text"
+#~ msgstr "Défilement infini : dernier texte"
+
+#~ msgid "No more pages to load"
+#~ msgstr "Plus de pages à charger"
+
+#~ msgid "Infinite Scroll: Error Text"
+#~ msgstr "Défilement infini : texte d'erreur"
+
+#~ msgid "Elements Positioning"
+#~ msgstr "Position des éléments"
+
+#~ msgid "Meta"
+#~ msgstr "Métadonnées"
+
+#~ msgid "Author"
+#~ msgstr "Auteur"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "Single Post"
+#~ msgstr "Article individuel"
+
+#~ msgid "Layout"
+#~ msgstr "Mise en page"
+
+#~ msgid "Page Header Title"
+#~ msgstr "Titre de l’entête"
+
+#~ msgid "Post Title"
+#~ msgstr "Titre de l’article"
+
+#~ msgid "Featured Image In Page Header"
+#~ msgstr "Image à la une dans l'entête de la page"
+
+#~ msgid "Title/Breadcrumb Position"
+#~ msgstr "Position titre/fil d'Ariane"
+
+#~ msgid "Position"
+#~ msgstr "Position"
+
+#~ msgid "Top Left"
+#~ msgstr "En haut à gauche"
+
+#~ msgid "Top Center"
+#~ msgstr "En haut centré"
+
+#~ msgid "Top Right"
+#~ msgstr "En haut à droite"
+
+#~ msgid "Center Left"
+#~ msgstr "Centré à gauche "
+
+#~ msgid "Center Center"
+#~ msgstr "Centré centré"
+
+#~ msgid "Center Right"
+#~ msgstr "Centrer à droite"
+
+#~ msgid "Bottom Left"
+#~ msgstr "En bas à gauche"
+
+#~ msgid "Bottom Center"
+#~ msgstr "En bas centré"
+
+#~ msgid "Bottom Right"
+#~ msgstr "En bas à droite"
+
+#~ msgid "Attachment"
+#~ msgstr "Comportement"
+
+#~ msgid "Scroll"
+#~ msgstr "Fond défilant"
+
+#~ msgid "Fixed"
+#~ msgstr "Fond fixe"
+
+#~ msgid "Repeat"
+#~ msgstr "Répéter"
+
+#~ msgid "No-repeat"
+#~ msgstr "Ne pas répéter"
+
+#~ msgid "Repeat-x"
+#~ msgstr "Répéter sur X"
+
+#~ msgid "Repeat-y"
+#~ msgstr "Répéter sur Y"
+
+#~ msgid "Size"
+#~ msgstr "Taille"
+
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgid "Cover"
+#~ msgstr "Recouvrir"
+
+#~ msgid "Contain"
+#~ msgstr "Contient"
+
+#~ msgid "Page Header Height (px)"
+#~ msgstr "Hauteur de l’entête (en px)"
+
+#~ msgid "Overlay Opacity"
+#~ msgstr "Opacité de la superposition"
+
+#~ msgid "Overlay Color"
+#~ msgstr "Couleur de la superposition"
+
+#~ msgid "Full Width Content"
+#~ msgstr "Contenu pleine largeur"
+
+#~ msgid "Next/Prev Taxonomy"
+#~ msgstr "Taxonomie Préc./Suiv."
+
+#~ msgid "Category"
+#~ msgstr "Catégorie"
+
+#~ msgid "Tag"
+#~ msgstr "Étiquette"
+
+#~ msgid "Related Posts Count"
+#~ msgstr "Colonnes d’articles en relation"
+
+#~ msgid "Related Posts Columns"
+#~ msgstr "Colonnes d’articles en relation"
+
+#~ msgid "Related Posts Taxonomy"
+#~ msgstr "Colonnes d’articles en relation"
+
+#~ msgid "Related Posts Image Width (px)"
+#~ msgstr "Largeur de l’image des articles en relation (px)"
+
+#~ msgid "Related Posts Image Height (px)"
+#~ msgstr "Hauteur de l’image des articles en relation (px)"
+
+#~ msgid "Footer Bottom"
+#~ msgstr "Zone de copyright"
+
+#~ msgid "Enable Footer Bottom"
+#~ msgstr "Activer la zone de Copyright"
+
+#~ msgid "Visibility"
+#~ msgstr "Visibilité "
+
+#~ msgid "Show On All Devices"
+#~ msgstr "Afficher sur les appareils"
+
+#~ msgid "Hide On Tablet"
+#~ msgstr "Masquer sur tablette"
+
+#~ msgid "Hide On Mobile"
+#~ msgstr "Masquer sur mobile"
+
+#~ msgid "Hide On Tablet & Mobile"
+#~ msgstr "Masquer sur tablette & mobile"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "Shortcodes allowed, %1$ssee the list%2$s."
+#~ msgstr "Codes courts autorisés, %1$svoir la liste%2$s."
+
+#~ msgid "Padding (px)"
+#~ msgstr "Marge interne (px)"
+
+#~ msgid "Background Color"
+#~ msgstr "Couleur d’arrière-plan"
+
+#~ msgid "Text Color"
+#~ msgstr "Couleur du texte "
+
+#~ msgid "Links Color"
+#~ msgstr "Couleur des liens"
+
+#~ msgid "Links Color: Hover"
+#~ msgstr "Couleur des liens au survol"
+
+#~ msgid "Footer Widgets"
+#~ msgstr "Pied de page"
+
+#~ msgid "Enable Footer Widgets"
+#~ msgstr "Activer le pied de page"
+
+#~ msgid "Fixed Footer"
+#~ msgstr "Pied de page fixe"
+
+#~ msgid ""
+#~ "This option add a height to your content to keep your footer at the "
+#~ "bottom of your page."
+#~ msgstr ""
+#~ "Cette option ajoute une hauteur à votre contenu pour garder votre pied de "
+#~ "page au bas de votre page."
+
+#~ msgid "On"
+#~ msgstr "Activé"
+
+#~ msgid "Off"
+#~ msgstr "Désactivé"
+
+#~ msgid "Parallax Footer Effect"
+#~ msgstr "Effet de parallaxe du pied de page"
+
+#~ msgid "Add a parallax effect to your footer."
+#~ msgstr "Ajoutez un effet de parallaxe à votre pied de page."
+
+#~ msgid "Select Template"
+#~ msgstr "Sélectionner un modèle"
+
+#~ msgid "Choose a template created in Theme Panel > My Library."
+#~ msgstr "Sélectionnez votre modèle créé dans Theme Panel > Ma bibliothèque."
+
+#~ msgid "Add Container"
+#~ msgstr "Ajouter un conteneur"
+
+#~ msgid "Borders Color"
+#~ msgstr "Couleur des bordures"
+
+#~ msgid "General Options"
+#~ msgstr "Options générales"
+
+#~ msgid "General Styling"
+#~ msgstr "Couleurs générales"
+
+#~ msgid "Primary Color"
+#~ msgstr "Couleur primaire"
+
+#~ msgid "Hover Primary Color"
+#~ msgstr "Survol couleur primaire"
+
+#~ msgid "Main Border Color"
+#~ msgstr "Couleur principale de bordure"
+
+#~ msgid "Site Background"
+#~ msgstr "Arrière-plan du site"
+
+#~ msgid "Background Image"
+#~ msgstr "Image d’arrière-plan"
+
+#~ msgid "Color"
+#~ msgstr "Couleur"
+
+#~ msgid "Color: Hover"
+#~ msgstr "Couleur au survol"
+
+#~ msgid "General Settings"
+#~ msgstr "Mise en page globale"
+
+#~ msgid "Layout Style"
+#~ msgstr "Style de mise en page"
+
+#~ msgid "Wide"
+#~ msgstr "Large"
+
+#~ msgid "Boxed"
+#~ msgstr "Boîte centrée"
+
+#~ msgid "Separate"
+#~ msgstr "Séparer"
+
+#~ msgid "Boxed Layout Drop-Shadow"
+#~ msgstr "Ombre portée mise en page centrée"
+
+#~ msgid "Boxed Width (px)"
+#~ msgstr "Largeur encadrée (px)"
+
+#~ msgid "Outside Background"
+#~ msgstr "Arrière-plan extérieur"
+
+#~ msgid "Inner Background"
+#~ msgstr "Arrière-plan intérieur"
+
+#~ msgid "Content Padding"
+#~ msgstr "Marge interne du contenu"
+
+#~ msgid "Add a custom content padding. px - em - %."
+#~ msgstr "Ajouter une marge interne personnalisée de contenu. px - em - %."
+
+#~ msgid "Widgets Padding"
+#~ msgstr "Marge interne des widgets"
+
+#~ msgid "Add a custom widgets padding. px - em - %."
+#~ msgstr "Ajouter une marge interne personnalisée de widget. px - em - %."
+
+#~ msgid "Main Container Width (px)"
+#~ msgstr "Largeur du conteneur principal (px)"
+
+#~ msgid "Content Width (%)"
+#~ msgstr "Largeur du contenu (%)"
+
+#~ msgid "Sidebar Width (%)"
+#~ msgstr "Largeur de la barre latérale (%)"
+
+#~ msgid "Enable Schema Markup"
+#~ msgstr "Activer le schéma de marquage"
+
+#~ msgid "Pages"
+#~ msgstr "Pages"
+
+#~ msgid "Content Padding (px)"
+#~ msgstr "Rembourrage de contenu (px)"
+
+#~ msgid "Search Result Page"
+#~ msgstr "Page de résultat de recherche"
+
+#~ msgid "Source"
+#~ msgstr "Source"
+
+#~ msgid "Search Posts Per Page"
+#~ msgstr "Rechercher des messages par page"
+
+#~ msgid "Custom Sidebar"
+#~ msgstr "Barre latérale personnalisée"
+
+#~ msgid "Page Title"
+#~ msgstr "Titre de la page "
+
+#~ msgid "Style"
+#~ msgstr "Style"
+
+#~ msgid "Centered"
+#~ msgstr "Centré"
+
+#~ msgid "Centered Minimal"
+#~ msgstr "Centré minimaliste"
+
+#~ msgid "Hidden"
+#~ msgstr "Masqué"
+
+#~ msgid "Image"
+#~ msgstr "Image"
+
+#~ msgid "Height (px)"
+#~ msgstr "Hauteur (px)"
+
+#~ msgid "Breadcrumbs"
+#~ msgstr "Fil d’Ariane"
+
+#~ msgid "Absolute Right"
+#~ msgstr "En absolute à droite"
+
+#~ msgid "Under Title"
+#~ msgstr "Sous titre"
+
+#~ msgid "Separator Color"
+#~ msgstr "Couleur du séparateur"
+
+#~ msgid "Link Color"
+#~ msgstr "Couleur du lien"
+
+#~ msgid "Link Color: Hover"
+#~ msgstr "Couleur du lien au survol"
+
+#~ msgid "Scroll To Top"
+#~ msgstr "Retour haut de page"
+
+#~ msgid "Scroll Up Button"
+#~ msgstr "Bouton retour haut de page"
+
+#~ msgid "Arrow Icon"
+#~ msgstr "Icône flèche"
+
+#~ msgid "Button Size (px)"
+#~ msgstr "Taille du bouton (px)"
+
+#~ msgid "Icon Size (px)"
+#~ msgstr "Taille de l’icône (px)"
+
+#~ msgid "Border Radius (px)"
+#~ msgstr "Rayon de la bordure (px)"
+
+#~ msgid "Background Color: Hover"
+#~ msgstr "Couleur d’arrière-plan au survol"
+
+#~ msgid "Pagination"
+#~ msgstr "Pagination"
+
+#~ msgid "Align"
+#~ msgstr "Aligner"
+
+#~ msgid "Font Size (px)"
+#~ msgstr "Taille de police (px)"
+
+#~ msgid "Border Width (px)"
+#~ msgstr "Largeur de la bordure (px)"
+
+#~ msgid "Border Color"
+#~ msgstr "Couleur de la bordure"
+
+#~ msgid "Border Color: Hover"
+#~ msgstr "Couleur de la bordure au survol"
+
+#~ msgid "Forms (Input - Textarea)"
+#~ msgstr "Formulaires (Input - Textarea)"
+
+#~ msgid "Label Color"
+#~ msgstr "Couleur de label "
+
+#~ msgid "Border Color: Focus"
+#~ msgstr "Couleur de la bordure au Focus"
+
+#~ msgid "Theme Buttons"
+#~ msgstr "Thème des boutons"
+
+#~ msgid "404 Error Page"
+#~ msgstr "Page Erreur 404"
+
+#~ msgid "Blank Page"
+#~ msgstr "Page blanche"
+
+#~ msgid ""
+#~ "Enable this option to remove all the elements and have full control of "
+#~ "the 404 error page."
+#~ msgstr ""
+#~ "Activez cette option pour supprimer tous les éléments et avoir le "
+#~ "contrôle total de la page d'erreur 404."
+
+#~ msgid "Header"
+#~ msgstr "Entête"
+
+#~ msgid "General"
+#~ msgstr "Général"
+
+#~ msgid "Minimal"
+#~ msgstr "Minimal"
+
+#~ msgid "Transparent"
+#~ msgstr "Transparent"
+
+#~ msgid "Top Menu"
+#~ msgstr "Menu haut"
+
+#~ msgid "Full Screen"
+#~ msgstr "Plein écran"
+
+#~ msgid "Vertical"
+#~ msgstr "Vertical"
+
+#~ msgid "Custom Header"
+#~ msgstr "Entête personnalisée"
+
+#~ msgid "Header Full Width"
+#~ msgstr "Entête pleine largeur"
+
+#~ msgid "Header Border Bottom"
+#~ msgstr "Bordure inférieure d’entête"
+
+#~ msgid "Border Bottom Color"
+#~ msgstr "Couleur de bordure inférieure"
+
+#~ msgid "Transparent Header Settings"
+#~ msgstr "Paramètres de l'entête transparente"
+
+#~ msgid "Top Menu Header Settings"
+#~ msgstr "Paramètres menu supérieur d'entête"
+
+#~ msgid "Menu Position"
+#~ msgstr "Position du menu"
+
+#~ msgid "Before The Logo"
+#~ msgstr "Avant le logo"
+
+#~ msgid "After The Logo"
+#~ msgstr "Après le logo"
+
+#~ msgid "Menu Background Color"
+#~ msgstr "Couleur d’arrière-plan du menu"
+
+#~ msgid "Search Button Border Color"
+#~ msgstr "Couleur de bordure du bouton de recherche"
+
+#~ msgid "Search Button Color"
+#~ msgstr "Couleur du bouton de recherche"
+
+#~ msgid "Search Button Color: Hover"
+#~ msgstr "Couleur au survol du bouton de recherche"
+
+#~ msgid "Full Screen Header Settings"
+#~ msgstr "Paramètres de l'entête plein écran"
+
+#~ msgid "Add Transparent Header"
+#~ msgstr "Ajouter une entête transparente"
+
+#~ msgid "Logo (optional)"
+#~ msgstr "Logo (optionnel)"
+
+#~ msgid "Select a custom logo when the menu is opened."
+#~ msgstr "Sélectionnez un logo personnalisé lorsque le menu est ouvert."
+
+#~ msgid "Retina Logo (optional)"
+#~ msgstr "Logo Rétina (optionnel)"
+
+#, fuzzy
+#~| msgid "Select a custom retina logo when the menu is opened."
+#~ msgid ""
+#~ "Select a custom retina logo (twice the logo size) when the menu is opened."
+#~ msgstr ""
+#~ "Sélectionnez un logo personnalisé de Rétina lorsque le menu est ouvert."
+
+#~ msgid "Styling"
+#~ msgstr "Style"
+
+#~ msgid "Menu Bar Color"
+#~ msgstr "Couleur de la barre du menu"
+
+#~ msgid "Menu Bar Close Color"
+#~ msgstr "Couleur de la fermeture du menu"
+
+#~ msgid "Links Background Color"
+#~ msgstr "Couleur d’arrière-plan des liens"
+
+#~ msgid "Links Hover Background Color"
+#~ msgstr "Couleur d'arrière-plan du lien au survol"
+
+#~ msgid "Links Hover Color"
+#~ msgstr "Couleur des liens au survol"
+
+#~ msgid "Search Styling"
+#~ msgstr "Style de la recherche"
+
+#~ msgid "Input Color"
+#~ msgstr "Couleur du texte de champ"
+
+#~ msgid "Input Dashed Text Color"
+#~ msgstr "Couleur du texte factice"
+
+#~ msgid "Input Border Bottom Color"
+#~ msgstr "Couleur de bordure inférieure de champ"
+
+#~ msgid "Input Hover Border Bottom Color"
+#~ msgstr "Couleur de bordure inférieure de champ : survol"
+
+#~ msgid "Input Focus Border Bottom Color"
+#~ msgstr "Couleur de bordure inférieure de champ : focus"
+
+#~ msgid "Center Header Settings"
+#~ msgstr "Paramètres entête centrée"
+
+#~ msgid "Left Menu"
+#~ msgstr "Menu de gauche"
+
+#~ msgid "Menus Position"
+#~ msgstr "Position des menus"
+
+#~ msgid "Wider Spacing"
+#~ msgstr "Espacement plus large"
+
+#~ msgid "Centered Menus"
+#~ msgstr "Menus centrés "
+
+#~ msgid "Closer Spacing"
+#~ msgstr "Espacement plus étroit"
+
+#~ msgid "Medium Header Settings"
+#~ msgstr "Paramètres d'entête moyen"
+
+#~ msgid "Hide Menu When Scrolling"
+#~ msgstr "Masquer le menu lors du défilement"
+
+#~ msgid "Stick Only The Menu"
+#~ msgstr "Coller seulement le menu"
+
+#~ msgid "Top Header"
+#~ msgstr "Entête supérieure"
+
+#~ msgid "Search Form"
+#~ msgstr "Formulaire de recherche"
+
+#~ msgid "Logo"
+#~ msgstr "Logo"
+
+#~ msgid "Social Buttons"
+#~ msgstr "Boutons sociaux"
+
+#~ msgid "Sticky Padding (px)"
+#~ msgstr "Marge interne collante (px)"
+
+#~ msgid "If you use the sticky header extension"
+#~ msgstr "Si vous utilisez l’extension de menu collant"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "Menu Items Padding (px)"
+#~ msgstr "Marge interne des éléments de menu (px)"
+
+#~ msgid "Input Background Color"
+#~ msgstr "Couleur d’arrière-plan de champ"
+
+#~ msgid "Placeholder Color"
+#~ msgstr "Couleur du terme générique"
+
+#~ msgid "Button Color"
+#~ msgstr "Couleur du bouton"
+
+#~ msgid "Button Hover Color"
+#~ msgstr "Couleur du bouton au survol"
+
+#~ msgid "Vertical Header Settings"
+#~ msgstr "Paramètres d'entête vertical"
+
+#~ msgid ""
+#~ "Choose a template created in Theme Panel > My Library to replace the "
+#~ "header content."
+#~ msgstr ""
+#~ "Choisissez un modèle créé dans Panneau du thème > Ma bibliothèque pour "
+#~ "remplacer le contenu de l'entête."
+
+#~ msgid "Select Bottom Template"
+#~ msgstr "Sélectionnez un modèle de bas"
+
+#~ msgid ""
+#~ "Choose a template created in Theme Panel > My Library to add at the "
+#~ "header bottom."
+#~ msgstr ""
+#~ "Choisissez un modèle créé dans Panneau du thème > Ma bibliothèque pour "
+#~ "ajouter en bas de l'entête."
+
+#~ msgid "Add Header Shadow"
+#~ msgstr "Ajouter une ombre à l'entête"
+
+#~ msgid "Closed Header"
+#~ msgstr "Entête fermé"
+
+#~ msgid "Custom Hamburger Button Color"
+#~ msgstr "Couleur du bouton de menu mobile personnalisé"
+
+#, fuzzy
+#~| msgid "Boxed Width (px)"
+#~ msgid "Collapse Width (px)"
+#~ msgstr "Largeur encadrée (px)"
+
+#~ msgid "Width (px)"
+#~ msgstr "Largeur (px)"
+
+#~ msgid "Inner Padding (px)"
+#~ msgstr "Marge interne (px)"
+
+#~ msgid "Logo Position"
+#~ msgstr "Position du logo"
+
+#~ msgid "Menu Items Top/Bottom Padding (px)"
+#~ msgstr " Marge interne haute/basse des éléments de menu (px)"
+
+#~ msgid "Dropdown Target"
+#~ msgstr "Cible du menu déroulant"
+
+#~ msgid "Choose your opening target for your submenus"
+#~ msgstr "Choisissez votre cible d'ouverture pour vos sous-menus"
+
+#~ msgid "Icon"
+#~ msgstr "Icône"
+
+#~ msgid "Link"
+#~ msgstr "Lien"
+
+#~ msgid "Menu Items Border Color"
+#~ msgstr "Couleur de bordure des éléments de menu"
+
+#~ msgid "Sub Menu Background Color"
+#~ msgstr "Couleur d’arrière-plan des sous-menu"
+
+#~ msgid "Sub Menu Links Color"
+#~ msgstr "Couleur des liens de sous-menu"
+
+#~ msgid "Sub Menu Links Color: Hover"
+#~ msgstr "Couleur des liens de sous-menu au survol"
+
+#~ msgid "Sub Menu Links Background Color"
+#~ msgstr "Couleur d’arrière-plan des liens de sous-menu"
+
+#~ msgid "Sub Menu Links Background Color: Hover"
+#~ msgstr "Couleur d’arrière-plan des liens de sous-menu au survol"
+
+#~ msgid "Display Search Form"
+#~ msgstr "Afficher le formulaire de recherche"
+
+#~ msgid "Border Width"
+#~ msgstr "Largeur de la bordure"
+
+#~ msgid "Add a custom border radius. px - em - %."
+#~ msgstr "Ajouter un rayon de bordure personnalisé. px - em - %."
+
+#~ msgid "Border Radius"
+#~ msgstr "Rayon de bordure"
+
+#~ msgid "Button Color: Hover"
+#~ msgstr "Couleur du texte du bouton au survol"
+
+#~ msgid "Header Media"
+#~ msgstr "Média d’entête"
+
+#~ msgid "Retina Logo"
+#~ msgstr "Logo rétina"
+
+#, fuzzy
+#~| msgid "Select a custom retina logo when the menu is opened."
+#~ msgid "Select a retina logo twice the normal logo size."
+#~ msgstr ""
+#~ "Sélectionnez un logo personnalisé de Rétina lorsque le menu est ouvert."
+
+#~ msgid "Max Width (px)"
+#~ msgstr "Largeur maxi (px)"
+
+#~ msgid "Max Height (px)"
+#~ msgstr "Hauteur maxi (px)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Choose a template created in Theme Panel > My Library to replace the "
+#~| "content."
+#~ msgid ""
+#~ "Choose a template created in Theme Panel > My Library to replace the "
+#~ "navigation."
+#~ msgstr ""
+#~ "Choisissez un modèle créé dans Panneau du thème > Ma bibliothèque pour "
+#~ "remplacer le contenu."
+
+#~ msgid "Top Level Dropdown Icon"
+#~ msgstr "Icône menu déroulant haut de page"
+
+#~ msgid "Second+ Level Dropdown Icon"
+#~ msgstr "Icône menu déroulant de deuxième niveau"
+
+#~ msgid "Dropdown Top Border"
+#~ msgstr "Bordure supérieure du menu déroulant"
+
+#~ msgid "Links Effect"
+#~ msgstr "Effet de lien du menu"
+
+#~ msgid "No Effect"
+#~ msgstr "Pas d'effet"
+
+#~ msgid "Underline From Left"
+#~ msgstr "Souligné depuis la gauche"
+
+#~ msgid "Underline Up"
+#~ msgstr "Souligner en haut"
+
+#~ msgid "Underline Down"
+#~ msgstr "Souligné en bas"
+
+#~ msgid "Brackets"
+#~ msgstr "Entre parenthèses"
+
+#~ msgid "Overline & Fixed Underline"
+#~ msgstr "Souligné depuis haut fixe bas"
+
+#~ msgid "Circular Reveal"
+#~ msgstr "Cercles révélés"
+
+#~ msgid "Tripple Dot Under"
+#~ msgstr "Pointillés en bas"
+
+#~ msgid "X Marks The Spot"
+#~ msgstr "Croisée en X"
+
+#~ msgid "Underline & Overline"
+#~ msgstr "Souligné depuis haut/bas"
+
+#~ msgid "Backlighting"
+#~ msgstr "Bloc ombré"
+
+#~ msgid "Links Effect: Color"
+#~ msgstr "Couleur des liens"
+
+#~ msgid "Main Styling"
+#~ msgstr "Style principal"
+
+#~ msgid "Left/Right Padding (px)"
+#~ msgstr "Marge interne gauche/droite (px)"
+
+#~ msgid "Link Color: Current Menu Item"
+#~ msgstr "Couleur texte du lien : menu actif"
+
+#~ msgid "Link Background"
+#~ msgstr "Arrière-plan du lien"
+
+#~ msgid "Link Background: Hover"
+#~ msgstr "Arrière-plan du lien au survol"
+
+#~ msgid "Link Background: Current Menu Item"
+#~ msgstr "Arrière-plan du lien : menu actif"
+
+#~ msgid "Dropdowns Styling"
+#~ msgstr "Style du menu déroulant"
+
+#~ msgid "Top Border Color"
+#~ msgstr "Couleur de la bordure supérieure"
+
+#~ msgid "Search Icon"
+#~ msgstr "Icône de recherche"
+
+#~ msgid "Search Icon Style"
+#~ msgstr "Style de l’icône de recherche"
+
+#~ msgid "Disabled"
+#~ msgstr "Désactivé"
+
+#~ msgid "Drop Down"
+#~ msgstr "Menu déroulant"
+
+#~ msgid "Header Replace"
+#~ msgstr "Remplacer l’entête"
+
+#~ msgid "Overlay"
+#~ msgstr "Superposition"
+
+#~ msgid "Input Border Color"
+#~ msgstr "Couleur de bordure de champ"
+
+#~ msgid "Input Border Color: Focus"
+#~ msgstr "Couleur de bordure de champ : focus"
+
+#~ msgid "Overlay Background Color"
+#~ msgstr "Couleur d’arrière-plan de la superposition"
+
+#~ msgid "Input Placeholder Color"
+#~ msgstr "Couleur du terme factice"
+
+#~ msgid "Input Border Color: Hover"
+#~ msgstr "Couleur de bordure de champ : survol"
+
+#~ msgid "Close Button Color"
+#~ msgstr "Couleur du texte du bouton de fermeture"
+
+#~ msgid "Dropdowns Categories Posts"
+#~ msgstr "Menus déroulants de catégories d’articles"
+
+#~ msgid "Category Title: Background"
+#~ msgstr "Titre de catégorie : arrière-plan"
+
+#~ msgid "Category Title: Color"
+#~ msgstr "Titre de catégorie : couleur"
+
+#~ msgid "Posts Links: Color"
+#~ msgstr "Couleur des liens d’article"
+
+#~ msgid "Posts Links Hover: Color"
+#~ msgstr "Couleur des liens d’article au survol"
+
+#~ msgid "Posts Date: Color"
+#~ msgstr "Date d’article : couleur"
+
+#~ msgid "Social Menu"
+#~ msgstr "Menu des réseaux sociaux"
+
+#~ msgid "Enable Social Menu"
+#~ msgstr "Activer le menu des réseaux sociaux"
+
+#~ msgid "Social Link Style"
+#~ msgstr "Style des liens sociaux"
+
+#~ msgid "Simple"
+#~ msgstr "Simple"
+
+#~ msgid "Colored"
+#~ msgstr "Coloré"
+
+#~ msgid "Dark"
+#~ msgstr "Sombre"
+
+#~ msgid "Social Link Target"
+#~ msgstr "Cible des liens sociaux"
+
+#~ msgid "New Window"
+#~ msgstr "Nouvelle fenêtre"
+
+#~ msgid "Same Window"
+#~ msgstr "Même fenêtre"
+
+#~ msgid "Margin (px)"
+#~ msgstr "Marge externe (px)"
+
+#~ msgid "Social: Background Color"
+#~ msgstr "Couleur d’arrière-plan des liens sociaux"
+
+#~ msgid "Social Hover: Background Color"
+#~ msgstr "Couleur d'arrière-plan des liens sociaux au survol"
+
+#~ msgid "Social: Color"
+#~ msgstr "Couleur des liens sociaux"
+
+#~ msgid "Social Hover: Color"
+#~ msgstr "Couleur des liens sociaux au survol"
+
+#~ msgid "Mobile Menu"
+#~ msgstr "Menu Mobile"
+
+#~ msgid "Breakpoints"
+#~ msgstr "Points de rupture"
+
+#~ msgid "Choose the media query where you want to display the mobile menu."
+#~ msgstr ""
+#~ "Choisissez la règle responsive à partir de laquelle s'affiche le menu "
+#~ "mobile."
+
+#~ msgid "From 1280px"
+#~ msgstr "Depuis 1280px"
+
+#~ msgid "From 1080px"
+#~ msgstr "Depuis 1080px"
+
+#~ msgid "From 959px"
+#~ msgstr "Depuis 959px"
+
+#~ msgid "From 767px"
+#~ msgstr "Depuis 767px"
+
+#~ msgid "From 480px"
+#~ msgstr "Depuis 480px"
+
+#~ msgid "From 320px"
+#~ msgstr "Depuis 320px"
+
+#~ msgid "Custom media query"
+#~ msgstr "Règle responsive personnalisée"
+
+#~ msgid "Select a custom responsive logo for tablet and mobile."
+#~ msgstr "Sélectionnez un logo responsif pour la tablette et le mobile."
+
+#~ msgid "Logo Max Height (px)"
+#~ msgstr "Hauteur maxi (px) du logo"
+
+#~ msgid "Enter a max height for your responsive logo."
+#~ msgstr "Entrez une hauteur maximale pour votre logo responsif."
+
+#~ msgid "Custom Media Query"
+#~ msgstr "Règle responsive personnalisée."
+
+#~ msgid ""
+#~ "Enter your custom media query where you want to display the mobile menu."
+#~ msgstr ""
+#~ "Entrez votre règle responsive à partir de laquelle s'affiche le menu "
+#~ "mobile."
+
+#~ msgid "Mobile Menu Style"
+#~ msgstr "Style de menu Mobile"
+
+#~ msgid "Sidebar"
+#~ msgstr "Barre latérale"
+
+#~ msgid "Display Menu Text"
+#~ msgstr "Afficher le texte du menu"
+
+#~ msgid "Menu Text"
+#~ msgstr "Texte du menu"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Close Menu Text"
+#~ msgstr "Texte de fermeture du menu"
+
+#~ msgid "Hamburger Icon Class"
+#~ msgstr "Classe de l’icône du menu hamburger"
+
+#~ msgid "Enter the full icon class"
+#~ msgstr "Entrez la classe complète de l’icône"
+
+#~ msgid "Custom Hamburger Button"
+#~ msgstr "Bouton de menu mobile personnalisé"
+
+#~ msgid "Custom Hamburger Button: Color"
+#~ msgstr "Couleur du bouton de menu mobile personnalisé"
+
+#~ msgid "Direction"
+#~ msgstr "Direction"
+
+#~ msgid "Drop Down Max Height (px)"
+#~ msgstr "Hauteur maxi du menu déroulant (px)"
+
+#~ msgid ""
+#~ "Add the height from which you want to display the scrollbar in the drop "
+#~ "down"
+#~ msgstr ""
+#~ "Ajoutez la hauteur à partir de laquelle vous souhaitez afficher la barre "
+#~ "de défilement dans la liste déroulante"
+
+#~ msgid "Displace"
+#~ msgstr "Déplacer"
+
+#~ msgid "Close Menu Button"
+#~ msgstr "Bouton de fermeture menu"
+
+#~ msgid "Close Menu Button Icon Class"
+#~ msgstr "Classe de l’icône du bouton de fermeture"
+
+#~ msgid "Close Menu"
+#~ msgstr "Fermer le menu"
+
+#~ msgid "Close Menu Button Text"
+#~ msgstr "Texte du bouton de fermeture"
+
+#~ msgid "Mobile Menu Search"
+#~ msgstr "Menu de recherche Mobile"
+
+#~ msgid "Styling: Mobile Menu"
+#~ msgstr "Style du menu Mobile"
+
+#~ msgid "Close Button Background"
+#~ msgstr "Couleur d’arrière-plan du bouton de fermeture"
+
+#~ msgid "Links Background Color: Hover"
+#~ msgstr "Couleur d'arrière-plan au survol des liens"
+
+#~ msgid "Dropdowns Menus: Background"
+#~ msgstr "Menus déroulants : arrière-plan"
+
+#~ msgid "Searchbar Background"
+#~ msgstr "Arrière plan de la barre de recherche"
+
+#~ msgid "Searchbar Color"
+#~ msgstr "Couleur de la barre de recherche"
+
+#~ msgid "Searchbar Border Color"
+#~ msgstr "Couleur de bordure de la barre de recherche"
+
+#~ msgid "Searchbar Border Color: Hover"
+#~ msgstr "Couleur de la bordure au survol de la barre de recherche"
+
+#~ msgid "Searchbar Border Color: Focus"
+#~ msgstr "Couleur de bordure de la barre de recherche : focus"
+
+#~ msgid "Searchbar Button Color"
+#~ msgstr "Couleur du bouton de barre de recherche"
+
+#~ msgid "Searchbar Button Color: Hover"
+#~ msgstr "Couleur du bouton de barre de recherche au survol"
+
+#~ msgid "Select Your Menu"
+#~ msgstr "Sélectionner votre menu"
+
+#~ msgid "Widgets"
+#~ msgstr "Widgets"
+
+#~ msgid "Margin Bottom (px)"
+#~ msgstr "Marge inférieure (px)"
+
+#~ msgid "Titles Border Color"
+#~ msgstr "Couleur de bordure des titres"
+
+#~ msgid "Titles Margin Bottom (px)"
+#~ msgstr "Marge interne inférieure des titres (px)"
+
+#~ msgid "Enable Top Bar"
+#~ msgstr "Activer la barre haute d’entête"
+
+#~ msgid "Top Bar Full Width"
+#~ msgstr "Barre supérieure pleine largeur"
+
+#~ msgid "Left Content & Right Social"
+#~ msgstr "Contenu à gauche & réseaux sociaux à droite"
+
+#~ msgid "Left Social & Right Content"
+#~ msgstr "Réseaux sociaux à gauche & contenu à droite"
+
+#~ msgid "Centered Content & Social"
+#~ msgstr "Contenu et social centrés"
+
+#~ msgid "Content"
+#~ msgstr "Contenu"
+
+#~ msgid ""
+#~ "Choose a template created in Theme Panel > My Library to replace the "
+#~ "content."
+#~ msgstr ""
+#~ "Choisissez un modèle créé dans Panneau du thème > Ma bibliothèque pour "
+#~ "remplacer le contenu."
+
+#, fuzzy
+#~| msgid "Before Content Inner"
+#~ msgid "Place your content here"
+#~ msgstr "Avant l’intérieur du contenu"
+
+#~ msgid "Social"
+#~ msgstr "Réseaux sociaux"
+
+#~ msgid "Enable Social"
+#~ msgstr "Activer les réseaux sociaux"
+
+#~ msgid "Social Alternative"
+#~ msgstr "Programmes sociaux"
+
+#~ msgid "Social Links Color"
+#~ msgstr "Couleur des liens sociaux"
+
+#~ msgid "Social Links Color: Hover"
+#~ msgstr "Couleur des liens sociaux au survol"
+
+#~ msgid "Body"
+#~ msgstr "Corps de page"
+
+#~ msgid "All Headings"
+#~ msgstr "Style générique titrages"
+
+#~ msgid "Heading 1 (H1)"
+#~ msgstr "Titrage 1 (h1)"
+
+#~ msgid "Heading 2 (H2)"
+#~ msgstr "Titrage 2 (h2)"
+
+#~ msgid "Heading 3 (H3)"
+#~ msgstr "Titrage 3 (h3)"
+
+#~ msgid "Heading 4 (H4)"
+#~ msgstr "Titrage 4 (h4)"
+
+#~ msgid "Main Menu"
+#~ msgstr "Menu principal"
+
+#~ msgid "Main Menu: Dropdowns"
+#~ msgstr "Sous-menu déroulant"
+
+#~ msgid "Page Title Subheading"
+#~ msgstr "Sous-titre de la page"
+
+#~ msgid "Blog Entry Title"
+#~ msgstr "Titre de l'entrée du blog"
+
+#~ msgid "Blog Post Title"
+#~ msgstr "Titre d’article du blog"
+
+#~ msgid "Sidebar Widget Heading"
+#~ msgstr "Titre Widget barre latérale"
+
+#~ msgid "Footer Widget Heading"
+#~ msgstr "Titre Widget pied de page"
+
+#~ msgid "Footer Copyright"
+#~ msgstr "Copyright du pied de page"
+
+#~ msgid "Footer Menu"
+#~ msgstr "Menu du pied de page"
+
+#~ msgid "Typography"
+#~ msgstr "Typographie"
+
+#~ msgid "Font Subsets"
+#~ msgstr "Sous-ensembles de police"
+
+#~ msgid "Important: Not all fonts support every font-weight."
+#~ msgstr ""
+#~ "Important : toutes les polices ne sont pas compatibles avec toutes les "
+#~ "graisses de caractère."
+
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgid "Letter Spacing (px)"
+#~ msgstr "Interlettrage (px)"
+
+#~ msgid "Font Color"
+#~ msgstr "Couleur de police"
+
+#~ msgid "WooCommerce"
+#~ msgstr "WooCommerce"
+
+#~ msgid ""
+#~ "For some options, you must save and refresh your live site to preview "
+#~ "changes."
+#~ msgstr ""
+#~ "Pour certaines options, vous devez enregistrer et actualiser votre site "
+#~ "en direct pour prévisualiser les modifications."
+
+#~ msgid "Custom WooCommerce Sidebar"
+#~ msgstr "Barre latérale personnalisée pour Woocommerce"
+
+#~ msgid "Category Page"
+#~ msgstr "Catégorie de page"
+
+#~ msgid "Display Featured Image"
+#~ msgstr "Afficher l'image à la Une"
+
+#~ msgid "Display the categories featured images before the product archives."
+#~ msgstr ""
+#~ "Afficher les images à la une des catégories avant les archives de produit."
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Cart Page"
+#~ msgstr "Page du panier "
+
+#~ msgid "Cross-Sells Count"
+#~ msgstr "Compteur des ventes croisées"
+
+#~ msgid "Cross-Sells Columns"
+#~ msgstr "Colonnes des ventes croisées"
+
+#~ msgid "Menu Cart"
+#~ msgstr "Menu du panier"
+
+#~ msgid "Hide If Empty Cart"
+#~ msgstr "Masquer si le panier est vide"
+
+#~ msgid "Display"
+#~ msgstr "Afficher"
+
+#~ msgid "Icon And Cart Total"
+#~ msgstr "Icône et total du panier"
+
+#~ msgid "Icon And Cart Count"
+#~ msgstr "Icône et compteur du panier"
+
+#~ msgid "Icon And Cart Count + Total"
+#~ msgstr "Icône et compteur panier + total"
+
+#~ msgid "Drop-Down"
+#~ msgstr "Menu déroulant"
+
+#~ msgid "Go To Cart"
+#~ msgstr "Voir au panier"
+
+#~ msgid "Custom Link"
+#~ msgstr "Lien personnalisé"
+
+#~ msgid "The Custom Link style need to be selected"
+#~ msgstr "Le style de lien personnalisé doit être sélectionné"
+
+#~ msgid "Cart Icon"
+#~ msgstr "Icône du panier"
+
+#~ msgid "Custom Icon"
+#~ msgstr "Icône personnalisée"
+
+#~ msgid "Enter your full icon class"
+#~ msgstr "Entrez votre classe complète de l’icône"
+
+#~ msgid "Center Vertically"
+#~ msgstr "Centrer verticalement"
+
+#~ msgid "Use this field to center your icon vertically"
+#~ msgstr "Utilisez ce champ pour centrer votre icône verticalement"
+
+#~ msgid "Cart Dropdown Styling"
+#~ msgstr "Style du menu déroulant du panier"
+
+#~ msgid "Cart Dropdowns Width (px)"
+#~ msgstr "Largeur du menu déroulant du panier (px)"
+
+#~ msgid "Dropdown Borders Color"
+#~ msgstr "Couleur de bordure du menu déroulant"
+
+#~ msgid "Remove Link Color"
+#~ msgstr "Supprimer la couleur de lien"
+
+#~ msgid "Remove Link Color: Hover"
+#~ msgstr "Supprimer la couleur de lien ausurvol"
+
+#~ msgid "Quantity Color"
+#~ msgstr "Couleur du chiffre de quantité"
+
+#~ msgid "Price Color"
+#~ msgstr "Couleur du prix"
+
+#~ msgid "Subtotal Color"
+#~ msgstr "Couleur du sous-total"
+
+#~ msgid "Checkout Button Background"
+#~ msgstr "Arrière-plan du bouton commander"
+
+#~ msgid "Checkout Button Background: Hover"
+#~ msgstr "Arrière-plan du bouton commander au survol"
+
+#~ msgid "Checkout Button Color"
+#~ msgstr "Couleur du texte bouton commander"
+
+#~ msgid "Checkout Button Color: Hover"
+#~ msgstr "Couleur du texte bouton commander au survol"
+
+#~ msgid "Shop Posts Per Page"
+#~ msgstr "Nombre de produits par page"
+
+#~ msgid "Shop Columns"
+#~ msgstr "Colonnes de la boutique"
+
+#~ msgid "Toolbar"
+#~ msgstr "Barre d'outils"
+
+#~ msgid "Grid/List Buttons"
+#~ msgstr "Grille/Liste boutons"
+
+#~ msgid "Default Catalog View"
+#~ msgstr "Vue en catalogue par défaut"
+
+#~ msgid "Grid View"
+#~ msgstr "Vue en grille"
+
+#~ msgid "List View"
+#~ msgstr "Vue en liste"
+
+#~ msgid "Length of the short description of the list view."
+#~ msgstr "Longueur de la courte description de la vue en liste."
+
+#~ msgid "Shop Sort"
+#~ msgstr "Tri de la boutique"
+
+#~ msgid "Shop Result Count"
+#~ msgstr "Compteur des résultats boutique"
+
+#~ msgid "Products"
+#~ msgstr "Produits"
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "Price/Rating"
+#~ msgstr "Prix/Notation"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Add To Cart Button"
+#~ msgstr "Bouton ajouter au panier"
+
+#~ msgid "Product Entry Media"
+#~ msgstr "Media d’entrée de produit"
+
+#~ msgid "Featured Image"
+#~ msgstr "Image à la Une"
+
+#~ msgid "Image Swap"
+#~ msgstr "Image alternative"
+
+#~ msgid "Gallery Slider"
+#~ msgstr "Diaporama de galerie"
+
+#, fuzzy
+#~| msgid "Blog Pagination Style"
+#~ msgid "Pagination Style"
+#~ msgstr "Style de pagination"
+
+#~ msgid "Single"
+#~ msgstr "Individuel"
+
+#~ msgid "Summary Elements Positioning"
+#~ msgstr "Positionnement des éléments du sommaire"
+
+#~ msgid "Rating"
+#~ msgstr "Notation"
+
+#~ msgid "Price"
+#~ msgstr "Prix"
+
+#~ msgid "Excerpt"
+#~ msgstr "Extrait"
+
+#~ msgid "Quantity & Add To Cart"
+#~ msgstr "Quantité et ajouter au panier"
+
+#~ msgid "Product Meta"
+#~ msgstr "Meta du produit"
+
+#~ msgid "Tabs Position"
+#~ msgstr "Position des onglets"
+
+#~ msgid "Up-Sells Count"
+#~ msgstr "Compteur des meilleures ventes"
+
+#~ msgid "Up-Sells Columns"
+#~ msgstr "Colonnes meilleures ventes"
+
+#~ msgid "Display Related Items"
+#~ msgstr "Afficher les éléments en relation"
+
+#~ msgid "Related Items Count"
+#~ msgstr "Nombre d’éléments en relation"
+
+#~ msgid "Related Products Columns"
+#~ msgstr "Colonnes de produits en relation"
+
+#~ msgid "Advanced Styling"
+#~ msgstr "Style avancé"
+
+#~ msgid "On Sale Background"
+#~ msgstr "Couleur d’arrière-plan du badge promo"
+
+#~ msgid "On Sale Color"
+#~ msgstr "Couleur du texte du badge promo"
+
+#~ msgid "Out of Stock Background"
+#~ msgstr "Couleur d’arrière-plan Produit épuisé"
+
+#~ msgid "Out of Stock Color"
+#~ msgstr "Couleur du texte Produit épuisé"
+
+#~ msgid "Stars Color Before"
+#~ msgstr "Couleur des étoiles avant"
+
+#~ msgid "Stars Color"
+#~ msgstr "Couleur des étoiles"
+
+#~ msgid "Product Entry: Toolbar"
+#~ msgstr "Fiche produit : barre d’outils"
+
+#~ msgid "Border Top/Bottom Color"
+#~ msgstr "Couleur de bordure supérieure/inférieure"
+
+#~ msgid "Grid/List Color"
+#~ msgstr "Grille/Liste couleur"
+
+#~ msgid "Grid/List Border Color"
+#~ msgstr "Grille/Liste couleur bordure active"
+
+#~ msgid "Grid/List Hover Color"
+#~ msgstr "Grille/Liste couleur au survol"
+
+#~ msgid "Grid/List Active Color"
+#~ msgstr "Grille/Liste couleur active"
+
+#~ msgid "Select Color"
+#~ msgstr "Choisir une couleur"
+
+#~ msgid "Select Border Color"
+#~ msgstr "Couleur de la bordure"
+
+#~ msgid "Number of Products Color"
+#~ msgstr "Couleur du nombre de produits"
+
+#~ msgid "Number of Products Inactive Color"
+#~ msgstr "Couleur du nombre de produits inactifs"
+
+#~ msgid "Number of Products Border Color"
+#~ msgstr "Couleur de la bordure du nombre de produits"
+
+#~ msgid "Product Entry"
+#~ msgstr "Entrée produit"
+
+#~ msgid "Category Color: Hover"
+#~ msgstr "Catégorie : couleur au survol"
+
+#~ msgid "Title Color"
+#~ msgstr "Couleur du titre"
+
+#~ msgid "Title Color: Hover"
+#~ msgstr "Couleur du titre au survol "
+
+#~ msgid "Del Price Color"
+#~ msgstr "Couleur de prix barré"
+
+#~ msgid "Product Entry: Add To Cart"
+#~ msgstr "Entrée de produit : Ajouter au panier"
+
+#~ msgid "Add To Cart Background Color"
+#~ msgstr "Couleur d'arrière-plan ajouter au panier"
+
+#~ msgid "Add To Cart Background Color: Hover"
+#~ msgstr "Couleur d'arrière-plan au survol ajouter au panier"
+
+#~ msgid "Add To Cart Color"
+#~ msgstr "Ajouter au panier : couleur"
+
+#~ msgid "Add To Cart Color: Hover"
+#~ msgstr "Ajouter au panier : couleur au survol"
+
+#~ msgid "Add To Cart Border Color"
+#~ msgstr "Ajouter au panier : couleur de bordure"
+
+#~ msgid "Add To Cart Border Color: Hover"
+#~ msgstr "Ajouter au panier : couleur de bordure au survol"
+
+#~ msgid "Add To Cart Border: Style"
+#~ msgstr "Style de bordure ajouter au panier"
+
+#~ msgid "Solid"
+#~ msgstr "Solide"
+
+#~ msgid "Double"
+#~ msgstr "Double"
+
+#~ msgid "Dashed"
+#~ msgstr "En pointillés"
+
+#~ msgid "Dotted"
+#~ msgstr "Pointillés"
+
+#~ msgid "Add To Cart Border: Size"
+#~ msgstr "Taille de bordure ajouter au panier"
+
+#~ msgid "Add a custom border size. px - em - %."
+#~ msgstr "Ajouter une taille de bordure personnalisée. px - em - %."
+
+#~ msgid "Add To Cart Border: Radius"
+#~ msgstr "Bords arrondis ajouter au panier"
+
+#~ msgid "Single Product"
+#~ msgstr "Produit individuel"
+
+#~ msgid "Description Color"
+#~ msgstr "Couleur de la description"
+
+#~ msgid "Quantity Border Color"
+#~ msgstr "Couleur de bordure de quantité"
+
+#~ msgid "Quantity Border Color Focus"
+#~ msgstr "Couleur de bordure de quantité au focus"
+
+#~ msgid "Quantity Plus/Minus Color"
+#~ msgstr "Couleur du bouton de quantité +/-"
+
+#~ msgid "Quantity Plus/Minus Color: Hover"
+#~ msgstr "Couleur du bouton de quantité +/-  au survol"
+
+#~ msgid "Quantity Plus/Minus Border Color: Hover"
+#~ msgstr "Couleur de bordure du bouton de quantité +/-  au survol"
+
+#~ msgid "Meta Title Color"
+#~ msgstr "Couleur du titre Méta"
+
+#~ msgid "Meta Link Color"
+#~ msgstr "Couleur des liens Méta"
+
+#~ msgid "Meta Link Color: Hover"
+#~ msgstr "Couleur des liens Méta au survol"
+
+#~ msgid "Single Product: Thumbnails"
+#~ msgstr "Produit individuel : vignettes"
+
+#~ msgid "Next/Prev Background: Hover"
+#~ msgstr "Arrière-plan Suiv/Préc. au survol"
+
+#~ msgid "Next/Prev Color"
+#~ msgstr "Couleur Préc./Suiv."
+
+#~ msgid "Single Product: Tabs"
+#~ msgstr "Produit individuel : onglets"
+
+#~ msgid "Text Color: Hover"
+#~ msgstr "Couleur du texte au survol"
+
+#~ msgid "Active Text Color"
+#~ msgstr "Couleur du texte actif"
+
+#~ msgid "Active Text Borders Color"
+#~ msgstr "Couleur de bordure du texte actif"
+
+#~ msgid "Product Description: Title Color"
+#~ msgstr "Description du produit : couleur du titre"
+
+#~ msgid "Product Description: Color"
+#~ msgstr "Description du produit : couleur"
+
+#~ msgid "Account"
+#~ msgstr "Mon compte"
+
+#~ msgid "Navigation: Borders Color"
+#~ msgstr "Navigation : couleur de bordure"
+
+#~ msgid "Navigation: Icons Color"
+#~ msgstr "Navigation : couleur des icônes"
+
+#~ msgid "Navigation: Links Color"
+#~ msgstr "Navigation : couleur des liens"
+
+#~ msgid "Navigation: Links Color: Hover"
+#~ msgstr "Navigation : couleur des liens au survol"
+
+#~ msgid "Addresses: Box Background"
+#~ msgstr "Adresses : arrière-plan"
+
+#~ msgid "Addresses: Box Title Color"
+#~ msgstr "Adresses : couleur du titre"
+
+#~ msgid "Addresses: Box Title Border Bottom Color"
+#~ msgstr "Adresses : couleur de bordure inférieure titre"
+
+#~ msgid "Addresses: Box Content Color"
+#~ msgstr "Adresses : couleur du texte de contenu"
+
+#~ msgid "Addresses: Box Button Background"
+#~ msgstr "Adresses : arrière-plan du bouton"
+
+#~ msgid "Addresses: Box Button Background: Hover"
+#~ msgstr "Adresses : arrière-plan au survol du bouton"
+
+#~ msgid "Addresses: Box Button color"
+#~ msgstr "Adresses : couleur du texte bouton"
+
+#~ msgid "Addresses: Box Button color: Hover"
+#~ msgstr "Adresses : couleur du texte au survol bouton"
+
+#~ msgid "Cart"
+#~ msgstr "Panier"
+
+#~ msgid "Head Background"
+#~ msgstr "Arrière plan de l’entête"
+
+#~ msgid "Head Titles Color"
+#~ msgstr "Couleur des titres d’entête"
+
+#~ msgid "Cart Totals Table: Titles Color"
+#~ msgstr "Tableau des totaux du panier : couleur des titres"
+
+#~ msgid "Remove Button Color"
+#~ msgstr "Supprimer la couleur de bouton"
+
+#~ msgid "Remove Button Color: Hover"
+#~ msgstr "Supprimer la couleur de bouton au survol"
+
+#~ msgid "Checkout"
+#~ msgstr "Commander"
+
+#~ msgid "Notices: Borders Color"
+#~ msgstr "Couleur de la bordure des avis"
+
+#~ msgid "Notices: Icon Color"
+#~ msgstr "Couleur de l’icône des avis"
+
+#~ msgid "Notices: Color"
+#~ msgstr "Couleur du texte des avis"
+
+#~ msgid "Notices: Link Color"
+#~ msgstr "Couleur du lien des avis"
+
+#~ msgid "Notices: Link Color: Hover"
+#~ msgstr "Couleur du lien des avis au survol"
+
+#~ msgid "Notices Form: Border Color"
+#~ msgstr "Couleur de la bordure des avis de formulaire"
+
+#~ msgid "Titles Color"
+#~ msgstr "Couleur des titres"
+
+#~ msgid "Titles Border Bottom Color"
+#~ msgstr "Couleur de bordure inférieure des titres"
+
+#~ msgid "Table Main Background"
+#~ msgstr "Arrière-plan principal de tableau"
+
+#~ msgid "Table Titles Color"
+#~ msgstr "Couleur des titres de tableau"
+
+#~ msgid "Table Borders Color"
+#~ msgstr "Couleur de bordure de tableau"
+
+#~ msgid "Payment Methods Background"
+#~ msgstr "Arrière-plan des méthodes de paiement"
+
+#~ msgid "Payment Methods Borders Color"
+#~ msgstr "Couleur de bordure des méthodes de paiement"
+
+#~ msgid "Payment Box Background"
+#~ msgstr "Arrière-plan de la boîte de paiement"
+
+#~ msgid "Payment Box Color"
+#~ msgstr "Couleur de la boîte de paiement"
+
+#~ msgid "Type your search"
+#~ msgstr "Saisissez votre recherche"
+
+#~ msgid "Recent Posts"
+#~ msgstr "Articles récents"
+
+#~ msgid "Search Results Found"
+#~ msgstr "Résultats trouvés pour la recherche"
+
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Archives quotidiennes : %s"
+
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Archives mensuelles : %s"
+
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Archives annuelles : %s"
+
+#~ msgid "404: Page Not Found"
+#~ msgstr "404 : page introuvable"
+
+#~ msgid "You searched for:"
+#~ msgstr "Votre recherche pour : "
+
+#~ msgid "This author has written"
+#~ msgstr "Cet auteur a écrit"
+
+#~ msgid "articles"
+#~ msgstr "articles"
+
+#~ msgid "Read More"
+#~ msgstr "Lire la suite"
+
+#~ msgid "Tags"
+#~ msgstr "Étiquettes"
+
+#~ msgid "Social Share"
+#~ msgstr "Partage réseaux sociaux"
+
+#~ msgid "Next/Prev Links"
+#~ msgstr "Liens Préc./Suiv."
+
+#~ msgid "Author Box"
+#~ msgstr "Encart sur l’auteur"
+
+#~ msgid "Related Posts"
+#~ msgstr "Articles similaires"
+
+#~ msgid "Pingback:"
+#~ msgstr "Pingback : "
+
+#~ msgid "(Edit)"
+#~ msgstr "(Éditer)"
+
+#~ msgid "%s "
+#~ msgstr "%s "
+
+#~ msgid "edit"
+#~ msgstr "éditer"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Votre commentaire est en attente de modération."
+
+#~ msgid "Name (required)"
+#~ msgstr "Nom (requis)"
+
+#~ msgid "Email (required)"
+#~ msgstr "Courriel (requis)"
+
+#~ msgid "Website"
+#~ msgstr "Site Web"
+
+#~ msgid "Newer Posts"
+#~ msgstr "Nouveaux articles"
+
+#~ msgid "Older Posts"
+#~ msgstr "Anciens articles"
+
+#~ msgid "OceanWP"
+#~ msgstr "OceanWP"
+
+#~ msgid "Default Icon"
+#~ msgstr "Icône par défaut"
+
+#~ msgid "3D X"
+#~ msgstr "3D Xv"
+
+#~ msgid "3D X Reverse"
+#~ msgstr "3D X inversé"
+
+#~ msgid "3D Y"
+#~ msgstr "3D Y"
+
+#~ msgid "3D Y Reverse"
+#~ msgstr "3D Y inversé"
+
+#~ msgid "3D XY"
+#~ msgstr "3D XY"
+
+#~ msgid "3D XY Reverse"
+#~ msgstr "3D XY inversé"
+
+#~ msgid "Arrow"
+#~ msgstr "Flèche"
+
+#~ msgid "Arrow Reverse"
+#~ msgstr "Flèche inversé"
+
+#~ msgid "Arrowalt"
+#~ msgstr "Flèche pivotante"
+
+#~ msgid "Arrowalt Reverse"
+#~ msgstr "Flèche pivotante inversée"
+
+#~ msgid "Arrowturn"
+#~ msgstr "Flèche tournante"
+
+#~ msgid "Arrowturn Reverse"
+#~ msgstr "Tournant inversé"
+
+#~ msgid "Collapse"
+#~ msgstr "Réduire"
+
+#~ msgid "Collapse Reverse"
+#~ msgstr "Réduire inversé"
+
+#~ msgid "Elastic"
+#~ msgstr "Élastique"
+
+#~ msgid "Elastic Reverse"
+#~ msgstr "Élastique inversé"
+
+#~ msgid "Minus"
+#~ msgstr "Moins"
+
+#~ msgid "Slider"
+#~ msgstr "Glissé"
+
+#~ msgid "Slider Reverse"
+#~ msgstr "Glissé inversé"
+
+#~ msgid "Spin"
+#~ msgstr "Tourner"
+
+#~ msgid "Spin Reverse"
+#~ msgstr "Tourner inversé"
+
+#, fuzzy
+#~ msgid "Stand"
+#~ msgstr "Si coché la première entrée se démarquera avec une grande image"
+
+#~ msgid "Vortex"
+#~ msgstr "Vortex"
+
+#~ msgid "Vortex Reverse"
+#~ msgstr "Vortex inversé"
+
+#~ msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+#~ msgstr "© [oceanwp_date] - OceanWP thème par Nick"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Google Plus"
+#~ msgstr "Google +"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Dribbble"
+#~ msgstr "Dribbble"
+
+#~ msgid "VK"
+#~ msgstr "VK"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "LinkedIn"
+#~ msgstr "LinkedIn"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Github"
+#~ msgstr "Github"
+
+#~ msgid "Flickr"
+#~ msgstr "Flickr"
+
+#~ msgid "Skype"
+#~ msgstr "Skype"
+
+#~ msgid "Youtube"
+#~ msgstr "YouTube"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"
+
+#~ msgid "Vine"
+#~ msgstr "Vine"
+
+#~ msgid "Xing"
+#~ msgstr "Xing"
+
+#~ msgid "Yelp"
+#~ msgstr "Yelp"
+
+#~ msgid "Tripadvisor"
+#~ msgstr "Tripadvisor"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Email"
+#~ msgstr "Courriel "
+
+#~ msgid "Install Required Plugins"
+#~ msgstr "Installation des extensions requises"
+
+#~ msgid "Install Plugins"
+#~ msgstr "Installer des extensions"
+
+#~ msgid "Installing Plugin: %s"
+#~ msgstr "Installation de l’extension : %s"
+
+#~ msgid "Updating Plugin: %s"
+#~ msgstr "Mise à jour de l’extension : %s"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Une erreur s’est produite avec l’API  de l’extension."
+
+#~ msgid "Return to Required Plugins Installer"
+#~ msgstr "Retour à l’installateur des extensions obligatoires"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Retourner au tableau de bord"
+
+#~ msgid "Plugin activated successfully."
+#~ msgstr "Extension activée avec succès."
+
+#~ msgid "The following plugin was activated successfully:"
+#~ msgstr "L’extension suivante a été activée avec succès&nbsp;: "
+
+#~ msgid "No action taken. Plugin %1$s was already active."
+#~ msgstr "Pas d'action requise. L’extension %1$s est déjà activée."
+
+#~ msgid ""
+#~ "Plugin not activated. A higher version of %s is needed for this theme. "
+#~ "Please update the plugin."
+#~ msgstr ""
+#~ "Extension non activée. Une version supérieure à %s  est nécessaire pour "
+#~ "ce thème. Merci de mettre à jour l’extension."
+
+#~ msgid "All plugins installed and activated successfully. %1$s"
+#~ msgstr "Toutes les extensions installées et activées avec succès. %1$s"
+
+#~ msgid ""
+#~ "There are one or more required or recommended plugins to install, update "
+#~ "or activate."
+#~ msgstr ""
+#~ "Il existe une ou plusieurs extensions requises ou recommandées pour "
+#~ "l'installation, la mise à jour ou l'activation."
+
+#~ msgid "Please contact the administrator of this site for help."
+#~ msgstr ""
+#~ "Veuillez contacter l’administrateur de ce site pour obtenir de l’aide."
+
+#~ msgid "Update Required"
+#~ msgstr "Mise à jour requise"
+
+#~ msgid ""
+#~ "The remote plugin package does not contain a folder with the desired slug "
+#~ "and renaming did not work."
+#~ msgstr ""
+#~ "Le pack à distance d’extensions ne contient pas de dossier avec le "
+#~ "déterminant souhaitée et le renommage n'a pas fonctionné."
+
+#~ msgid ""
+#~ "Please contact the plugin provider and ask them to package their plugin "
+#~ "according to the WordPress guidelines."
+#~ msgstr ""
+#~ "Veuillez contacter le développeur de l’extension pour lui demander de la "
+#~ "rendre conforme aux directives de WordPress."
+
+#~ msgid ""
+#~ "The remote plugin package consists of more than one file, but the files "
+#~ "are not packaged in a folder."
+#~ msgstr ""
+#~ "Le pack à distance d’extensions se compose de plus d'un fichier, mais les "
+#~ "fichiers ne sont pas installés dans un dossier."
+
+#~ msgid "TGMPA v%s"
+#~ msgstr "TGMPA v%s"
+
+#~ msgid "Required"
+#~ msgstr "Requis"
+
+#~ msgid "Recommended"
+#~ msgstr "Recommandé"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "Dépôt de WordPress"
+
+#~ msgid "External Source"
+#~ msgstr "Source externe"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "Pré-installé"
+
+#~ msgid "Not Installed"
+#~ msgstr "Non installé"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "Installée mais non activée"
+
+#~ msgid "Active"
+#~ msgstr "Activé"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "Mise à jour requise non disponible"
+
+#~ msgid "Requires Update"
+#~ msgstr "Requiert une mise à jour"
+
+#~ msgid "Update recommended"
+#~ msgstr "Mise à jour recommandée"
+
+#~ msgid "Installed version:"
+#~ msgstr "Version installée : "
+
+#~ msgid "Minimum required version:"
+#~ msgstr "Requiert au minimum la version : "
+
+#~ msgid "Available version:"
+#~ msgstr "Version disponible : "
+
+#~ msgid "No plugins to install, update or activate."
+#~ msgstr "Pas d’extension à installer, à mettre à jour ou à activer."
+
+#~ msgid "Plugin"
+#~ msgstr "Extension"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Version"
+#~ msgstr "Version "
+
+#~ msgid "Install %2$s"
+#~ msgstr "Installer %2$s"
+
+#~ msgid "Update %2$s"
+#~ msgstr "Mettre à jour %2$s"
+
+#~ msgid "Activate %2$s"
+#~ msgstr "Activer %2$s"
+
+#~ msgid "Upgrade message from the plugin author:"
+#~ msgstr "Message de mise à niveau de l’auteur de l’extension : "
+
+#~ msgid "Install"
+#~ msgstr "Installer"
+
+#~ msgid "Update"
+#~ msgstr "Mettre à jour"
+
+#~ msgid "Activate"
+#~ msgstr "Activer"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr ""
+#~ "Aucune extension n’a été sélectionnée pour être installée. Aucune action "
+#~ "effective."
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr ""
+#~ "Aucune extension n’a été sélectionnée pour être mise à jour. Aucune "
+#~ "action effective."
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr "Aucune extension n'est disponible pour être installée en ce moment."
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr ""
+#~ "Aucune extension n'est disponible pour être mise à jour en ce moment."
+
+#~ msgid "No plugins were selected to be activated. No action taken."
+#~ msgstr ""
+#~ "Aucune extension n'a été sélectionnée pour être activée. Aucune action "
+#~ "effective."
+
+#~ msgid "No plugins are available to be activated at this time."
+#~ msgstr "Aucune extension n'est disponible pour être activée en ce moment."
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "L’activation de l’extension a écouhé."
+
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Mise à jour de l’extension %1$s (%2$d/%3$d)"
+
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de l'installation de %1$s : <strong>%2$s</"
+#~ "strong>."
+
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "L’installation de %1$s a échouée."
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "Le processus d'installation et d'activation démarre. Ce processus peut "
+#~ "prendre un certain temps sur certains hébergeurs, soyez patient."
+
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s a été installé et activé avec succès."
+
+#~ msgid "Show Details"
+#~ msgstr "Afficher les détails"
+
+#~ msgid "Hide Details"
+#~ msgstr "Masquer les détails"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr ""
+#~ "Toutes les installations et les activations ont été effectuées avec "
+#~ "succès."
+
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installation et activation de l’extension %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "Le processus d'installation démarre. Ce processus peut prendre un certain "
+#~ "temps sur certains hôtes, soyez patient."
+
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$s installé avec succès."
+
+#~ msgid "All installations have been completed."
+#~ msgstr "Toutes les installations sont terminées."
+
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installation de l’extension %1$s (%2$d/%3$d)"
+
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgid "Before Page"
+#~ msgstr "Avant la page"
+
+#~ msgid "After Page"
+#~ msgstr "Après la page"
+
+#~ msgid "Before Top Bar"
+#~ msgstr "Avant la barre supérieure"
+
+#~ msgid "Before Top Bar Inner"
+#~ msgstr "Avant l’intérieur de la barre supérieure"
+
+#~ msgid "After Top Bar Inner"
+#~ msgstr "Après l’intérieur de la barre supérieure"
+
+#~ msgid "After Top Bar"
+#~ msgstr "Après la barre supérieure"
+
+#~ msgid "Before Header"
+#~ msgstr "Avant l’entête"
+
+#~ msgid "Before Header Inner"
+#~ msgstr "Avant l’intérieur de l’entête de page"
+
+#~ msgid "After Header Inner"
+#~ msgstr "Après l’intérieur de l’entête"
+
+#~ msgid "After Header"
+#~ msgstr "Après l’entête"
+
+#~ msgid "Page Header"
+#~ msgstr "Entête de page"
+
+#~ msgid "Before Page Header"
+#~ msgstr "Avant l'entête de la page"
+
+#~ msgid "Before Page Header Inner"
+#~ msgstr "Avant l’intérieur du titre de page"
+
+#~ msgid "After Page Header Inner"
+#~ msgstr "Après l’intérieur du titre de page"
+
+#~ msgid "After Page Header"
+#~ msgstr "Après le titre de page"
+
+#~ msgid "Before Content"
+#~ msgstr "Avant le contenu"
+
+#~ msgid "Before Content Inner"
+#~ msgstr "Avant l’intérieur du contenu"
+
+#~ msgid "After Content Inner"
+#~ msgstr "Après l’intérieur du contenu"
+
+#~ msgid "After Content"
+#~ msgstr "Après le contenu"
+
+#~ msgid "Before Sidebar"
+#~ msgstr "Avant la barre latérale"
+
+#~ msgid "Before Sidebar Inner"
+#~ msgstr "Avant l’intérieur de la barre latérale"
+
+#~ msgid "After Sidebar Inner"
+#~ msgstr "Après l’intérieur de la barre latérale"
+
+#~ msgid "After Sidebar"
+#~ msgstr "Après la barre latérale"
+
+#~ msgid "Before Footer"
+#~ msgstr "Avant le pied de page"
+
+#~ msgid "Before Footer Inner"
+#~ msgstr "Avant l’intérieur du pied de page"
+
+#~ msgid "After Footer Inner"
+#~ msgstr "Après l’intérieur du pied de page"
+
+#~ msgid "After Footer"
+#~ msgstr "Après le pied de page"
+
+#~ msgid "Template"
+#~ msgstr "Modèle"
+
+#~ msgid "Theme Panel > My Library"
+#~ msgstr "Theme Panel > ma bibliothèque"
+
+#~ msgid "Select A Template"
+#~ msgstr "Choisissez un modèle"
+
+#~ msgid "Disable link"
+#~ msgstr "Désactiver le lien"
+
+#~ msgid "Display Latest Posts"
+#~ msgstr "Afficher les derniers articles"
+
+#~ msgid "Enable megamenu"
+#~ msgstr "Activer le méga-menu"
+
+#~ msgid "Megamenu auto width?"
+#~ msgstr "Hauteur automatique du méga menu ?"
+
+#~ msgid "Megamenu columns (from 1 to 6)"
+#~ msgstr "Colonnes du Méga menu (de 1 à 6)"
+
+#~ msgid "Hide Mega menu heading?"
+#~ msgstr "Masquer les titres du Mega menu ?"
+
+#~ msgid "Mega Menu Widget Area"
+#~ msgstr "Zone de Widget du Méga Menu"
+
+#~ msgid "Select Widget Area"
+#~ msgstr "Choisir la zone des Widgets"
+
+#, fuzzy
+#~ msgid "Latest in"
+#~ msgstr "Dernier [ themes ]"
+
+#~ msgid "WooCommerce Sidebar"
+#~ msgstr "Barre latérale Woocommerce"
+
+#~ msgid "Grid view"
+#~ msgstr "Vue en grille"
+
+#~ msgid "List view"
+#~ msgstr "Vue en liste"
+
+#~ msgid "Out of Stock"
+#~ msgstr "Produit épuisé"
+
+#~ msgid "Welcome!"
+#~ msgstr "Bienvenue !"
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+#~ msgid "Your cart"
+#~ msgstr "Votre panier"
+
+#~ msgid "WooCommerce Product Title"
+#~ msgstr "Titre produit Woocommerce"
+
+#, fuzzy
+#~| msgid "WooCommerce Product Title"
+#~ msgid "WooCommerce Product Price"
+#~ msgstr ""
+#~ "Changez automatiquement le prix et la devise du produit WooCommerce par "
+#~ "pays du client."
+
+#~ msgid "WooCommerce Product Add To Cart"
+#~ msgstr "Ajouter au panier produit WooCommerce"
+
+#~ msgid "Placeholder Image"
+#~ msgstr "Image générique"
+
+#~ msgid "0 Comments"
+#~ msgstr "0 commentaire"
+
+#~ msgid "1 Comment"
+#~ msgstr "1 commentaire"
+
+#~ msgid "% Comments"
+#~ msgstr "% commentaires"
+
+#~ msgid "Continue Reading"
+#~ msgstr "Continuer la lecture"
+
+#~ msgid "Type your text and hit enter to search"
+#~ msgstr "Saisir votre texte et appuyer sur Entrée pour rechercher…"
+
+#~ msgid "Type then hit enter to search..."
+#~ msgstr "Saisir et appuyer sur Entrée pour rechercher…"
+
+#~ msgid "Search..."
+#~ msgstr "Rechercher…"
+
+#~ msgid "Search"
+#~ msgstr "Rechercher"
+
+#~ msgid "Ready to publish your first post? %1$sGet started here%2$s."
+#~ msgstr "Prêt à publier votre premier article ? %1$sCommencez ici%2$s."
+
+#~ msgid ""
+#~ "Sorry, but nothing matched your search terms. Please try again with "
+#~ "different keywords."
+#~ msgstr ""
+#~ "Aucun résultat ne correspond à vos critères de recherche. Essayez de "
+#~ "nouveau avec des mots clés différents."
+
+#~ msgid "There aren't any posts currently published in this category."
+#~ msgstr "Il n’y a aucun article publié actuellement dans cette catégorie."
+
+#~ msgid "There aren't any posts currently published under this taxonomy."
+#~ msgstr "Il n’y a aucun article publié actuellement pour cette taxinomie."
+
+#~ msgid "There aren't any posts currently published under this tag."
+#~ msgstr "Il n’y a aucun article publié actuellement sous cette étiquette."
+
+#~ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+#~ msgstr "Il semble que nous ne pouvons pas trouver ce que vous recherchez."
+
+#~ msgid "Pages:"
+#~ msgstr "Pages : "
+
+#~ msgid "Previous Post"
+#~ msgstr "Article précédent"
+
+#~ msgid "Next Post"
+#~ msgstr "Article suivant"
+
+#~ msgid "You Might Also Like"
+#~ msgstr "Vous aimerez peut-être aussi"
+
+#~ msgid "Have a coupon?"
+#~ msgstr "Avez-vous un code promo ?"
+
+#~ msgid "Click here to enter your code"
+#~ msgstr "Cliquez ici pour entrer votre code"
+
+#~ msgid "View:"
+#~ msgstr "Visualiser : "
+
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgid "Custom CSS/JS"
+#~ msgstr "CSS/JS personnalisés"
+
+#~ msgid "Custom JS"
+#~ msgstr "Scripts JS personnalisés"
+
+#~ msgid ""
+#~ "You need to reload to see the changes. No need to add the <script> tags."
+#~ msgstr ""
+#~ "Vous devez recharger pour voir les modifications. Pas besoin d'ajouter "
+#~ "les balises <script>."
+
+#~ msgid "Visit Author Page"
+#~ msgstr "Visitez la page de l’auteur"
+
+#~ msgid "Coupon code"
+#~ msgstr "Code promo"
+
+#~ msgid "Apply coupon"
+#~ msgstr "Appliquer le code promo"
+
+#~ msgid "g:i a"
+#~ msgstr "g:i a"
+
+#~ msgid "i"
+#~ msgstr "i"
+
+#~ msgid "g a"
+#~ msgstr "g a"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "F"
+#~ msgstr "F"
+
+#~ msgid "j"
+#~ msgstr "j"
+
+#~ msgid "W"
+#~ msgstr "W"
+
+#~ msgid "Page ID"
+#~ msgstr "ID de la page"
+
+#~ msgid ""
+#~ "Deprecated, this field is no longer supported. Please use the Select "
+#~ "Template field below instead."
+#~ msgstr ""
+#~ "Déconseillé, ce champ n'est plus pris en charge. Utilisez plutôt le champ "
+#~ "Sélectionner le modèle ci-dessous."
+
+#~ msgid "Elementor Templates"
+#~ msgstr "Modèles Elementor"
+
+#~ msgid ""
+#~ "Deprecated, this field is no longer supported. If you want a different "
+#~ "logo when scrolling, go to Sticky Header > Logo."
+#~ msgstr ""
+#~ "Déconseillé, ce champ n'est plus pris en charge. Si vous voulez un logo "
+#~ "différent lors du défilement, allez à Entête collante > Logo."
+
+#~ msgid ""
+#~ "Deprecated, this field is no longer supported. If you want a different "
+#~ "retina logo when scrolling, go to Sticky Header > Retina Logo."
+#~ msgstr ""
+#~ "Déconseillé, ce champ n'est plus pris en charge. Si vous voulez un logo "
+#~ "de rétina différent lors du défilement, allez à Entête collante > Logo "
+#~ "rétina."
+
+#~ msgid "Enter the height of your normal logo, used for retina."
+#~ msgstr "Saisir la hauteur de votre logo normal, utilisé pour le rétina."
+
+#~ msgid "Effect 1"
+#~ msgstr "Filet bas progressif"
+
+#~ msgid "Effect 2"
+#~ msgstr "Filet bas montant"
+
+#~ msgid "Effect 3"
+#~ msgstr "Filet bas descendant"
+
+#~ msgid "Effect 4"
+#~ msgstr "Parenthèses ouvrantes"
+
+#~ msgid "Effect 5"
+#~ msgstr "Souligné filet montant"
+
+#~ msgid "Effect 6"
+#~ msgstr "Double cercle filet"
+
+#~ msgid "Effect 7"
+#~ msgstr "3 points centrés"
+
+#~ msgid "Effect 8"
+#~ msgstr "Double filet en croix"
+
+#~ msgid "Effect 9"
+#~ msgstr "Double filet fermant"
+
+#~ msgid "Effect 10"
+#~ msgstr "Bloc ombré"
+
+#~ msgid "Menu Social"
+#~ msgstr "Menu Social"
+
+#~ msgid "Enable Menu Social"
+#~ msgstr "Activer le menu réseaux sociaux"
+
+#~ msgid "Simple Social Links Color"
+#~ msgstr "Couleur des liens sociaux individuels"
+
+#~ msgid "Simple Social Links Color: Hover"
+#~ msgstr "Couleur des liens sociaux individuels au survol"
+
+#~ msgid ""
+#~ "Deprecated, this field is no longer supported. Please use the Social "
+#~ "Alternative field below instead."
+#~ msgstr ""
+#~ "Déconseillé, ce champ n'est plus pris en charge. Veuillez utiliser le "
+#~ "champ Social alternatif ci-dessous."
+
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgid "This theme requires the following plugin: %1$s."
+#~ msgid_plural "This theme requires the following plugins: %1$s."
+#~ msgstr[0] "Ce thème nécessite l’extension suivante : %1$s."
+#~ msgstr[1] "Ce thème nécessite les extension suivantes : %1$s."
+
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "Ce thème recommande l’extension suivante : %1$s."
+#~ msgstr[1] "Ce thème recommande les extensions suivantes : %1$s."
+
+#~ msgid ""
+#~ "The following plugin needs to be updated to its latest version to ensure "
+#~ "maximum compatibility with this theme: %1$s."
+#~ msgid_plural ""
+#~ "The following plugins need to be updated to their latest version to "
+#~ "ensure maximum compatibility with this theme: %1$s."
+#~ msgstr[0] ""
+#~ "Afin d'assurer une compatibilité maximale avec ce thème, l’extension "
+#~ "suivante doit être mise à jour dans sa dernière version : %1$s."
+#~ msgstr[1] ""
+#~ "Afin d'assurer une compatibilité maximale avec ce thème, les extensions "
+#~ "suivantes doivent être mises à jour dans leur dernière version : %1$s."
+
+#~ msgid "There is an update available for: %1$s."
+#~ msgid_plural "There are updates available for the following plugins: %1$s."
+#~ msgstr[0] "Il y a une mise à jour disponible pour : %1$s."
+#~ msgstr[1] "Il y a des mises à jour disponibles pour : %1$s."
+
+#~ msgid "The following required plugin is currently inactive: %1$s."
+#~ msgid_plural "The following required plugins are currently inactive: %1$s."
+#~ msgstr[0] "L’extension requise suivante est actuellement inactive : %1$s."
+#~ msgstr[1] ""
+#~ "Les extensions requises suivantes sont actuellement inactives : %1$s."
+
+#~ msgid "The following recommended plugin is currently inactive: %1$s."
+#~ msgid_plural ""
+#~ "The following recommended plugins are currently inactive: %1$s."
+#~ msgstr[0] ""
+#~ "L’extension recommandée suivante est actuellement inactive : %1$s."
+#~ msgstr[1] ""
+#~ "Les extensions recommandées suivantes sont actuellement inactives : %1$s."
+
+#~ msgid "Begin installing plugin"
+#~ msgid_plural "Begin installing plugins"
+#~ msgstr[0] "Commencez à installer l’extension"
+#~ msgstr[1] "Commencez à installer les extensions"
+
+#~ msgid "Begin updating plugin"
+#~ msgid_plural "Begin updating plugins"
+#~ msgstr[0] "Commercer la mise à jour de l’extension"
+#~ msgstr[1] "Commercer la mise à jour des extensions"
+
+#~ msgid "Begin activating plugin"
+#~ msgid_plural "Begin activating plugins"
+#~ msgstr[0] "Avant d’activer l’extension"
+#~ msgstr[1] "Avant d’activer les extensions"
+
+#~ msgid "and"
+#~ msgstr "et"
+
+#~ msgctxt "Install/Update Status"
+#~ msgid "%1$s, %2$s"
+#~ msgstr "%1$s, %2$s"
+
+#~ msgctxt "plugins"
+#~ msgid "All <span class=\"count\">(%s)</span>"
+#~ msgid_plural "All <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Tout <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Tous <span class=\"count\">(%s)</span>"
+
+#~ msgid "To Install <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Install <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Pour installer <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Pour installer <span class=\"count\">(%s)</span>"
+
+#~ msgid "Update Available <span class=\"count\">(%s)</span>"
+#~ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Mise à jour disponible <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Mises à jour disponibles <span class=\"count\">(%s)</span>"
+
+#~ msgid "To Activate <span class=\"count\">(%s)</span>"
+#~ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+#~ msgstr[0] "Pour activer <span class=\"count\">(%s)</span>"
+#~ msgstr[1] "Pour activer <span class=\"count\">(%s)</span>"
+
+#~ msgctxt "as in: \"version nr unknown\""
+#~ msgid "unknown"
+#~ msgstr "inconnu"
+
+#~ msgid "Elementor Template"
+#~ msgstr "Modèle Elementor"
+
+#~ msgid ""
+#~ "Deprecated, this field is no longer supported. Please use the Select A "
+#~ "Template field below instead."
+#~ msgstr ""
+#~ "Déconseillé, ce champ n'est plus pris en charge. Veuillez utiliser le "
+#~ "champ Sélectionner un modèle ci-dessous."
+
+#~ msgid "Enter Icon Class (Deprecated)"
+#~ msgstr "Entrer une classe d'icône (déprécié)"
+
+#~ msgid "If you want to display a different logo for this style (optional)"
+#~ msgstr ""
+#~ "Si vous souhaitez afficher un logo différent pour ce style (optionnel)"
+
+#~ msgid "Mobile Sidebar Menu"
+#~ msgstr "Menu de la barre latérale mobile"
+
+#~ msgid "Mobile Menu: Dropdowns"
+#~ msgstr "Menu mobile déroulant"
+
+#~ msgid ""
+#~ "The following shortcodes can be added:%1$s %2$s[oceanwp_date]%3$s To show "
+#~ "a dynamic date.%1$s %2$s[oceanwp_site_url]%3$s To add a homepage link."
+#~ msgstr ""
+#~ "Les codes courts suivants peuvent être ajoutés : %1$s "
+#~ "%2$s[oceanwp_date]%3$s pour afficher une date dynamique. %1$s "
+#~ "%2$s[oceanwp_site_url]%3$s pour ajouter un lien de page d'accueil."
+
+#~ msgid "Padding (DECREPITATED)"
+#~ msgstr "Marge interne (déprécié)"
+
+#~ msgid ""
+#~ "This field will be removed in OceanWP 1.2.0, add your value(s) in the "
+#~ "dimensions control below"
+#~ msgstr ""
+#~ "Ce champ sera supprimé dans OceanWP 1.2.0, saisissez vos valeurs dans le "
+#~ "contrôle des dimensions ci-dessous"
+
+#~ msgid "Choose a page to replace the widgets by this page."
+#~ msgstr "Choisissez une page pour remplacer les widgets par cette page."
+
+#~ msgid "Border Width (DECREPITATED)"
+#~ msgstr "Largeur de la bordure (déprécié)"
+
+#~ msgid "Choose a page where the content will be displayed in the header."
+#~ msgstr "Choisissez une page où le contenu sera affiché dans l'entête."
+
+#~ msgid "Used for retina."
+#~ msgstr "Utilisé pour le Rétina."
+
+#~ msgid ""
+#~ "The following shortcodes can be added:%1$s %2$s[oceanwp_login]%3$s To add "
+#~ "a login/logout link.%1$s %2$s[oceanwp_search]%3$s To show a search form."
+#~ msgstr ""
+#~ "Les codes courts suivants peuvent être ajoutés : %1$s "
+#~ "%2$s[oceanwp_login]%3$s pour ajouter un lien connexion / connexion, %1$s "
+#~ "%2$s[oceanwp_search]%3$s pour afficher un formulaire de recherche."
+
+#~ msgid "Choose a page to display the content of such page."
+#~ msgstr "Choisissez une page pour afficher le contenu de cette page."
+
+#~ msgid "Menu Cart: Display"
+#~ msgstr "Menu panier : afficher"
+
+#~ msgid "Menu Cart: Custom Link"
+#~ msgstr "Lien personnalisé du menu panier"
+
+#~ msgid "Styling: Cart Dropdowns"
+#~ msgstr "Style du menu panier déroulant"
+
+#~ msgid ""
+#~ "Enter your extension license keys here to receive updates for purchased "
+#~ "extensions. If your license key has expired, please %1$srenew your license"
+#~ "%2$s."
+#~ msgstr ""
+#~ "Entrez vos clés de licence d'extension ici pour recevoir des mises à jour "
+#~ "pour les extensions achetées. Si votre clé de licence a expirée, merci de "
+#~ "%1$srenouveler votre license%2$s."
+
+#~ msgid ""
+#~ "Your license key expired on %1$s. Please <a href=\"%2$s\" target=\"_blank"
+#~ "\">renew your license key</a>."
+#~ msgstr ""
+#~ "Votre clé de licence a expirée à %1$s. Merci de <a href=\"%2$s\" target="
+#~ "\"_blank\">renouveler votre clé de licence</a>."
+
+#~ msgid ""
+#~ "Your license key has been disabled. Please <a href=\"%1$s\" target="
+#~ "\"_blank\">contact support</a> for more information."
+#~ msgstr ""
+#~ "Votre clé de licence a été désactivée. Merci de a href=« %1$s\" target="
+#~ "\"_blank\">renouveler votre clé de licence</a>."
+
+#~ msgid ""
+#~ "Invalid license. Please <a href=\"%1$s\" target=\"_blank\">visit your "
+#~ "account page</a> and verify it."
+#~ msgstr ""
+#~ "Licence invalide. Merci de <a href=\"%1$s\" target=\"_blank\">visiter "
+#~ "votre page de compte</a> et vérifiez-le."
+
+#~ msgid ""
+#~ "Your %1$s is not active for this URL. Please <a href=\"%2$s\" target="
+#~ "\"_blank\">visit your account page</a> to manage your license key URLs."
+#~ msgstr ""
+#~ "Votre %1$s n'est pas actif pour cette URL. Merci de <a href=\"%2$s\" "
+#~ "target=\"_blank\">consulter votre page de compte</a> pour gérer vos URL "
+#~ "de clé de licence."
+
+#~ msgid "This appears to be an invalid license key for %1$s."
+#~ msgstr "Cela semble être une clé de licence invalide pour %1$s."
+
+#~ msgid ""
+#~ "Your license key has reached its activation limit. <a href=\"%1$s\">View "
+#~ "possible upgrades</a> now."
+#~ msgstr ""
+#~ "Votre clé de licence a atteint sa limite d'activation. <a href=\"%1$s"
+#~ "\">Voir les améliorations possibles</a> maintenant."
+
+#~ msgid ""
+#~ "The key you entered belongs to a bundle, please use the product specific "
+#~ "license key."
+#~ msgstr ""
+#~ "La clé que vous avez entrée appartient à un pack, merci d’utilisez la clé "
+#~ "de licence spécifique au produit."
+
+#~ msgid "unknown_error"
+#~ msgstr "unknown_error"
+
+#~ msgid ""
+#~ "There was an error with this license key: %1$s. Please <a href=\"%2$s"
+#~ "\">contact our support team</a>."
+#~ msgstr ""
+#~ "Une erreur s'est produite avec cette clé de licence de : %1$s. Merci de "
+#~ "<a href=\"%2$s\">contacter notre équipe de support</a>."
+
+#~ msgid "License key never expires."
+#~ msgstr "La clé de licence n'expire jamais."
+
+#~ msgid ""
+#~ "Your license key expires soon! It expires on %1$s. <a href=\"%2$s\" "
+#~ "target=\"_blank\">Renew your license key</a>."
+#~ msgstr ""
+#~ "Votre clé de licence expire bientôt ! Elle expire le  %1$s. <a href=\"%2$s"
+#~ "\" target=\"_blank\">Renouvelez votre clé de licence</a>."
+
+#~ msgid "Your license key expires on %1$s."
+#~ msgstr "Votre clé de licence expire le %1$s."
+
+#~ msgid "To receive updates, please enter your valid %1$s license key."
+#~ msgstr ""
+#~ "Pour recevoir des mises à jour, entrez une clé de licence %1$s valide."
+
+#~ msgid "%1$s License Key"
+#~ msgstr "Clé de licence %1$s "
+
+#~ msgid "Deactivate License"
+#~ msgstr "Désactiver la Licence"
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+#~ msgstr ""
+#~ "Il existe une nouvelle version disponible de %1$s. <a target=\"_blank\" "
+#~ "class=\"thickbox\" href=\"%2$s\">Voir les détails de la version  %3$s</a>."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+#~ "\">update now</a>."
+#~ msgstr ""
+#~ "Il existe une nouvelle version disponible de %1$s. <a target=\"_blank\" "
+#~ "class=\"thickbox\" href=\"%2$s\">Voir les détails de la version %3$s</a> "
+#~ "ou <a href=\"%4$s\">mettre à jour maintenant</a>."
+
+#~ msgid "You do not have permission to install plugin updates"
+#~ msgstr ""
+#~ "Vous n'avez pas la permission d'installer des mises à jour d’extension"
+
+#~ msgid ""
+#~ "Thanks for choosing OceanWP! You can read hints and tips on how get the "
+#~ "most out of your new theme on the %1$swelcome screen%2$s."
+#~ msgstr ""
+#~ "Merci d'avoir choisi OceanWP ! Vous pouvez lire des conseils et astuces "
+#~ "sur la façon d'obtenir le meilleur de votre nouveau thème sur l'écran "
+#~ "%1$sde bienvenuen%2$s."
+
+#~ msgid "Get started with OceanWP"
+#~ msgstr "Commencer avec OceanWP"
+
+#~ msgid "Theme"
+#~ msgstr "Thème"
+
+#~ msgid "Join us on Twitter"
+#~ msgstr "Nous retrouver sur Twitter"
+
+#~ msgid "Join us on Facebook"
+#~ msgstr "Nous retrouver sur Facebook"
+
+#~ msgid "Find us on GitHub"
+#~ msgstr "Nous trouver sur GitHub"
+
+#~ msgid ""
+#~ "OceanWP is the perfect theme for your project. Lightweight and highly "
+#~ "extendible, it will enable you to create almost any type of site with a "
+#~ "beautiful & professional design. There are several options to personalise "
+#~ "your website, multiple widget regions, a responsive design and much more. "
+#~ "Developers will love his extensible codebase making it a joy to customise "
+#~ "and extend."
+#~ msgstr ""
+#~ "OceanWP est le thème parfait pour votre projet. Léger et hautement "
+#~ "extensible, il vous permettra de créer presque n'importe quel type de "
+#~ "site avec un design magnifique et professionnel. Il existe plusieurs "
+#~ "options pour personnaliser votre site Web, plusieurs zones de widgets, un "
+#~ "design responsif et bien plus encore. Les développeurs aimeront sa base "
+#~ "de code extensible, ce qui permet de le personnaliser facilement."
+
+#~ msgid "The perfect theme to use with your favorite page builder!"
+#~ msgstr ""
+#~ "Le thème parfait à utiliser avec votre constructeur de pages préféré !"
+
+#~ msgid "Extend his functionalities with our extensions"
+#~ msgstr "Étendre ses fonctionnalités avec nos extensions"
+
+#~ msgid ""
+#~ "Check our free and premium extensions that extend OceanWP&rsquo;s "
+#~ "functionality and make it more powerful."
+#~ msgstr ""
+#~ "Consultez nos extensions gratuites et Premium qui étendent la "
+#~ "fonctionnalité d'OceanWP et le rendent plus performant."
+
+#~ msgid "Ocean Extra"
+#~ msgstr "Extras OceanWP"
+
+#~ msgid "free"
+#~ msgstr "gratuit"
+
+#~ msgid ""
+#~ "Add extra features like metaboxes, import/export and a panel to activate "
+#~ "the extensions."
+#~ msgstr ""
+#~ "Ajoutez des fonctionnalités supplémentaires comme métabox, import/export "
+#~ "et un panneau pour activer les extensions."
+
+#~ msgid ""
+#~ "Add some awesome new widgets to the popular free page builder Elementor."
+#~ msgstr ""
+#~ "Ajoutez de nouveaux widgets géniaux au populaire Créateur de Pages "
+#~ "Elementor (gratuit)."
+
+#~ msgid ""
+#~ "Generates an unlimited number of sidebars and place them on any page or "
+#~ "post."
+#~ msgstr ""
+#~ "Gérez un nombre illimité de barres latérales et placez-les sur n'importe "
+#~ "quelle page ou article."
+
+#~ msgid "Sticky Header"
+#~ msgstr "Entête collant"
+
+#~ msgid ""
+#~ "A simple extension to attach the header at the top of your screen with an "
+#~ "animation."
+#~ msgstr ""
+#~ "Une extension simple pour joindre l'entête en haut de votre écran avec "
+#~ "une animation."
+
+#~ msgid "Footer Callout"
+#~ msgstr "Bloc d’appel en pied de page"
+
+#~ msgid ""
+#~ "Add some relevant/important information about your company or product in "
+#~ "your footer."
+#~ msgstr ""
+#~ "Ajoutez des informations pertinentes ou importantes sur votre entreprise "
+#~ "ou votre produit dans votre pied de page."
+
+#~ msgid "Side Panel"
+#~ msgstr "Panneau latéral"
+
+#~ msgid ""
+#~ "Display a panel on the right or left with your favorite widgets by "
+#~ "clicking on an icon in the menu."
+#~ msgstr ""
+#~ "Affiche un panneau à droite ou à gauche avec vos widgets favoris en "
+#~ "cliquant sur une icône dans le menu."
+
+#~ msgid ""
+#~ "Import the OceanWP demo content, widgets and customizer settings with one "
+#~ "click."
+#~ msgstr ""
+#~ "Importez le contenu de démonstration OceanWP, les widgets et les "
+#~ "paramètres personnalisés en un clic."
+
+#~ msgid "Social Sharing"
+#~ msgstr "Partage social"
+
+#~ msgid ""
+#~ "A simple extension to add your prefered social sharing buttons to your "
+#~ "single posts."
+#~ msgstr ""
+#~ "Une extension simple pour ajouter vos boutons de partage social préférés "
+#~ "à vos articles."
+
+#~ msgid "View all OceanWP extensions"
+#~ msgstr "Voir toutes les extensions OceanWP"
+
+#~ msgid "Create your WordPress site quickly with Themecloud"
+#~ msgstr "Créez votre site WordPress rapidement avec Themecloud"
+
+#~ msgid "What is Themecloud?"
+#~ msgstr "Qu'est-ce que Themecloud ?"
+
+#~ msgid ""
+#~ "It&rsquo;s a better way to build WordPress websites, instant setup, no "
+#~ "coding required. They are removed all of the technical hurdles standing "
+#~ "between you and your ideal site. Don’t worry about installations, "
+#~ "configurations, migrations and maintenance. Focus on creating stellar "
+#~ "content – and watch your business skyrocket! Not convinced yet?"
+#~ msgstr ""
+#~ "C'est une meilleure façon de créer des sites Web WordPress, une "
+#~ "configuration instantanée, aucun codage requis. Tous les obstacles "
+#~ "techniques sont simplifiés entre vous et votre site idéal. Ne vous "
+#~ "inquiétez pas pour les installations, les configurations, les migrations "
+#~ "et la maintenance. Concentrez-vous sur la création de contenu, et "
+#~ "regardez votre notoriété progresser en flèche ! Pas encore convaincu ?"
+
+#~ msgid "Look at this great review from WPKube"
+#~ msgstr "Regardez cette excellente critique de WPKube"
+
+#~ msgid "( 15-day free trial, no credit card required )"
+#~ msgstr "(15 jours d’essai gratuit, sans carte de crédit requise)"
+
+#~ msgid "Learn more about Themecloud"
+#~ msgstr "En savoir plus sur Themecloud"
+
+#~ msgid "Getting started with OceanWP"
+#~ msgstr "Pour commencer avec OceanWP"
+
+#~ msgid ""
+#~ "Take a look in the options of the Customizer and see yourself how easy "
+#~ "and quick to customize the theme as you wish."
+#~ msgstr ""
+#~ "Jetez un coup d'oeil dans les options du Customizer et voyez comment vous "
+#~ "pouvez simplifier et personnaliser le thème comme vous le souhaitez."
+
+#~ msgid "Upload your logo"
+#~ msgstr "Télécharger votre logo"
+
+#~ msgid "Add your own logo and retina logo used for the mobile design."
+#~ msgstr ""
+#~ "Ajoutez votre propre logo et logo rétina utilisé pour la conception "
+#~ "mobile."
+
+#~ msgid "Go to the option"
+#~ msgstr "Aller à l’option"
+
+#~ msgid "Add your favicon"
+#~ msgstr "Télécharger votre favicon"
+
+#~ msgid "The favicon is used as a browser and app icon for your website."
+#~ msgstr ""
+#~ "Le favicon est utilisé comme icône de navigateur et d'application pour "
+#~ "votre site."
+
+#~ msgid "Choose your primary color"
+#~ msgstr "Choisissez votre couleur primaire"
+
+#~ msgid "Replace the default primary and hover color by your own colors."
+#~ msgstr ""
+#~ "Remplacez la couleur par défaut et la couleur au survol par vos propres "
+#~ "couleurs."
+
+#~ msgid "Change the links color"
+#~ msgstr "Changer la couleur des liens"
+
+#~ msgid "Choose the color and hover color of your links for the entire site."
+#~ msgstr ""
+#~ "Choisissez la couleur et couleur de survol des liens pour l'ensemble du "
+#~ "site."
+
+#~ msgid "Choose your typography"
+#~ msgstr "Choisissez votre typographie"
+
+#~ msgid "Choose your own typography for any parts of your website."
+#~ msgstr ""
+#~ "Choisissez votre propre typographie pour toutes les parties de votre site."
+
+#~ msgid "Top bar options"
+#~ msgstr "Options barre supérieure"
+
+#~ msgid "Enable/Disable the top bar, add your own paddings and colors."
+#~ msgstr ""
+#~ "Activer/Désactiver la barre supérieure, ajouter vos propres marges "
+#~ "internes et couleurs."
+
+#~ msgid "Header options"
+#~ msgstr "Options de l’entête"
+
+#~ msgid "Choose the style, the height and the colors for your site header."
+#~ msgstr ""
+#~ "Choisissez le style, la hauteur et les couleurs pour l'entête de votre "
+#~ "site."
+
+#~ msgid "Footer bottom options"
+#~ msgstr "Options du Copyright"
+
+#~ msgid "Add your copyright, paddings and colors for the footer bottom."
+#~ msgstr ""
+#~ "Ajoutez un Copyright, marge interne et couleurs pour le bas de page."
+
+#~ msgid "Customize Your Site"
+#~ msgstr "Personnaliser votre site"
+
+#~ msgid "Contribute to OceanWP"
+#~ msgstr "Contribuer à OceanWP"
+
+#~ msgid ""
+#~ "You&rsquo;ve found a bug? Want to contribute a patch, create a new "
+#~ "feature or extension?"
+#~ msgstr ""
+#~ "Vous avez trouvé un bogue ? Voulez-vous contribuer un correctif, créer "
+#~ "une nouvelle fonctionnalité ou une extension ?"
+
+#~ msgid "GitHub is the place to go!"
+#~ msgstr "GitHub est l'endroit où aller !"
+
+#~ msgid ""
+#~ "You can find a wide range of information on how to use and customise "
+#~ "OceanWP in our"
+#~ msgstr ""
+#~ "Vous pouvez trouver un large éventail d'informations sur la façon "
+#~ "d'utiliser et de personnaliser OceanWP dans notre"
+
+#~ msgid "If you need help?"
+#~ msgstr "Si vous avez besoin d'aide ?"
+
+#~ msgid "open a support ticket"
+#~ msgstr "Ouvrir un ticket de support"
+
+#~ msgid "Recommended plugins"
+#~ msgstr "Extensions recommandées"
+
+#~ msgid ""
+#~ "Below you will find links to plugins I personally like and recommend. "
+#~ "None of these plugins are required for your theme to work, they simply "
+#~ "add additional functionality."
+#~ msgstr ""
+#~ "Vous trouverez ci-dessous des liens vers des extensions que j'aime "
+#~ "personnellement et je vous recommande. Aucune de ces extensions n'est "
+#~ "nécessaire pour que votre thème fonctionne, elles ajoutent simplement des "
+#~ "fonctionnalités supplémentaires."
+
+#~ msgid ""
+#~ "Manage multiple contact forms and customize the form and the mail "
+#~ "contents with markups."
+#~ msgstr ""
+#~ "Gérez les formulaires de contact multiples et personnalisez le formulaire "
+#~ "et les contenus du courrier avec des balises."
+
+#~ msgid ""
+#~ "Gravity Forms is the easiest tool to create advanced forms for your "
+#~ "WordPress powered website."
+#~ msgstr ""
+#~ "GravityForms est l'outil le plus simple pour créer des formulaires "
+#~ "avancés pour votre site Web WordPress."
+
+#~ msgid ""
+#~ "The most advanced frontend drag & drop page builder. Create high-end, "
+#~ "pixel perfect websites."
+#~ msgstr ""
+#~ "Le constructeur de page par glisser/déposer le plus avancé. Créez des "
+#~ "sites Web modernes, précis et haut de gamme."
+
+#~ msgid ""
+#~ "A drag and drop WordPress Page Builder. Create with ease beautiful & "
+#~ "professional pages."
+#~ msgstr ""
+#~ "Un créateur de pages par glissé/déposé pour WordPress. Créez facilement "
+#~ "des pages magnifiques et professionnelles."
+
+#~ msgid ""
+#~ "Visual Composer is the ultimate plugin for building every WordPress site "
+#~ "without coding."
+#~ msgstr ""
+#~ "Visual Composer est l’extension ultime pour construire votre site "
+#~ "WordPress sans coder."
+
+#~ msgid ""
+#~ "It&rsquo;s not just a slider, build modern & mobile friendly "
+#~ "presentations for your website in no time."
+#~ msgstr ""
+#~ "Ce n’est pas seulement un diaporama, créez des présentations conviviales "
+#~ "modernes et mobiles pour votre site Web en un rien de temps."
+
+#~ msgid ""
+#~ "A powerful and flexible plugin that makes it a breeze for users to sign-"
+#~ "up and become members."
+#~ msgstr ""
+#~ "Une extension puissante et flexible qui permet aux utilisateurs de "
+#~ "s'inscrire et de devenir membres."
+
+#~ msgid ""
+#~ "WooCommerce is a free eCommerce plugin that allows you to sell anything, "
+#~ "beautifully."
+#~ msgstr ""
+#~ "WooCommerce est une extension de e-commerce gratuite qui vous permet de "
+#~ "vendre de tout, magnifiquement."
+
+#~ msgid "More Recommended Plugins"
+#~ msgstr "Plus d’extensions recommandées"
+
+#~ msgid "Sale!"
+#~ msgstr "Promo !"

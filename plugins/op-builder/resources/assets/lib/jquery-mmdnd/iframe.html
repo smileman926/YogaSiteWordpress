@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            * { box-sizing: border-box; }
+            html, body { position: relative; margin: 0; padding: 0; text-align: center; }
+            div.draggable-container { margin: 0; padding: 0.5em; }
+            [data-jquery-mmdnd-droppable] { max-width: 640px; margin: 0.5em auto; padding: 0.5em; background: rgba(0,0,0,0.25); transition: 0.2s ease all; }
+            [data-jquery-mmdnd-droppable="00f"] { background: rgba(0,0,255,0.25); }
+            [data-jquery-mmdnd-droppable="0f0"] { background: rgba(0,255,0,0.25); }
+            [data-jquery-mmdnd-droppable="f00"] { background: rgba(255,0,0,0.25); }
+            [data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] { box-shadow: 0 0 2px 2px rgba(0,0,0,0.5); }
+            [data-jquery-mmdnd-draggable] { display: inline-block; margin: 0.5em; padding: 0.5em 1em; border-radius: 0.25em; color: #666; border: 1px solid #999; }
+            [data-jquery-mmdnd-draggable="00f"] { background: #00f; }
+            [data-jquery-mmdnd-draggable="0f0"] { background: #0f0; }
+            [data-jquery-mmdnd-draggable="f00"] { background: #f00; }
+            .wrapper { display: flex; height: 60vh; margin: 1em; padding: 0; }
+            .frame { flex: 1 1 0; flex-basis: 0; padding: 0 1em; }
+            iframe { display: block; width: 100%; height: 100%; border: 1px solid #aaa; }
+        </style>
+    </head>
+    <body>
+        <p data-jquery-mmdnd-droppable="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem perspiciatis nihil tempora sapiente, ratione asperiores, sit iste, voluptatum voluptatibus ipsam, reiciendis quaerat? At laborum nostrum, recusandae dolores excepturi cum sed.</p>
+        <p data-jquery-mmdnd-droppable="00f">Quibusdam mollitia vitae dicta minima repellat quae debitis consectetur aperiam blanditiis eos magnam perspiciatis corrupti harum ut explicabo rerum odit, autem dignissimos expedita, cumque tempore a? Consequuntur velit, culpa. Iusto.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Architecto at fugit, placeat quia, unde modi eius. Ipsam molestias suscipit dolor accusantium nihil fugit ex explicabo neque repellat, commodi alias minima error, iure libero. Ab nam, odio dolor voluptatem.</p>
+        <p data-jquery-mmdnd-droppable="f00">Fugit laudantium aperiam fugiat totam! Minus distinctio quam vel, autem quisquam assumenda, inventore ad nostrum odio eum a commodi corporis eligendi cumque eos non dignissimos soluta. Debitis quo ipsum facilis.</p>
+        <p data-jquery-mmdnd-droppable="">Laborum, magnam. Est veritatis unde deserunt, ut rerum, nulla repellendus dolor ex. Vero doloremque dolores qui laboriosam dicta obcaecati, nam, illum autem perferendis architecto doloribus harum quod ut omnis nihil!</p>
+        <div class="draggable-container">
+            <span class="draggable" data-jquery-mmdnd-draggable="00f"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="0f0"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="f00"><b>Drag Me!!!</b></span>
+        </div>
+        <div class="wrapper">
+            <div class="frame">
+                <iframe src="_iframe0.html" frameborder="0"></iframe>
+            </div>
+            <div class="frame">
+                <iframe src="_iframe1.html" frameborder="0"></iframe>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(document)
+                .on("mmdndpredrag", function(e) {
+                    console.log("predrag", e.target);
+                })
+                .on("mmdnddragstart", function(e) {
+                    e.setData("foo", $(e.target).attr("data-jquery-mmdnd-draggable"));
+                    console.log("dragstart", e.target);
+                })
+                .on("mmdnddrop", function(e) {
+                    console.log("drop", e.target, e.getData("foo"));
+                })
+                .on("mmdnddragenter", function(e) {
+                    console.log("dragenter", e.target);
+                })
+                .on("mmdnddragover", function(e) {
+                    console.log("dragover", e.target);
+                })
+                .on("mmdnddragleave", function(e) {
+                    console.log("dragleave", e.target);
+                })
+                .on("mmdnddragend", function(e) {
+                    console.log("dragend", e.target);
+                });
+        </script>
+    </body>
+</html>

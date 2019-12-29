@@ -1,0 +1,19 @@
+html.op3-screenshot #op3-designer-element .op3-element[data-op3-element-type="video"] {
+    .op3-element-iframe-placeholder {
+        transform: translateZ(0);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        &::before {
+            content: "\ef22";
+        }
+    }
+
+    // we have placeholder, hide overlay
+    .op3-video-image-overlay {
+        display: none !important;
+    }
+}

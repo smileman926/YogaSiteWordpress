@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Input range test page</title>
+        <link rel="stylesheet" href="jquery-input-range.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+        <style>
+            .jquery-input-range-widget { width: 240px; font-family: 'Open Sans', sans-serif; }
+            .jquery-input-range { display: inline-block !important; }
+            html { font-size: 16px; }
+            label { font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <label>This input field will be hidden. Em units are relative to this label (uses font size 12px), while rem units are relative to document (font size 16px)</label>
+        <input type="text" value="12px" data-min="10" data-max="48" data-step="1" data-units="px, em, rem" />
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-input-range.js"></script>
+        <script>
+            ;(function() {
+                var $target = $("label:first");
+
+                $("input")
+                    .on("inputrangechange", function(e, o) {
+                        console.log(o.numeric(), o.unit(),o);
+                    })
+                    .inputRange({
+                        data: {
+                            target: $target,
+                            parent: $target.closest("html"),
+                        },
+                        convert: function(numeric, oldUnit, newUnit) {
+                            var em = parseFloat(this.options("data").target.css("font-size")),
+                                rem = parseFloat(this.options("data").parent.css("font-size")),
+                                min = 6,
+                                max = 48,
+                                rate = 1,
+                                precision = 0;
+
+                            // convertion rate
+                            if (oldUnit == "px" && newUnit == "em")
+                                rate = 1/em;
+                            else if (oldUnit == "em" && newUnit == "px")
+                                rate = em;
+                            else if (oldUnit == "px" && newUnit == "rem")
+                                rate = 1/rem;
+                            else if (oldUnit == "rem" && newUnit == "px")
+                                rate = rem;
+                            else if (oldUnit == "rem" && newUnit == "em")
+                                rate = rem/em;
+                            else if (oldUnit == "em" && newUnit == "rem")
+                                rate = em/rem;
+
+                            // min and max
+                            if (newUnit == "em")
+                                min = min/em;
+                            else if (newUnit == "rem")
+                                min = min/rem;
+                            if (newUnit == "em")
+                                max = max/em;
+                            else if (newUnit == "rem")
+                                max = max/rem;
+
+                            // step
+                            if (newUnit == "em" || newUnit == "rem" || newUnit == "%")
+                                precision = 3;
+
+                            return {
+                                numeric: (numeric*rate).toFixed(precision)*1,
+                                min: min.toFixed(precision)*1,
+                                max: max.toFixed(precision)*1,
+                                step: 1 / Math.pow(10, precision),
+                            }
+                        },
+                    });
+            })();
+        </script>
+    </body>
+</html>

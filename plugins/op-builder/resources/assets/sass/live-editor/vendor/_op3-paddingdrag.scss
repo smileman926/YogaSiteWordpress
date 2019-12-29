@@ -1,0 +1,8 @@
+// Ensure toolbar is not messing up the padding drag
+.jquery-paddingdrag-dragging #toolbar {
+    opacity: 0 !important;
+}
+
+.jquery-paddingdrag-dragging #toolbar * {
+    pointer-events: none !important;
+}

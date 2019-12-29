@@ -1,0 +1,129 @@
+.opd-integrations {
+    margin-top: 20px;
+
+    h1 {
+        i {
+            color: $color__ops-logoBlue;
+        }
+    }
+
+    @import "integrations/connected-integrations";
+}
+
+.opd-dashboard-integrations-list {
+
+    .opd-dashboard-integrations-list-item {
+        width: 33.3%;
+        margin-bottom: 30px;
+
+        &.opd-hide {
+            display: none;
+        }
+
+        .ops-white-box {
+            box-sizing: border-box;
+            margin: 0 15px;
+            border: 1px solid $color__ops-borderLight;
+
+            .opd-integration-enter-credentials-btn, .opd-integration-enter-oauth-credentials-btn {
+                display: block;
+            }
+
+            img.opd-integration-logo {
+                margin-bottom: 15px;
+            }
+
+            .opd-integration-enter-credentials-form, div.opd-integration-enter-oauth-credentials-form {
+                display: block;
+                text-align: left;
+                margin-top: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: $transition__maxHeight-margin-linear;
+
+                .ops-button {
+                    min-width: 100%;
+                }
+
+                input {
+
+                }
+            }
+
+            div.opd-integration-connect {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                opacity: 0;
+                transition: $transition__opacity-linear;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                a.opd-integration-connect-choose {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    min-width: 70%;
+                }
+            }
+        }
+
+        &.opd-open {
+            .ops-white-box {
+                div.opd-integration-connect {
+                    display: none;
+                }
+
+                .opd-integration-enter-credentials-form, div.opd-integration-enter-oauth-credentials-form {
+                    max-height: 500px;
+                    margin-top: 25px;
+                }
+            }
+
+        }
+    }
+}
+
+.opd-dashboard-integrations-list-item {
+    .ops-white-box {
+        .d-flex {
+            & > div {
+                width: 100%;
+            }
+        }
+
+        .opd-integration-enter-credentials-btn, .opd-integration-enter-oauth-credentials-btn {
+            display: none;
+        }
+    }
+}
+
+.oauth-connection-actions {
+    .opd-integration-enter-oauth-credentials-form-submit-btn {
+        display: inline-block;
+    }
+
+    .opd-integration-connect-choose {
+        display: none;
+    }
+
+    &.opd-connection-actions-for-connected {
+        .opd-integration-enter-oauth-credentials-form-submit-btn {
+            display: none;
+        }
+
+        &.opd-connection-edit-actions-for-connected .opd-integration-enter-oauth-credentials-form-submit-btn {
+            display: inline-block;
+        }
+
+        .opd-integration-connect-choose {
+            display: inline-block;
+        }
+    }
+}

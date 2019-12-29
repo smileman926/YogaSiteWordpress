@@ -1,0 +1,33 @@
+// Lock margin & margin handles to prevent layout breaking
+form[data-op3-element-options-type="popoverlay"] {
+    .op3-boxmodel {
+        .op3-boxmodel-margin-top,
+        .op3-boxmodel-margin-bottom,
+        .op3-boxmodel-margin-left,
+        .op3-boxmodel-margin-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="popoverlay"] {
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"],
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="copy"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+[data-op3-force-visibility] .op3-element[data-op3-element-type="row"] {
+    display: flex !important;
+}
+
+// Hide flex grid cell sizer handles
+// when wrap columns is enabled
+.op3-element[data-op3-element-type="row"] {
+    > [data-op3-element-container] > [data-op3-children][data-op3-wrap-columns="1"] {
+        > [data-op3-element-type="column"] {
+            > .jquery-flex-grid-cell-sizer-handle {
+                display: none;
+            }
+        }
+    }
+}
+
+// Hide flex grid cell sizer handles on tablet
+// when stack columns on tablet is enabled
+@media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile) {
+    .op3-element[data-op3-element-type="row"] {
+        > [data-op3-element-container] > [data-op3-children][data-op3-stack-columns-tablet="1"] {
+            > [data-op3-element-type="column"] {
+                > .jquery-flex-grid-cell-sizer-handle {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Hide flex grid cell sizer handles on mobile
+// when stack columns on mobile is enabled
+@media (max-width: $breakpoint-mobile) {
+    .op3-element[data-op3-element-type="row"] {
+        > [data-op3-element-container] > [data-op3-children][data-op3-stack-columns-mobile="1"] {
+            > [data-op3-element-type="column"] {
+                > .jquery-flex-grid-cell-sizer-handle {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+[data-op3-element-type="customhtml"] {
+    [data-op3-code-html] {
+    	pointer-events: none;
+    	display: none;
+    }
+
+    .op3-custom-html-wrapper {
+		&:before {
+			content: "[Custom HTML Element]";
+		}
+	}
+
+}

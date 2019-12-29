@@ -1,0 +1,47 @@
+.ops-secondary-menu {
+    margin: 40px auto;
+
+    nav {
+        display: inline-block;
+
+        ul {
+            border-bottom: 1px solid $color__ops-borderBlue;
+            margin-bottom: 0;
+
+            li {
+                display: inline-block;
+                margin: 0 15px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                a {
+                    padding: 25px 0;
+                    color: $color__ops-gray;
+                    text-decoration: none;
+                    display: inline-block;
+
+                    &:hover {
+                        color: $color__ops-logoBlue;
+                    }
+                }
+
+                &.selected {
+                    a {
+                        color: $color__ops-logoBlue;
+                    }
+                }
+            }
+        }
+    }
+
+    .ops_movingBorderMenuHover {
+        bottom: -1px;
+    }
+
+}

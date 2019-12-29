@@ -1,0 +1,112 @@
+/* elements */
+.jquery-colorpicker { }
+.jquery-colorpicker-widget { position: absolute; display: none; width: 15em; margin: 0; padding: 1em; font-size: 16px; color: #666; background-color: #fff; border: 1px solid #ccc; border-radius: 0.25em; font-family: Helvetica, "Helvetica Neue", Arial, sans-serif; user-select: none; z-index: 1000; }
+.jquery-colorpicker-widget.jquery-colorpicker-show { display: block; }
+.jquery-colorpicker-widget[data-tab="edit"] { width: 30em; }
+
+/* preview */
+.jquery-colorpicker-preview { position: relative; display: inline-block; outline: none; vertical-align: middle; font-size: inherit; font-size: 0.6875em; color: #888; }
+.jquery-colorpicker-preview-css { width: 2em; height: 2em; margin-left: 0.5em; line-height: 1; color: red; background-color: currentColor; box-shadow: inset 0 0 0 1em #fff; border: 1px solid #ccc; vertical-align: middle; border-radius: 0.1875em; box-sizing: border-box; }
+.jquery-colorpicker-preview-css:first-child { margin-left: 0; }
+.jquery-colorpicker-preview-css::before,
+.jquery-colorpicker-preview-css::after { content: ""; position: absolute; display: block; top: 0.25em; right: 0.25em; bottom: 0.25em; left: 0.25em; }
+.jquery-colorpicker-preview-css::before { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==) center center; }
+.jquery-colorpicker-preview-css::after { color: inherit; background-color: currentColor; box-shadow: 0 0 0 0 currentColor; }
+.jquery-colorpicker-preview-scheme:empty { display: none; }
+.jquery-colorpicker-preview-scheme::before { content: ""; display: inline-block; width: 1.25em; height: 1.25em; margin: 0 0.25em 0 0.5em; vertical-align: middle; background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" version="1.1"><path fill="rgb(153,153,153)" d="m 13.90685,3.8104027 c -3.601774,-1.6984885 -6.6032525,1.7983994 -8.0039424,0 -0.5002464,-0.6993776 0.7003449,-1.9982217 0,-2.8974214 -0.5002464,-0.59946656 -1.7008378,-0.49955547 -2.4011828,0 C 1.4006899,2.4116475 0,4.8095135 0,7.5071127 0,11.903201 3.6017741,15.5 8.0039425,15.5 11.705766,15.5 14.807293,13.002223 15.707737,9.605245 16.107935,8.5062235 16.508132,5.1092467 13.90685,3.8104027 Z M 3.0014784,8.0066681 c -0.6002956,0 -1.0004927,-0.3996443 -1.0004927,-0.9991108 0,-0.5994665 0.4001971,-0.9991108 1.0004927,-0.9991108 0.6002957,0 1.0004928,0.3996443 1.0004928,0.9991108 0,0.5994665 -0.4001971,0.9991108 -1.0004928,0.9991108 z m 2.0009857,3.9964439 c -0.6002958,0 -1.0004929,-0.399644 -1.0004929,-0.999111 0,-0.599467 0.4001971,-0.999112 1.0004929,-0.999112 0.6002956,0 1.0004928,0.399645 1.0004928,0.999112 0,0.599467 -0.4001972,0.999111 -1.0004928,0.999111 z m 4.0019712,1.998222 c -0.6002956,0 -1.0004928,-0.399645 -1.0004928,-0.999111 0,-0.599467 0.4001972,-0.999111 1.0004928,-0.999111 0.6002956,0 1.0004927,0.399644 1.0004927,0.999111 0,0.599466 -0.4001971,0.999111 -1.0004927,0.999111 z m 3.0014787,-3.996445 c -1.100542,0 -2.000986,-0.899199 -2.000986,-1.9982209 0,-1.0990219 0.900444,-1.9982216 2.000986,-1.9982216 1.100542,0 2.000985,0.8991997 2.000985,1.9982216 0,1.0990219 -0.900443,1.9982209 -2.000985,1.9982209 z" /></svg>') center center no-repeat; background-size: cover; }
+
+/* reset */
+.jquery-colorpicker-widget article,
+.jquery-colorpicker-widget nav,
+.jquery-colorpicker-widget ul,
+.jquery-colorpicker-widget li,
+.jquery-colorpicker-widget button,
+.jquery-colorpicker-widget a { display: block; margin: 0; padding: 0; font-size: 1em; line-height: 1; }
+.jquery-colorpicker-widget > * { margin-bottom: 1em; }
+.jquery-colorpicker-widget p { font-size: 0.8em; line-height: 1.4; user-select: text; }
+.jquery-colorpicker-widget label { display: inline-block; font-size: 1em; color: #666; }
+.jquery-colorpicker-widget input { display: inline-block; width: 6em; height: 2em; line-height: normal; margin: 0 0.125em 0 0.5em; padding: 0 0.5em; font-family: inherit; font-size: inherit; font-size: 0.6875em; font-family: inherit; background: #fff; color: #999; border: 1px solid #ccc;  border-radius: 3px; box-sizing: border-box; vertical-align: top; outline: none; vertical-align: middle; }
+.jquery-colorpicker-widget label span { font-size: 0.6875em; vertical-align: middle; }
+.jquery-colorpicker-widget input[type="number"] { width: 4em; padding-right: 0; text-align: right; }
+
+/* classes */
+.jquery-colorpicker-row { display: block; width: 100%; }
+.jquery-colorpicker-split { position: relative; }
+.jquery-colorpicker-split > * { position: relative; }
+.jquery-colorpicker-split > *:first-child { width: calc(100% - 1em - 1.5em); }
+.jquery-colorpicker-split > *:last-child:not(:first-child) { width: 1.5em; margin-left: 1em; }
+.jquery-colorpicker-clearfix > * { float: left; }
+.jquery-colorpicker-clearfix::after { content: ""; clear: both; display: table; }
+.jquery-colorpicker-float-left { float: left; }
+.jquery-colorpicker-float-right { float: right; }
+
+/* align arrow */
+.jquery-colorpicker-widget::after { content: ""; position: absolute; width: 0; height: 0; border: 6px solid #fff; }
+.jquery-colorpicker-widget[data-align^="top"]::after { top: 100%; left: 50%; transform: translateX(-50%); border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; filter: drop-shadow(0 2px 1px #bbb); }
+.jquery-colorpicker-widget[data-align="top-left"]::after { left: calc(0% + var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align="top-right"]::after { left: calc(100% - var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align^="bottom"]::after { bottom: 100%; left: 50%; transform: translateX(-50%); border-top-color: transparent; border-right-color: transparent; border-left-color: transparent; filter: drop-shadow(0px -1px 0px #bbb); }
+.jquery-colorpicker-widget[data-align="bottom-left"]::after { left: calc(0% + var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align="bottom-right"]::after { left: calc(100% - var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align^="left"]::after { left: 100%; top: 50%; transform: translateY(-50%); border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; filter: drop-shadow(1px 0px 0px #bbb); }
+.jquery-colorpicker-widget[data-align="left-top"]::after { top: calc(0% + var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align="left-bottom"]::after { top: calc(100% - var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align^="right"]::after { right: 100%; top: 50%; transform: translateY(-50%); border-top-color: transparent; border-bottom-color: transparent; border-left-color: transparent; filter: drop-shadow(-1px 0px 0px #bbb); }
+.jquery-colorpicker-widget[data-align="right-top"]::after { top: calc(0% + var(--arrow-offset)); }
+.jquery-colorpicker-widget[data-align="right-bottom"]::after { top: calc(100% - var(--arrow-offset)); }
+
+/* draggable */
+.jquery-colorpicker-draggable { position: relative; cursor: crosshair; }
+.jquery-colorpicker-draggable-handle { position: absolute; display: block; top: auto; right: auto; bottom: auto; left: auto; width: 8px; height: 8px; z-index: 1200; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 0 2px #000, inset 0 0 0 2px #fff; box-sizing: content-box; }
+.jquery-colorpicker-draggable.jquery-colorpicker-draggable-horizontal .jquery-colorpicker-draggable-handle { top: 50% !important; height: 125%; background-color: #fff; border-radius: 0.125em; box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5); }
+.jquery-colorpicker-draggable.jquery-colorpicker-draggable-vertical .jquery-colorpicker-draggable-handle { left: 50% !important; width: 100%; height: 2px; border: 2px solid #000; border-radius: 4px; box-shadow: none; }
+html.jquery-colorpicker-draggable-dragging,
+html.jquery-colorpicker-draggable-dragging * { cursor: crosshair !important; }
+
+/* tabs */
+.jquery-colorpicker-tabs { margin-bottom: 0.5em !important; }
+.jquery-colorpicker-widget [data-tab-open] { height: auto; font-size: 0.8em; line-height: 1.26; font-weight: normal; text-decoration: none; color: #8e8e8e;  }
+.jquery-colorpicker-widget [data-tab-open]:not([data-tab-open="storage"])::before { content: "|"; margin: 0 0.5em; color: #8e8e8e; }
+.jquery-colorpicker-widget [data-tab-open]:hover { color: #8e8e8e; }
+.jquery-colorpicker-widget [data-tab-open="edit"] { width: 1.5em; height: 1.5em; font-size: 1em; text-indent: -999px; overflow: hidden; background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj48dGl0bGU+c2V0dGluZ3MgZ2VhciA2MyAxPC90aXRsZT48ZyBjbGFzcz0ibmMtaWNvbi13cmFwcGVyIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9IiMxMTExMTEiIHN0cm9rZT0iIzExMTExMSI+PGNpcmNsZSBkYXRhLWNvbG9yPSJjb2xvci0yIiBmaWxsPSJub25lIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGN4PSIxNiIgY3k9IjE2IiByPSI0Ii8+IDxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzExMTExMSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMzEsMTl2LTZoLTQuNCBjLTAuMi0wLjgtMC42LTEuNi0xLTIuNGwzLjEtMy4xbC00LjItNC4ybC0zLjEsMy4xYy0wLjctMC40LTEuNS0wLjctMi40LTFWMWgtNnY0LjRjLTAuOCwwLjItMS42LDAuNi0yLjQsMUw3LjUsMy4zTDMuMyw3LjUgbDMuMSwzLjFjLTAuNCwwLjctMC43LDEuNS0xLDIuNEgxdjZoNC40YzAuMiwwLjgsMC42LDEuNiwxLDIuNGwtMy4xLDMuMWw0LjIsNC4ybDMuMS0zLjFjMC43LDAuNCwxLjUsMC43LDIuNCwxVjMxaDZ2LTQuNCBjMC44LTAuMiwxLjYtMC42LDIuNC0xbDMuMSwzLjFsNC4yLTQuMmwtMy4xLTMuMWMwLjQtMC43LDAuNy0xLjUsMS0yLjRIMzF6Ii8+PC9nPjwvc3ZnPg==') center center no-repeat; opacity: 0.5; background-size: cover; }
+.jquery-colorpicker-widget [data-tab-open].jquery-colorpicker-tab-selected,
+.jquery-colorpicker-widget [data-tab-open].jquery-colorpicker-tab-selected:hover { color: #666; }
+.jquery-colorpicker-widget [data-tab-content] { display: none; }
+.jquery-colorpicker-widget [data-tab-content].jquery-colorpicker-tab-selected { display: block; }
+.jquery-colorpicker-widget [data-tab-content],
+.jquery-colorpicker-widget [data-tab-content] > * { margin-top: 1em; }
+.jquery-colorpicker-widget [data-tab-content] > *:first-child { margin-top: 0; }
+.jquery-colorpicker-widget[data-tab] .jquery-colorpicker-tabs li:last-child { display: none; }
+.jquery-colorpicker-widget[data-tab="edit"] .jquery-colorpicker-tabs li { display: none; }
+.jquery-colorpicker-widget[data-tab="edit"] .jquery-colorpicker-tabs li:last-child { display: block; }
+
+/* color list (storage/scheme) */
+.jquery-colorpicker-list { display: flex !important; height: 1.5em; border-radius: 0.1876em; overflow: hidden; }
+.jquery-colorpicker-item { flex: 1; height: 100%; }
+.jquery-colorpicker-list a { position: relative; width: 100%; height: 100%; text-decoration: none; }
+.jquery-colorpicker-list a::before,
+.jquery-colorpicker-list a::after { content: ""; position: absolute; display: block; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; }
+.jquery-colorpicker-list a::before { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==) center center; }
+.jquery-colorpicker-list a::after { color: inherit; background-color: currentColor; box-shadow: 0 0 0 0 currentColor; }
+.jquery-colorpicker-list span { position: relative; display: block; top: 50%; line-height: 1; font-size: 0.6875em; font-weight: bold; text-align: center; color: #fff; text-shadow: 0 0 1px rgba(0,0,0,0.75); opacity: 0.5; z-index: 2; transform: translateY(-50%); }
+
+/* light/hue/alpha */
+.jquery-colorpicker-light { padding-top: calc(100% - 1em - 1.5em); color: red; background-color: currentColor; border-radius: 0.1875em; border-radius: 0.1876em; }
+.jquery-colorpicker-light::before,
+.jquery-colorpicker-light::after { content: ""; position: absolute; display: block; top: 0; right: 0; bottom: 0; left: 0; z-index: 1100; border-radius: 0.1875em; }
+.jquery-colorpicker-light::before { background-image: linear-gradient(to right, #fff, rgba(204, 154, 129, 0)); }
+.jquery-colorpicker-light::after { background-image: linear-gradient(to top, #000, rgba(204, 154, 129, 0)); }
+.jquery-colorpicker-hue { padding-top: calc(100% - 1em - 1.5em); background-image: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%); border-radius: 0.1875em; }
+.jquery-colorpicker-alpha { position: relative; height: 0.5em; color: red; background-color: transparent; }
+.jquery-colorpicker-alpha::before,
+.jquery-colorpicker-alpha::after { content: ""; position: absolute; display: block; top: 0; right: 0; bottom: 0; left: 0; z-index: 1; }
+.jquery-colorpicker-alpha::before { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==) center center; }
+.jquery-colorpicker-alpha::after { color: inherit; box-shadow: 0 0 0 0 currentColor; background-image: linear-gradient(to right, transparent, currentColor); }
+
+/* buttons */
+.jquery-colorpicker-action { display: block; width: 100%; height: 1.5em; background: transparent; color: #0071ff; border: 1px solid #0071ff; border-radius: 0.25em; cursor: pointer; }
+.jquery-colorpicker-action:active,
+.jquery-colorpicker-action:focus,
+.jquery-colorpicker-action:hover,
+.jquery-colorpicker-action:visited { background: transparent; }
+.jquery-colorpicker-action span { font-weight: normal; font-size: 0.6875em; }

@@ -1,0 +1,83 @@
+.op3-href-container {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding-right: 3em;
+    }
+
+    .op3-href-preview {
+        position: absolute;
+        right: 0.3em;
+        top: 0;
+        font-size: 1.5em;
+        height: 100%;
+        color: #8e8e8e;
+
+        &:hover {
+            color: $op-blue;
+        }
+    }
+
+    // Hide the link preview button
+    // when link is invalid
+    input:invalid + .op3-href-preview {
+        display: none;
+    }
+
+    .op3-icon {
+        position: absolute;
+        top: calc(50% + 1px);
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .autocomplete-suggestions {
+        background: #FFF;
+        overflow: auto;
+        border-radius: 0;
+        margin-top: -4px;
+        border-top: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .autocomplete-suggestion {
+        border-radius: 0;
+        margin: 0;
+        padding: 10px 20px 10px 10px;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+        text-align: left;
+        text-decoration: none;
+        color: #8e8e8e;
+        background-color: #fff;
+        outline: none;
+        border-radius: 0;
+        border: 1px solid #e8e8e8;
+        border-top: none;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .autocomplete-selected {
+        background: #f0f0f0;
+        box-shadow: inset 0 2px 0 0 rgba(241, 241, 241, 0.37);
+    }
+
+    .autocomplete-suggestions strong {
+        font-weight: normal;
+        color: $op-blue;
+    }
+
+    .autocomplete-group {
+        padding: 2px 5px;
+        border: 1px solid #e8e8e8;
+    }
+
+    .autocomplete-group strong {
+        display: block;
+    }
+}

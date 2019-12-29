@@ -1,0 +1,112 @@
+[data-op3-element-options-property-name="children"] {
+    .op3-element-options-label-group,
+    .op3-property-type-children-add-new {
+        display: none;
+    }
+
+    .op3-element-options-property-children-list {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+        &:empty::after {
+            content: "Empty Children List";
+            display: block;
+            font-size: 12px;
+            color: $op-light-grey;
+        }
+    }
+
+    .op3-element-options-property-children-list-item {
+        display: flex;
+        margin: 0 0 4px;
+        font-size: 12px;
+        border: 1px solid $op-grey-border;
+        background: $op-white;
+        color: $op-grey;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $op-blue;
+        }
+
+        .op3-element-options-property-children-list-item-desc {
+            flex: 1;
+            flex-grow: 1;
+            min-width: 0;
+            padding: 10px;
+
+            .op3-icon {
+                margin-right: 0.5em;
+            }
+        }
+
+        .op3-element-options-property-children-list-item-visible {
+            display: none;
+
+            &.op3-element-options-property-children-list-item-visible-display-0,
+            &.op3-element-options-property-children-list-item-visible-display-1 {
+                display: flex;
+            }
+
+            &.op3-element-options-property-children-list-item-visible-display-0 {
+                .op3-icon-eye-ban-18-1 { display: block; }
+                .op3-icon-eye-17-1,
+                .op3-icon-lock-1 { display: none; }
+            }
+
+            &.op3-element-options-property-children-list-item-visible-display-1 {
+                .op3-icon-eye-ban-18-1,
+                .op3-icon-lock-1 { display: none; }
+                .op3-icon-eye-17-1 { display: block; }
+            }
+
+            &.op3-element-options-property-children-list-item-visible-lock-1 {
+                pointer-events: none;
+
+                .op3-icon-eye-ban-18-1,
+                .op3-icon-eye-17-1 {
+                    display: none;
+                }
+
+                .op3-icon-lock-1 {
+                    display: block;
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            display: flex;
+            width: 35px;
+            justify-content: center;
+            align-items: center;
+            border-left: inherit;
+            color: $op-grey;
+            text-decoration: none;
+            font-size: 16px;
+
+            &:hover {
+                color: $op-blue;
+            }
+        }
+    }
+}
+
+form[data-op3-element-options-children-count="0"] {
+    [data-op3-element-options-property-name="children"] {
+        .op3-element-options-property-children-list::after {
+            content: "Empty Children List";
+            display: block;
+            font-size: 12px;
+            color: $op-light-grey;
+        }
+   }
+}

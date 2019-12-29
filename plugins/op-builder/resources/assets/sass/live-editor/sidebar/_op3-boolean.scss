@@ -1,0 +1,111 @@
+.op3-element-options-property--boolean {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .op3-element-options-label-group {
+        margin: 0;
+
+        ~ .toggle-switch {
+            margin: 0;
+        }
+    }
+
+    @at-root {
+        .toggle-switch {
+            margin: 0;
+            padding: 0;
+            width: 60px;
+            height: 28px;
+            position: relative;
+            display: block;
+            text-align: left;
+            box-sizing: border-box;
+
+            input {
+                display: none;
+            }
+
+            .toggle-switch-wrapper {
+                height: 100%;
+                padding: 4px;
+                background: $op-light-grey;
+                border-radius: 50px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .toggle-switch-content {
+                position: relative;
+                height: 100%;
+                line-height: 0;
+                transition: inherit;
+                will-change: transform;
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: calc(100% - 20px);
+                    height: 20px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    text-align: center;
+                    color: inherit;
+                }
+
+                &::before {
+                    content: attr(data-toggle-switch-value-1);
+                    right: 100%;
+                    color: #fff;
+                }
+
+                &::after {
+                    content: attr(data-toggle-switch-value-0);
+                    right: 0;
+                    color: #fff;
+                }
+            }
+
+            .toggle-switch-handle {
+                position: relative;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                border-radius: 50%;
+            }
+
+            input:checked + .toggle-switch-wrapper {
+                background: $op-blue;
+
+                .toggle-switch-content {
+                    transform: translateX(calc(100% - 20px));
+                }
+            }
+
+            input:disabled + .toggle-switch-wrapper {
+                opacity: 0.8;
+                cursor: default;
+            }
+
+            input:disabled + .toggle-switch-wrapper .toggle-switch-handle::before {
+                content: "\f2b0";
+                position: absolute;
+                display: block;
+                top: 50%;
+                left: 50%;
+                line-height: 1;
+                font-family: "op3-icons";
+                color: #808080;
+                transform: translate(-50%, -50%);
+            }
+
+            input:checked:disabled + .toggle-switch-wrapper .toggle-switch-handle::before {
+                color: $op-light-grey;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<div data-op3-element-container>
+    <div data-op3-border>
+        <div data-op3-background="overlay"></div>
+    </div>
+    <form action="{{home-url}}/wp-json/op3/v1/optin/submit" method="post">
+        <input type="hidden" name="admin-email" value="<op3 adminEmail>" />
+        <input type="hidden" name="optin-integration" value="<op3 optinIntegration>" />
+        <input type="hidden" name="optin-list" value="<op3 optinList>" />
+        <input type="hidden" name="optin-webhook-url" value="<op3 optinWebhookUrl>" />
+        <input type="hidden" name="optin-form-id" value="<op3 optinFormId>" />
+        <input type="hidden" name="optin-double-optin" value="<op3 optinDoubleOptin>" />
+        <input type="hidden" name="optin-tag" value="<op3 optinTag>" />
+        <input type="hidden" name="optin-goal" value="<op3 optinGoal>" />
+        <input type="hidden" name="optin-post-action" value="<op3 optinPostAction>" />
+        <input type="hidden" name="optin-post-action-notification-text" value="<op3 optinPostActionNotificationText>" />
+        <input type="hidden" name="optin-post-action-redirect-url" value="<op3 optinPostActionRedirectURL>" />
+        <input type="hidden" name="optin-post-action-redirect-autofill" value="<op3 optinPostActionRedirectAutofill>" />
+        <input type="hidden" name="optin-post-action-popoverlay-trigger" value="<op3 optinPostActionPopOverlayTrigger>" />
+        <input type="hidden" name="optin-post-action-funnel-step" value="<op3 optinPostActionFunnelStep>" />
+        <input type="hidden" name="optin-gdpr-activate" value="<op3 optinGdprActivate>" />
+        <input type="hidden" name="optin-gdpr-consent1-tag-confirmed" value="<op3 optinGdprConsent1TagConfirmed>" />
+        <input type="hidden" name="optin-gdpr-consent1-tag-declined" value="<op3 optinGdprConsent1TagDeclined>" />
+        <input type="hidden" name="optin-gdpr-consent1-tag-not-shown" value="<op3 optinGdprConsent1TagNotShown>" />
+        <input type="hidden" name="optin-gdpr-consent2-tag-confirmed" value="<op3 optinGdprConsent2TagConfirmed>" />
+        <input type="hidden" name="optin-gdpr-consent2-tag-declined" value="<op3 optinGdprConsent2TagDeclined>" />
+        <input type="hidden" name="optin-gdpr-consent2-tag-not-shown" value="<op3 optinGdprConsent2TagNotShown>" />
+        <input type="hidden" name="optin-gdpr-field-note" value="<op3 optinGdprFieldNote>" />
+        <input type="submit" value="Submit" tabindex="-1" class="visually-hidden" />
+        <div data-op3-children data-op3-optin-field-layout="<op3 optinFieldLayout>"></div>
+    </form>
+</div>

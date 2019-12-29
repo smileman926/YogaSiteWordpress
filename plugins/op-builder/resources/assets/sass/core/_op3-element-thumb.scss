@@ -1,0 +1,47 @@
+.op3-element-thumb {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 84px;
+    height: 86px;
+    line-height: 1;
+    font-size: 12px;
+    font-family: $op-font-family;
+    color: $op-grey;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid $op-grey-border;
+    border-radius: 5px;
+    background: $op-white;
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+
+    img {
+        width: auto;
+        height: 24px;
+        margin-bottom: 8px;
+        opacity: 0.8;
+    }
+
+    span {
+        display: block;
+        margin: 0 0.25em;
+        line-height: 1.4em;
+    }
+
+    .op3-icon {
+        font-size: 20px;
+        margin: 0 0 0.25em;
+        color: $op-grey;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    .element-item:hover & {
+        border-color: darken($op-grey-border, 20%);
+        box-shadow: 0 4px 5px -5px rgba(80, 80, 80, 0.2);
+    }
+}

@@ -1,0 +1,15 @@
+.op3-element[data-op3-element-type="rating"] {
+
+    .op3-rating-content {
+        position: relative;
+        height: 64px;
+        text-align: center;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: flex;
+        }
+    }
+}

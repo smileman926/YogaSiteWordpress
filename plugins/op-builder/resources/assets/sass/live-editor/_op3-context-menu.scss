@@ -1,0 +1,243 @@
+#op3-context-menu {
+    position: fixed;
+    display: none;
+    width: 200px;
+    margin: 0;
+    padding: 4px 0;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    color: #6d7882;
+    background-color: #fff;
+    border: 1px solid $op-grey-border;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.09);
+    user-select: none;
+    z-index: 4000;
+
+    .op3-context-menu-list {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .op3-context-menu-list-item {
+        display: block;
+        margin: 0;
+        padding: 0;
+        opacity: 0.33;
+        pointer-events: none;
+    }
+
+    .op3-context-menu-list-separator {
+        display: block;
+        height: 1px;
+        margin: 4px 0;
+        padding: 0;
+        font-size: 0;
+        background: $op-grey-border;
+        overflow: hidden;
+    }
+
+    .op3-context-menu-list-item-action {
+        display: flex;
+        margin: 0;
+        padding: 4px 12px 4px 8px;
+        align-items: center;
+        color: inherit;
+        background-color: inherit;
+        text-decoration: none;
+        cursor: default;
+
+        &:hover {
+            color: #fff;
+            background-color: $op-blue;
+        }
+    }
+
+    .op3-context-menu-list-item-icon {
+        display: block;
+        width: 10px;
+        margin-right: 8px;
+        font-size: 10px;
+        line-height: 1;
+    }
+
+    .op3-context-menu-list-item-title {
+        flex: 1;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:first-child {
+            margin-left: 18px;
+        }
+    }
+
+    .op3-context-menu-list-item-shortcut {
+        display: block;
+        margin-left: 12px;
+    }
+
+    .op3-context-menu-list-item-tier {
+        font-size: 8px;
+        color: #fff;
+        background: green;
+        padding: 2px 4px;
+        line-height: 1;
+    }
+
+    // cut not necessary?
+    .op3-context-menu-list-item[data-op3-action="cut"] {
+        display: none;
+    }
+
+    // clone and delete always enabled (disable/hide it
+    // per element type in op3-live-editor.scss)
+    .op3-context-menu-list-item[data-op3-action="clone"],
+    .op3-context-menu-list-item[data-op3-action="delete"] {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    // add block item hidden by default (show it per
+    // element type in op3-live-editor.scss)
+    .op3-context-menu-list-item[data-op3-action="addElement"] {
+        display: none;
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    // export template/section not displayed by default,
+    // displayed per element type (see below)
+    .op3-context-menu-list-item[data-op3-action="exportTemplate"],
+    .op3-context-menu-list-item[data-op3-action="exportSection"],
+    .op3-context-menu-list-separator[data-op3-separator="export/global"] {
+        display: none;
+    }
+
+    // global elements always enabled
+    .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+    .op3-context-menu-list-item[data-op3-action="globalElementWizard"],
+    .op3-context-menu-list-item[data-op3-action="unlockGlobalElement"],
+    .op3-context-menu-list-item[data-op3-action="unlinkGlobalElement"] {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    .op3-context-menu-list-item[data-op3-action="globalElementWizard"],
+    .op3-context-menu-list-item[data-op3-action="unlockGlobalElement"],
+    .op3-context-menu-list-item[data-op3-action="unlinkGlobalElement"] {
+        display: none;
+    }
+
+    &[data-op3-element-gid]:not([data-op3-element-gid=""]) {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"] {
+            display: none;
+        }
+        .op3-context-menu-list-item[data-op3-action="globalElementWizard"],
+        .op3-context-menu-list-item[data-op3-action="unlockGlobalElement"],
+        .op3-context-menu-list-item[data-op3-action="unlinkGlobalElement"] {
+            display: block;
+        }
+    }
+    // @todo - disable markAsGlobalElement if element has global element child???
+
+    // for now disabling export for common user
+    // (we gona remove this data-op3-user-role
+    // selectors in the future)
+    //&[data-op3-user-role="superadmin"],
+    //&[data-op3-user-role="admin"],
+    //&[data-op3-user-role="developer"],
+    //&[data-op3-user-role="designer"] {
+        &[data-op3-element-type="document"] {
+            .op3-context-menu-list-separator[data-op3-separator="export/global"] {
+                display: block;
+            }
+            .op3-context-menu-list-item[data-op3-action="exportTemplate"] {
+                display: block;
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+
+        &[data-op3-element-type="section"] {
+            .op3-context-menu-list-separator[data-op3-separator="export/global"] {
+                display: block;
+            }
+            .op3-context-menu-list-item[data-op3-action="exportSection"] {
+                display: block;
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+    //}
+
+    // enable cut/copy/paste
+    &[data-op3-element-allow-cut="1"] .op3-context-menu-list-item[data-op3-action="cut"],
+    &[data-op3-element-allow-copy="1"] .op3-context-menu-list-item[data-op3-action="copy"],
+    &[data-op3-element-allow-paste="1"] .op3-context-menu-list-item[data-op3-action="paste"] {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    // hide action for on document element type
+    &[data-op3-element-type="document"] {
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/global"],
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-item[data-op3-action="globalElementWizard"],
+        .op3-context-menu-list-item[data-op3-action="unlockGlobalElement"],
+        .op3-context-menu-list-item[data-op3-action="unlinkGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+    }
+
+}
+
+html.op3-context-menu-active {
+
+    #op3-context-menu {
+        display: block;
+    }
+
+    #toolbar {
+        display: none;
+    }
+}
+
+html[data-op3-global-element-edit] #op3-context-menu[data-op3-element-type] {
+    &[data-op3-element-type="document"] {
+        display: none;
+    }
+
+    &[data-op3-element-gid]:not([data-op3-element-gid=""]) {
+        .op3-context-menu-list-item[data-op3-action="addElement"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+
+    .op3-context-menu-list-item[data-op3-action="cut"],
+    .op3-context-menu-list-item[data-op3-action="copy"],
+    .op3-context-menu-list-item[data-op3-action="paste"] {
+        opacity: 0.33;
+        pointer-events: none;
+    }
+
+    .op3-context-menu-list-separator[data-op3-separator="clipboard/export"],
+    .op3-context-menu-list-item[data-op3-action="exportTemplate"],
+    .op3-context-menu-list-item[data-op3-action="exportSection"],
+    .op3-context-menu-list-separator[data-op3-separator="export/global"],
+    .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+    .op3-context-menu-list-item[data-op3-action="globalElementWizard"],
+    .op3-context-menu-list-item[data-op3-action="unlockGlobalElement"],
+    .op3-context-menu-list-item[data-op3-action="unlinkGlobalElement"] {
+        display: none;
+    }
+}

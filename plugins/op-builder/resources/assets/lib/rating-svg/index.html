@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="src/rating-svg.css" />
+        <style>
+            body { max-width: 1024px; margin: 0 auto; font-size: 16px; text-align: center; color: #666; }
+            p, div { margin: 1em 0; }
+        </style>
+    </head>
+    <body>
+        <h2>RatingSVG</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora modi unde, architecto, temporibus non, culpa distinctio consequatur placeat error voluptate iusto animi, libero quidem enim. Tempora dolore velit in fugit. Iusto eos quis quidem in quod, atque ab deserunt, sunt, numquam repellat praesentium modi, fuga qui. Dignissimos, soluta, minus perferendis, distinctio culpa fuga voluptatum iste molestiae delectus nam nobis commodi?</p>
+        <p>Labore, reiciendis vel, nesciunt amet, sapiente ab tempore, deleniti maiores minima inventore fugiat assumenda dolorem voluptate ducimus possimus! Consectetur ad soluta ut quod vero pariatur aut distinctio, expedita, ducimus perferendis. Nobis deleniti, tempore alias ducimus dicta facilis itaque soluta sequi harum distinctio quia eum minima tempora corporis necessitatibus repellat, similique illum velit non fugit officia incidunt fuga aut ipsum maiores.</p>
+        <div class="element" style="height: 64px;">
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>ID</strong>
+                <br />
+                <input name="idSuffix" type="text" disabled />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Pattern</strong>
+                <br />
+                <select name="patternId">
+                    <option value="star">Star</option>
+                    <option value="star2">Star #2</option>
+                    <option value="heart">Heart</option>
+                    <option value="heart2">Heart #2</option>
+                </select>
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Fill Color</strong>
+                <br />
+                <input name="fillColor" type="color" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Fill Color (empty)</strong>
+                <br />
+                <input name="fillColor2" type="color" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Stroke Color</strong>
+                <br />
+                <input name="strokeColor" type="color" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Stroke Width</strong>
+                <br />
+                <select name="strokeWidth">
+                    <option value="0">None</option>
+                    <option value="1">Thin</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Thick</option>
+                </select>
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Count</strong>
+                <br />
+                <input name="count" type="number" min="1" max="10" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Rate</strong>
+                <br />
+                <input name="rate" type="number" min="0" max="10" step="0.5" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Padding</strong>
+                <br />
+                <input name="padding" type="number" min="0" max="10" />
+            </label>
+        </div>
+        <div class="prop r">
+            <label>
+                <strong>Offset</strong>
+                <br />
+                <input name="offset" type="number" min="0" max="10" />
+            </label>
+        </div>
+        <div class="prop el">
+            <label>
+                <strong>Size</strong>
+                <br />
+                <input name="size" type="number" min="16" max="256" />
+            </label>
+        </div>
+        <div><a href="#" onclick="return !!r.refresh();">Refresh</a></div>
+        <!-- -->
+        <svg class="rating-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444" height="45" viewBox="0 0 444 45"><defs><use id="pattern-base-test" xlink:href="src/rating-svg.svg#heart2" x="6.5" y="6.5" stroke="rgb(0, 0, 255)" stroke-width="1" /><pattern id="pattern-filled-test" width="57" height="45" patternUnits="userSpaceOnUse"><use xlink:href="#pattern-base-test" fill="rgb(255, 0, 0)" /></pattern><pattern id="pattern-empty-test" width="57" height="45" patternUnits="userSpaceOnUse"><use xlink:href="#pattern-base-test" fill="rgb(0, 255, 0)" /></pattern></defs><rect id="canvas-filled-test" x="0" y="0" width="193.5" height="45" fill="url(#pattern-filled-test)" /><rect id="canvas-empty-test" x="193.5" y="0" width="250.5" height="45" fill="url(#pattern-empty-test)" /></svg>
+        heart #2 | red | green | blue | 1 | 8 | 3.5 | 2 | 6
+        <!-- -->
+        <script type="text/javascript" src="src/rating-svg.js"></script>
+        <script>
+            ;(function() {
+                window.r = new RatingSVG({
+                    patternUrl: "src/rating-svg.svg",
+                });
+
+                window.el = document.querySelectorAll(".element")[0];
+                el.appendChild(r.element);
+
+                var _handleRate = function(e) {
+                    r.setOption(e.target.getAttribute("name"), e.target.value);
+                }
+
+                var _handleEl = function(e) {
+                    el.style.height = e.target.value + "px";
+                }
+
+                document.querySelectorAll(".prop.r [name]").forEach(function(node) {
+                    var type = node.getAttribute("type");
+                    var key = node.getAttribute("name");
+                    var value = r.getOption(key);
+
+                    if (type === "color") {
+                        var color = RatingSVG.prototype._toColor(value);
+                        var match = color ? color.match(/(\d+)/g) : null;
+                        if (match)
+                            value = "#"
+                                + ("0" + (match[0] * 1).toString(16)).substr(-2)
+                                + ("0" + (match[1] * 1).toString(16)).substr(-2)
+                                + ("0" + (match[2] * 1).toString(16)).substr(-2);
+                    }
+
+                    node.value = value;
+                    node.addEventListener("change", _handleRate);
+                });
+
+                document.querySelectorAll(".prop.el [name]").forEach(function(node) {
+                    node.value = el.offsetHeight;
+                    node.addEventListener("change", _handleEl);
+                });
+            })();
+        </script>
+    </body>
+</html>

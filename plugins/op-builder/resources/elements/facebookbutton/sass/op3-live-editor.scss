@@ -1,0 +1,37 @@
+#toolbar {
+    form[data-op3-element-options-type="facebookbutton"] {
+        .op3-element-options-property[data-op3-element-options-property-name="facebookHref"] {
+            display: none;
+        }
+
+        .op3-element-options-property[data-op3-element-options-property-name="facebookHrefType"][data-op3-element-options-property-value="url"] {
+            & + .op3-element-options-property[data-op3-element-options-property-name="facebookHref"] {
+                display: flex;
+            }
+        }
+
+        .op3-element-options-property[data-op3-element-options-property-id="textAlign"] {
+            .jquery-select-buttons-widget {
+                [data-jquery-select-buttons-option-value="inherit"],
+                [data-jquery-select-buttons-option-value="justify"] {
+                    display: none;
+                }
+
+                [data-jquery-select-buttons-option-value="left"] .jquery-select-buttons-option-icon::before { content: "\f481"; }
+                [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f485"; }
+                [data-jquery-select-buttons-option-value="right"] .jquery-select-buttons-option-icon::before { content: "\f482"; }
+            }
+        }
+
+        // Width only affects the standard layout, as per button docs
+        .op3-element-options-property[data-op3-element-options-property-id="facebookWidth"] {
+            display: none;
+        }
+
+        .op3-element-options-property[data-op3-element-options-property-id="facebookLayout"][data-op3-element-options-property-value="standard"] {
+            & + .op3-element-options-property[data-op3-element-options-property-id="facebookWidth"] {
+                display: flex;
+            }
+        }
+    }
+}

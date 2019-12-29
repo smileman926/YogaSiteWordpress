@@ -1,0 +1,31 @@
+// Padding adjust handles...
+.op3-element {
+    [data-jquery-paddingdrag] {
+        font-family: $op-font-family;
+        display: none;
+    }
+
+    // Default case, when drag is initialized on the op3 element
+    &.op3-focus.jquery-paddingdrag > [data-jquery-paddingdrag] {
+        display: block;
+    }
+
+    // When drag is initialized on a target div (using property selector)
+    // 1. we show ALL padding handles
+    &.op3-focus .jquery-paddingdrag > [data-jquery-paddingdrag] {
+        display: block;
+    }
+
+    // 2. we hide ALL padding handles that are in nested elements
+    &.op3-focus .op3-element.jquery-paddingdrag > [data-jquery-paddingdrag],
+    &.op3-focus .op3-element .jquery-paddingdrag > [data-jquery-paddingdrag] {
+        display: none;
+    }
+
+    // Tweak to offset negative marginLeft/marginRight on column
+    &[data-op3-element-type="column"] > [data-op3-paddingdrag] {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
+    }
+}

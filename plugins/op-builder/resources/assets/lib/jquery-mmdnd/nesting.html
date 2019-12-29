@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            * { box-sizing: border-box; }
+            html, body { position: relative; margin: 0; padding: 0; text-align: center; }
+            p { margin: 1em auto; max-width: 640px; }
+            [data-jquery-mmdnd-draggable] { display: inline-block; margin: 0.5em; padding: 0.5em 1em; border-radius: 0.25em; color: #666; border: 1px solid #999; }
+            [data-jquery-mmdnd-droppable] { max-width: 640px; margin: 0 auto; padding: 2em; background: rgba(0,0,0,0.25); transition: 0.2s ease all; }
+            [data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] { box-shadow: 0 0 2px 2px rgba(0,0,0,0.5); }
+        </style>
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem perspiciatis nihil tempora sapiente, ratione asperiores, sit iste, voluptatum voluptatibus ipsam, reiciendis quaerat? At laborum nostrum, recusandae dolores excepturi cum sed.</p>
+        <p>Quibusdam mollitia vitae dicta minima repellat quae debitis consectetur aperiam blanditiis eos magnam perspiciatis corrupti harum ut explicabo rerum odit, autem dignissimos expedita, cumque tempore a? Consequuntur velit, culpa. Iusto.</p>
+        <p>Architecto at fugit, placeat quia, unde modi eius. Ipsam molestias suscipit dolor accusantium nihil fugit ex explicabo neque repellat, commodi alias minima error, iure libero. Ab nam, odio dolor voluptatem.</p>
+        <p>Fugit laudantium aperiam fugiat totam! Minus distinctio quam vel, autem quisquam assumenda, inventore ad nostrum odio eum a commodi corporis eligendi cumque eos non dignissimos soluta. Debitis quo ipsum facilis.</p>
+        <p>Laborum, magnam. Est veritatis unde deserunt, ut rerum, nulla repellendus dolor ex. Vero doloremque dolores qui laboriosam dicta obcaecati, nam, illum autem perferendis architecto doloribus harum quod ut omnis nihil!</p>
+        <span class="draggable" data-jquery-mmdnd-draggable><b>Drag Me!!!</b></span>
+        <div data-jquery-mmdnd-droppable data-id="1">
+            <div data-jquery-mmdnd-droppable data-id="2">
+                <div data-jquery-mmdnd-droppable data-id="3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, consequuntur veniam natus tempora beatae! Ut rem eum laboriosam, nihil non eveniet ad, eius pariatur earum ex animi provident nostrum illo!</p>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(document)
+                .on("mmdnddragstart", function(e) {
+                    e.setData("foo", $(e.target).attr("data-jquery-mmdnd-draggable"));
+                    console.log("dragstart");
+                })
+                .on("mmdnddrag", function(e) {
+                    console.log("drag");
+                })
+                .on("mmdnddragend", function(e) {
+                    console.log("dragend");
+                })
+                .on("mmdnddrop", function(e) {
+                    console.log("drop", $(e.target).attr("data-id"), e.getData("foo"));
+                })
+                .on("mmdnddragenter", function(e) {
+                    console.log("dragenter", $(e.target).attr("data-id"));
+                })
+                .on("mmdnddragover", function(e) {
+                    if ($(e.target).attr("data-id") == "2" && e.offsetY < 16)
+                        return e.preventDefault();
+
+                    console.log("dragover", $(e.target).attr("data-id"));
+                })
+                .on("mmdnddragleave", function(e) {
+                    console.log("dragleave", $(e.target).attr("data-id"));
+                });
+        </script>
+    </body>
+</html>

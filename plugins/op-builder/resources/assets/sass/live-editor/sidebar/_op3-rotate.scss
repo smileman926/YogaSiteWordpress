@@ -1,0 +1,53 @@
+.op3-element-options-property {
+    &[data-op3-element-options-property-name="textShadowAngle"],
+    &[data-op3-element-options-property-name="boxShadowAngle"],
+    &[data-op3-element-options-property-name="backgroundImageAngle"],
+    &[data-op3-element-options-property-name="transformRotate"] {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 32px;
+
+        .op3-element-options-label-group {
+            margin: 0;
+            align-self: center;
+        }
+
+        .op3-element-options-property-input {
+            display: none;
+        }
+
+        .jquery-anglepicker-widget {
+            width: auto;
+            padding-top: 0;
+        }
+
+        .jquery-anglepicker-numeric {
+            width: 76px;
+            align-self: center;
+        }
+
+        .jquery-anglepicker-unit-container {
+            top: -22px;
+        }
+
+        .jquery-anglepicker-handle {
+            border-color: #8e8e8e;
+
+            &::before {
+                background: #8e8e8e;
+            }
+
+            &::after {
+                background: #0175ff;
+            }
+        }
+    }
+}
+
+[data-op3-element-options-property-name="transform"] {
+    display: none;
+}

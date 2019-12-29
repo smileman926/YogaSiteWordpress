@@ -1,0 +1,50 @@
+html {
+    position: relative;
+}
+
+html[class] {
+    margin-top: 0 !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+html,body {
+    min-height: 100%;
+}
+
+#wpadminbar {
+    display: none !important;
+}
+
+#op3-designer-element {
+    position: relative;
+
+    > [data-op3-children]::before,
+    > [data-op3-children]::after {
+        content: "";
+        display: block;
+        height: 1px;
+        margin-top: -1px;
+    }
+}
+
+// Desktop Preview
+@media screen and (max-width: 1024px) {}
+
+// Tablet Preview
+@media screen and (max-width: 768px) {
+    body {
+        min-width: 768px !important;
+        min-width: calc(768px - 17px) !important;
+    }
+}
+
+// Mobile Preview
+@media screen and (max-width: 360px) {
+    body {
+        min-width: calc(360px - 17px) !important;
+    }
+}

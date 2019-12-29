@@ -1,0 +1,49 @@
+.op3-element[data-op3-element-type="videothumbnail"] {
+    .op3-video-thumbnail-wrapper {
+        overflow: hidden;
+        position: relative;
+
+        .op3-video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 0;
+            transform: translateZ(0);
+            border-width: 0;
+            background-repeat: no-repeat;
+            background-color: black;
+            background-position: center;
+            background-size: cover;
+            z-index: 0;
+
+            &[data-op3-aspect-ratio="16:9"] {
+                padding-top: percentage(9/16);
+            }
+
+            &[data-op3-aspect-ratio="16:10"] {
+                padding-top: percentage(10/16);
+            }
+
+            &[data-op3-aspect-ratio="21:9"] {
+                padding-top: percentage(9/21);
+            }
+
+            &[data-op3-aspect-ratio="4:3"] {
+                padding-top: percentage(3/4);
+            }
+        }
+    }
+
+    [data-op3-background="overlay"] {
+        z-index: 1;
+    }
+
+    .op3-icon {
+        position: absolute;
+        font-size: 125px;
+        top: 50%;
+        left: 50%;
+        color: white;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 2;
+    }
+}

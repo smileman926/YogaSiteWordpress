@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery AnglePicker</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="jquery-anglepicker.css" />
+	<style type="text/css">
+		body {
+		    font-family: 'Open Sans', sans-serif;
+		}
+		.jquery-anglepicker {
+			display: inline-block !important;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="30" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="jquery-anglepicker.js"></script>
+	<script>
+		$("input").anglepicker({
+			prefix: "rotate(",
+			suffix: ")",
+			//startOffset: 90,
+			//roundStep: 15,
+		});
+	</script>
+</body>
+</html>

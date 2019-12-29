@@ -1,0 +1,109 @@
+//
+// Base styles
+//
+
+.ops-alert {
+    font-size: 14px;
+    position: relative;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 4px 17px 0 rgba(56, 79, 134, 0.1);
+
+    p {
+        margin: 15px 0 0 0;
+    }
+}
+
+// Headings for larger alerts
+.ops-alert-heading {
+    // Specified to prevent conflicts of changing $headings-color
+    color: inherit !important;
+    font-size: 22px !important;
+    margin-bottom: 15px !important;
+    font-weight: 300 !important;
+}
+
+// Provide class for links that match alerts
+.ops-alert-link {
+    font-weight: normal;
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.ops-alert-dismissible {
+    padding-right: 15px;
+
+    // Adjust close link position
+    .ops-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 10px;
+        color: inherit;
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        float: right;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .5;
+    }
+}
+
+
+// Alternate styles
+.ops-alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.ops-alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+.ops-alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.ops-alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.ops-alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.ops-alert-light {
+    color: #818182;
+    background-color: #fefefe;
+    border-color: #fdfdfe;
+}
+
+.ops-alert-danger, .ops-alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.ops-alert-light {
+    color: $color__ops-darkBlue;
+    background-color: $color__ops-white;
+    border-color: $color__ops-borderLight;
+}

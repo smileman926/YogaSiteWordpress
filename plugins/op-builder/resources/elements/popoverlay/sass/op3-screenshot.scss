@@ -1,0 +1,21 @@
+html.op3-screenshot #op3-designer-element .op3-element[data-op3-element-type="popoverlay"] {
+    position: absolute;
+    width: 1200px;
+    min-height: 100%;
+    padding: 0;
+
+    .op3-popoverlay-background {
+        position: absolute;
+        min-height: 100%;
+    }
+
+    // override element transition to make
+    // sure we don't trigger screenshot
+    // in  moment of transition (eq.
+    // we can have overlay:0.5 on
+    // fadeIn animation)
+    .op3-popoverlay-background,
+    .op3-popoverlay-content {
+        transition: none !important;
+    }
+}

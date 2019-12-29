@@ -1,0 +1,324 @@
+#toolbar {
+    form[data-op3-element-options-type="numberblock"] {
+        .op3-element-options-property.jquery-filter-button-content {
+            .op3-element-options-label-group {
+                display: none;
+            }
+        }
+
+        // Block layout dektop/tablet/mobile
+        .op3-element-options-property[data-op3-element-options-property-id^="blockLayout"] {
+            display: none;
+        }
+
+        [data-op3-device="desktop"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutDesktop"] {
+            display: flex;
+        }
+
+        [data-op3-device="tablet"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutTablet"] {
+            display: flex;
+        }
+
+        [data-op3-device="mobile"] & .op3-element-options-property[data-op3-element-options-property-id="blockLayoutMobile"] {
+            display: flex;
+        }
+
+        // Resetting border all width style
+        [data-op3-element-options-property-id="borderAllWidthNumber"] {
+            display: flex;
+            position: static;
+
+            .op3-element-options-label-group,
+            .jquery-input-range-slider,
+            .jquery-input-range-numeric,
+            .jquery-input-range-unit-container {
+                display: flex !important;
+            }
+
+            .jquery-input-range-numeric {
+                position: static;
+                width: 76px;
+            }
+
+            input[data-property-type="range"] {
+                display: none;
+            }
+
+            .op3-element-options-label-group {
+                display: flex !important;
+            }
+        }
+
+        // Frame / Shape / Padding logic
+        .op3-element-options-property[data-op3-element-options-property-id="numberblockFrame"] {
+            ~ .op3-element-options-property[data-op3-element-options-property-id="numberblockShape"],
+            ~ .op3-element-options-property[data-op3-element-options-property-id="borderAllWidthNumber"] {
+                display: none;
+            }
+
+            &:not([data-op3-element-options-property-value="none"]) {
+                ~ .op3-element-options-property[data-op3-element-options-property-id="numberblockShape"] {
+                    display: flex;
+                }
+            }
+
+            &[data-op3-element-options-property-value="outline"] {
+                ~ .op3-element-options-property[data-op3-element-options-property-id="borderAllWidthNumber"] {
+                    display: flex;
+                }
+            }
+        }
+
+        // Hide custom option for the flex basis columns (2/3/4)
+        [data-op3-element-options-property-id="flexBasisSteps"] {
+            [data-jquery-select-buttons-option-value="none"] {
+                display: none;
+            }
+        }
+
+        // Block layout/margin logic
+        [data-op3-element-options-property-id^="blockLayout"] {
+            // Layout Previews
+            .jquery-select-buttons-option {
+                position: relative;
+            }
+
+            .jquery-select-buttons-option-text {
+                display: none;
+            }
+
+            .jquery-select-buttons-option-icon {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+            }
+
+            [data-jquery-select-buttons-option-value="0"] .jquery-select-buttons-option-icon {
+                // background-image: url("../img/numberblock-layout-0.svg");
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDEwNiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cC00Ij4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0U1RTRFNSIgeD0iMjIiIHk9IjEzIiB3aWR0aD0iODQiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlIiBmaWxsPSIjOEQ4QjhEIiB4PSIyMiIgeT0iMCIgd2lkdGg9Ijc5IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0U1RTRFNSIgeD0iMjIiIHk9IjI0IiB3aWR0aD0iNzIiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjRDhEOEQ4IiBjeD0iNyIgY3k9IjciIHI9IjciPjwvY2lyY2xlPgogICAgICAgICAgICA8cGF0aCBkPSJNOC4yNzY4NTU0NywxMC41IEw2Ljc2ODA2NjQxLDEwLjUgTDYuNzY4MDY2NDEsNi4zNjkxNDA2MiBMNi43ODI3MTQ4NCw1LjY5MDQyOTY5IEw2LjgwNzEyODkxLDQuOTQ4MjQyMTkgQzYuNTU2NDc2NjEsNS4xOTg4OTQ0OCA2LjM4MjMyNDcxLDUuMzYzMjgwODYgNi4yODQ2Njc5Nyw1LjQ0MTQwNjI1IEw1LjQ2NDM1NTQ3LDYuMTAwNTg1OTQgTDQuNzM2ODE2NDEsNS4xOTIzODI4MSBMNy4wMzY2MjEwOSwzLjM2MTMyODEyIEw4LjI3Njg1NTQ3LDMuMzYxMzI4MTIgTDguMjc2ODU1NDcsMTAuNSBaIiBpZD0iMSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+            }
+
+            [data-jquery-select-buttons-option-value="1"] .jquery-select-buttons-option-icon {
+                // background-image: url("../img/numberblock-layout-1.svg");
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDEwNiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cC00Ij4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0U1RTRFNSIgeD0iMCIgeT0iMTMiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiM4RDhCOEQiIHg9IjAiIHk9IjAiIHdpZHRoPSI3OSIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiNFNUU0RTUiIHg9IjAiIHk9IjI0IiB3aWR0aD0iNzIiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjRDhEOEQ4IiBjeD0iOTkiIGN5PSI3IiByPSI3Ij48L2NpcmNsZT4KICAgICAgICAgICAgPHBhdGggZD0iTTEwMC4yNzY4NTUsMTAuNSBMOTguNzY4MDY2NCwxMC41IEw5OC43NjgwNjY0LDYuMzY5MTQwNjIgTDk4Ljc4MjcxNDgsNS42OTA0Mjk2OSBMOTguODA3MTI4OSw0Ljk0ODI0MjE5IEM5OC41NTY0NzY2LDUuMTk4ODk0NDggOTguMzgyMzI0Nyw1LjM2MzI4MDg2IDk4LjI4NDY2OCw1LjQ0MTQwNjI1IEw5Ny40NjQzNTU1LDYuMTAwNTg1OTQgTDk2LjczNjgxNjQsNS4xOTIzODI4MSBMOTkuMDM2NjIxMSwzLjM2MTMyODEyIEwxMDAuMjc2ODU1LDMuMzYxMzI4MTIgTDEwMC4yNzY4NTUsMTAuNSBaIiBpZD0iMSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+            }
+
+            [data-jquery-select-buttons-option-value="2"] .jquery-select-buttons-option-icon {
+                // background-image: url("../img/numberblock-layout-2.svg");
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODRweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIwIDAgODQgNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtNCI+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiNFNUU0RTUiIHg9IjAiIHk9IjMxIiB3aWR0aD0iODQiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlIiBmaWxsPSIjOEQ4QjhEIiB4PSIzIiB5PSIxOCIgd2lkdGg9Ijc5IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0U1RTRFNSIgeD0iNiIgeT0iNDIiIHdpZHRoPSI3MiIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC01IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNS4wMDAwMDAsIDAuNTAwMDAwKSI+CiAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBmaWxsPSIjRDhEOEQ4IiBjeD0iNyIgY3k9IjciIHI9IjciPjwvY2lyY2xlPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTguMjc2ODU1NDcsMTAuNSBMNi43NjgwNjY0MSwxMC41IEw2Ljc2ODA2NjQxLDYuMzY5MTQwNjIgTDYuNzgyNzE0ODQsNS42OTA0Mjk2OSBMNi44MDcxMjg5MSw0Ljk0ODI0MjE5IEM2LjU1NjQ3NjYxLDUuMTk4ODk0NDggNi4zODIzMjQ3MSw1LjM2MzI4MDg2IDYuMjg0NjY3OTcsNS40NDE0MDYyNSBMNS40NjQzNTU0Nyw2LjEwMDU4NTk0IEw0LjczNjgxNjQxLDUuMTkyMzgyODEgTDcuMDM2NjIxMDksMy4zNjEzMjgxMiBMOC4yNzY4NTU0NywzLjM2MTMyODEyIEw4LjI3Njg1NTQ3LDEwLjUgWiIgaWQ9IjEiIGZpbGw9IiNGRkZGRkYiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+            }
+
+            [data-jquery-select-buttons-option-value="3"] .jquery-select-buttons-option-icon {
+                // background-image: url("../img/numberblock-layout-3.svg");
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODRweCIgaGVpZ2h0PSI0OXB4IiB2aWV3Qm94PSIwIDAgODQgNDkiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtNCI+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiNFNUU0RTUiIHg9IjAiIHk9IjMwIiB3aWR0aD0iODQiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlIiBmaWxsPSIjOEQ4QjhEIiB4PSIwIiB5PSIxNyIgd2lkdGg9Ijc5IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0U1RTRFNSIgeD0iMCIgeT0iNDEiIHdpZHRoPSI3MiIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC01Ij4KICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGZpbGw9IiNEOEQ4RDgiIGN4PSI3IiBjeT0iNyIgcj0iNyI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNOC4yNzY4NTU0NywxMC41IEw2Ljc2ODA2NjQxLDEwLjUgTDYuNzY4MDY2NDEsNi4zNjkxNDA2MiBMNi43ODI3MTQ4NCw1LjY5MDQyOTY5IEw2LjgwNzEyODkxLDQuOTQ4MjQyMTkgQzYuNTU2NDc2NjEsNS4xOTg4OTQ0OCA2LjM4MjMyNDcxLDUuMzYzMjgwODYgNi4yODQ2Njc5Nyw1LjQ0MTQwNjI1IEw1LjQ2NDM1NTQ3LDYuMTAwNTg1OTQgTDQuNzM2ODE2NDEsNS4xOTIzODI4MSBMNy4wMzY2MjEwOSwzLjM2MTMyODEyIEw4LjI3Njg1NTQ3LDMuMzYxMzI4MTIgTDguMjc2ODU1NDcsMTAuNSBaIiBpZD0iMSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==");
+            }
+        }
+
+        // Hide column gutter in advanced options when
+        // Arrangement in Number Block Styling
+        // is set to vertical
+        &[data-op3-parent-options-property-value-block-arrangement="1"] {
+            [data-op3-element-options-property-id="gutter"] {
+                display: none;
+            }
+        }
+    }
+
+    form[data-op3-element-options-type="numberblock"],
+    form[data-op3-element-options-type="numberblockitem"] {
+        [data-op3-toolbar-nav-id="add"] {
+            display: block;
+        }
+
+        &[data-op3-element-options-row-children-count="12"] {
+            [data-op3-toolbar-nav-id="add"] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+
+        // No need to equalize columns, columns always
+        // have same width
+        .op3-element-options-property[data-op3-element-options-property-id="gutter"] {
+            button {
+                display: none;
+            }
+        }
+    }
+
+    form[data-op3-element-options-type="numberblockitem"] {
+        &[data-op3-element-options-row-children-count="12"] {
+            [data-op3-toolbar-nav-id="clone"] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+
+    form[data-op3-element-options-type="icon"][data-op3-element-options-path*="/numberblock/"] {
+        [data-op3-element-options-property-id="lineHeight"] {
+            display: none;
+        }
+    }
+}
+
+@mixin blockLayoutNumberBlock($device) {
+    #toolbar form[data-op3-element-options-type="numberblock"] {
+        &[data-op3-parent-options-property-value-blocklayout#{$device}="0"] {
+            .op3-element-options-property[data-op3-element-options-property-id="marginRightNumber"] {
+                display: flex;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginLeftNumber"] {
+                display: none;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginBottomNumber"] {
+                display: none;
+            }
+        }
+
+        &[data-op3-parent-options-property-value-blocklayout#{$device}="1"] {
+            .op3-element-options-property[data-op3-element-options-property-id="marginRightNumber"] {
+                display: none;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginLeftNumber"] {
+                display: flex;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginBottomNumber"] {
+                display: none;
+            }
+        }
+
+        &[data-op3-parent-options-property-value-blocklayout#{$device}="2"],
+        &[data-op3-parent-options-property-value-blocklayout#{$device}="3"] {
+            .op3-element-options-property[data-op3-element-options-property-id="marginRightNumber"] {
+                display: none;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginLeftNumber"] {
+                display: none;
+            }
+
+            .op3-element-options-property[data-op3-element-options-property-id="marginBottomNumber"] {
+                display: flex;
+            }
+        }
+    }
+}
+
+[data-op3-device="desktop"] {
+    @include blockLayoutNumberBlock(desktop);
+}
+
+[data-op3-device="tablet"] {
+    @include blockLayoutNumberBlock(tablet);
+}
+
+[data-op3-device="mobile"] {
+    @include blockLayoutNumberBlock(mobile);
+}
+
+// Sidebar
+form[data-op3-element-options-type="numberblock"],
+form[data-op3-element-options-type="numberblockitem"] {
+    [data-op3-element-options-property-name="flexBasis"],
+    [data-op3-element-options-property-name="flexBasisColumn"],
+    [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+    [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+        display: none;
+    }
+
+    [data-op3-element-options-property-name="wrapColumns"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="flexBasis"],
+        & + [data-op3-element-options-property-name="flexBasisColumn"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+
+    [data-op3-element-options-property-name="stackColumnsTablet"][data-op3-element-options-property-value="1"],
+    [data-op3-element-options-property-name="stackColumnsMobile"][data-op3-element-options-property-value="1"] {
+        & + [data-op3-element-options-property-name="stackColumnsTabletReverse"],
+        & + [data-op3-element-options-property-name="stackColumnsMobileReverse"] {
+            display: flex;
+            padding-top: 0;
+
+            &::before { display: none; }
+        }
+    }
+
+    // No need to equalize columns, columns always
+    // have same width
+    .op3-element-options-property[data-op3-element-options-property-id="gutter"] {
+        button {
+            display: none;
+        }
+    }
+}
+
+form[data-op3-element-options-path*="/numberblockitem/"] {
+    .op3-element-options-group[data-op3-element-options-group-id="responsive"] {
+        display: none;
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="numberblock"],
+    &[data-op3-element-type="numberblockitem"] {
+        .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="numberblock"] {
+            display: block;
+        }
+
+        &[data-op3-element-row-children-count="12"] {
+            .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="numberblock"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &[data-op3-element-type="numberblockitem"] {
+        &[data-op3-element-row-children-count="12"] {
+            .op3-context-menu-list-item[data-op3-action="clone"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // numberblockitem children
+    &[data-op3-element-path*="/numberblockitem/"] {
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+
+    //numberblockitem and children
+    &[data-op3-element-path*="/numberblockitem"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"] {
+            display: none;
+        }
+    }
+}

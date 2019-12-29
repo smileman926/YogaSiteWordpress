@@ -1,0 +1,96 @@
+[data-op3-element-options-type="evergreencountdowntimer"],
+[data-op3-toolbar-element-type="evergreencountdowntimer"] {
+    div[data-op3-element-options-property-name="redirectUrl"],
+    div[data-op3-element-options-property-name="text"],
+    div[data-op3-element-options-property-id="digitsBackgroundColor"],
+    div[data-op3-element-options-property-id="wrapperBackgroundColor"] {
+        display: none;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="spacingBetweenBlocks"] {
+        flex-direction: column;
+
+        .op3-element-options-label-group {
+            margin-bottom: 10px;
+        }
+    }
+
+    // Display digitBackgroundColor property only for style-6
+    &[data-op3-element-options-style="style-6"],
+    &[data-op3-toolbar-element-style="style-6"] {
+        div[data-op3-element-options-property-id="digitsBackgroundColor"] {
+            display: flex;
+        }
+    }
+
+    // Display wrapperBackgroundColor property only for style-8
+    &[data-op3-element-options-style="style-8"],
+    &[data-op3-toolbar-element-style="style-8"] {
+        div[data-op3-element-options-property-id="wrapperBackgroundColor"] {
+            display: flex;
+        }
+    }
+
+    /* Display redirectUrl or text property
+       base of countdownFinishAction property */
+    div[data-op3-element-options-property-name="countdownFinishAction"] {
+        &[data-op3-element-options-property-value="redirect"] {
+            ~ div[data-op3-element-options-property-name="redirectUrl"],
+            ~ div[data-op3-element-options-property-name="redirectUrl"] input {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="text"] {
+            ~ div[data-op3-element-options-property-name="text"],
+            ~ div[data-op3-element-options-property-name="text"] textarea {
+                display: flex;
+            }
+        }
+    }
+
+    // Display hour, minute and second property inline
+    div[data-op3-element-options-property-name="day"],
+    div[data-op3-element-options-property-name="hour"],
+    div[data-op3-element-options-property-name="minute"],
+    div[data-op3-element-options-property-name="second"],
+    div[data-op3-element-options-property-name="restartDay"],
+    div[data-op3-element-options-property-name="restartHour"] {
+        display: inline-block;
+
+        input.op3-element-options-property-input {
+            width: 50px;
+        }
+    }
+
+    div[data-op3-element-options-property-name="restartDay"],
+    div[data-op3-element-options-property-name="day"] {
+        padding: 16px 7px 0 22px;
+    }
+
+    div[data-op3-element-options-property-name="restartHour"],
+    div[data-op3-element-options-property-name="hour"],
+    div[data-op3-element-options-property-name="minute"] {
+        padding: 16px 8px 0 8px;
+    }
+
+    div[data-op3-element-options-property-name="second"] {
+        padding: 16px 22px 0 7px;
+    }
+
+    div[data-op3-element-options-property-name="restartDay"],
+    div[data-op3-element-options-property-name="restartHour"] {
+        display: none;
+    }
+
+    // Show/hide restartDay and restartHour properties
+    // depending on restartTimer value
+    div[data-op3-element-options-property-name="restartTimer"] {
+        &[data-op3-element-options-property-value="1"] {
+            ~ div[data-op3-element-options-property-name="restartDay"],
+            ~ div[data-op3-element-options-property-name="restartHour"] {
+                display: inline-block;
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.jconfirm-optimizepress {
+    font-family: "Open Sans", sans-serif !important;
+
+    &.jconfirm-optimizepress-mini {
+        .jconfirm-box-container {
+            .jconfirm-box {
+                max-width: 80%;
+            }
+        }
+    }
+
+    &.jconfirm-optimizepress-alert {
+        .jconfirm-box-container {
+            .jconfirm-box {
+                border: 2px solid $color__ops-red;
+
+                .jconfirm-title-c {
+                    padding: 30px 50px 30px 40px;
+                }
+            }
+        }
+    }
+
+    &.jconfirm-optimizepress-success {
+        .jconfirm-box-container {
+            .jconfirm-box {
+                border: 2px solid $color__ops-green;
+
+                .jconfirm-title-c {
+                    padding: 30px 50px 30px 40px;
+                }
+            }
+        }
+    }
+
+    #wpadminbar {
+        display: none !important;
+    }
+
+    .jconfirm-bg {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .jconfirm-box-container {
+        margin-left: 160px;
+
+        .jconfirm-box {
+            box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            max-width: 1120px;
+            padding: 0;
+            width: auto !important;
+
+            &.loading {
+                &:before {
+                }
+
+                &:after {
+                }
+            }
+
+            div.jconfirm-closeIcon {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                color: $color__ops-logoBlue;
+                top: 30px;
+                right: 30px;
+                opacity: 1;
+                transition: $transition__color-linear;
+
+                &:hover {
+                    color: $color__ops-black;
+                }
+            }
+
+            div.jconfirm-title-c {
+                display: block;
+                padding: 30px 65px 30px 55px;
+                margin: 0;
+                border-bottom: 1px solid $color__ops-borderBlue;
+                position: relative;
+
+                .jconfirm-title {
+                    display: block;
+
+                    h4 {
+                        margin-bottom: 0;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            div.jconfirm-content-pane {
+                box-sizing: border-box;
+                height: auto !important;
+                padding: 30px 50px 30px 40px;
+                margin-bottom: 0;
+            }
+
+            div.jconfirm-buttons {
+                box-sizing: border-box;
+                padding: 30px 65px 30px 55px;
+            }
+
+            div.jconfirm-content-pane + div.jconfirm-buttons {
+                padding-top: 0;
+            }
+
+            .op3-input-filter {
+                font-size: 15px;
+            }
+        }
+    }
+
+    &.jconfirm-op3small {
+        .jconfirm-box {
+            max-width: 30%;
+            @media (max-width: 1460px) {
+                max-width: 40%;
+            }
+        }
+    }
+
+    &.jconfirm-op3full {
+        .jconfirm-box {
+            max-width: 90%;
+        }
+    }
+}
+
+.ops_isFullScreen {
+    .jconfirm-optimizepress {
+        .jconfirm-box-container {
+            margin-left: 0;
+        }
+    }
+}

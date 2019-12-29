@@ -1,0 +1,7 @@
+.jquery-opnotify { position: relative; display: flex; align-items: center; margin: 0.5em; padding: 0.5em; border: 1px solid gray; border-radius: 0.25em; }
+.jquery-opnotify-message { flex: 1; flex-grow: 1; display: block; margin: 0; padding: 0; }
+.jquery-opnotify-clear { display: block; width: 1em; height: 1em; margin: 0 0 0 0.5em; padding: 0; line-height: 1em; font-weight: bold; text-align: center; color: inherit; text-decoration: none; }
+[data-jquery-opnotify-type="success"] { background: #def0d8; border-color: #d4e9c6; color: #457c49; }
+[data-jquery-opnotify-type="info"] { background: #d8ecf6; border-color: #bae7f0; color: #3d7693; }
+[data-jquery-opnotify-type="warning"] { background: #fcf8e3; border-color: #faebcc; color: #8f754a; }
+[data-jquery-opnotify-type="danger"] { background: #f2dddd; border-color: #ebcbd0; color: #ad4d4d; }

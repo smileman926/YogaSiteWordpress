@@ -1,0 +1,29 @@
+// General
+$page-min-width: 1024px;
+$page-min-width-tablet: 767px;
+$page-min-width-mobile: 360px;
+
+// Default font (css file is imported to page by php)
+$op-font-family: 'Open Sans', sans-serif;
+
+// Colours
+$op-white: #fff;
+$op-blue: #0175ff;
+$op-dark-blue: #00487c;
+
+$op-grey: #333;
+$op-dark-grey: #111;
+$op-light-grey: #8e8e8e;
+$op-grey-border: #e8e8e8;
+
+// Media Query Breakpoints
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 1023px;
+
+// Header / Sidebar / Frame
+$header-height: 55px;
+$sidebar-switcher-width: 20px;
+$sidebar-width: 310px;
+
+// Default Option Values
+$op-gutter: 10px;

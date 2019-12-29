@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>OP3 Base64ImagePreview test page</title>
+        <link rel="stylesheet" href="jquery-base64-image-preview.css" />
+    </head>
+    <body>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque architecto at aliquid voluptates neque consequatur explicabo dignissimos, ea? Laboriosam voluptate quasi harum error cum blanditiis minus quam repellendus, dignissimos rem.</p>
+        <img alt="" src="" />
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-base64-image-preview.js"></script>
+        <script>
+            ;(function() {
+                $("img")
+                    .on("base64imagepreviewchange", function(e) {
+                        console.log("imagepreviewchange", e);
+                    })
+                    .base64ImagePreview({
+                        accept: "image/jpeg,image/png",
+                    });
+            })();
+        </script>
+    </body>
+</html>

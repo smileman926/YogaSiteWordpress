@@ -1,0 +1,137 @@
+#op3-wrapper {
+    display: none;
+    position: relative;
+    padding-bottom: 15px;
+
+    &.active {
+        display: block;
+    }
+
+    a img {
+        width: 22px;
+        height: 22px;
+        margin-top: -4px;
+        margin-right: 4px;
+        vertical-align: middle;
+        filter: drop-shadow(0 0 1px #006799);
+    }
+
+    .op-editor-mode-button-wrap {
+        display: inline-block;
+        outline: none !important;
+
+        &:focus {
+            outline: none !important;
+            box-shadow: none;
+        }
+    }
+
+    .op-editor-mode-button {
+        background: #0070fa;
+        border-color: #0070fa;
+        box-shadow: 0 2px 0 #006799 !important;
+        border-radius: 3px;
+        transition: 0.4s all ease;
+        height: auto;
+        padding: 5px 35px;
+
+        &:hover {
+            background: #0060e9;
+        }
+    }
+
+    .op-editor-exit {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        display: none !important;
+    }
+}
+
+body.op-editor-active #op3-wrapper {
+    border: 1px solid #ddd;
+    background-color: #f6f6f6;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+    padding: 100px;
+    text-align: center;
+
+    .op-editor-exit {
+        display: inline-block !important;
+    }
+}
+
+#op3-frame-live-editor {
+    // min-width: 1024px;
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $op-blue;
+    border: 0 none;
+    z-index: 1000002;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+
+    // When live editor animates out, we want the height to
+    // be set to 0 after the opacity animation finishes
+    transition: visibility 0.2s ease, opacity 0.2s ease, height 0s 0.2s ease;
+
+    body.wp-plugin-op3-show & {
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
+
+        // When live editor animates in, we want the height
+        // to be set to 100% immediately (with 0s delay)
+        transition: visibility 0.2s ease, opacity 0.2s ease, height 0s 0s ease;
+    }
+}
+
+body.wp-plugin-op3-show {
+    overflow: hidden !important;
+}
+
+.op3-modal.op3-modal-media {
+    /*
+     * @todo
+     * wordpress can change markup, find
+     * beter way to hide specifix menu
+     * items (maybe js modal params?)
+     */
+    .media-menu {
+        > * {
+            display: none;
+        }
+
+        > *:first-child,
+        > *:last-child {
+            display: block;
+        }
+    }
+}
+
+// We need to hide some boxes so they don't interfere with the OP editor
+body.op-editor-active #postdivrich {
+    display: none !important;
+}
+
+body.op-editor-active .redux-op_options {
+    display: none !important;
+}
+
+/**
+ * Fix for media library modal (z-index needs to
+ * be higher than guttenberg tutorial popups
+ * and higher than liveeditor itself)
+ */
+.media-modal {
+    z-index: 1000004;
+}
+
+.media-modal-backdrop {
+    z-index: 1000003;
+}

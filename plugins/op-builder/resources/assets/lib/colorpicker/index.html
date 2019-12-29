@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>OP3 color picker test page</title>
+        <link rel="stylesheet" href="colorpicker.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+        <style>
+            html {
+                background: #eee;
+            }
+            body {
+                --op3-color-scheme-1:rgb(19, 57, 167);
+                --op3-color-scheme-2:rgb(27, 104, 251);
+                --op3-color-scheme-3:rgb(20, 155, 252);
+                --op3-color-scheme-4:rgb(48, 48, 48);
+                --op3-color-scheme-5:rgb(216, 216, 216);
+            }
+            .widget-parent { position: relative; padding: 420px 100px; }
+            .jquery-colorpicker-widget { margin: 12px; }
+        </style>
+        <style>
+            .jquery-colorpicker-list > * { width: 20%; }
+            .jquery-colorpicker-widget { font-family: 'Open Sans', sans-serif; }
+        </style>
+    </head>
+    <body>
+        <div class="widget-parent">
+            <input type="text" value="red" />
+            <br />
+            <input type="text" value="yellow" />
+            <br />
+            <input type="text" value="lime" />
+            <br />
+            <input type="text" value="cyan" />
+            <br />
+            <input type="text" value="blue" />
+            <br />
+            <input type="text" value="magenta" />
+            <br />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque architecto at aliquid voluptates neque consequatur explicabo dignissimos, ea? Laboriosam voluptate quasi harum error cum blanditiis minus quam repellendus, dignissimos rem.</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://rawgit.com/fffilo/color/master/src/color.js"></script>
+        <script src="colorpicker.js"></script>
+        <script>
+            ;(function() {
+                $('input')
+                    .on("colorpickershow", function(event, color) {
+                        console.log("index", event.type);
+                    })
+                    .on("colorpickerhide", function(event, color) {
+                        console.log("index", event.type);
+                    })
+                    .on("colorpickerchange", function(event, color) {
+                        console.log("index", event.type, color.toString("hexa"));
+                    })
+                    .on("change", function(event) {
+                        console.log("index", event.type, this.value);
+                    })
+                    .colorpicker({
+                        parent: ".widget-parent",
+                        format: "rgb",
+                        storage: [ "#ffc32e", "#ff5839", "#c62039", "#8e1841", "#591e45" ],
+                        default: "gray",
+                        allowEmpty: true,
+                        cssVarNode: document.body,
+                        align: "topright",
+                        widgetOffset: 24,
+                        schemeVars: [
+                            "--op3-color-scheme-1",
+                            "--op3-color-scheme-2",
+                            "--op3-color-scheme-3",
+                            "--op3-color-scheme-4",
+                            "--op3-color-scheme-5",
+                        ]
+                    });
+            })();
+        </script>
+    </body>
+</html>

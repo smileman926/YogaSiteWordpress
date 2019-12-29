@@ -1,0 +1,24 @@
+[data-op3-force-visibility] .op3-element[data-op3-element-type="membershipcontentlistitem"] {
+    display: flex !important;
+}
+
+[data-op3-element-type="membershipcontentlistitem"] {
+    pointer-events: none;
+
+    > .op3-column-content {
+        pointer-events: all;
+
+        .op3-element[data-op3-gid]:not([data-op3-gid=""]) & {
+            pointer-events: none;
+        }
+
+        .ice-editor {
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}
+
+.op3-absolute-link {
+    pointer-events: none;
+}

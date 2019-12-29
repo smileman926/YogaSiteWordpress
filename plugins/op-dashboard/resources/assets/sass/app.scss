@@ -1,0 +1,29 @@
+// We need the framework variables first
+@import "framework/variables/variables";
+
+// Then the default styling and page styling
+@import "app/default/default";
+@import "app/pages/pages";
+
+// Variables
+//@import "variables";
+
+// Dashboard components
+//@import 'common';
+//@import 'notifications';
+//@import 'headers';
+//@import 'nav';
+//@import 'forms';
+//@import 'buttons';
+//@import 'overlay';
+//@import 'helpers';
+
+// Page specific
+//@import 'index';
+//@import 'products';
+//@import 'integrations';
+//@import 'settings';
+
+//@import "admin";
+//@import "fonts";
+//@import "general";

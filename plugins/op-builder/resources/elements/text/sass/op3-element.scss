@@ -1,0 +1,349 @@
+.op3-element[data-op3-element-type="text"] {
+    width: 100%;
+    margin: 0 0 0.75em 0;
+
+    .op3-text-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+
+    [contenteditable="true"] {
+        outline: 0 none;
+    }
+
+    [data-op3-contenteditable] {
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            height: 1px;
+            margin-top: -1px;
+        }
+
+        h1 {
+            margin: 0 0 0.67em 0;
+            font-size: 2em;
+        }
+
+        h2 {
+            margin: 0 0 0.75em 0;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            margin: 0 0 0.83em 0;
+            font-size: 1.17em;
+        }
+
+        h4 {
+            margin: 0 0 1em 0;
+            font-size: 1em;
+        }
+
+        h5 {
+            margin: 0 0 1.5em 0;
+            font-size: 0.83em;
+        }
+
+        h6 {
+            margin: 0 0 1.67em 0;
+            font-size: 0.75em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            padding: 0;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 0 0 0.75em 0;
+            padding: 0;
+            font-size: 1em;
+        }
+
+        pre {
+            margin: 0 0 1em 0;
+            padding: 0;
+            font-size: 1em;
+        }
+    }
+
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child,
+    p:first-child {
+        margin-top: 0;
+    }
+
+    h1:last-child,
+    h2:last-child,
+    h3:last-child,
+    h4:last-child,
+    h5:last-child,
+    h6:last-child,
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*
+// attribute data-op3-element-options-media-all is depricated!!!
+.op3-element {
+    &[data-op3-element-options-media-all="color"],
+    &[data-op3-element-options-media-all*=",color,"],
+    &[data-op3-element-options-media-all^="color,"],
+    &[data-op3-element-options-media-all$=",color"] {
+        [data-op3-contenteditable] h1,
+        [data-op3-contenteditable] h2,
+        [data-op3-contenteditable] h3,
+        [data-op3-contenteditable] h4,
+        [data-op3-contenteditable] h5,
+        [data-op3-contenteditable] h6,
+        [data-op3-contenteditable] p,
+        [data-op3-contenteditable] pre {
+            color: inherit;
+        }
+    }
+
+    &[data-op3-element-options-media-all="fontStyle"],
+    &[data-op3-element-options-media-all*=",fontStyle,"],
+    &[data-op3-element-options-media-all^="fontStyle,"],
+    &[data-op3-element-options-media-all$=",fontStyle"] {
+        [data-op3-contenteditable] h1,
+        [data-op3-contenteditable] h2,
+        [data-op3-contenteditable] h3,
+        [data-op3-contenteditable] h4,
+        [data-op3-contenteditable] h5,
+        [data-op3-contenteditable] h6,
+        [data-op3-contenteditable] p,
+        [data-op3-contenteditable] pre {
+            font-style: inherit;
+        }
+    }
+
+    &[data-op3-element-options-media-all="fontWeight"],
+    &[data-op3-element-options-media-all*=",fontWeight,"],
+    &[data-op3-element-options-media-all^="fontWeight,"],
+    &[data-op3-element-options-media-all$=",fontWeight"] {
+        [data-op3-contenteditable] h1,
+        [data-op3-contenteditable] h2,
+        [data-op3-contenteditable] h3,
+        [data-op3-contenteditable] h4,
+        [data-op3-contenteditable] h5,
+        [data-op3-contenteditable] h6,
+        [data-op3-contenteditable] p,
+        [data-op3-contenteditable] pre {
+            font-weight: inherit;
+        }
+    }
+
+    &[data-op3-element-options-media-all="textAlign"],
+    &[data-op3-element-options-media-all*=",textAlign,"],
+    &[data-op3-element-options-media-all^="textAlign,"],
+    &[data-op3-element-options-media-all$=",textAlign"] {
+        [data-op3-contenteditable] h1,
+        [data-op3-contenteditable] h2,
+        [data-op3-contenteditable] h3,
+        [data-op3-contenteditable] h4,
+        [data-op3-contenteditable] h5,
+        [data-op3-contenteditable] h6,
+        [data-op3-contenteditable] p,
+        [data-op3-contenteditable] pre {
+            text-align: inherit;
+        }
+    }
+
+    &[data-op3-element-options-media-all="textDecoration"],
+    &[data-op3-element-options-media-all*=",textDecoration,"],
+    &[data-op3-element-options-media-all^="textDecoration,"],
+    &[data-op3-element-options-media-all$=",textDecoration"] {
+        [data-op3-contenteditable] h1,
+        [data-op3-contenteditable] h2,
+        [data-op3-contenteditable] h3,
+        [data-op3-contenteditable] h4,
+        [data-op3-contenteditable] h5,
+        [data-op3-contenteditable] h6,
+        [data-op3-contenteditable] p,
+        [data-op3-contenteditable] pre {
+            text-decoration: inherit;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .op3-element {
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}="color"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}*=",color,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}^="color,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}$=",color"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                color: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}="fontStyle"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}*=",fontStyle,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}^="fontStyle,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}$=",fontStyle"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                font-style: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}="fontWeight"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}*=",fontWeight,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}^="fontWeight,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}$=",fontWeight"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                font-weight: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}="textAlign"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}*=",textAlign,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}^="textAlign,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}$=",textAlign"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                text-align: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}="textDecoration"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}*=",textDecoration,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}^="textDecoration,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-tablet}$=",textDecoration"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                text-decoration: inherit;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .op3-element {
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}="color"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}*=",color,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}^="color,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}$=",color"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                color: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}="fontStyle"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}*=",fontStyle,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}^="fontStyle,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}$=",fontStyle"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                font-style: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}="fontWeight"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}*=",fontWeight,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}^="fontWeight,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}$=",fontWeight"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                font-weight: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}="textAlign"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}*=",textAlign,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}^="textAlign,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}$=",textAlign"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                text-align: inherit;
+            }
+        }
+
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}="textDecoration"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}*=",textDecoration,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}^="textDecoration,"],
+        &[data-op3-element-options-media-screen-and-max-width-#{$breakpoint-mobile}$=",textDecoration"] {
+            [data-op3-contenteditable] h1,
+            [data-op3-contenteditable] h2,
+            [data-op3-contenteditable] h3,
+            [data-op3-contenteditable] h4,
+            [data-op3-contenteditable] h5,
+            [data-op3-contenteditable] h6,
+            [data-op3-contenteditable] p,
+            [data-op3-contenteditable] pre {
+                text-decoration: inherit;
+            }
+        }
+    }
+}
+*/

@@ -1,0 +1,94 @@
+/**
+<div class="ops-onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="ops-onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="ops-onoffswitch-label" for="myonoffswitch">
+        <span class="ops-onoffswitch-inner"></span>
+        <span class="ops-onoffswitch-switch"></span>
+    </label>
+</div>
+ */
+.ops-onoffswitch {
+    position: relative;
+    width: 73px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ops-onoffswitch-checkbox {
+    display: none !important;
+}
+
+.ops-onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid $color__ops-borderBlue;
+    border-radius: 20px;
+}
+
+.ops-onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.ops-onoffswitch-inner:before,
+.ops-onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: $color__ops-white;
+    box-sizing: border-box;
+}
+
+.ops-onoffswitch .ops-onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 15px;
+    background-color: $color__ops-logoBlue;
+    color: $color__ops-white;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 30px;
+}
+
+.ops-onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 12px;
+    background-color: $color__ops-white;
+    color: $color__ops-gray;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.ops-onoffswitch-switch {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 10px;
+    background: $color__ops-white;
+    position: absolute;
+    top: 3px;
+    bottom: 0;
+    right: 39px;
+    border: 2px solid $color__ops-borderBlue;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.ops-onoffswitch-checkbox:checked+.ops-onoffswitch-label .ops-onoffswitch-inner {
+    margin-left: 0;
+}
+
+.ops-onoffswitch-checkbox:checked+.ops-onoffswitch-label .ops-onoffswitch-switch {
+    right: 0px;
+}

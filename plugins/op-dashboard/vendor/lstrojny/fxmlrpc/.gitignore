@@ -1,0 +1,8 @@
+/coverage/
+/nbproject/
+/node_modules/
+/.idea/
+/atlassian-ide-plugin.xml
+/composer.lock
+/phpunit.xml
+/build/

@@ -1,0 +1,115 @@
+.op3-image-url-preview-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-width: 1px;
+    border-color: $op-grey-border;
+    border-style: solid;
+    padding: 5px;
+    background-clip: content-box;
+    background-color: $op-light-grey;
+
+    button {
+        border-radius: 166px;
+        padding: 0.7em 1.5em;
+        width: auto;
+        background-color: rgba(0, 0, 0, 0.65);
+        margin: 10px auto 0 auto;
+        color: white;
+        border: 0;
+        font-family: $op-font-family;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:hover {
+            background-color: $op-blue;
+            color: $op-white;
+        }
+    }
+}
+
+.op3-element-options-property[data-op3-element-options-property-name="src"] {
+    .op3-image-url-preview-widget {
+        .op3-image-url-preview-clear {
+            display: none !important;
+        }
+    }
+}
+
+/*
+.op3-element-options-property[data-op3-element-options-property-id="backgroundImage"] {
+    display: none;
+}
+
+.op3-element-options-property[data-op3-element-options-property-id="backgroundImageUrl"] {
+    .op3-element-options-property-input {
+        display: none;
+    }
+
+    .op3-background-image-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        border-width: 1px;
+        border-color: $op-grey-border;
+        border-style: solid;
+        padding: 5px;
+        background-clip: content-box;
+        background-color: $op-light-grey;
+
+        button {
+            border-radius: 166px;
+            padding: 0.7em 1.5em;
+            width: auto;
+            background-color: rgba(0, 0, 0, 0.65);
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            border: 0;
+            font-family: $op-font-family;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                background-color: $op-blue;
+                color: $op-white;
+            }
+        }
+    }
+}
+
+/* Hide all background properties
+   until background-image is set * /
+form {
+    [data-op3-element-options-property-id="backgroundImage"] {
+        &[data-op3-element-options-property-value="none"],
+        &[data-op3-element-options-property-value=""] {
+            ~ [data-op3-element-options-property-name="backgroundPosition"],
+            ~ [data-op3-element-options-property-name="backgroundAttachment"],
+            ~ [data-op3-element-options-property-name="backgroundRepeat"],
+            ~ [data-op3-element-options-property-name="backgroundSize"] {
+                display: none;
+            }
+        }
+    }
+}
+*/

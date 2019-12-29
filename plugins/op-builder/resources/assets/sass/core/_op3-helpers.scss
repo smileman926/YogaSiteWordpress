@@ -1,0 +1,44 @@
+/**
+ * Helpers
+ *
+ * Should be included at the end of the
+ * stylesheet to ensure that default
+ * styles can be overriden
+ */
+
+// Hide something visually (not
+// from screen readers)
+.visually-hidden {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: block;
+}
+
+// Disabling user-select site-wide
+.op3-live-editor-user-select-off {
+    user-select: none;
+}
+
+// Disabling pointer-events site-wide
+.op3-live-editor-pointer-events-off {
+    #header,
+    #sidebar,
+    #frame,
+    #toolbar,
+    iframe {
+        pointer-events: none;
+    }
+}
+
+// Forcing cursor for col/row resize
+.op3-cursor-override-col-resize,
+.op3-cursor-override-col-resize * {
+    cursor: col-resize !important;
+}
+
+.op3-cursor-override-row-resize,
+.op3-cursor-override-row-resize * {
+    cursor: row-resize !important;
+}

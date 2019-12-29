@@ -1,0 +1,2 @@
+post_title,ID,post_excerpt,post_status,post_date,post_author,discount_type,coupon_amount,individual_use,product_ids,exclude_product_ids,usage_limit,usage_limit_per_user,limit_usage_to_x_items,expiry_date,free_shipping,exclude_sale_items,product_categories,exclude_product_categories,minimum_amount,maximum_amount,customer_email,date_expires,usage_count
+coupon1003,502,Not so dummy,publish,2019-01-28 10:01:21,1,percent_product,57,yes,,,10,10,3,2019-03-28,no,yes,"8,9,6","2,10,7",70,80,"patra@gmail.com, patra@hotmail.com, patra@yahoo.co.in",1553731200,0

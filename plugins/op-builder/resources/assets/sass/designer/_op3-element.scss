@@ -1,0 +1,29 @@
+.op3-element {
+    [data-op3-children]:empty {
+        height: 100%;
+        min-height: 64px;
+
+        &::before {
+            content: "\f236";
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'op3-icons';
+            font-size: 24px;
+
+            width: 32px;
+            line-height: 32px;
+            text-align: center;
+            color: transparentize($op-blue, 0.5);
+            cursor: pointer;
+        }
+    }
+
+    // Force word wrapping because
+    // Firefox is not doing it.
+    [data-op3-contenteditable] {
+        overflow-wrap: break-word;
+    }
+}

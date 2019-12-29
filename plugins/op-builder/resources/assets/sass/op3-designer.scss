@@ -1,0 +1,45 @@
+// Dependencies
+@import 'core/op3-variables';
+@import 'core/op3-core';
+@import 'core/op3-icons-base';
+@import 'core/op3-icons';
+@import 'core/op3-element-thumb';
+@import 'core/op3-block-thumb';
+
+// Designer styles
+@import 'designer/op3-designer-base';
+@import 'designer/op3-element';
+@import 'designer/op3-force-visibility';
+@import 'designer/op3-text-editor';
+@import 'designer/op3-draganddrop';
+@import 'designer/op3-add-section';
+@import 'designer/op3-element-layouts';
+@import 'designer/op3-element-focus';
+@import 'designer/op3-global-elements';
+//@import 'designer/op3-toolbar';
+
+// Custom op3 libraries
+@import 'live-editor/vendor/op3-colorpicker';
+@import 'live-editor/vendor/op3-ice-editor';
+
+// Properties (default property has to be included first;
+// it is ignored in the gulp GulpSassGlob task)
+@import '../../properties/default/sass/op3-property.scss';
+@import '../../properties/**/*.scss';
+
+// Elements (default element has to be included first;
+// it is ignored in the gulp GulpSassGlob task)
+@import '../../elements/default/sass/op3-designer.scss';
+@import '../../elements/default/sass/op3-element.scss';
+@import '../../elements/**/op3-designer.scss';
+@import '../../elements/**/op3-element.scss';
+
+// Corrections of Wordpress themes
+@import 'live-editor/op3-wp-theme-override';
+
+// Node modules custom styles
+@import 'designer/vendor/op3-ice-editor.scss';
+@import 'designer/vendor/op3-flex-grid-cell-sizer.scss';
+
+// General Helpers
+@import 'core/op3-helpers';

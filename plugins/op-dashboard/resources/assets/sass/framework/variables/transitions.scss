@@ -1,0 +1,13 @@
+$transition__color-linear: color .3s linear;
+$transition__bg-color-linear: background-color .3s linear;
+$transition__bg-linear: background .3s linear;
+$transition__transform-linear: transform .3s linear;
+$transition__opacity-linear: opacity .3s linear;
+$transition__maxHeight-linear: max-height .3s linear;
+
+$transition__width-left-linear: width .3s ease, left .3s ease;
+
+$transition__color-bg-color-linear: color .3s linear, background .3s linear;
+$transition__maxHeight-margin-linear: max-height .3s linear, margin .3s linear;
+
+$transition__color-bg-color-border-color-linear: color .3s linear, background .3s linear, border-color .3s linear;

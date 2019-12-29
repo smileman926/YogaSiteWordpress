@@ -1,0 +1,51 @@
+[data-op3-element-options-property-name="action"] {
+    ~ [data-op3-element-options-property-name="href"],
+    ~ [data-op3-element-options-property-name="relNoFollow"],
+    ~ [data-op3-element-options-property-name="target"],
+    ~ [data-op3-element-options-property-name="popOverlayTrigger"],
+    ~ [data-op3-element-options-property-name="nextFunnelStep"],
+    ~ [data-op3-element-options-property-name="prevFunnelStep"],
+    ~ [data-op3-element-options-property-name="selectFunnelStep"],
+    ~ [data-op3-element-options-property-name="videoUrlYoutube"],
+    ~ [data-op3-element-options-property-name="createVideoPopoverlay"] {
+        display: none;
+    }
+
+    ~ [data-op3-element-options-property-name="createVideoPopoverlay"] .op3-element-options-label-group {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value="link"] {
+        ~ [data-op3-element-options-property-name="href"],
+        ~ [data-op3-element-options-property-name="relNoFollow"],
+        ~ [data-op3-element-options-property-name="target"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="popoverlay"] {
+        ~ [data-op3-element-options-property-name="popOverlayTrigger"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="video"] {
+        ~ [data-op3-element-options-property-name="createVideoPopoverlay"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="nextFunnelStep"],
+    &[data-op3-element-options-property-value="prevFunnelStep"] {
+        ~ [data-op3-element-options-property-name="nextFunnelStep"],
+        ~ [data-op3-element-options-property-name="prevFunnelStep"] {
+            display: flex;
+        }
+    }
+
+    &[data-op3-element-options-property-value="goToFunnelStep"] {
+        ~ [data-op3-element-options-property-name="selectFunnelStep"] {
+            display: flex;
+        }
+    }
+}

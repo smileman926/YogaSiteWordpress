@@ -1,0 +1,6 @@
+// set cursor and disable frame while dragging
+html.jquery-draggable-dragging {
+    #op3-designer-iframe {
+        pointer-events: none;
+    }
+}

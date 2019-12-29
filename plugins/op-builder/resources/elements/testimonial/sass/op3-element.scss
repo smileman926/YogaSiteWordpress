@@ -1,0 +1,1112 @@
+.op3-element[data-op3-element-type="testimonial"] {
+    display: flex;
+    flex-direction: column;
+    width: 1140px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 0;
+    border-width: 0;
+
+    > [data-op3-element-container] > [data-op3-children] {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$op-gutter;
+        margin-right: -$op-gutter;
+
+        // We only allow grow/shrink when wrapping is enabled
+        &[data-op3-wrap-columns="1"] > [data-op3-element-type="testimonialitem"] {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        // Force basis to auto, in case the user changed flex-basis
+        // and then disabled column wrapping
+        //&[data-op3-wrap-columns="0"] > [data-op3-element-type="testimonialitem"] {
+        //    flex-basis: auto !important;
+        //}
+
+        // Show/hide children
+        .op3-element[data-op3-element-spec="title"],
+        .op3-element[data-op3-element-spec="avatar"],
+        .op3-element[data-op3-element-spec="company"],
+        .op3-element[data-op3-element-spec="author"],
+        .op3-element[data-op3-element-spec="logo"] {
+            display: none;
+        }
+
+        &[data-op3-block-display-title="1"] .op3-element[data-op3-element-spec="title"],
+        &[data-op3-block-display-avatar="1"] .op3-element[data-op3-element-spec="avatar"],
+        &[data-op3-block-display-company="1"] .op3-element[data-op3-element-spec="company"],
+        &[data-op3-block-display-author="1"] .op3-element[data-op3-element-spec="author"],
+        &[data-op3-block-display-logo="1"] .op3-element[data-op3-element-spec="logo"] {
+            display: block;
+        }
+    }
+
+    // Child elements
+    .op3-element[data-op3-element-type="testimonialitem"] {
+        margin-bottom: 20px;
+
+        > .op3-column-content {
+            padding: 20px;
+            border: 0 solid #ddd;
+            justify-content: flex-start;
+            overflow: hidden;
+            overflow-wrap: break-word;
+
+            // For backward-compatibility with OP3-11477 (commit 5f0ec49f)
+            > [data-op3-element-container] > [data-op3-border] {
+                border: 0 solid #ddd;
+            }
+
+            > [data-op3-element-container],
+            > [data-op3-element-container] > [data-op3-border] {
+                border-style: solid;
+            }
+
+            > [data-op3-element-container] > [data-op3-children] {
+                display: grid;
+                grid-template:
+                    "avatar"
+                    "title"
+                    "text"
+                    "author"
+                    "company"
+                    "logo";
+                grid-auto-columns: minmax(0, 100%);
+                grid-gap: 0 15px;
+                text-align: center;
+                min-width: 0;
+                min-height: 0;
+
+                .op3-element {
+                    &[data-op3-element-spec="title"] {
+                        margin-bottom: 5px;
+                        grid-area: title;
+                        line-height: 1.25;
+                        text-align: inherit;
+                        font-weight: bold;
+                        font-size: 1.5em;
+                        min-width: 0;
+                    }
+
+                    &[data-op3-element-spec="text"] {
+                        margin: 0 0 10px 0;
+                        grid-area: text;
+                        min-width: 0;
+                    }
+
+                    &[data-op3-element-spec="avatar"] {
+                        grid-area: avatar;
+                        width: 100px;
+                        margin: 0 auto;
+                        align-self: center;
+
+                        .op3-image-overlay-container {
+                            border-radius: 100%;
+                        }
+                    }
+
+                    &[data-op3-element-spec="author"] {
+                        grid-area: author;
+                        margin: 0;
+                        line-height: 1.25;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        text-align: inherit;
+                        min-width: 0;
+                        align-self: end;
+                    }
+
+                    &[data-op3-element-spec="company"] {
+                        grid-area: company;
+                        margin: 0;
+                        line-height: 1.25;
+                        font-size: 1em;
+                        font-weight: bold;
+                        text-align: inherit;
+                        min-width: 0;
+                        align-self: start;
+                    }
+
+                    &[data-op3-element-spec="logo"] {
+                        grid-area: logo;
+                        width: 128px;
+                        margin: 0 auto 5px auto;
+                        min-width: 0;
+                        line-height: 1;
+                    }
+
+                    &[data-op3-element-spec="autogap"] {
+                        grid-area: autogap;
+                        min-width: 0;
+                        // autogap grid area is not used,
+                        // it's only alignment fix
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin testimonialLayout($device) {
+    // .op3-element[data-op3-element-type="testimonial"] [data-op3-block-layout-desktop="1"][data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children]
+    .op3-element[data-op3-element-type="testimonial"] > [data-op3-element-container] {
+        [data-op3-block-layout-#{$device}="0"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "title  title"
+                    "text   text"
+                    "avatar logo"
+                    "avatar author"
+                    "avatar company"
+                    / minmax(0, min-content) minmax(0, 100%);
+                text-align: left;
+
+                .op3-element {
+                    &[data-op3-element-spec="company"] {
+                        align-self: start;
+                    }
+
+                    &[data-op3-element-spec="author"] {
+                        align-self: center;
+                    }
+
+                    &[data-op3-element-spec="logo"] {
+                        align-self: end;
+                    }
+                }
+            }
+
+            // avatar, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar company"
+                        / minmax(0, min-content) minmax(0, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="company"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar author"
+                        / minmax(0, min-content) minmax(0, 100%);
+                }
+            }
+
+            // avatar, logo
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar logo"
+                        / minmax(0, min-content) minmax(0, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="logo"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, company, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar author"
+                        "avatar company"
+                        / minmax(0, min-content) minmax(0, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="author"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar logo"
+                        "avatar company"
+                        / minmax(0, min-content) minmax(0, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar logo"
+                        "avatar author"
+                        / minmax(0, min-content) minmax(0, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="author"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // remove gap when avatar is hidden
+            &[data-op3-block-display-avatar="0"] {
+                .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-gap: 0;
+                }
+
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="company"],
+                    .op3-element[data-op3-element-spec="author"] {
+                        margin-bottom: 5px;
+                    }
+
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="1"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "avatar logo"
+                    "avatar author"
+                    "avatar company"
+                    "title  title"
+                    "text   text"
+                    / minmax(0, min-content) minmax(0, 100%);
+                text-align: left;
+
+                .op3-element {
+                    &[data-op3-element-spec="title"] {
+                        margin-bottom: 5px;
+                    }
+
+                    &[data-op3-element-spec="company"] {
+                        align-self: start;
+                    }
+
+                    &[data-op3-element-spec="author"] {
+                        align-self: center;
+                    }
+
+                    &[data-op3-element-spec="logo"] {
+                        align-self: end;
+                    }
+                }
+            }
+
+            // avatar, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar company"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="company"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar author"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+                }
+            }
+
+            // avatar, logo
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar logo"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="logo"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, company, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar author"
+                        "avatar company"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+
+                    .op3-element {
+                        &[data-op3-element-spec="author"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar logo"
+                        "avatar company"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar logo"
+                        "avatar author"
+                        "title title"
+                        "text text"
+                        / auto 1fr;
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="author"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // add space between avatar & title
+            &[data-op3-block-display-title="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="title"] {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            // add space between avatar & text (when title is hidden)
+            &[data-op3-block-display-title="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="text"] {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            // remove gap when avatar is hidden
+            &[data-op3-block-display-avatar="0"] {
+                .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-gap: 0;
+                }
+
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="company"],
+                    .op3-element[data-op3-element-spec="author"] {
+                        margin-bottom: 5px;
+                    }
+
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="2"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "avatar"
+                    "title"
+                    "text"
+                    "author"
+                    "company"
+                    "logo"
+                    / minmax(0, 100%);
+            }
+
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                .op3-element[data-op3-element-spec="avatar"] {
+                    margin-bottom: 10px;
+                }
+
+                .op3-element[data-op3-element-spec="author"],
+                .op3-element[data-op3-element-spec="company"],
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-bottom: 5px;
+                }
+
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-top: 5px;
+                }
+            }
+
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar"
+                        "title"
+                        "text"
+                        "author"
+                        "company"
+                        "logo"
+                        / minmax(0, 100%);
+                }
+            }
+
+        }
+
+        [data-op3-block-layout-#{$device}="3"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "title"
+                    "text"
+                    "avatar"
+                    "author"
+                    "company"
+                    "logo"
+                    / minmax(0, 100%);
+            }
+
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                .op3-element[data-op3-element-spec="avatar"] {
+                    margin-bottom: 10px;
+                }
+
+                .op3-element[data-op3-element-spec="author"],
+                .op3-element[data-op3-element-spec="company"],
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-bottom: 5px;
+                }
+
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-top: 5px;
+                }
+            }
+
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title"
+                        "text"
+                        "avatar"
+                        "author"
+                        "company"
+                        "logo"
+                        / minmax(0, 100%);
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="4"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                text-align: center;
+                grid-template:
+                    "title  title   title    title"
+                    "text   text    text    text"
+                    ".      avatar  logo     ."
+                    ".      avatar  author   ."
+                    ".      avatar  company  ."
+                    / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                .op3-element {
+                    &[data-op3-element-spec="avatar"] {
+                        align-self: start;
+                        justify-self: end;
+                    }
+
+                    &[data-op3-element-spec="company"] {
+                        align-self: start;
+                        justify-self: start;
+                        text-align: left;
+                    }
+
+                    &[data-op3-element-spec="author"] {
+                        align-self: center;
+                        justify-self: start;
+                        text-align: left;
+                    }
+
+                    &[data-op3-element-spec="logo"] {
+                        align-self: end;
+                        justify-self: start;
+                    }
+                }
+            }
+
+            // remove gap when avatar is hidden
+            &[data-op3-block-display-avatar="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-gap: 0;
+
+                    .op3-element[data-op3-element-spec="author"],
+                    .op3-element[data-op3-element-spec="company"],
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            // avatar, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  company ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="company"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  author  ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+            }
+
+            // avatar, logo
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  logo  ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="logo"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, company, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  author  ."
+                        ".      avatar  company ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="author"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  logo    ."
+                        ".      avatar  company ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title title"
+                        "text text"
+                        "avatar logo"
+                        "avatar author"
+                        / minmax(0, min-content) minmax(0, 100%);
+                    grid-template:
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        ".      avatar  logo    ."
+                        ".      avatar  author  ."
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="author"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // No avatar
+            &[data-op3-block-display-avatar="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "title"
+                        "text"
+                        "avatar"
+                        "logo"
+                        "author"
+                        "company"
+                        / minmax(0, 100%);
+                    justify-content: center;
+
+                    .op3-element[data-op3-element-spec="author"],
+                    .op3-element[data-op3-element-spec="company"] {
+                        align-self: center;
+                        justify-self: center;
+                        text-align: center;
+                    }
+
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="5"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                text-align: center;
+                grid-template:
+                    ".      avatar  logo     ."
+                    ".      avatar  author   ."
+                    ".      avatar  company  ."
+                    "title  title   title    title"
+                    "text   text    text    text"
+                    / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                .op3-element {
+                    &[data-op3-element-spec="avatar"] {
+                        align-self: start;
+                        justify-self: end;
+                    }
+
+                    &[data-op3-element-spec="company"] {
+                        align-self: start;
+                        justify-self: start;
+                        text-align: left;
+                    }
+
+                    &[data-op3-element-spec="author"] {
+                        align-self: center;
+                        justify-self: start;
+                        text-align: left;
+                    }
+
+                    &[data-op3-element-spec="logo"] {
+                        align-self: end;
+                        justify-self: start;
+                    }
+                }
+            }
+
+            // add space between avatar & title
+            &[data-op3-block-display-title="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="title"] {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            // add space between avatar & text (when title is hidden)
+            &[data-op3-block-display-title="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    .op3-element[data-op3-element-spec="text"] {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            // remove gap when avatar is hidden
+            &[data-op3-block-display-avatar="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-gap: 0;
+
+                    .op3-element[data-op3-element-spec="author"],
+                    .op3-element[data-op3-element-spec="company"],
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+
+            // avatar, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  company ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="company"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  author  ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+            }
+
+            // avatar, logo
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  logo  ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+                }
+
+                .op3-element {
+                    &[data-op3-element-spec="logo"] {
+                        align-self: center;
+                    }
+                }
+            }
+
+            // avatar, company, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  author  ."
+                        ".      avatar  company ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="author"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, company
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  logo    ."
+                        ".      avatar  company ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="company"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // avatar, logo, author
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        ".      avatar  logo    ."
+                        ".      avatar  author  ."
+                        "title  title   title   title"
+                        "text   text    text    text"
+                        / minmax(0%, 100%) minmax(min-content, max-content) minmax(min-content, max-content) minmax(0%, 100%);
+
+                    .op3-element {
+                        &[data-op3-element-spec="logo"] {
+                            align-self: end;
+                        }
+
+                        &[data-op3-element-spec="author"] {
+                            align-self: start;
+                        }
+                    }
+                }
+            }
+
+            // No avatar
+            &[data-op3-block-display-avatar="0"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar"
+                        "logo"
+                        "author"
+                        "company"
+                        "title"
+                        "text"
+                        / minmax(0, 100%);
+                    justify-content: center;
+
+                    .op3-element[data-op3-element-spec="author"],
+                    .op3-element[data-op3-element-spec="company"] {
+                        align-self: center;
+                        justify-self: center;
+                        text-align: center;
+                    }
+
+                    .op3-element[data-op3-element-spec="logo"] {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="6"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "avatar"
+                    "author"
+                    "company"
+                    "title"
+                    "text"
+                    "logo"
+                    / minmax(0, 100%);
+
+                .op3-element[data-op3-element-spec="author"] {
+                    margin-bottom: 5px;
+                }
+
+                .op3-element[data-op3-element-spec="avatar"],
+                .op3-element[data-op3-element-spec="company"] {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="1"][data-op3-block-display-logo="0"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="1"][data-op3-block-display-author="0"][data-op3-block-display-logo="1"],
+            &[data-op3-block-display-avatar="1"][data-op3-block-display-company="0"][data-op3-block-display-author="1"][data-op3-block-display-logo="1"] {
+                .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                    grid-template:
+                        "avatar"
+                        "title"
+                        "text"
+                        "author"
+                        "company"
+                        "logo"
+                        / minmax(0, 100%);
+                }
+            }
+        }
+
+        // Layouts 9 has been removed as per OP3-1105,
+        // but to make the code backward-compatible,
+        // it now uses CSS from layout 7
+        [data-op3-block-layout-#{$device}="7"],
+        [data-op3-block-layout-#{$device}="9"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "avatar title"
+                    "avatar text"
+                    "avatar author"
+                    "avatar company"
+                    "avatar logo"
+                    / minmax(0, min-content) minmax(0, 100%);
+                text-align: left;
+
+                .op3-element[data-op3-element-spec="author"],
+                .op3-element[data-op3-element-spec="company"],
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-bottom: 5px;
+                }
+
+                .op3-element[data-op3-element-spec="title"] {
+                    align-self: end;
+                }
+
+                .op3-element[data-op3-element-spec="logo"] {
+                    align-self: end;
+                }
+            }
+        }
+
+        // Layouts 10 has been removed as per OP3-1105,
+        // but to make the code backward-compatible,
+        // it now uses CSS from layout 8
+        [data-op3-block-layout-#{$device}="8"],
+        [data-op3-block-layout-#{$device}="10"] {
+            .op3-element[data-op3-element-type="testimonialitem"] > .op3-column-content > [data-op3-element-container] > [data-op3-children] {
+                grid-template:
+                    "title      avatar"
+                    "text       avatar"
+                    "author     avatar"
+                    "company    avatar"
+                    "logo       avatar"
+                    / minmax(0, 100%) minmax(0, min-content);
+                text-align: left;
+
+                .op3-element[data-op3-element-spec="author"],
+                .op3-element[data-op3-element-spec="company"],
+                .op3-element[data-op3-element-spec="logo"] {
+                    margin-bottom: 5px;
+                }
+
+                .op3-element[data-op3-element-spec="title"] {
+                    align-self: end;
+                }
+
+                .op3-element[data-op3-element-spec="logo"] {
+                    align-self: start;
+                }
+            }
+        }
+    }
+}
+
+@include testimonialLayout(desktop);
+
+// 1140px is default row width,
+// so this ie related to it
+@media (max-width: $breakpoint-tablet) {
+    @include testimonialLayout(tablet);
+    .op3-element[data-op3-element-type="testimonial"] {
+        padding: 15px 30px;
+
+        .op3-element[data-op3-element-type="testimonialitem"] .op3-element {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    @include testimonialLayout(mobile);
+    .op3-element[data-op3-element-type="testimonial"] {
+        padding: 15px 30px;
+
+        .op3-element[data-op3-element-type="testimonialitem"] .op3-element {
+            width: 100%;
+        }
+    }
+}

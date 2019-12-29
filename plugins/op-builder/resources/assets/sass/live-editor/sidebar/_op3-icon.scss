@@ -1,0 +1,15 @@
+/*
+ * OP3 icon element:
+ * Display only fontSize property.
+ * tab-property is in charge to display this property.
+ */
+[data-op3-element-options-type="icon"] .op3-element-options-group {
+    div[data-op3-element-options-property-id="fontSize"] {
+        display: flex;
+        padding-top: 22px;
+
+        .op3-element-options-label-group {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<?php
+
+define('OPD_CACHE_TTL_SL',                   getenv('OPD_CACHE_TTL_SL') ?: 10);
+define('OPD_CACHE_TTL_SL_PING',              getenv('OPD_CACHE_TTL_SL_PING') ?: 5);
+define('OPD_CACHE_TTL_TEMPLATE_CATEGORIES',  getenv('OPB_CACHE_TTL_TEMPLATE_CATEGORIES') ?: 10);
+define('OPD_CACHE_TTL_TEMPLATE_COLLECTIONS', getenv('OPD_CACHE_TTL_TEMPLATE_COLLECTIONS') ?: 5);
+define('OPD_CACHE_TTL_BLOCK_CATEGORIES',     getenv('OPD_CACHE_TTL_BLOCK_CATEGORIES') ?: 10);
+define('OPD_CACHE_TTL_TEMPLATES',            getenv('OPB_CACHE_TTL_TEMPLATES') ?: 5);
+define('OPD_CACHE_TTL_FUNNEL_CATEGORIES',    getenv('OPD_CACHE_TTL_FUNNEL_CATEGORIES') ?: 5);
+define('OPD_CACHE_TTL_FUNNELS',              getenv('OPD_CACHE_TTL_FUNNELS') ?: 10);
+define('OPD_CACHE_TTL_MESSAGES',             getenv('OPD_CACHE_TTL_MESSAGES') ?: 720);

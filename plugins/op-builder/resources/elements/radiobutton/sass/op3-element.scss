@@ -1,0 +1,19 @@
+.op3-element[data-op3-element-type="radiobutton"] {
+    label {
+        display: inline-block;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    input {
+        display: inline-block;
+    }
+
+    &[data-op3-style-id="flat"] label {
+        color: red;
+    }
+
+    &[data-op3-style-id="raised"] label {
+        color: blue;
+    }
+}

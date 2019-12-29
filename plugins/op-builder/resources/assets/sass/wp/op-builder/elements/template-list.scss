@@ -1,0 +1,98 @@
+.opb-template-list {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+
+    .opb-template-list-item {
+        width: 300px;
+        margin-bottom: 30px;
+
+        .ops-white-box {
+            margin: 0 15px;
+            padding: 0;
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+
+            &.opb-no-template {
+                background: none;
+                box-shadow: none;
+                border: none;
+
+                p {
+                    padding: 100px 0;
+                    margin: 0;
+                }
+            }
+
+            .ops-moving-image {
+                height: 180px;
+                overflow: hidden;
+                border-bottom: 1px solid $color__ops-borderBlue;
+            }
+
+            .opb-inner {
+                padding: 30px;
+                min-height: 180px;
+                position: relative;
+
+                h4 {
+                    font-size: 18px;
+                    line-height: initial;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    color: $color__ops-blue;
+                }
+
+                .opb-hover {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    transform: translate(-50%, -50%);
+                    padding: 30px;
+                    background: rgba(255, 255, 255, 0.95);
+                    opacity: 0;
+                    transition: $transition__opacity-linear;
+
+                    // OP3-716 - Show buttons on item hover, not just on area hover
+                    // https://optimizepress.atlassian.net/browse/OP3-716
+                    @at-root {
+                        .ops-white-box:hover .opb-hover {
+                            opacity: 1 !important;
+                        }
+                    }
+
+                    .ops-button {
+                        min-width: auto;
+                        width: 100%;
+
+                        &.op3-transparent {
+                            margin-bottom: 15px;
+                            border-color: $color__ops-logoBlue;
+
+                            i {
+                                font-size: 24px;
+                                line-height: 24px;
+                                height: 24px;
+                                padding-left: 5px;
+                                transform: translateY(7px);
+                                transition: $transition__color-linear;
+                            }
+
+                            &:hover {
+                                border-color: $color_op-blueDark;
+
+                                i {
+                                    color: $color_op-blueDark;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

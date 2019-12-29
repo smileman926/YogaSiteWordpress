@@ -1,0 +1,24 @@
+.op3-modal.op3-modal-shortcuts {
+    .op3-modal-wrapper {
+        label {
+            display: none;
+        }
+
+        .op3-modal-content {
+            dl {
+                display: flex;
+                margin: 1em 0;
+            }
+
+            dt {
+                width: 240px;
+                font-weight: bold;
+                text-align: right;
+            }
+
+            dd {
+                margin-left: 2.5em;
+            }
+        }
+    }
+}

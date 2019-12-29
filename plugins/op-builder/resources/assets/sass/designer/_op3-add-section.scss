@@ -1,0 +1,172 @@
+#op3-designer-element-add-section {
+    font-size: 16px;
+    width: calc(100% - 2em);
+    margin: 2em 1em;
+    padding: 2em;
+    border: 2px dashed $op-grey-border;
+    text-align: center;
+    background: $op-white;
+    font-family: $op-font-family;
+
+    &[data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] {
+        border-color: lighten($op-blue, 30%);
+    }
+
+    span {
+        display: block;
+        margin: 0 0 1em 0;
+        font-size: 16px;
+        text-align: center;
+        color: $op-light-grey;
+    }
+
+    button {
+        width: 180px;
+        height: 42px;
+        margin: 0 1em;
+        line-height: 1;
+        font-size: 13px;
+        font-weight: normal;
+        text-transform: uppercase;
+        outline: 0 none;
+        border: 0 none;
+        border-radius: 3px;
+        background: $op-light-grey;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.2s all ease;
+
+        &.op3-designer-element-add-section-new {
+            background: $op-blue;
+        }
+
+        &:active {
+            padding: 0;
+        }
+
+        &:focus {
+            padding: 0;
+            outline: 0 none;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &::-moz-focus-inner {
+            border: 0 none;
+        }
+
+        &[disabled],
+        &[disabled]:hover {
+            cursor: default;
+            opacity: 0.25;
+        }
+    }
+
+    [data-jquery-mmdnd-dragging] & {
+        pointer-events: all;
+    }
+
+    .op3-designer-column-layouts-wrapper {
+        display: none;
+        position: relative;
+        flex-direction: column;
+
+        span {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: $op-light-grey;
+            font-weight: 400;
+        }
+
+        .close {
+            color: $op-light-grey;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            transition: 0.2s all ease;
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+        .op3-designer-column-layouts {
+            width: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+
+            .column-layout {
+                display: flex;
+                height: 40px;
+                width: 80px;
+                margin: 5px;
+                cursor: pointer;
+
+                div {
+                    background-color: $op-blue;
+                    margin: 1px;
+                    transition: background-color 0.2s ease;
+                }
+
+                &:hover div {
+                    background-color: $op-light-grey;
+                }
+
+                .one-col {
+                    width: 100%;
+                }
+
+                .one-half {
+                    width: 50%;
+                }
+
+                .one-thirds {
+                    width: 33%;
+                }
+
+                .two-thirds {
+                    width: 66%;
+                }
+
+                .one-quarter {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $page-min-width-mobile) {
+    #op3-designer-element-add-section {
+        padding: 2em 1em;
+
+        .op3-designer-column-layouts-wrapper {
+            i.close {
+                right: 20px;
+            }
+
+            .op3-designer-column-layouts {
+                width: 270px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+
+                .column-layout {
+                    display: flex;
+                    height: 27px;
+                    width: 50px;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}

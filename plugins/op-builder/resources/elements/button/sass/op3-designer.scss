@@ -1,0 +1,9 @@
+.op3-element[data-op3-element-type="button"] {
+    [data-op3-contenteditable] {
+        cursor: text;
+    }
+}
+
+[data-op3-force-visibility] .op3-element[data-op3-element-type="button"] {
+    display: flex !important;
+}

@@ -1,0 +1,62 @@
+.op3-element[data-op3-element-type="checkbox"] {
+    .op3-element-checkbox-wrapper {
+        display: flex;
+        align-items: center;
+        margin: 0;
+
+        &:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .op3-element-checkbox-edit {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+
+            input {
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                left: 0;
+
+                &:checked {
+                    ~ .checkmark {
+                        background-color: #2196f3;
+
+                        &::after {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .checkmark {
+                display: flex;
+                height: 25px;
+                width: 25px;
+                background-color: #eee;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    left: 9px;
+                    top: 5px;
+                    width: 7px;
+                    height: 13px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .op3-element-checkbox-label {
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 8px;
+            line-height: 2.5;
+            opacity: 0.8;
+        }
+    }
+}

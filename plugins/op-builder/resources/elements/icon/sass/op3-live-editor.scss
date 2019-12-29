@@ -1,0 +1,100 @@
+[data-op3-element-options-type="icon"] {
+    .op3-element-options-property[data-op3-element-options-property-id="iconFrame"] {
+        ~ .op3-element-options-property[data-op3-element-options-property-id="iconShape"],
+        ~ .op3-element-options-property[data-op3-element-options-property-id="borderAllWidth"] {
+            display: none;
+        }
+
+        &:not([data-op3-element-options-property-value="none"]) {
+            ~ .op3-element-options-property[data-op3-element-options-property-id="iconShape"],
+            ~ .op3-element-options-property[data-op3-element-options-property-id="borderAllWidth"] {
+                display: flex;
+            }
+        }
+    }
+
+    [data-op3-element-options-property-name="borderAllWidth"] {
+        display: flex;
+        position: static;
+
+        .op3-element-options-label-group,
+        .jquery-input-range-slider,
+        .jquery-input-range-numeric,
+        .jquery-input-range-unit-container {
+            display: flex !important;
+        }
+
+        .jquery-input-range-numeric {
+            position: static;
+            width: 76px;
+        }
+
+        input[data-property-type="range"] {
+            display: none;
+        }
+
+        .op3-element-options-label-group {
+            display: flex !important;
+        }
+    }
+
+    [data-op3-element-options-property-name="borderColor"] {
+        display: flex;
+        position: relative;
+
+        &::before {
+            display: block;
+        }
+
+        input[data-op3-element-options-property-name="borderColor"] {
+            display: none;
+        }
+
+        .op3-element-options-label-group {
+            display: flex;
+        }
+
+        a.jquery-colorpicker-preview-css {
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+    }
+}
+
+#sidebar [data-op3-element-options-type="icon"] {
+    &[data-op3-parent-options-property-value-iconFrame="none"] {
+        .op3-element-options-property[data-op3-element-options-property-id="backgroundColor"],
+        .op3-element-options-property[data-op3-element-options-property-id="borderColor"] {
+            display: none;
+        }
+    }
+
+    &[data-op3-parent-options-property-value-iconFrame="outline"] {
+        .op3-element-options-property[data-op3-element-options-property-id="backgroundColor"] {
+            display: none;
+        }
+    }
+}
+
+#toolbar {
+    [data-op3-element-options-type="icon"] {
+        &[data-op3-parent-options-property-value-iconFrame="none"] {
+            .op3-toolbar-list-item[data-op3-content-item-name="color-colour"] {
+                border-right: 0;
+                border-top-right-radius: inherit;
+            }
+
+            .op3-toolbar-list-item[data-op3-content-item-name="color-background"],
+            .op3-toolbar-list-item[data-op3-content-item-name="color-border"] {
+                display: none;
+            }
+        }
+
+        &[data-op3-parent-options-property-value-iconFrame="outline"] {
+            .op3-toolbar-list-item[data-op3-content-item-name="color-background"] {
+                display: none;
+            }
+        }
+    }
+}

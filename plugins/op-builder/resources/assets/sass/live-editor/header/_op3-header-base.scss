@@ -1,0 +1,361 @@
+.op3-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 4000;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: $header-height;
+    min-width: 750px;
+    background: $op-white;
+    border-bottom: 1px solid $op-grey-border;
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .nav-group {
+        display: flex;
+        flex-direction: row;
+
+        &.op3-tabs {
+            margin-left: 32px;
+        }
+    }
+
+    .op3-tabs-default-cursor button {
+        cursor: default !important;
+    }
+
+    .op3-tabs-inactive {
+        display: none;
+    }
+
+    .op3-tabs-narrow .op3-icon {
+        margin-right: 0;
+        & + .op3-header-text { display: none; }
+    }
+
+    .header-btn {
+        margin: 0 32px 0 0;
+        padding: 0;
+        outline: none;
+        cursor: pointer;
+        color: $op-light-grey;
+        font-size: 13px;
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        appearance: none;
+        position: relative;
+
+        &.selected,
+        &:hover {
+            color: $op-grey;
+        }
+
+        &.disabled {
+            color: $op-light-grey;
+            opacity: 0.5;
+            pointer-events: none;
+
+            &.selected,
+            &:hover {
+                color: $op-light-grey;
+            }
+        }
+
+        &.undo {
+            margin-right: 8px;
+            span { margin-right: 0; }
+        }
+
+        &.save,
+        &.global-element-save {
+
+            margin-right: 22px;
+        }
+    }
+
+    .op3-icon {
+        margin-right: 8px;
+        font-size: 20px;
+        &-pop { font-size: 19px; }
+    }
+
+    .nav-group--options {
+        .op3-icon {
+            font-size: 23px;
+        }
+
+        .header-btn:hover {
+            color: $op-blue;
+        }
+
+        [data-op3-button-status] {
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 30px;
+            background-color: $op-blue;
+            color: $op-white;
+            border-radius: 20px;
+            overflow: hidden;
+            --op3-button-progress: 0%;
+
+            &:hover {
+                color: $op-white;
+            }
+
+            [data-op3-button-status-area] {
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                position: absolute;
+                top: 6px;
+                left: 19px;
+                z-index: 100;
+                transition: opacity 0.3s ease-in-out;
+
+                span {
+                    display: block;
+                    margin: 0 0 0 5px;
+                }
+
+                i {
+                    font-size: 13px;
+                    margin-right: 2px;
+                }
+            }
+
+            [data-op3-button-status-area="default"] {
+                left: 30px;
+            }
+
+            &[data-op3-button-status="default"] [data-op3-button-status-area="default"] {
+                opacity: 1;
+            }
+            &[data-op3-button-status="pending"] [data-op3-button-status-area="pending"] {
+                opacity: 1;
+            }
+            &[data-op3-button-status="success"] [data-op3-button-status-area="success"] {
+                opacity: 1;
+            }
+            &[data-op3-button-status="error"] [data-op3-button-status-area="error"] {
+                opacity: 1;
+            }
+
+            &[data-op3-button-status="pending"] [data-op3-button-status-area="pending"] .op3-icon {
+                animation: op3-icon-spin 2s infinite linear;
+            }
+
+            [data-op3-button-progress-area] {
+                position: absolute;
+                display: none;
+                bottom: 0;
+                height: 100%;
+                width: var(--op3-button-progress);
+                background: #0064dc;
+                z-index: 10;
+                transition: width 0.2s linear;
+            }
+
+            &[data-op3-button-status="pending"] [data-op3-button-progress-area] {
+                display: block;
+            }
+        }
+
+        // These icons are blue when hovered/selected
+        .selected > .op3-icon,
+        *:hover > .op3-icon {
+            color: $op-blue;
+        }
+    }
+
+    .header-btn--devices {
+        position: relative;
+
+        &:hover .devices-menu {
+            display: block;
+        }
+    }
+
+    .devices-menu {
+        margin: 5px 0 0;
+        padding: 0;
+        position: absolute;
+        left: 11px;
+        top: 100%;
+        list-style: none;
+        background: #fff;
+        border-radius: 3px;
+        transform: translateX(-50%);
+        border: 1px solid #eee;
+        display: none;
+
+        // Menu arrow
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            transform: translateX(-50%) rotate(45deg);
+            display: block;
+            position: absolute;
+            z-index: 10;
+            bottom: calc(100% - 5px);
+            left: 50%;
+            border-left: 1px solid #eee;
+            border-top: 1px solid #eee;
+        }
+
+        // Invisible div to allow
+        // bigger mouse target
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 40px;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .op3-device {
+            margin: 0.3em 0;
+            padding: 0.8em 1.5em;
+            width: 100%;
+            white-space: nowrap;
+            color: $op-grey;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            text-decoration: none;
+            position: relative;
+            z-index: 20;
+
+            &:hover {
+                color: $op-blue;
+            }
+
+            &.selected {
+                background-color: $op-blue;
+                border-color: $op-dark-blue;
+                color: $op-white;
+            }
+        }
+
+        small {
+            margin-left: 3em;
+            font-size: 0.7em;
+        }
+    }
+
+    .popoverlay {
+        position: relative;
+
+        &.hover .popoverlay-menu {
+            display: block;
+        }
+    }
+
+    .popoverlay-menu {
+        margin: 12px 0 0;
+        padding: 0;
+        position: absolute;
+        left: -10px;
+        top: 100%;
+        list-style: none;
+        background: #fff;
+        box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.11);
+        border: 1px solid #eee;
+        border-radius: 3px;
+        display: none;
+        z-index: 1;
+
+        // Menu arrow
+        &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            transform: translateX(-50%) rotate(45deg);
+            display: block;
+            position: absolute;
+            z-index: 10;
+            bottom: calc(100% - 5px);
+            left: 20px;
+            border-left: 1px solid #eee;
+            border-top: 1px solid #eee;
+        }
+
+        // Invisible div to allow
+        // bigger mouse target
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            bottom: calc(100% - 5px);
+            left: 0;
+        }
+
+        &.popoverlay-menu--hidden {
+            display: none !important;
+        }
+
+        .popoverlay-menu-list {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            max-height: 70vh;
+        }
+
+        .popoverlay-menu-item button {
+            margin: 0.3em 0;
+            padding: 0.8em 1.5em;
+            width: 100%;
+            white-space: nowrap;
+            color: $op-light-grey;
+            background: transparent;
+            text-decoration: none;
+            position: relative;
+            z-index: 20;
+            border: none;
+            display: block;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline: none;
+            text-align: left;
+
+            &:hover {
+                color: $op-blue;
+            }
+
+            &.selected {
+                background-color: $op-blue;
+                border-color: $op-dark-blue;
+                color: $op-white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1102px) {
+    .header-nav > .op3-tabs .header-btn {
+        width: 20px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Order-Import-Export-Basic\n"
+"POT-Creation-Date: 2016-06-14 14:30+0530\n"
+"PO-Revision-Date: 2016-06-14 14:33+0530\n"
+"Last-Translator: \n"
+"Language-Team: HikeForce <support@hikeforce.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\basicwordpress\\wp-content\\plugins\\\n"
+"X-Poedit-SearchPath-0: order-import-export-for-woocommerce\n"
+
+#: order-import-export-for-woocommerce/order-import-export.php:57
+msgid "Import Export"
+msgstr ""
+
+#: order-import-export-for-woocommerce/order-import-export.php:58
+msgid "Premium Upgrade"
+msgstr ""
+
+#: order-import-export-for-woocommerce/order-import-export.php:59
+msgid "Support"
+msgstr ""
+
+#: order-import-export-for-woocommerce/order-import-export.php:109
+msgid "Import <strong>Orders</strong> to your store via a csv file."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-admin-screen.php:22
+msgid ""
+"Order CSV Import Export requires the function <code>mb_detect_encoding</"
+"code> to import and export CSV files. Please ask your hosting provider to "
+"enable this function."
+msgstr ""
+"Commander CSV Import Export nécessite la fonction <code> mb_detect_encoding "
+"</ code> pour importer et exporter des fichiers CSV. S'il vous plaît "
+"demander à votre fournisseur d'hébergement pour activer cette fonction."
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-admin-screen.php:30
+msgid "Order Im-Ex"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-ajax-handler.php:27
+#, php-format
+msgid ""
+"&quot;%1$s&quot; (ID %2$s) failed to resize. The error message was: %3$s"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:22
+msgid "Delete Trashed Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:23
+msgid "Delete  Trashed Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:24
+msgid "This tool will delete all  Trashed Orders."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:28
+msgid "Delete Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:29
+msgid "Delete ALL Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:30
+msgid "This tool will delete all orders allowing you to start fresh."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:43
+#: order-import-export-for-woocommerce/includes/class-wf-orderimpexpcsv-system-status-tools.php:60
+#, php-format
+msgid "%d Orders Deleted"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:161
+#, php-format
+msgid "> Row %s - skipped due to record offset."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:173
+#, php-format
+msgid "> Row %s - preparing for import."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:181
+#, php-format
+msgid "> > Skipped. Order number field must be an integer: %s."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:190
+msgid ""
+"> > Skipped. Formatted order number provided but no numerical order number, "
+"see the documentation for further details."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:222
+#, php-format
+msgid "> > Skipped. Order %s already exists."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:239
+#, php-format
+msgid "> > Skipped. Cannot find customer with id %s."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:280
+#, php-format
+msgid "> > Skipped. Unknown order status %s (%s)."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:294
+#, php-format
+msgid "> > Skipped. Invalid date format %s."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:593
+#, php-format
+msgid "> > Skipped. Unknown order item: %s."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:628
+#, php-format
+msgid "> > Row %d - %s - skipped. Missing SKU, quantity or total"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-csv-parser.php:639
+#, php-format
+msgid "> > Row %d - %s - skipped. Unknown order item: %s."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:84
+msgid "Error with handle_upload!"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:109
+msgid "Row"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:110
+msgid "OrderID"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:111
+msgid "Order Status"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:112
+msgid "Status Msg"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:190
+msgid "AJAX Error"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:286
+msgid "Error finding uploaded file!"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:344
+msgid "Step 1..."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:349
+msgid "Step 2..."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:353
+msgid "Finalizing..."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:356
+msgid "Finished. Import complete."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:422
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:557
+msgid "Processing orders."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:436
+msgid "Finished processing Orders."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:451
+msgid "Parsing products CSV."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:457
+msgid "Finished parsing products CSV."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:499
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:516
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:584
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:764
+#, php-format
+msgid "> &#8220;%s&#8221;"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:598
+#, php-format
+msgid "> Error inserting %s: %s"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:656
+msgid "Unknown Product"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:750
+#, php-format
+msgid "Original order #%s"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:766
+#, php-format
+msgid "> Finished importing order %s"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:770
+msgid "Finished processing orders."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:806
+msgid "Import"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/class-wf-orderimpexpcsv-order-import.php:806
+msgid "Merge Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/views/html-wf-import-greeting.php:2
+msgid ""
+"You can import orders (in CSV format) in to the shop using any of below "
+"methods."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/views/html-wf-import-greeting.php:5
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/views/html-wf-import-greeting.php:13
+msgid "Method 1: Select a file from your computer"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/importer/views/html-wf-import-greeting.php:19
+#, php-format
+msgid "Maximum size: %s"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/html-wf-admin-screen.php:4
+msgid "Order Import / Export"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/export/html-wf-export-orders.php:2
+msgid "Export Orders in CSV Format:"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/export/html-wf-export-orders.php:3
+msgid ""
+"Export and download your orders in CSV format. This file can be used to "
+"import orders back into your Woocommerce shop."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/export/html-wf-export-orders.php:5
+msgid "Export Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:3
+msgid ""
+"HikeForce Import Export Plugin Premium version helps you to seamlessly "
+"import/export orders into your Woocommerce Store."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:5
+msgid "-Import/Export orders in CSV format."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:6
+msgid ""
+"-Map your fields to WooCommerce Order fields [ Diffrent types of E-commerce "
+"sytem orders can be imported]."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:7
+msgid "-Import/Export file from/to a remote server via FTP."
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:8
+msgid "-Excellent Support for setting it up!"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:12
+msgid "Upgrade to Premium Version"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:13
+msgid "Live Demo"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:14
+msgid "Documentation"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:15
+msgid "Sample CSV"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:28
+msgid "Import Orders in CSV Format:"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:29
+msgid ""
+"Import Orders in CSV format from different sources (  from your computer OR "
+"from another server via FTP )"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:35
+msgid "Import Orders"
+msgstr ""
+
+#: order-import-export-for-woocommerce/includes/views/import/html-wf-import-orders.php:37
+msgid "Merge order if exists"
+msgstr ""

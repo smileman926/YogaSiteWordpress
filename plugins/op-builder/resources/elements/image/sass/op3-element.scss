@@ -1,0 +1,40 @@
+.op3-element[data-op3-element-type="image"] {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    figure {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        box-shadow: none;
+        display: block;
+        color: transparent;
+
+        &:hover {
+            color: transparent;
+            box-shadow: none;
+        }
+    }
+
+    .op3-image-overlay-container {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-width: 0;
+
+        img {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            vertical-align: middle;
+            box-shadow: none;
+            width: 100%;
+        }
+    }
+}

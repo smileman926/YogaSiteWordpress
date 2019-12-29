@@ -1,0 +1,112 @@
+.op3-element[data-op3-element-type="input"] {
+    margin: 1em auto;
+    max-width: 100%;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .op3-element-input-wrapper {
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        color: inherit;
+        font-weight: inherit;
+    }
+
+    .op3-element-input-label {
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    .op3-element-input-edit {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        font-size: 18px;
+        align-items: center;
+        padding: 5px 10px;
+        // color: inherit;
+        // overflow: hidden; - commented out because it cuts off the field box-shadow
+        cursor: text;
+        z-index: 0;
+
+        [data-op3-background="overlay"] {
+            z-index: -1;
+        }
+
+        [data-op3-element-container],
+        [data-op3-border] {
+            border: 1px solid #e8e8e8;
+        }
+
+        [data-op3-border] {
+            border-radius: 3px;
+        }
+    }
+
+    .op3-element-input-edit-text {
+        display: block;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: 0 none;
+        outline: 0 none;
+        font-family: inherit;
+        font-weight: inherit;
+        text-transform: inherit;
+        text-decoration: inherit;
+        text-align: inherit;
+        // color: inherit;
+        overflow: hidden;
+        letter-spacing: inherit;
+
+        &::placeholder {
+            color: inherit;
+            opacity: 0.5;
+            font-size: inherit;
+            font-weight: inherit;
+            letter-spacing: inherit;
+        }
+    }
+
+    .op3-element-input-edit-icon {
+        display: none;
+        width: 1em;
+        height: 1em;
+        margin: 0;
+        font-size: 1em;
+        text-align: center;
+        color: #aab3bc;
+
+        // Making sure the icon is placed
+        // above the background overlay
+        z-index: 10;
+    }
+
+    .op3-divider {
+        display: none;
+        width: 12px;
+    }
+
+    input {
+        z-index: 1;
+
+        // Css hack to avoid:
+        // [Chrome] yellow input when choosing value from autocomplete
+        // [Firefox] input red border (actually box-shadow) on form submit
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            transition-delay: 9999s;
+            transition-property: background-color, color, border, box-shadow;
+        }
+    }
+}

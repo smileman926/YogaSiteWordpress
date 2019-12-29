@@ -1,0 +1,57 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: normal;
+    font-weight: 600;
+    color: $color__ops-black;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+.opf_fakeH1 {
+    font-size: 38px;
+    line-height: 38px;
+    padding-bottom: 25px;
+}
+
+h2,
+.fakeH2 {
+    font-size: 32px;
+    line-height: 40px;
+    padding-bottom: 20px;
+}
+
+h3,
+.fakeH3 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 58px;
+    padding-bottom: 20px;
+}
+
+h4,
+.fakeH4 {
+    font-size: 22px;
+    line-height: 31px;
+}
+
+h5,
+.fakeH5 {
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+h6,
+.fakeH6 {
+    font-size: 13px;
+    line-height: 16px;
+    opacity: 0.4;
+}

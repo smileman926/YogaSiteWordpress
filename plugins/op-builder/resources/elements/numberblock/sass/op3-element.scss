@@ -1,0 +1,275 @@
+.op3-element[data-op3-element-type="numberblock"] {
+    margin: 0 auto;
+    padding: 15px 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 1140px;
+    max-width: 100%;
+    border-width: 0;
+
+    > [data-op3-element-container] > [data-op3-children] {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        margin-left: -$op-gutter;
+        margin-right: -$op-gutter;
+
+        // We only allow grow/shrink when wrapping is enabled
+        &[data-op3-wrap-columns="1"] [data-op3-element-type="numberblockitem"] {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        & > [data-op3-element-type="numberblockitem"] {
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        // Default number block structure is 2
+        &[data-op3-children] > [data-op3-element-type="numberblockitem"] {
+            flex-basis: 50%;
+        }
+
+        // Vertical arangement
+        &[data-op3-block-arrangement="1"] > [data-op3-element-type="numberblockitem"] {
+            flex-basis: 100% !important;
+        }
+
+        // Show/hide children
+        .op3-element[data-op3-element-spec="text"],
+        .op3-element[data-op3-element-spec="title"] {
+            display: none;
+        }
+
+        &[data-op3-block-display-text="1"] .op3-element[data-op3-element-spec="text"],
+        &[data-op3-block-display-title="1"] .op3-element[data-op3-element-spec="title"] {
+            display: block;
+        }
+
+        &[data-op3-numberblock-frame="none"] .op3-numberblock-number {
+            border-color: transparent !important;
+            border-width: 0 !important;
+            background: transparent !important;
+        }
+
+        &[data-op3-numberblock-frame="outline"] .op3-numberblock-number {
+            background: transparent !important;
+            border-color: currentColor;
+        }
+
+        &[data-op3-numberblock-frame="filled"] .op3-numberblock-number {
+            border-color: currentColor;
+            border-width: 0 !important;
+
+            [data-op3-background] {
+                border-width: 0 !important;
+            }
+        }
+
+        &[data-op3-numberblock-shape="curved"] .op3-numberblock-number {
+            border-radius: 10px;
+        }
+
+        &[data-op3-numberblock-shape="circle"] .op3-numberblock-number {
+            border-radius: 100px;
+        }
+
+        // Counter increment logic
+        &[data-op3-numberblock-sequence="all"] {
+            counter-reset: numberblock;
+
+            .op3-element[data-op3-element-type="numberblockitem"] {
+                counter-increment: numberblock;
+            }
+        }
+
+        &[data-op3-numberblock-sequence="odd"] {
+            counter-reset: numberblock -1;
+
+            .op3-element[data-op3-element-type="numberblockitem"] {
+                counter-increment: numberblock 2;
+            }
+        }
+
+        &[data-op3-numberblock-sequence="even"] {
+            counter-reset: numberblock;
+
+            .op3-element[data-op3-element-type="numberblockitem"] {
+                counter-increment: numberblock 2;
+            }
+        }
+    }
+
+    // Some default styling
+    .op3-element[data-op3-element-type="numberblockitem"] {
+        text-align: left;
+        counter-increment: numberblock;
+        border-radius: 5px;
+
+        > .op3-column-content > [data-op3-element-container] {
+            display: flex;
+            overflow: hidden;
+            overflow-wrap: break-word;
+
+            > [data-op3-children] {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .op3-numberblock-number {
+        width: 1.5em;
+        height: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        flex-grow: 0;
+        position: relative;
+        z-index: 50;
+
+        &::before {
+            content: counter(numberblock);
+            color: inherit;
+            font-weight: bold;
+            z-index: 40;
+            white-space: nowrap;
+        }
+
+        [data-op3-background] {
+            border-radius: inherit;
+            border-color: inherit;
+            border-style: solid;
+
+            &::after,
+            &::before {
+                border-radius: inherit;
+            }
+        }
+    }
+}
+
+@mixin numberBlockLayout($device) {
+    .op3-element[data-op3-element-type="numberblock"] {
+        [data-op3-block-layout-#{$device}="0"] {
+            .op3-element[data-op3-element-type="numberblockitem"] > .op3-column-content > [data-op3-element-container] {
+                flex-direction: row;
+            }
+
+            .op3-numberblock-number {
+                margin-left: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: left;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="1"] {
+            .op3-element[data-op3-element-type="numberblockitem"] > .op3-column-content > [data-op3-element-container] {
+                flex-direction: row-reverse;
+            }
+
+            .op3-numberblock-number {
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: left;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="2"] {
+            .op3-element[data-op3-element-type="numberblockitem"] > .op3-column-content > [data-op3-element-container] {
+                flex-direction: column;
+            }
+
+            .op3-numberblock-number {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [data-op3-element-type="numberblockitem"] {
+                text-align: center;
+            }
+        }
+
+        [data-op3-block-layout-#{$device}="3"] {
+            .op3-element[data-op3-element-type="numberblockitem"] > .op3-column-content > [data-op3-element-container] {
+                flex-direction: column;
+            }
+
+            .op3-numberblock-number {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            [data-op3-element-type="numberblockitem"] {
+                text-align: left;
+            }
+
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    @include numberBlockLayout(desktop);
+}
+
+@media (max-width: $breakpoint-tablet) and (min-width: $breakpoint-mobile) {
+    @include numberBlockLayout(tablet);
+}
+
+@media (max-width: $breakpoint-mobile) {
+    @include numberBlockLayout(mobile);
+}
+
+// 1140px is default row width,
+// so this ie related to it
+@media (max-width: $breakpoint-tablet) {
+
+    .op3-element[data-op3-element-type="numberblock"] {
+        padding: 15px 30px;
+
+        [data-op3-block-layout-tablet="0"],
+        [data-op3-block-layout-tablet="1"],
+        [data-op3-block-layout-tablet="3"] {
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: left;
+            }
+        }
+
+        [data-op3-block-layout-tablet="2"] {
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+
+    .op3-element[data-op3-element-type="numberblock"] {
+        padding: 15px 30px;
+
+        [data-op3-block-layout-mobile="0"],
+        [data-op3-block-layout-mobile="1"],
+        [data-op3-block-layout-mobile="3"] {
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: left;
+            }
+        }
+
+        [data-op3-block-layout-mobile="2"] {
+            .op3-element[data-op3-element-spec="title"] {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+#header {
+    .header-btn.global-element-cancel,
+    .header-btn.global-element-save {
+        display: none;
+    }
+}
+
+html[data-op3-global-element-edit] #header {
+    .tab-button[data-tab="global-elements"],
+    .tab-button[data-tab="blocks"],
+    .tab-button[data-tab="settings"],
+    .tab-button.popoverlay {
+        pointer-events: none;
+        opacity: 0.25;
+    }
+
+    .header-btn.close,
+    .header-btn.save {
+        display: none;
+    }
+
+    .header-btn.global-element-cancel,
+    .header-btn.global-element-save {
+        display: flex;
+    }
+}

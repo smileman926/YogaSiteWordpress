@@ -1,0 +1,69 @@
+.op3-element[data-op3-element-type="video"] {
+
+    .op3-video-wrapper {
+        overflow: hidden;
+    }
+
+    [data-op3-code] {
+        position: relative;
+        width: 100%;
+        height: 0;
+        transform: translateZ(0);
+        border-width: 0;
+
+        &[data-op3-aspect-ratio="16:9"] {
+            padding-top: percentage(9/16);
+        }
+
+        &[data-op3-aspect-ratio="16:10"] {
+            padding-top: percentage(10/16);
+        }
+
+        &[data-op3-aspect-ratio="21:9"] {
+            padding-top: percentage(9/21);
+        }
+
+        &[data-op3-aspect-ratio="4:3"] {
+            padding-top: percentage(3/4);
+        }
+    }
+
+    iframe,
+    .wistia_embed {
+        transform: translateZ(0);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .op3-video-image-overlay {
+        position: absolute;
+        top: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .op3-icon {
+        position: absolute;
+        font-size: 125px;
+        top: 50%;
+        left: 50%;
+        color: white;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+// Set overlay over video only in designer mode
+html[data-op3-layer="designer"] {
+    .op3-element[data-op3-element-type="video"] {
+        [data-op3-code] {
+            pointer-events: none;
+        }
+    }
+}

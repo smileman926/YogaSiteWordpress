@@ -1,0 +1,22 @@
+form[data-op3-element-options-type="videothumbnail"] {
+    .op3-element-options-property[data-op3-element-options-property-name="boxShadowInset"],
+    .op3-element-options-property[data-op3-element-options-property-name="backgroundImage"] {
+        display: none;
+    }
+
+    // Hide alignment in advanced tab
+    .op3-boxmodel-align-container {
+        display: none;
+    }
+
+    /* Display image overlay options
+       base on visible property switch */
+    [data-op3-element-options-property-id="visible"] {
+        &[data-op3-element-options-property-value="0"] {
+            ~ [data-op3-element-options-property-name="backgroundImageUrl"],
+            ~ [data-op3-element-options-property-id="videoIconVisible"] {
+                display: none;
+            }
+        }
+    }
+}

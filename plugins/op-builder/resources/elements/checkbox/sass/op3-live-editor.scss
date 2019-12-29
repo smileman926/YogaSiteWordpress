@@ -1,0 +1,28 @@
+.op3-toolbar {
+    form[data-op3-element-options-type="checkbox"] {
+        .op3-toolbar-list-item {
+            &[data-op3-toolbar-nav-id="clone"],
+            &[data-op3-toolbar-nav-id="move"],
+            &[data-op3-toolbar-nav-id="delete"] {
+                display: none;
+            }
+        }
+    }
+
+    form[data-op3-element-options-spec="gdpr1"],
+    form[data-op3-element-options-spec="gdpr2"] {
+        [data-op3-element-options-property-id="required"][data-op3-element-options-property-value="1"] {
+            padding-top: 50px;
+        }
+        [data-op3-element-options-property-id="required"][data-op3-element-options-property-value="1"]:before {
+            font-size: 11px;
+            opacity: .8;
+            display: block;
+            content: 'Making this field required may make your form non-GDPR compliant.';
+            border-bottom: none;
+            top: 10px;
+            color: #333;
+            font-style: italic;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.op3-element[data-op3-element-type="bulletblock"] {
+    padding: 15px 0;
+
+    .op3-element {
+        margin-bottom: 0.25em;
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}

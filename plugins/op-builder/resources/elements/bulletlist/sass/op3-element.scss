@@ -1,0 +1,29 @@
+.op3-element[data-op3-element-type="bulletlist"] {
+    display: flex;
+    line-height: 1.5;
+
+    a {
+        align-self: center;
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .op3-icon {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+        align-self: flex-start;
+        width: 2em;
+        font-size: 100%;
+        line-height: inherit;
+        justify-content: center;
+        transition: inherit;
+    }
+
+    [data-op3-contenteditable] {
+        display: flex;
+        flex-grow: 1;
+        font-size: inherit;
+        line-height: inherit;
+    }
+}

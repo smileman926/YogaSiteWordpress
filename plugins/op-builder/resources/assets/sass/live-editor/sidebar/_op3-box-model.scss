@@ -1,0 +1,292 @@
+.op3-boxmodel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .op3-boxmodel-margin {
+        padding: 2em 2.5em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 2px dashed $op-blue;
+        // border: 2px dashed rgba(36,70,203,.5);
+        border-radius: 5px;
+    }
+
+    .op3-boxmodel-padding {
+        padding: 2em 2.5em;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid $op-blue;
+        // border: 2px dashed rgba(36,70,203,.5);
+        border-radius: 5px;
+        // background-image: linear-gradient(to right, rgba(36,70,203,.2) 0%, rgba(255,255,255,0) 110%);
+        background-image: linear-gradient(to right, $op-white 0%, lighten($op-blue, 40%) 110%);
+    }
+
+    .op3-boxmodel-button {
+        margin: 0 auto;
+        padding: 0.3em;
+        font-size: 1em;
+        border-radius: 5px;
+        width: 50px;
+        border: 1px solid $op-blue;
+        // color: $op-blue;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+
+        .icon-inactive {
+            display: block;
+        }
+
+        .icon-active {
+            display: none;
+        }
+
+        &--active {
+            background: $op-blue;
+            color: #fff;
+            .icon-inactive { display: none; }
+            .icon-active { display: block; }
+        }
+    }
+
+    .op3-boxmodel-label {
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 1em;
+        right: 0.9em;
+        color: $op-blue;
+        // color: rgba(36,70,203,.5);
+        color: $op-grey;
+        font-size: 0.6em;
+    }
+
+    .op3-boxmodel-input {
+        margin: 0;
+        padding: 0;
+        width: 30px;
+        display: block;
+        position: absolute;
+        font-size: 0.7em;
+        border: none;
+        border-radius: 0;
+        text-align: center;
+        // color: $op-blue;
+        color: $op-grey;
+        font-weight: normal;
+        background: transparent;
+
+        // Hiding number spinner buttons
+        // used on padding
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+
+        // Fix for firefox, because it doesn't register
+        // mouseup event on disabled input fields
+        &[disabled="disabled"] {
+            pointer-events: none;
+        }
+    }
+
+    .op3-boxmodel-input-top {
+        top: 0.9em;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .op3-boxmodel-input-bottom {
+        bottom: 0.9em;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .op3-boxmodel-input-left {
+        left: 0.5em;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .op3-boxmodel-input-right {
+        right: 0.5em;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .op3-boxmodel-handler {
+        display: block;
+        position: absolute;
+
+        &.op3-boxmodel-handler--disabled {
+            display: none;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border: 2px solid $op-blue;
+            // border: 2px dashed rgba(36,70,203,.5);
+            background: #f9fafc;
+        }
+    }
+
+    .op3-boxmodel-handler-top,
+    .op3-boxmodel-handler-bottom {
+        width: calc(100% - 10px);
+        left: 5px;
+        height: 10px;
+        cursor: row-resize;
+    }
+
+    .op3-boxmodel-handler-top {
+        top: -6px;
+
+        &::before {
+            left: 50%;
+            top: 1px;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .op3-boxmodel-handler-bottom {
+        bottom: -5px;
+
+        &::before {
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .op3-boxmodel-handler-left,
+    .op3-boxmodel-handler-right {
+        height: calc(100% - 10px);
+        top: 5px;
+        width: 10px;
+        cursor: col-resize;
+    }
+
+    .op3-boxmodel-handler-left {
+        left: -6px;
+
+        &::before {
+            top: 50%;
+            left: 1px;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .op3-boxmodel-handler-right {
+        right: -6px;
+
+        &::before {
+            top: 50%;
+            right: 1px;
+            transform: translate(0, -50%);
+        }
+    }
+
+    // Disabling handlers for locked boxmodel properties
+    &.op3-boxmodel-margin-top-disabled .op3-boxmodel-handler-margin.op3-boxmodel-handler-top,
+    &.op3-boxmodel-margin-bottom-disabled .op3-boxmodel-handler-margin.op3-boxmodel-handler-bottom,
+    &.op3-boxmodel-margin-left-disabled .op3-boxmodel-handler-margin.op3-boxmodel-handler-left,
+    &.op3-boxmodel-margin-right-disabled .op3-boxmodel-handler-margin.op3-boxmodel-handler-right,
+    &.op3-boxmodel-padding-top-disabled .op3-boxmodel-handler-padding.op3-boxmodel-handler-top,
+    &.op3-boxmodel-padding-bottom-disabled .op3-boxmodel-handler-padding.op3-boxmodel-handler-bottom,
+    &.op3-boxmodel-padding-left-disabled .op3-boxmodel-handler-padding.op3-boxmodel-handler-left,
+    &.op3-boxmodel-padding-right-disabled .op3-boxmodel-handler-padding.op3-boxmodel-handler-right {
+        display: none;
+    }
+
+    // Align buttons
+    .op3-boxmodel-align-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 22px 0 0;
+        color: $op-grey;
+        font-size: 12px;
+
+        // Margins & Padding container for these element
+        // don't have alignment, because we have a
+        // separate align options
+        [data-op3-element-options-type="image"] &,
+        [data-op3-element-options-type="button"] &,
+        [data-op3-element-options-type="popoverlay"] &,
+        [data-op3-element-options-type="horizontalline"] & {
+            display: none;
+        }
+
+        .op3-boxmodel-align-buttons {
+            display: flex;
+            font-size: 0.9em;
+        }
+
+        .op3-boxmodel-align-button {
+            margin-left: 1px;
+            padding: 0.6em;
+            height: auto;
+            line-height: 1;
+            display: flex;
+            align-self: center;
+            color: $op-light-grey;
+            background: $op-white;
+            border: 1px solid $op-grey-border;
+            width: auto;
+
+            &:hover {
+                border-color: darken($op-grey-border, 10%);
+                background: $op-white;
+                color: $op-grey;
+            }
+
+            &.selected {
+                background-color: $op-blue;
+                border-color: $op-blue;
+                color: $op-white;
+            }
+        }
+
+        .op3-icon {
+            margin-bottom: -1px;
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+    }
+}
+
+// Column doesn't have align button
+[data-op3-element-options-type="column"] [data-op3-element-options-property-name="boxModel"] {
+    .op3-boxmodel-align-container {
+        display: none !important;
+    }
+}
+
+// Range slider properties (hidden in boxModel)
+.op3-element-options-property[data-op3-element-options-property-name="marginTop"],
+.op3-element-options-property[data-op3-element-options-property-name="marginBottom"],
+.op3-element-options-property[data-op3-element-options-property-name="marginLeft"],
+.op3-element-options-property[data-op3-element-options-property-name="marginRight"],
+.op3-element-options-property[data-op3-element-options-property-name="paddingTop"],
+.op3-element-options-property[data-op3-element-options-property-name="paddingBottom"],
+.op3-element-options-property[data-op3-element-options-property-name="paddingLeft"],
+.op3-element-options-property[data-op3-element-options-property-name="paddingRight"] {
+    flex-direction: column;
+
+    .op3-element-options-label-group {
+        margin-bottom: 10px;
+    }
+}

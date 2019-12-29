@@ -1,0 +1,210 @@
+.op3-modal {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5000;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+
+    body.modal & {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.button-ok-disabled footer button.op3-modal-ok,
+    &.button-cancel-disabled footer button.op3-modal-cancel {
+        opacity: 0.25;
+        cursor: default;
+        pointer-events: none;
+
+        &:hover {
+            opacity: 0.25;
+        }
+    }
+
+    .op3-modal-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 80%;
+        max-width: 1060px;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+
+        header {
+            position: relative;
+            display: block;
+            padding: 1em;
+
+            .op3-modal-title {
+                height: 1.6em;
+                line-height: 1.6em;
+                margin: 0;
+                padding: 0 1em 0 0;
+                font-size: 1.25em;
+                font-weight: normal;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            label {
+                float: right;
+                display: block;
+                margin: 0 0.25em 0 0;
+                padding: 0 0 0 1.25em;
+                font-size: 2em;
+                position: relative;
+            }
+
+            .op3-icon {
+                font-size: 16px;
+                position: absolute;
+                right: 11px;
+                top: 8px;
+                color: #888;
+            }
+
+            input {
+                display: block;
+                height: 2em;
+                line-height: 2em;
+                margin: 0;
+                padding: 0 2em 0 1em;
+                font-size: 0.5em;
+                color: #888;
+                outline: 0 none;
+                border: 1px solid #ddd;
+                border-radius: 1em;
+            }
+
+            .op3-modal-close {
+                float: right;
+                display: block;
+                width: 1em;
+                height: 1em;
+                margin: 0;
+                line-height: 1em;
+                font-size: 2em;
+                text-align: center;
+                color: #ddd;
+                text-decoration: none;
+                transition: 0.4s all ease;
+
+                &:hover {
+                    color: #aaa;
+                }
+            }
+        }
+
+        .op3-modal-content {
+            position: relative;
+            height: calc(100% - 8em);
+            padding: 1em;
+            overflow: hidden;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            border-right: 0 none;
+            border-left: 0 none;
+
+            .preloader {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                color: $op-blue;
+                opacity: 0.8;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        footer {
+            height: 4em;
+            padding: 1em;
+            background: #fafafa;
+
+            .op3-modal-message {
+                margin: 0;
+                padding: 0 1em 0 0;
+                font-size: 0.8em;
+                line-height: 2.6em;
+                color: #888;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            button {
+                float: right;
+                width: 10em;
+                height: 2.4em;
+                margin: 0 1em 0 0;
+                padding: 0;
+                line-height: 1;
+                text-transform: uppercase;
+                outline: 0 none;
+                border: 0 none;
+                border-radius: 3px;
+                background: #6d7882;
+                color: #fff;
+                cursor: pointer;
+                overflow: hidden;
+                opacity: 0.8;
+                transition: 0.4s all ease;
+
+                &:first-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &[disabled] {
+                    opacity: 0.25;
+                    cursor: default;
+
+                    &:hover {
+                        opacity: 0.25;
+                    }
+                }
+
+                &.op3-modal-ok {
+                    background: $op-blue;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .op3-modal .op3-modal-wrapper {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .op3-modal .op3-modal-wrapper header label {
+        display: none;
+    }
+
+    .op3-modal .op3-modal-wrapper footer .op3-modal-message {
+        display: none;
+    }
+
+    .op3-modal .op3-modal-wrapper footer button {
+        width: calc(50% - 0.5em);
+    }
+}

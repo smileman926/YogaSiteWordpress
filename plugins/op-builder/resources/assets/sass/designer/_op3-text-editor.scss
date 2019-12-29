@@ -1,0 +1,361 @@
+// hide element toolbar on ice-floatbar show
+html.ice-floatbar-showing #op3-designer-toolbar {
+    display: none;
+}
+
+// designer
+.ice-editor:focus {
+    box-shadow: none;
+}
+
+.ice-floatbar {
+    z-index: 5010;
+
+    .ice-floatbar-iframe {
+        z-index: 5030;
+    }
+}
+
+.ice-floatbar-wrapper .op3-icon {
+    line-height: inherit;
+}
+
+// floatbar iframe
+.ice-floatbar-html {
+    font-size: 16px;
+
+    .ice-floatbar-content {
+        display: flex;
+        flex-direction: column;
+        //width: 17em;
+        width: 276px; // same as colorpicker
+        padding: 0;
+        font-family: $op-font-family;
+        background: transparent;
+        box-shadow: 0 0 0.5em 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .ice-floatbar-nav {
+        padding: 0.25em;
+        background: #1f1f1f;
+        border-radius: 0.25em;
+    }
+
+    .ice-floatbar-dropdown {
+        margin-top: 0;
+        padding: 0 0.25em 0.25em 0.25em;
+        background: #1f1f1f;
+    }
+
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown] {
+        .ice-floatbar-nav {
+            border-radius: 0.25em 0.25em 0 0;
+        }
+
+        .ice-floatbar-dropdown {
+            border-radius: 0 0 0.25em 0.25em;
+        }
+    }
+
+    // dropdown tooltip
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="link"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="fore-color"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="back-color"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="hilite-color"] {
+        .ice-floatbar-content {
+            box-shadow: none;
+        }
+
+        // content is transparent, keep navigation radius
+        .ice-floatbar-nav {
+            border-radius: 0.25em;
+            box-shadow: 0 0 0.5em 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .ice-floatbar-dropdown {
+            margin: 6px 0;
+            padding: 1em;
+            color: #666;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,.1);
+            border-radius: 0.25em;
+            box-shadow: 0 2px 10px -3px rgba(0,0,0,0.3);
+
+            p {
+                margin: 1em 0;
+                padding: 0;
+                vertical-align: middle;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            label {
+                margin: 0;
+            }
+
+            a[data-ice-link-test] {
+                top: 0;
+                right: 0;
+                width: 2em;
+                height: 2em;
+                line-height: 2em;
+                font-size: 0.8em;
+                color: #666;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+
+                &:hover {
+                    color: #0071ff;
+                    border: 1px solid #0071ff;
+                }
+            }
+
+            input[data-ice-decoration="linkURL"] {
+                width: calc(100% - 3em);
+                height: 2em;
+                padding: 0 0.5em;
+                color: #999;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            select {
+                width: 100%;
+                height: 2em;
+                padding: 0 0.5em;
+                color: #999;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 12px;
+                background: #fff;
+            }
+        }
+
+        // reverse order
+        &.ice-floatbar-position-top {
+            .ice-floatbar-content {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    // tooltip arrow inside nav item
+    // (for easier repositioning)
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="link"] .ice-floatbar-list-item-link,
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="fore-color"] .ice-floatbar-list-item-fore-color,
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="back-color"] .ice-floatbar-list-item-back-color,
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="hilite-color"] .ice-floatbar-list-item-back-color {
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: -1em;
+            width: 0;
+            height: 0;
+            transform: translateX(-50%);
+            border: 6px solid #fff;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            filter: drop-shadow(0 2px 1px #bbb);
+            z-index: 1010;
+        }
+    }
+
+    .ice-floatbar-wrapper.ice-floatbar-position-bottom[data-ice-floatbar-dropdown="link"] .ice-floatbar-list-item-link,
+    .ice-floatbar-wrapper.ice-floatbar-position-bottom[data-ice-floatbar-dropdown="fore-color"] .ice-floatbar-list-item-fore-color,
+    .ice-floatbar-wrapper.ice-floatbar-position-bottom[data-ice-floatbar-dropdown="back-color"] .ice-floatbar-list-item-back-color,
+    .ice-floatbar-wrapper.ice-floatbar-position-bottom[data-ice-floatbar-dropdown="hilite-color"] .ice-floatbar-list-item-hilite-color {
+        &::before {
+            top: auto;
+            bottom: -1em;
+            transform: translateX(-50%) rotate(180deg);
+        }
+    }
+
+    // colorpicker uses widget as tooltip,
+    // not dropdown
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="fore-color"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="back-color"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="hilite-color"] {
+        .ice-floatbar-dropdown {
+            padding: 0;
+        }
+
+        // Hide default tooltip arrow
+        .jquery-colorpicker-widget {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    // center position widget
+    .jquery-colorpicker-widget {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        width: auto;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    // default, simple mode
+    .ice-floatbar-nav > ul > li {
+        position: relative;
+
+        &.ice-floatbar-list-item-format-block,
+        &.ice-floatbar-list-item-align,
+        &.ice-floatbar-list-item-link,
+        &.ice-floatbar-list-item-unlink,
+        &.ice-floatbar-list-item-back-color,
+        &.ice-floatbar-list-item-hilite-color {
+            display: none;
+        }
+    }
+
+    // simple with link
+    &[data-floatbar-element-type="bulletlist"] .ice-floatbar-nav > ul > li,
+    &[data-floatbar-element-type="checkbox"] .ice-floatbar-nav > ul > li {
+        &.ice-floatbar-list-item-link,
+        &.ice-floatbar-list-item-unlink:not([data-ice-status="0"]) {
+            display: block;
+        }
+    }
+
+    // headline
+    &[data-floatbar-element-type="headline"] .ice-floatbar-nav > ul > li {
+        &.ice-floatbar-list-item-link,
+        &.ice-floatbar-list-item-unlink:not([data-ice-status="0"]),
+        &.ice-floatbar-list-item-back-color,
+        &.ice-floatbar-list-item-hilite-color {
+            display: block;
+        }
+    }
+
+    // text element, display all
+    &[data-floatbar-element-type="text"] .ice-floatbar-nav > ul > li {
+        &.ice-floatbar-list-item-format-block,
+        &.ice-floatbar-list-item-align,
+        &.ice-floatbar-list-item-link,
+        &.ice-floatbar-list-item-unlink:not([data-ice-status="0"]),
+        &.ice-floatbar-list-item-back-color,
+        &.ice-floatbar-list-item-hilite-color {
+            display: block;
+        }
+    }
+
+    .ice-floatbar-dropdown-link p:first-child {
+        position: relative;
+    }
+
+    .autocomplete-suggestions {
+        height: 80px;
+        overflow-y: scroll;
+        width: 100% !important;
+        top: 30px !important;
+        left: 0 !important;
+        margin-bottom: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+
+        .autocomplete-suggestion {
+            font-size: 12px;
+            cursor: pointer;
+            padding: 2px 5px;
+            white-space: nowrap;
+            overflow: hidden;
+
+            &:hover {
+                color: #2196f3;
+            }
+        }
+
+        .autocomplete-selected {
+            color: #2196f3;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: #ccc;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #fff;
+        }
+    }
+
+    // Link conditionals.
+    // hide popoverlay and show link by default
+    .ice-floatbar-dropdown-link-popoverlay {
+        display: none;
+    }
+
+    .ice-floatbar-dropdown-select-funnel-step {
+        display: none;
+    }
+
+    .ice-floatbar-dropdown-link[data-op-action="popoverlay"] {
+        .ice-floatbar-dropdown-link-popoverlay {
+            display: block;
+        }
+
+        .ice-floatbar-dropdown-link-href {
+            display: none;
+        }
+
+        .ice-floatbar-dropdown-select-funnel-step {
+            display: none;
+        }
+    }
+
+    .ice-floatbar-dropdown-link[data-op-action="nextFunnelStep"],
+    .ice-floatbar-dropdown-link[data-op-action="prevFunnelStep"] {
+         .ice-floatbar-dropdown-link-href {
+             display: none;
+         }
+
+        .ice-floatbar-dropdown-select-funnel-step {
+            display: none;
+        }
+     }
+
+    .ice-floatbar-dropdown-link[data-op-action="goToFunnelStep"] {
+        .ice-floatbar-dropdown-link-href {
+            display: none;
+        }
+
+        .ice-floatbar-dropdown-select-funnel-step {
+            display: block;
+        }
+    }
+
+    // Hide url field when nextFunnelStep is selected
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="link"] .ice-floatbar-dropdown-link[data-op3-action="nextFunnelStep"],
+    .ice-floatbar-wrapper[data-ice-floatbar-dropdown="link"] .ice-floatbar-dropdown-link[data-op3-action="prevFunnelStep"] {
+        .ice-floatbar-dropdown-link-href {
+            display: none;
+        }
+
+        > p {
+            margin-bottom: 0;
+        }
+    }
+}

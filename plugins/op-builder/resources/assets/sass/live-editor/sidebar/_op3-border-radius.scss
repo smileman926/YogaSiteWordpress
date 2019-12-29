@@ -1,0 +1,118 @@
+.op3-element-options-border-radius-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+
+    .op3-element-options-label-group {
+        margin-bottom: 22px;
+    }
+
+    .jquery-input-range-widget {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        position: absolute;
+        width: 175px;
+        left: 96px;
+        top: 69px;
+
+        .jquery-input-range-numeric {
+            text-align: left;
+            width: 57px;
+        }
+
+        .jquery-input-range-unit-container {
+            font-size: 0.8em;
+            top: -24px;
+        }
+    }
+
+    .op3-element-options-corner-boxes {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+
+        .op3-corner-box {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px dotted darken($op-grey-border, 10%);
+            cursor: pointer;
+
+            .active {
+                border-color: $op-blue;
+            }
+
+            &.bottom-right {
+                border-bottom: 2px solid $op-light-grey;
+                border-right: 2px solid $op-light-grey;
+                border-bottom-right-radius: 50%;
+                right: 0;
+                bottom: 0;
+
+                &:hover,
+                &.active {
+                    border-bottom: 4px solid $op-blue;
+                    border-right: 4px solid $op-blue;
+                }
+            }
+
+            &.bottom-left {
+                border-bottom: 2px solid $op-light-grey;
+                border-left: 2px solid $op-light-grey;
+                border-bottom-left-radius: 50%;
+                left: 0;
+                bottom: 0;
+
+                &:hover,
+                &.active {
+                    border-bottom: 4px solid $op-blue;
+                    border-left: 4px solid $op-blue;
+                }
+            }
+
+            &.all {
+                width: 18px;
+                height: 18px;
+                border: 2px solid $op-light-grey;
+                border-radius: 5px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                &:hover,
+                &.active {
+                    border: 4px solid $op-blue;
+                }
+            }
+
+            &.top-left {
+                border-left: 2px solid $op-light-grey;
+                border-top: 2px solid $op-light-grey;
+                border-top-left-radius: 50%;
+                top: 0;
+                left: 0;
+
+                &:hover,
+                &.active {
+                    border-left: 4px solid $op-blue;
+                    border-top: 4px solid $op-blue;
+                }
+            }
+
+            &.top-right {
+                border-top: 2px solid $op-light-grey;
+                border-right: 2px solid $op-light-grey;
+                border-top-right-radius: 50%;
+                top: 0;
+                right: 0;
+
+                &:hover,
+                &.active {
+                    border-top: 4px solid $op-blue;
+                    border-right: 4px solid $op-blue;
+                }
+            }
+        }
+    }
+}

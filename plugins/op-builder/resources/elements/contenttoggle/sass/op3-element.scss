@@ -1,0 +1,11 @@
+.op3-element[data-op3-element-type="contenttoggle"] {
+    display: flex;
+
+    .op3-contenttoggle-wrapper {
+        width: 100%;
+
+        > [data-op3-children] {
+            width: 100%;
+        }
+    }
+}

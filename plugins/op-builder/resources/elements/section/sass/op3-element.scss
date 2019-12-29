@@ -1,0 +1,43 @@
+.op3-element[data-op3-element-type="section"] {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+
+    [data-op3-background="separatorTop"],
+    [data-op3-background="separatorBottom"] {
+        border-width: 0 !important;
+        color: #d8d8d8;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        width: 100%;
+    }
+
+    [data-op3-background="separatorBottom"] {
+        bottom: 0;
+        top: auto;
+
+        svg {
+            transform: scaleY(-1);
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .op3-element[data-op3-element-type="section"] {
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.op3-element[data-op3-element-type="icon"] {
+    display: table;
+    line-height: 0;
+
+    a {
+        color: inherit;
+
+        .op3-icon-container {
+            border: 2px solid currentColor;
+
+            &[data-op3-iconframe="none"] {
+                border-color: transparent !important;
+                background: transparent !important;
+            }
+
+            &[data-op3-iconframe="outline"] {
+                background: transparent !important;
+                border-color: currentColor;
+                padding: 25px;
+            }
+
+            &[data-op3-iconframe="filled"] {
+                background: #ccc;
+                border-color: currentColor;
+                padding: 25px;
+            }
+
+            &[data-op3-iconshape="curved"] {
+                border-radius: 10%;
+            }
+
+            &[data-op3-iconshape="circle"] {
+                border-radius: 100%;
+            }
+
+            .op3-icon {
+                font-size: 55px;
+            }
+        }
+    }
+}

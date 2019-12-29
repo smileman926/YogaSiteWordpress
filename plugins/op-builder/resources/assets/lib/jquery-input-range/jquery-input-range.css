@@ -1,0 +1,17 @@
+.jquery-input-range { display: none; }
+.jquery-input-range-widget { display: flex; position: relative; margin: 0; padding: 1.125em 0 0 0; font-size: 16px; font-family: inherit; justify-content: center; align-items: center; color: #8e8e8e; box-sizing: border-box; }
+.jquery-input-range-slider { width: 65%; height: 1.8em; margin: 0 auto; padding: 0; font-size: 1em; font-family: inherit; align-self: center; box-shadow: none; cursor: pointer; outline: 0 none; --jquery-input-range-slider: 25%; -webkit-appearance: none; }
+.jquery-input-range-slider::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(90deg, #0175ff var(--jquery-input-range-slider), #dbdbdb var(--jquery-input-range-slider), #dbdbdb 100%); border: none; border-radius: 2px; }
+.jquery-input-range-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 0.875em; height: 0.875em; background: #0175ff; border: 0 none; border-radius: 50%; transform: translateY(calc(-50% + 1px)); }
+.jquery-input-range-slider::-moz-focus-outer { border: 0 none; }
+.jquery-input-range-slider::-moz-range-track { height: 2px; background: linear-gradient(90deg, #0175ff var(--jquery-input-range-slider), #dbdbdb var(--jquery-input-range-slider), #dbdbdb 100%); border: none; border-radius: 2px; }
+.jquery-input-range-slider::-moz-range-thumb { width: 0.875em; height: 0.875em; background: #0175ff; border: 0 none; border-radius: 50%; }
+.jquery-input-range-slider::-ms-track { height: 2px; background: linear-gradient(90deg, #0175ff var(--jquery-input-range-slider), #dbdbdb var(--jquery-input-range-slider), #dbdbdb 100%); border: none; border-radius: 2px; }
+.jquery-input-range-slider::-ms-thumb { width: 0.875em; height: 0.875em; background: #0175ff; border: 0 none; border-radius: 50%; }
+.jquery-input-range-slider::-ms-tooltip { display: none }
+.jquery-input-range-numeric { width: calc(35% - 1em); margin: 0 0 0 1em; padding: 0.5em 0.25em; font-size: 0.75em; font-family: inherit; text-align: right; color: #333; border: 1px solid #e8e8e8; border-radius: 4px; outline: 0 none; align-self: center; }
+.jquery-input-range-numeric:focus { border-color: #cfcfcf; outline: 0 none; }
+.jquery-input-range-unit-container { position: absolute; top: 0; right: 0; font-size: 0.8em; line-height: 1.5; }
+.jquery-input-range-unit-item { margin-left: 0.5em; font-size: 0.8em; font-family: inherit; color: inherit; text-decoration: none; -webkit-user-drag: none; user-drag: none; }
+.jquery-input-range-unit-item, .jquery-input-range-unit-item:active, .jquery-input-range-unit-item:focus { outline: none; }
+.jquery-input-range-unit-item.jquery-input-range-unit-item-selected { color: #0175ff; }

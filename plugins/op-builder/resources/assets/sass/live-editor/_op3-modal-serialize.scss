@@ -1,0 +1,25 @@
+.op3-modal.op3-modal-serialize {
+    .op3-modal-wrapper {
+        label {
+            display: none;
+        }
+
+        .op3-modal-content {
+            font-size: 14px;
+            overflow: scroll;
+            white-space: nowrap;
+        }
+
+        .op3-modal-ok {
+            line-height: 0;
+            text-indent: -999px;
+
+            &::after {
+                content: "Export";
+                display: block;
+                line-height: initial;
+                text-indent: -0;
+            }
+        }
+    }
+}

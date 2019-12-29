@@ -1,0 +1,237 @@
+.op3-wizard.op3-wizard-membership {
+    select:not([multiple]) + .jquery-grid-picker-widget {
+        grid-gap: 2em;
+
+        .jquery-grid-picker-item-content {
+            border: 1px solid lighten($op-grey-border, 2%);
+            opacity: 0.9;
+            transition: border-color ease 0.2s;
+
+            &:hover {
+                opacity: 1;
+                border-color: lighten($op-light-grey, 2%);
+            }
+
+            .op3-icon {
+                font-size: 2em;
+                vertical-align: baseline;
+            }
+        }
+
+        .jquery-grid-picker-item.jquery-grid-picker-active .jquery-grid-picker-item-content {
+            color: $op-blue;
+            border-color: $op-blue;
+        }
+    }
+
+    select[name="fields"] + .jquery-grid-picker-widget {
+        .op3-icon {
+            display: none;
+            margin: 0 0.25em 0 0;
+            position: relative;
+            top: 2px;
+        }
+
+        .jquery-grid-picker-item-content[data-required="1"] {
+            .op3-icon.locked {
+                display: inline-block;
+            }
+        }
+
+        .jquery-grid-picker-item-content[data-hidden="1"] {
+            .op3-icon.hidden {
+                display: inline-block;
+            }
+        }
+    }
+
+    .op3-wizard-membership-thumb {
+        padding: 0;
+        border: 0 none;
+        box-shadow: 0 4px 17px 0 rgba(56, 79, 134, 0.1);
+    }
+
+    .op3-wizard-membership-summary {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 2em;
+        margin: 1.5em 0;
+
+        dl {
+            margin: 1em 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        dt {
+            font-size: 0.8em;
+            color: $op-light-grey;
+        }
+
+        dd {
+            margin: 0;
+            color: $op-grey;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 2em;
+
+            .op3-icon {
+                visibility: hidden;
+                margin-left: 5px;
+                position: relative;
+                top: 2px;
+            }
+
+            li {
+                margin-bottom: 5px;
+
+                &[data-required="1"] {
+                    .op3-icon.locked {
+                        visibility: visible;
+                    }
+                }
+
+                &[data-hidden="1"] {
+                    .op3-icon.hidden {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        // .op3-wizard-integration-summary-desc {}
+    }
+
+    [data-field],
+    [data-field-summary] {
+        //display: none;
+    }
+
+
+    .op3-wizard-steps-item-header {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            flex: 1;
+        }
+    }
+
+    &[data-wizard-step="1"] {
+
+    }
+
+    &[data-wizard-step="2"] {
+
+    }
+}
+
+.op3-wizard-membership-thumb {
+    position: relative;
+    display: block;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 4px 17px 0 rgba(56, 79, 134, 0.1);
+
+    button {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        top: auto;
+        margin: 0;
+        width: 100%;
+        padding: 1em 1.5em;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.65);
+        color: white;
+        border: 0 none;
+        border-radius: 0 0 3px 3px;
+        outline: 0 none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transform: translateX(-50%);
+
+        &:hover {
+            background-color: $op-blue;
+        }
+    }
+
+    .op3-icon,
+    img {
+        font-size: 2em;
+        vertical-align: baseline;
+        max-height: 100%;
+    }
+
+    #toolbar & {
+        margin: 16px 22px 0;
+
+        button {
+            padding: 1em 1.5em;
+            font-size: 14px;
+        }
+
+        span {
+            padding: 0.8em 1em;
+            opacity: 0;
+        }
+    }
+}
+
+.op3-legend {
+    margin-top: 20px;
+    color: #8e8e8e;
+
+    .op3-legend-item {
+        margin-bottom: 5px;
+
+        .op3-icon {
+            margin-right: 5px;
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+        }
+
+        .op3-legend-label {
+            font-size: 12px;
+        }
+    }
+}
+
+// Wizard
+.op3-wizard.op3-wizard-membership {
+
+    .label-group {
+        .field-label {
+            width: 270px;
+            margin: 0;
+            line-height: 39px;
+        }
+
+        .input-text {
+            flex: 1;
+            width: auto;
+        }
+
+        .toggle-switch {
+            margin-left: -60px;
+        }
+    }
+
+    .description {
+        font-size: 16px;
+    }
+}

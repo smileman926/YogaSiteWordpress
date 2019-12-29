@@ -1,0 +1,98 @@
+// Flatpickr customizations
+.flatpickr-input {
+    width: 100%;
+}
+
+.flatpickr-calendar {
+    font-family: inherit;
+    width: 85%;
+    top: 90px !important;
+    left: 7.5% !important;
+    z-index: 1000;
+
+    .flatpickr-rContainer,
+    .flatpickr-days,
+    .dayContainer {
+        width: 100% !important;
+    }
+
+    .dayContainer {
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .numInputWrapper input {
+        border: 0;
+        display: inline-block;
+        padding: 0 0 0 0.5ch;
+        color: inherit;
+        text-align: center;
+    }
+
+    .flatpickr-day {
+        height: 34px;
+        line-height: 33px;
+    }
+
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange,
+    .flatpickr-day.selected.inRange,
+    .flatpickr-day.startRange.inRange,
+    .flatpickr-day.endRange.inRange,
+    .flatpickr-day.selected:focus,
+    .flatpickr-day.startRange:focus,
+    .flatpickr-day.endRange:focus,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.startRange:hover,
+    .flatpickr-day.endRange:hover,
+    .flatpickr-day.selected.prevMonthDay,
+    .flatpickr-day.startRange.prevMonthDay,
+    .flatpickr-day.endRange.prevMonthDay,
+    .flatpickr-day.selected.nextMonthDay,
+    .flatpickr-day.startRange.nextMonthDay,
+    .flatpickr-day.endRange.nextMonthDay {
+        border-color: $op-blue;
+        background: $op-blue;
+    }
+
+    .flatpickr-time {
+        border-bottom: 1px solid #e6e6e6;
+    }
+}
+
+// Custom Done button
+.flatpickr-confirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    margin: 10px 13px;
+    height: 26px;
+    width: 90%;
+    font-size: 12px;
+    font-weight: 300;
+    outline: none;
+    border: 1px solid $op-blue;
+    border-radius: 0.25em;
+    cursor: pointer;
+    color: $op-blue;
+}
+
+.flatpickr-confirm:hover {
+    background: $op-blue;
+    color: #fff;
+}
+
+// Video Start Time: Hide hour selector
+[data-op3-element-options-property-name="videoStartTime"] {
+    .flatpickr-time {
+        .numInputWrapper:first-child {
+            display: none;
+
+            & + .flatpickr-time-separator {
+                display: none;
+            }
+        }
+    }
+}

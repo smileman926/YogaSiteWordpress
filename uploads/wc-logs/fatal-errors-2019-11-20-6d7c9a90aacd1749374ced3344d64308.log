@@ -1,0 +1,16 @@
+2019-11-20T18:28:05+00:00 CRITICAL Uncaught Error: Call to a member function get_total() on boolean in /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php:256
+Stack trace:
+#0 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php(274): WC_Payment_Gateway->get_order_total()
+#1 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php(151): WC_Payment_Gateway->is_available()
+#2 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-payment-request.php(530): WC_Payment_Gateways->get_available_payment_gateways()
+#3 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-includes/class-wp-hook.php(288): WC_Stripe_Payment_Request->scripts('')
+#4 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-includes/cla in /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php on line 256
+
+2019-11-20T18:28:09+00:00 CRITICAL Uncaught Error: Call to a member function get_total() on boolean in /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php:256
+Stack trace:
+#0 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php(274): WC_Payment_Gateway->get_order_total()
+#1 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php(151): WC_Payment_Gateway->is_available()
+#2 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-payment-request.php(530): WC_Payment_Gateways->get_available_payment_gateways()
+#3 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-includes/class-wp-hook.php(288): WC_Stripe_Payment_Request->scripts('')
+#4 /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-includes/cla in /home/chenzino/public_html/anatomyandphilosophyonline.com/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-payment-gateway.php on line 256
+

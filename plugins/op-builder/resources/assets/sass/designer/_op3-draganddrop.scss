@@ -1,0 +1,127 @@
+html[data-jquery-mmdnd-dragging] {
+    .op3-element:not(.op3-focus):hover::before,
+    .op3-element:not(.op3-focus):hover .op3-column-content::before {
+        display: none;
+    }
+
+    .jquery-flex-grid-cell-sizer-handle,
+    .op3-popoverlay-controls,
+    #op3-designer-element-add-section button {
+        pointer-events: none;
+    }
+
+    .op3-element-drop-target {
+        background: transparentize($op-blue, 0.8) !important;
+
+        // drop target line
+        &::before {
+            display: block !important;
+            /* stylelint-disable-next-line */
+            content: attr(data-position-description)" "attr(data-op3-element-type);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            line-height: 1.5em;
+            font-size: 12px;
+            background: transparentize($op-blue, 0.2);
+            color: #fff;
+            border: 0 none;
+            text-align: center;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        &[data-position-method="appendTo"][data-orientation="horizontal"]::before {
+            top: 50%;
+            bottom: auto;
+            height: 1.5em;
+            transform: translateY(-50%);
+        }
+
+        &[data-position-method="insertBefore"][data-orientation="horizontal"]::before {
+            top: -1.5em;
+            bottom: auto;
+            height: 1.5em;
+        }
+
+        &[data-position-method="insertAfter"][data-orientation="horizontal"]::before {
+            top: auto;
+            bottom: -1.5em;
+            height: 1.5em;
+        }
+
+        &[data-position-method="appendTo"][data-orientation="vertical"]::before {
+            right: auto;
+            left: 50%;
+            width: 1.5em;
+            transform: translateX(-50%);
+        }
+
+        &[data-position-method="insertBefore"][data-orientation="vertical"]::before {
+            content: "";
+            right: auto;
+            left: -1.5em;
+            width: 1.5em;
+        }
+
+        &[data-position-method="insertAfter"][data-orientation="vertical"]::before {
+            content: "";
+            right: -1.5em;
+            left: auto;
+            width: 1.5em;
+        }
+
+        // arrow
+        &::after {
+            content: "\f446";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2em;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+            font-family: "op3-icons";
+            font-size: 16px;
+            color: #fff;
+            background: rgba(0, 0, 200, 0.4);
+            background: $op-blue;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.4s all;
+            pointer-events: none;
+        }
+
+        &[data-position-method] > .op3-column-content > [data-op3-element-container] > [data-op3-children]:empty::before {
+            display: none !important;
+        }
+
+        &[data-position-method="appendTo"]::after {
+            display: none;
+        }
+
+        &[data-position-method="insertBefore"][data-orientation="horizontal"]::after {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+
+        &[data-position-method="insertAfter"][data-orientation="horizontal"]::after {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        &[data-position-method="insertBefore"][data-orientation="vertical"]::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &[data-position-method="insertAfter"][data-orientation="vertical"]::after {
+            transform: translate(-50%, -50%) rotate(270deg);
+        }
+    }
+
+    .op3-element.op3-drag-source {
+        [data-op3-children] {
+            pointer-events: none;
+        }
+    }
+}

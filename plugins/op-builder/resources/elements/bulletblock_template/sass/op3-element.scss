@@ -1,0 +1,18 @@
+.op3-bullet-block {
+    margin: 0;
+
+    .op3-bullet-list {
+        display: flex;
+        align-items: center;
+
+        .op3-element {
+            &:first-child { margin-right: 0.5em; }
+
+            [data-op3-contenteditable] {
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

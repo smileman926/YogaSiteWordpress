@@ -1,0 +1,78 @@
+form[data-op3-element-options-type="button"] {
+    // Align icons
+    .op3-element-options-property[data-op3-element-options-property-id="buttonAlignText"] {
+        [data-jquery-select-buttons-option-value="stretch"] { display: none; }
+        [data-jquery-select-buttons-option-value="normal"] .jquery-select-buttons-option-icon::before { content: "\f261"; }
+        [data-jquery-select-buttons-option-value="flex-start"] .jquery-select-buttons-option-icon::before { content: "\f2a8"; }
+        [data-jquery-select-buttons-option-value="center"] .jquery-select-buttons-option-icon::before { content: "\f405"; }
+        [data-jquery-select-buttons-option-value="flex-end"] .jquery-select-buttons-option-icon::before { content: "\f1f1"; }
+    }
+
+    // Hiding button element icons properties
+    // depending on icon visibility property
+    .op3-element-options-property[data-op3-element-options-property-id="visible"] {
+        &[data-op3-element-options-property-value="0"] {
+            ~ .op3-element-options-property,
+            ~ .op3-element-options-property-filter {
+                display: none;
+            }
+        }
+    }
+
+    // Hide label on 'tabbed view'
+    .op3-element-options-property[data-op3-element-options-property-id="iconSize"],
+    .op3-element-options-property[data-op3-element-options-property-id="iconDirection"],
+    .op3-element-options-property[data-op3-element-options-property-id="iconSpacing"] {
+        .op3-element-options-label-group {
+            visibility: hidden;
+        }
+    }
+
+    // More 'tabbed view' tweaks
+    .op3-element-options-property[data-op3-element-options-property-id="iconDirection"] {
+        padding-top: 0;
+    }
+
+    .op3-element-options-property[data-op3-element-options-property-id="iconSpacing"] {
+        .op3-element-options-label-group {
+            margin-bottom: 10px;
+        }
+    }
+
+    // Subtext
+    .op3-element-options-property[data-op3-element-options-property-id="subtextVisible"] {
+        &[data-op3-element-options-property-value="0"] {
+            ~ .op3-element-options-property,
+            ~ .op3-element-options-property-filter {
+                display: none;
+            }
+        }
+    }
+}
+
+// Button on Form element
+#toolbar form[data-op3-element-options-path$="/form/button"],
+form[data-op3-element-options-path$="/form/button"] {
+    .op3-boxmodel {
+        .op3-boxmodel-margin-top,
+        .op3-boxmodel-margin-bottom,
+        .op3-boxmodel-margin-left,
+        .op3-boxmodel-margin-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+
+    [data-op3-toolbar-nav-id="advanced"],
+    [data-op3-toolbar-nav-id="alignment"],
+    [data-op3-toolbar-nav-id="move"],
+    [data-op3-toolbar-nav-id="link"],
+    [data-op3-toolbar-nav-id="clone"],
+    [data-op3-toolbar-nav-id="delete"] {
+        display: none;
+    }
+}

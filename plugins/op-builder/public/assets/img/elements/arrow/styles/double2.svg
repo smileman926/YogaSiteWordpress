@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="128" height="128" viewBox="0 0 512 512">
+  <path fill="currentColor" d="M0,256L128,0h128L128,256l128,256H128L0,256z M384,512h128L384,256L512,0H384L256,256L384,512z" />
+</svg>

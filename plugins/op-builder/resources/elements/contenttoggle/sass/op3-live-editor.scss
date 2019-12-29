@@ -1,0 +1,67 @@
+#toolbar {
+    form[data-op3-element-options-type="contenttoggle"],
+    form[data-op3-element-options-type="contenttoggleitem"] {
+        [data-op3-toolbar-nav-id="add"] {
+            display: block;
+        }
+
+        &[data-op3-element-options-row-children-count="20"] {
+            [data-op3-toolbar-nav-id="add"] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+#op3-context-menu {
+    &[data-op3-element-type="contenttoggle"],
+    &[data-op3-element-type="contenttoggleitem"] {
+        .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="contenttoggle"] {
+            display: block;
+        }
+
+        &[data-op3-element-row-children-count="20"] {
+            .op3-context-menu-list-item[data-op3-action="addElement"][data-op3-args*="contenttoggle"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &[data-op3-element-type="contenttoggleitem"] {
+        &[data-op3-element-row-children-count="20"] {
+            .op3-context-menu-list-item[data-op3-action="clone"] {
+                opacity: 0.33;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // contenttoggleitem children
+    &[data-op3-element-path*="/contenttoggleitem/"] {
+        .op3-context-menu-list-separator[data-op3-separator="global/delete"],
+        .op3-context-menu-list-item[data-op3-action="clone"],
+        .op3-context-menu-list-separator[data-op3-separator="clone/clipboard"],
+        .op3-context-menu-list-separator[data-op3-separator="export/delete"],
+        .op3-context-menu-list-item[data-op3-action="delete"] {
+            display: none;
+        }
+
+        .op3-context-menu-list-item[data-op3-action="cut"],
+        .op3-context-menu-list-item[data-op3-action="copy"],
+        .op3-context-menu-list-item[data-op3-action="paste"] {
+            opacity: 0.33;
+            pointer-events: none;
+        }
+    }
+
+    // contenttoggleitem and children
+    &[data-op3-element-path*="/contenttoggleitem"] {
+        .op3-context-menu-list-item[data-op3-action="markAsGlobalElement"],
+        .op3-context-menu-list-separator[data-op3-separator="clipboard/export"] {
+            display: none;
+        }
+    }
+
+}

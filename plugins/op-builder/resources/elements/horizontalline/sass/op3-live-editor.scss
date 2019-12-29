@@ -1,0 +1,28 @@
+// Display line separator for borders properties
+// on horizontalline element because separators
+// are hidden by default
+[data-op3-element-options-type="horizontalline"] {
+    [data-op3-element-options-property-name="borderTopColor"],
+    [data-op3-element-options-property-name="borderTopWidth"] {
+        &::before {
+            display: block;
+        }
+    }
+}
+
+// Lock padding & padding handles to prevent layout breaking
+form[data-op3-element-options-type="horizontalline"] {
+    .op3-boxmodel {
+        .op3-boxmodel-padding-top,
+        .op3-boxmodel-padding-bottom,
+        .op3-boxmodel-padding-left,
+        .op3-boxmodel-padding-right {
+            pointer-events: none;
+            opacity: 0.5;
+
+            & + .op3-boxmodel-handler {
+                display: none;
+            }
+        }
+    }
+}

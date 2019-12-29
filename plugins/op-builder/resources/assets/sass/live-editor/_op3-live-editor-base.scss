@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    min-width: $page-min-width;
+
+    &.sidebar {
+        min-width: $page-min-width;
+    }
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: $op-font-family;
+    font-weight: 400;
+}

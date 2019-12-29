@@ -1,0 +1,135 @@
+.opd-dashboard-settings {
+    margin-top: 20px;
+
+    h1 {
+        i {
+            color: $color__ops-logoBlue;
+        }
+    }
+
+    .opd-settings-secondary-menu {
+        margin: 40px auto;
+
+        nav {
+            display: inline-block;
+
+            ul {
+                border-bottom: 1px solid $color__ops-borderBlue;
+                padding-bottom: 20px;
+                margin-bottom: 0;
+
+                li {
+                    display: inline-block;
+                    margin: 0 15px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    a {
+                        padding: 25px 0;
+                        color: $color__ops-gray;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $color__ops-logoBlue;
+                        }
+                    }
+
+                    &.selected {
+                        a {
+                            color: $color__ops-logoBlue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ops_movingBorderMenuHover {
+            bottom: -1px;
+        }
+    }
+
+    // Simple column layout
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+            margin: 0 15px;
+        }
+    }
+
+    // Settings -> Disable Scripts And Styles
+	.disable-scripts-styles {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 2em;
+
+		thead {
+			tr {
+				th {
+					color: #95a2ae;
+					font-size: 0.8em;
+
+					&:hover {
+						cursor: pointer;
+						color: $color__ops-logoBlue;
+					}
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				height: 40px;
+				border-bottom: 1px solid #f1f1f1;
+
+				&:first-child {
+					border-top: 1px solid #f1f1f1;
+				}
+
+				th {
+					font-size: 14px;
+					font-weight: normal;
+
+					&:nth-child(1) {width: 60%; font-weight: bold;}
+					&:nth-child(2) {width: 20%}
+					&:nth-child(3) {width: 10%}
+					&:nth-child(4) {width: 10%}
+				}
+			}
+
+			label {
+				margin-bottom: 0;
+				word-break: break-all;
+			}
+
+			input {
+				margin: 0;
+			}
+		}
+
+		.plugins,
+		.themes {
+			width: 100%;
+			color: #000;
+
+			.ops-form-group {
+				display: flex;
+				flex-direction: row;
+				margin: 0;
+			}
+		}
+	}
+}

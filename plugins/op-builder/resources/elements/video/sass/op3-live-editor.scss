@@ -1,0 +1,137 @@
+form[data-op3-element-options-type="video"] {
+    .op3-element-options-property[data-op3-element-options-property-name="boxShadowInset"],
+    .op3-element-options-property[data-op3-element-options-property-name="backgroundImage"] {
+        display: none;
+    }
+
+    // Hide alignment in advanced tab
+    .op3-boxmodel-align-container {
+        display: none;
+    }
+
+    /* Display image overlay options
+       base on visible property switch */
+    [data-op3-element-options-property-id="visible"] {
+        &[data-op3-element-options-property-value="0"] {
+            ~ [data-op3-element-options-property-name="backgroundImageUrl"],
+            ~ [data-op3-element-options-property-id="videoIconVisible"] {
+                display: none;
+            }
+        }
+    }
+
+
+    // Hide all options so we can show only what's needed
+    [data-op3-element-options-property-id="videoSource"] {
+        ~ [data-op3-element-options-property-id="code"],
+        ~ [data-op3-element-options-property-id="videoUrlYoutube"],
+        ~ [data-op3-element-options-property-id="videoUrlVimeo"],
+        ~ [data-op3-element-options-property-id="videoUrlWistia"] {
+            display: none;
+        }
+
+        &[data-op3-element-options-property-value="embed"] {
+            ~ [data-op3-element-options-property-id="code"] {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="youtube"] {
+            ~ [data-op3-element-options-property-id="videoUrlYoutube"] {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="vimeo"] {
+            ~ [data-op3-element-options-property-id="videoUrlVimeo"] {
+                display: flex;
+            }
+        }
+
+        &[data-op3-element-options-property-value="wistia"] {
+            ~ [data-op3-element-options-property-id="videoUrlWistia"] {
+                display: flex;
+            }
+        }
+    }
+
+    // Hide advanced options for custom embed code
+    &[data-op3-parent-options-property-value-video-source="embed"] {
+        [data-op3-content-item-name="video-video-advanced"] {
+            display: none;
+        }
+    }
+
+    // Hide all intergration options
+    .op3-element-options-property[data-op3-element-options-property-id="videoStartTime"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoAutoplay"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoMute"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoLoop"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoControls"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoModestBranding"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoRelated"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoColor"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoByline"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoPortrait"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoTitle"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoSpeed"],
+    .op3-element-options-property[data-op3-element-options-property-id="videoBackground"] {
+        display: none;
+    }
+
+    // When youtube is choosen display only youtube integration properties
+    &[data-op3-parent-options-property-value-video-source="youtube"] {
+        .op3-element-options-property[data-op3-element-options-property-id="videoStartTime"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoAutoplay"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoMute"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoLoop"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoControls"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoModestBranding"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoRelated"] {
+            display: flex;
+        }
+    }
+
+    // Hide options not belong to Vimeo integration
+    &[data-op3-parent-options-property-value-video-source="vimeo"] {
+        .op3-element-options-property[data-op3-element-options-property-id="videoAutoplay"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoMute"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoByline"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoPortrait"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoTitle"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoSpeed"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoBackground"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoColor"] {
+            display: flex;
+        }
+    }
+
+    // Hide options not belong to Wistia integration
+    &[data-op3-parent-options-property-value-video-source="wistia"] {
+        .op3-element-options-property[data-op3-element-options-property-id="videoAutoplay"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoLoop"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoMute"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoSpeed"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoControls"],
+        .op3-element-options-property[data-op3-element-options-property-id="videoColor"] {
+            display: flex;
+        }
+    }
+
+    // Video Play Icon
+    [data-op3-element-options-property-id="videoIconVisible"] {
+        &[data-op3-element-options-property-value="0"] {
+            ~ .jquery-filter-button-active[data-op3-element-options-property-name] {
+                display: none;
+            }
+        }
+
+        &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property-filter {
+            display: block;
+        }
+
+        &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value="1"]) ~ .op3-element-options-property-filter {
+            display: none;
+        }
+    }
+}

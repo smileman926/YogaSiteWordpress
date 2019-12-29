@@ -1,0 +1,87 @@
+.ops-form {
+    .ops-form-group {
+        margin-bottom: 25px;
+
+    }
+
+    label {
+        color: $color__ops-black;
+        display: block;
+        margin-bottom: .5rem;
+    }
+
+    .ops-form-control {
+        width: 100%;
+        display: block;
+        border: 1px solid $color__ops-borderLight;
+        border-radius: 5px;
+        line-height: 100%;
+        font-size: 16px;
+        box-sizing: border-box !important;
+        margin-bottom: 20px !important;
+        padding: 1rem 1.5rem !important;
+        background-clip: padding-box;
+        height: auto;
+
+        &:focus {
+            box-shadow: none;
+            border-color: initial;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::placeholder {
+            opacity: 0.4;
+        }
+
+        &.ops-form-control-facebook-select {
+          max-width: 100%;
+          line-height: 1.2;
+        }
+    }
+
+    .ops-form-actions {
+
+    }
+
+    button {
+        &:focus {
+            box-shadow: none;
+            border-color: initial;
+            outline: none;
+        }
+    }
+}
+
+@import "elements/form/onoffswitch";
+
+/*
+.ops-form {
+
+
+  select {
+    border: 1px solid $color__ops-borderLight;
+    &:focus {
+      box-shadow: none;
+      border-color: initial;
+    }
+  }
+
+  button {
+    &:focus {
+      box-shadow: none;
+      border-color: initial;
+      outline: none;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: 15px;
+  }
+
+  @import "form/onoffswitch";
+}
+
+ */

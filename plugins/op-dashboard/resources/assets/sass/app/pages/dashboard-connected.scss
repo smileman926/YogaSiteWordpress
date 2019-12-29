@@ -1,0 +1,18 @@
+.opd-dashboard-connected {
+    margin-top: 20px;
+
+    h1 {
+        i {
+            color: $color__ops-logoBlue;
+        }
+    }
+
+    p {
+        &.opd-teaser {
+            margin-bottom: 40px;
+        }
+    }
+
+    @import "dashboard-connected/introduction";
+    @import "dashboard-connected/products";
+}

@@ -1,0 +1,11 @@
+.op3-element[data-op3-element-type="customhtml"] {
+    [data-op3-code-html] {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        border-width: 0;
+    }
+    iframe {
+        width: 100%;
+    }
+}

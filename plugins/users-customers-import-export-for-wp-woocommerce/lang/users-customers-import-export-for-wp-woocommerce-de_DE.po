@@ -1,0 +1,536 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-01-17 12:12+0530\n"
+"PO-Revision-Date: 2019-01-17 12:13+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: styles\n"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:22
+msgid ""
+"User/Customer CSV Import Export requires the function "
+"<code>mb_detect_encoding</code> to import and export CSV files. Please ask "
+"your hosting provider to enable this function."
+msgstr ""
+"Produkt CSV Import Export krever funksjonen <code> mb_detect_encoding </"
+"code> for å importere og eksportere CSV-filer. Vennligst spør "
+"nettleverandøren din for å aktivere denne funksjonen."
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:30
+msgid "User Import Export"
+msgstr "Importieren und Exportieren"
+
+#: includes/class-wf-customerimpexpcsv-admin-screen.php:31
+msgid "Customer Import Export"
+msgstr "Kundenimport Export"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:19
+msgid "Used it successfully. Don't need anymore."
+msgstr "Erfolgreich eingesetzt Brauche nicht mehr"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:21
+msgid "Have used it successfully and aint in need of it anymore"
+msgstr "Habe es erfolgreich benutzt und brauche es nicht mehr"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:25
+msgid "I couldn't understand how to make it work"
+msgstr "Ich habe nicht verstanden, wie es funktioniert"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:27
+msgid "Would you like us to assist you?"
+msgstr "Möchtest Du Hilfe?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:31
+msgid "I found a better plugin"
+msgstr "Ich fand ein besseres Plugin"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:33
+msgid "Which plugin?"
+msgstr "Welches Plugin?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:37
+msgid "The plugin is great, but I need specific feature that you don't support"
+msgstr ""
+"Das Plugin ist großartig, aber ich brauche besondere Funktionen, die das "
+"PlugIn nicht bietet"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:39
+msgid "Could you tell us more about that feature?"
+msgstr "Können Sie uns mehr über dieses Feature erzählen?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:43
+msgid "The plugin is not working"
+msgstr "Das PlugIn funktioniert nicht"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:45
+msgid "Could you tell us a bit more whats not working?"
+msgstr "Können Sie uns mehr dazu sagen, was nicht funktioniert?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:49
+msgid "It's not what I was looking for"
+msgstr "Es ist nicht das, was ich suchte"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:55
+msgid "The plugin didn't work as expected"
+msgstr "Das PlugIn funktioniert nicht wie erwartet"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:57
+msgid "What did you expect?"
+msgstr "Was haben Sie erwartet?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:61
+msgid "Other"
+msgstr "Sonstiges"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:63
+msgid "Could you tell us a bit more?"
+msgstr "Könnten Sie uns noch etwas mehr erzählen?"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:81
+msgid "If you have a moment, please let us know why you are deactivating:"
+msgstr ""
+"Wenn Du einen Moment Zeit hast, lass uns wissen, warum Du das Plugin "
+"deaktivieren möchtest:"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:93
+msgid "I rather wouldn't say"
+msgstr "Ich würde das lieber nicht sagen"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:94
+msgid "Submit & Deactivate"
+msgstr "Absenden & Deaktivieren"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:95
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: includes/class-wt-userimport-uninstall-feedback.php:174
+msgid "Deactivate and leave a review"
+msgstr "Deaktivieren Sie und hinterlassen Sie eine Bewertung"
+
+#: includes/importer/class-wf-csv-parser.php:193
+#, php-format
+msgid "> Row %s - skipped due to record offset."
+msgstr "> Zeile%s - Überspringt wegen Datensatzversatz."
+
+#: includes/importer/class-wf-csv-parser.php:199
+#, php-format
+msgid "> Row %s - skipped: cannot insert user without email."
+msgstr ""
+"> Zeile%s - übersprungen: Benutzer können ohne E-Mail nicht eingefügt werden."
+
+#: includes/importer/class-wf-csv-parser.php:204
+#, php-format
+msgid "> Row %s - skipped: Email is not valid."
+msgstr "> Zeile%s - übersprungen: E-Mail ist ungültig."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:117
+msgid "Error with handle_upload!"
+msgstr "Fehler mit Handle_upload!"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:142
+msgid "Row"
+msgstr "Zeile"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:143
+msgid "User ID"
+msgstr "Benutzer ID"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:144
+msgid "User Status"
+msgstr "Benutzerstatus"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:145
+msgid "Status Msg"
+msgstr "Status Msg"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:214
+msgid "AJAX Error"
+msgstr "Ajax Fehler"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:307
+msgid "Error finding uploaded file!"
+msgstr "Fehler beim suchen Datei hochgeladen!"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:374
+msgid "Step 1..."
+msgstr "1. Schritt"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:379
+msgid "Step 2..."
+msgstr "2. Schritt"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:383
+msgid "Finalizing..."
+msgstr "Finalisierung"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:386
+msgid "Finished. Import complete."
+msgstr "Fertig. Import abgeschlossen."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:456
+msgid ""
+"Columns are pre-selected using the Mapping file: \"<b style=\"color:gray\">"
+msgstr "Spalten werden mithilfe der Zuordnungsdatei vorgewählt: \""
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:475
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:600
+msgid "Processing users."
+msgstr "Benutzer bearbeiten."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:493
+msgid "Finished processing Users."
+msgstr "Beendete Verarbeitung Benutzer."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:516
+msgid "Parsing products CSV."
+msgstr "Parsen Produkte CSV."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:523
+msgid "Finished parsing products CSV."
+msgstr "Parsing Fertigprodukte CSV."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:563
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:578
+msgid "Sorry, there has been an error."
+msgstr "Leider ist ein Fehler aufgetreten."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:604
+msgid "Cannot insert user without email"
+msgstr "Benutzer kann ohne E-Mail nicht eingefügt werden"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:608
+msgid "skipped: Email is not valid."
+msgstr "Übersprungen: E-Mail ist ungültig."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:624
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:657
+#, php-format
+msgid "> &#8220;%s&#8221;"
+msgstr "> &#8220; %s &#8221;"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:634
+#, php-format
+msgid "> Error inserting %s: %s"
+msgstr "> Fehler beim Einfügen von%s:%s"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:641
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:642
+msgid "An error occurred with the customer information provided."
+msgstr "Bei den angegebenen Kundeninformationen ist ein Fehler aufgetreten."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:660
+#, php-format
+msgid "> Finished importing user %s"
+msgstr "> Import des Benutzers%s abgeschlossen"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:661
+msgid "Finished processing users."
+msgstr "Fertige Benutzer der Verarbeitung."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:767
+msgid "User could not be created without Email."
+msgstr "Benutzer konnte nicht ohne E-Mail erstellt werden."
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:800
+msgid "Import"
+msgstr "Importieren"
+
+#: includes/importer/class-wf-customerimpexpcsv-customer-import.php:800
+msgid "Merge Users"
+msgstr "Benutzer zusammenführen"
+
+#: includes/importer/views/html-wf-import-greeting.php:5
+#: includes/views/html-wf-admin-screen.php:4
+msgid "User/Customer Export"
+msgstr "Benutzer- / Kundenexport"
+
+#: includes/importer/views/html-wf-import-greeting.php:6
+#: includes/views/html-wf-admin-screen.php:5
+msgid "User/Customer Import"
+msgstr "Kundenimport"
+
+#: includes/importer/views/html-wf-import-greeting.php:7
+#: includes/views/html-wf-admin-screen.php:6
+msgid "Help"
+msgstr "Hilfe"
+
+#: includes/importer/views/html-wf-import-greeting.php:8
+#: includes/views/html-wf-admin-screen.php:7
+msgid "Upgrade to Premium for More Features"
+msgstr "Upgrade auf Premium für mehr Funktionen"
+
+#: includes/importer/views/html-wf-import-greeting.php:16
+#: includes/views/import/html-wf-import-customers.php:2
+msgid "Import Users in CSV Format:"
+msgstr "Benutzer im CSV-Format importieren:"
+
+#: includes/importer/views/html-wf-import-greeting.php:17
+msgid ""
+"Import Users in CSV format from your computer.You can import users/customers "
+"(in CSV format) in to the shop."
+msgstr ""
+"Benutzer im CSV-Format von Ihrem Computer importieren. Sie können Benutzer / "
+"Kunden (im CSV-Format) in den Shop importieren."
+
+#: includes/importer/views/html-wf-import-greeting.php:19
+msgid ""
+"Before you can upload your import file, you will need to fix the following "
+"error:"
+msgstr ""
+"Bevor Sie Ihre Importdatei hochladen können, müssen Sie folgenden Fehler "
+"beheben:"
+
+#: includes/importer/views/html-wf-import-greeting.php:28
+msgid "Select a file from your computer"
+msgstr "Methode 1: Wählen Sie eine Datei von Ihrem computer"
+
+#: includes/importer/views/html-wf-import-greeting.php:34
+#, php-format
+msgid "Maximum size: %s"
+msgstr "Maximale Größe: %s"
+
+#: includes/importer/views/market.php:89 includes/views/export/market.php:94
+msgid "Upgrade to Premium Version"
+msgstr "Upgrade auf Premium-Version"
+
+#: includes/importer/views/market.php:92 includes/views/export/market.php:97
+msgid "Your Business is precious! Go Premium!"
+msgstr "Ihr Geschäft ist kostbar! Go Premium-!"
+
+#: includes/importer/views/market.php:94 includes/views/export/market.php:99
+msgid ""
+"HikeForce Import Export Users Plugin Premium version helps you to seamlessly "
+"import/export Customer details into your Woocommerce Store."
+msgstr ""
+"HikeForce Import Export Plugin Premium-versjonen hjelper deg med å sømløst "
+"importere / eksportere produkter til din Woocommerce Store."
+
+#: includes/importer/views/market.php:96 includes/views/export/market.php:101
+msgid "Export/Import WooCommerce Customer details into a CSV file."
+msgstr ""
+"Exportieren / Importieren von WooCommerce-Kundendetails in eine CSV-Datei."
+
+#: includes/importer/views/market.php:96 includes/views/export/market.php:101
+msgid "( Basic version supports only WordPress User details )"
+msgstr "(Basisversion unterstützt nur WordPress-Benutzerdetails)"
+
+#: includes/importer/views/market.php:97 includes/views/export/market.php:102
+msgid "Various Filter options for exporting Customers."
+msgstr "Verschiedene Filteroptionen für den Export von Kunden."
+
+#: includes/importer/views/market.php:98 includes/views/export/market.php:103
+msgid "Map and Transform fields while Importing Customers."
+msgstr "Felder zuordnen und umwandeln, während Kunden importiert werden."
+
+#: includes/importer/views/market.php:99 includes/views/export/market.php:104
+msgid "Change values while importing Customers using Evaluation Fields."
+msgstr ""
+"Ändern Sie die Werte, während Sie Kunden mithilfe von Bewertungsfeldern "
+"importieren."
+
+#: includes/importer/views/market.php:100 includes/views/export/market.php:105
+msgid "Choice to Update or Skip existing imported Customers."
+msgstr ""
+"Wahl zum Aktualisieren oder Überspringen vorhandener importierter Kunden."
+
+#: includes/importer/views/market.php:101 includes/views/export/market.php:106
+msgid "Choice to Send or Skip Emails for newly imported Customers."
+msgstr ""
+"Wahl zum Senden oder Überspringen von E-Mails für neu importierte Kunden."
+
+#: includes/importer/views/market.php:102 includes/views/export/market.php:107
+msgid ""
+"Import/Export file from/to a remote server via FTP in Scheduled time "
+"interval with Cron Job."
+msgstr ""
+"Importieren / Exportieren von Dateien von / zu einem Remote-Server über FTP "
+"im geplanten Zeitintervall mit Cron Job."
+
+#: includes/importer/views/market.php:103 includes/views/export/market.php:108
+msgid "Excellent Support for setting it up!"
+msgstr "-Hervorragende Unterstützung für sie eingerichtet!"
+
+#: includes/importer/views/market.php:108 includes/views/export/market.php:113
+#: includes/views/html-wf-help-guide.php:39
+#: includes/views/html-wf-help-guide.php:41
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: includes/importer/views/market.php:112 includes/views/export/market.php:90
+#, php-format
+msgid ""
+"<div class=\"\"><p><i>If you like the plugin please leave us a %1$s review!</"
+"i><p></div>"
+msgstr ""
+"<div class=\"\"><p><i>Wenn Ihnen das Plugin gefällt, lassen Sie uns bitte "
+"eine %1$s Rezension zukommen!</i><p></div>"
+
+#: includes/views/export/html-wf-export-customers.php:4
+msgid "Export Users in CSV Format:"
+msgstr "Benutzer im CSV-Format exportieren:"
+
+#: includes/views/export/html-wf-export-customers.php:5
+msgid ""
+"Export and download your Users in CSV format. This file can be used to "
+"import users back into your Website."
+msgstr ""
+"Exportieren und laden Sie Ihre Benutzer im CSV-Format. Diese Datei kann "
+"verwendet werden, um Benutzer zurück in Ihre Website zu importieren."
+
+#: includes/views/export/html-wf-export-customers.php:11
+msgid "User Roles"
+msgstr "Benutzerrollen"
+
+#: includes/views/export/html-wf-export-customers.php:14
+msgid "All Roles"
+msgstr "Alle Rollen"
+
+#: includes/views/export/html-wf-export-customers.php:25
+msgid "Users with these roles will be exported."
+msgstr "Benutzer mit diesen Rollen werden exportiert."
+
+#: includes/views/export/html-wf-export-customers.php:30
+msgid "Offset"
+msgstr "Mitarbeiter überspringen"
+
+#: includes/views/export/html-wf-export-customers.php:33
+msgid "0"
+msgstr "0"
+
+#: includes/views/export/html-wf-export-customers.php:34
+msgid "The number of users to skip before returning."
+msgstr ""
+"Die Anzahl der Benutzer, die vor der Rückkehr übersprungen werden sollen."
+
+#: includes/views/export/html-wf-export-customers.php:39
+msgid "Limit"
+msgstr "Limit"
+
+#: includes/views/export/html-wf-export-customers.php:42
+msgid "Unlimited"
+msgstr "Unbegrenzt"
+
+#: includes/views/export/html-wf-export-customers.php:43
+msgid "The number of users to return."
+msgstr "Die Anzahl der Benutzer, die zurückgegeben werden sollen."
+
+#: includes/views/export/html-wf-export-customers.php:53
+msgid "Columns"
+msgstr "Spalten"
+
+#: includes/views/export/html-wf-export-customers.php:57
+msgid "Column"
+msgstr "Spalte"
+
+#: includes/views/export/html-wf-export-customers.php:60
+msgid "Column Name"
+msgstr "Spaltenname"
+
+#: includes/views/export/html-wf-export-customers.php:87
+msgid "Export Users"
+msgstr "Benutzer exportieren"
+
+#: includes/views/html-wf-help-guide.php:31
+msgid "How-to-setup"
+msgstr "Anleitung zur Einrichtung"
+
+#: includes/views/html-wf-help-guide.php:32
+msgid "Get to know about our produt in 3 minutes with this video"
+msgstr "Lernen Sie unser Produkt in 3 Minuten mit diesem Video kennen."
+
+#: includes/views/html-wf-help-guide.php:34
+msgid "Setup Guide"
+msgstr "Einrichtungsanleitung"
+
+#: includes/views/html-wf-help-guide.php:40
+msgid "Refer to our documentation to set and get started"
+msgstr ""
+"Schlagen Sie in unserer Dokumentation nach, um die Einstellungen vorzunehmen "
+"und loszulegen."
+
+#: includes/views/html-wf-help-guide.php:46
+#: users-customers-import-export-for-wp-woocommerce.php:97
+msgid "Support"
+msgstr "Unterstützen"
+
+#: includes/views/html-wf-help-guide.php:47
+msgid "We would love to help you on any queries or issues."
+msgstr "Gerne stehen wir Ihnen bei Fragen und Problemen zur Verfügung."
+
+#: includes/views/html-wf-help-guide.php:49
+msgid "Contact Us"
+msgstr ""
+"Keine Lieferarten verfügbar. Bitte prüfen Sie Ihre Adresse – oder "
+"kontaktieren Sie uns, wenn Sie Hilfe benötigen."
+
+#: includes/views/import/html-wf-import-customers.php:3
+msgid "Import Users in CSV format from your computer"
+msgstr "Importieren Sie Benutzer im CSV-Format von Ihrem Computer"
+
+#: includes/views/import/html-wf-import-customers.php:6
+msgid "Import Users"
+msgstr "User importieren"
+
+#: users-customers-import-export-for-wp-woocommerce.php:28
+msgid ""
+"You already have the Premium version installed. For any issues, kindly "
+"contact our <a target='_blank' href='https://www.webtoffee.com/"
+"support/'>support</a>."
+msgstr ""
+"Sie haben bereits die Premium-Version installiert. Bei Fragen wenden Sie "
+"sich bitte an unseren <a target='_blank' href='https://www.webtoffee.com/"
+"support/'>Support</a> ."
+
+#: users-customers-import-export-for-wp-woocommerce.php:95
+msgid "Import Export Users"
+msgstr "Import / Export Benutzer"
+
+#: users-customers-import-export-for-wp-woocommerce.php:96
+msgid "Premium Upgrade"
+msgstr "Premium-Upgrade"
+
+#: users-customers-import-export-for-wp-woocommerce.php:98
+msgid "Review"
+msgstr "Bewertung"
+
+#: users-customers-import-export-for-wp-woocommerce.php:157
+msgid "Import <strong>users/customers</strong> to your site via a csv file."
+msgstr ""
+"Importieren Sie <strong>Benutzer / Kunden</strong> über eine CSV-Datei in "
+"Ihre Site."
+
+#: users-customers-import-export-for-wp-woocommerce.php:184
+msgid "<h3>Save Time, Money & Hassle on Your WooCommerce Data Migration?</h3>"
+msgstr ""
+"<h3> Sparen Sie Zeit, Geld und Ärger bei der Migration Ihrer WooCommerce-"
+"Daten? </h3>"
+
+#: users-customers-import-export-for-wp-woocommerce.php:185
+msgid "<h3>Use StoreFrog Migration Services.</h3>"
+msgstr "<h3> Verwenden Sie StoreFrog Migration Services. </h3>"
+
+#: users-customers-import-export-for-wp-woocommerce.php:188
+msgid "Dismiss this notice."
+msgstr "Diesen Hinweis ausblenden"
+
+#: users-customers-import-export-for-wp-woocommerce.php:220
+#, php-format
+msgid "If you like the plugin please leave us a %1$s review."
+msgstr ""
+"<div class=\"\"><p><i>Wenn Ihnen das Plugin gefällt, lassen Sie uns bitte "
+"eine %1$s Rezension zukommen!</i><p></div>"
+
+#: users-customers-import-export-for-wp-woocommerce.php:232
+msgid "Thank you for your review."
+msgstr "Danke für deine Bewertung."

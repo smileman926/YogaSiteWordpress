@@ -1,0 +1,228 @@
+// ColorPicker Theme for OP3
+
+.jquery-colorpicker-widget {
+    width: 276px;
+    margin: 12px;
+    font-family: $op-font-family;
+    color: inherit;
+    font-weight: inherit;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+    z-index: 1010;
+
+    &.jquery-colorpicker-type-color-simple {
+        .jquery-colorpicker-tabs {
+            li:not(:first-child) {
+                display: none;
+            }
+        }
+    }
+
+    .jquery-colorpicker-tab-content {
+        .jquery-colorpicker-preview-css {
+            width: 22px;
+            height: 22px;
+        }
+
+        & > {
+            margin-top: 15px;
+        }
+    }
+
+    .jquery-colorpicker-tabs {
+        [data-tab] {
+            font-weight: 300;
+            color: $op-light-grey;
+        }
+
+        .jquery-colorpicker-tab-selected,
+        .jquery-colorpicker-tab-selected:hover {
+            color: $op-blue;
+        }
+
+        .jquery-colorpicker-preview-css {
+            margin-left: 0;
+        }
+    }
+
+    input {
+        display: inline-block;
+        padding: 0 0.5em;
+        font-size: 1em;
+        color: $op-light-grey;
+        vertical-align: middle;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+
+        &[type="number"] {
+            text-align: right;
+        }
+    }
+
+    label {
+        height: auto;
+        line-height: 1.5;
+        margin: 0;
+        font-size: 11px;
+        vertical-align: middle;
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    .jquery-colorpicker-action {
+        padding: 6px;
+        display: block;
+        height: auto;
+        font-size: 12px;
+        font-weight: 300;
+        outline: none;
+
+        span {
+            font-weight: inherit;
+            font-size: 1em;
+            line-height: 1;
+        }
+
+        &:hover {
+            background: $op-blue;
+            color: $op-white;
+        }
+    }
+}
+
+.jquery-colorpicker-preview-css {
+    border: 1px solid $op-grey-border;
+    border-radius: 50%;
+    color: $op-white;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    background: $op-white;
+    // margin-left: 5px;
+
+    &::before,
+    &::after {
+        border-radius: 50%;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        left: 3px;
+    }
+}
+
+.op3-element-options-property {
+    [data-property-type="color"],
+    [data-property-type="color-simple"] {
+        display: none;
+    }
+}
+
+.jquery-colorpicker-widget [data-tab-open="edit"] {
+    position: relative;
+    background: none;
+    opacity: 1;
+
+    &::before {
+        margin: 0 !important;
+        padding: 0;
+        content: "\f1dd" !important;
+        font-family: "op3-icons";
+        color: $op-light-grey;
+        display: inline-block;
+        line-height: 1.2;
+        font-size: 1.2em;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        text-indent: 0;
+    }
+}
+
+.jquery-colorpicker-widget [data-reset-color] {
+    position: relative;
+    background: none;
+    opacity: 1;
+    text-indent: -999px;
+    overflow: hidden;
+    line-height: 1.5;
+
+    &::before {
+        margin: 0 !important;
+        padding: 0;
+        content: "\ec71" !important;
+        font-family: "op3-icons";
+        color: $op-light-grey;
+        display: inline-block;
+        line-height: 1.2;
+        font-size: 1.2em;
+        position: absolute;
+        right: 3px;
+        top: 0;
+        text-indent: 0;
+    }
+}
+
+.jquery-colorpicker-widget .jquery-colorpicker-preview-css {
+    width: 22px;
+    height: 22px;
+}
+
+.jquery-colorpicker-inline {
+    display: block;
+
+    &.op3-element-options-property {
+        display: none !important;
+    }
+
+    &.jquery-colorpicker-widget {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        width: auto;
+        margin: 1px;
+        padding: 16px 22px 0 22px;
+        box-shadow: none;
+        border: none;
+
+        &::after {
+            display: none;
+        }
+
+        // hide done button
+        [data-tab-content="storage"] ,
+        [data-tab-content="scheme"] {
+            .jquery-colorpicker-row:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+// designer ice editor floatbar
+.ice-floatbar-html {
+    .jquery-colorpicker,
+    .jquery-colorpicker-link {
+        display: none;
+    }
+
+    .jquery-colorpicker-widget {
+        position: relative;
+        display: block;
+        color: #666;
+
+        input {
+            display: inline-block;
+            //width: 5.5em;
+            height: auto;
+            line-height: 1.875em;
+            border: 1px solid #ccc;
+            color: #999;
+        }
+
+        input[type="number"] {
+            //width: 4.5em;
+        }
+    }
+}

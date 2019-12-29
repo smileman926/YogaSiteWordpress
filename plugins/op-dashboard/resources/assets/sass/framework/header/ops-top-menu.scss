@@ -1,0 +1,109 @@
+.ops-top-menu {
+    position: relative;
+    background-color: $color__ops-white;
+    height: 65px;
+    border-bottom: 1px solid $color__ops-borderLight;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+
+    .ops-logo {
+        display: inline-block;
+        height: 35px;
+
+        i {
+            font-size: 35px;
+            line-height: 35px;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            a {
+                display: inline-block;
+                text-decoration: none;
+                font-size: 20px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .ops-right {
+        nav {
+            display: inline-block;
+        }
+
+        ul {
+            line-height: 65px;
+            text-align: center;
+            display: inline-block;
+
+            &.ops-right-menu {
+                li {
+                    display: inline-block;
+                    margin-right: 40px;
+
+                    a {
+                        display: block;
+                        color: $color__ops-blue;
+                        position: relative;
+                        line-height: 65px;
+                        transition: $transition__color-linear;
+
+                        i {
+                            font-size: 25px;
+                            line-height: 25px;
+                            height: 25px;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+
+                        span {
+                            font-size: 14px;
+                            padding-left: 35px;
+                        }
+                    }
+
+                    &:hover,
+                    &.selected {
+                        a {
+                            color: $color__ops-black;
+                        }
+                    }
+                }
+            }
+
+            &.ops-right-static {
+                li {
+                    border-left: 1px solid $color__ops-borderLight;
+
+                    &.ops-fullscreenBtn {
+                        a {
+                            i {
+                                transition: $transition__color-linear;
+                            }
+
+                            &:hover {
+                                i {
+                                    color: $color__ops-gray;
+                                }
+                            }
+                        }
+                    }
+
+                    a {
+                        width: 80px;
+                        line-height: 65px;
+                    }
+                }
+            }
+        }
+    }
+}

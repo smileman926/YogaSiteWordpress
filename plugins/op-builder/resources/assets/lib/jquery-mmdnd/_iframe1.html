@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            body { text-align: center; }
+            .frame { flex: 1 1 0; flex-basis: 0; padding: 0.5em; }
+            iframe { display: block; width: 100%; height: 100%; border: 1px solid #aaa; }
+            div.draggable-container { margin: 0; padding: 0.5em; }
+            [data-jquery-mmdnd-draggable] { display: inline-block; margin: 0.5em; padding: 0.5em 1em; border-radius: 0.25em; color: #666; border: 1px solid #999; }
+            [data-jquery-mmdnd-draggable="00f"] { background: #00f; }
+            [data-jquery-mmdnd-draggable="0f0"] { background: #0f0; }
+            [data-jquery-mmdnd-draggable="f00"] { background: #f00; }
+            [data-jquery-mmdnd-droppable] { margin: 0.5em; padding: 0.5em; background: rgba(0,0,0,0.25); transition: 0.2s ease all; }
+            [data-jquery-mmdnd-droppable="00f"] { background: rgba(0,0,255,0.25); }
+            [data-jquery-mmdnd-droppable="0f0"] { background: rgba(0,255,0,0.25); }
+            [data-jquery-mmdnd-droppable="f00"] { background: rgba(255,0,0,0.25); }
+            [data-jquery-mmdnd-droppable][data-jquery-mmdnd-dragover] { box-shadow: 0 0 2px 2px rgba(0,0,0,0.5); }
+        </style>
+    </head>
+    <body>
+    	<p data-jquery-mmdnd-droppable="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et dolorum at hic voluptatum soluta doloremque eaque, ipsum iste recusandae assumenda? Quod quisquam quo blanditiis molestiae quasi ipsa consectetur quam soluta!</p>
+        <p data-jquery-mmdnd-droppable="00f">Repellendus, architecto, voluptatum. Officiis vitae sunt repellendus inventore ipsam dolorem velit delectus est laborum accusantium eum quae labore, natus error nulla aperiam beatae quibusdam. Ipsam, doloremque recusandae officia laudantium porro!</p>
+        <div class="draggable-container">
+            <span class="draggable" data-jquery-mmdnd-draggable="00f"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="0f0"><b>Drag Me!!!</b></span>
+            <span class="draggable" data-jquery-mmdnd-draggable="f00"><b>Drag Me!!!</b></span>
+        </div>
+        <p data-jquery-mmdnd-droppable="0f0">Tempore voluptatum similique quia itaque, voluptatibus unde quis velit reprehenderit, distinctio quae a, ea dolores necessitatibus veritatis vero harum atque ipsa aspernatur rem architecto. Ipsum fugiat officiis delectus porro quibusdam?</p>
+        <p data-jquery-mmdnd-droppable="f00">Adipisci sed voluptatem cum nisi aliquam perferendis ratione. Necessitatibus perferendis commodi architecto eveniet rerum exercitationem modi. Amet quaerat tempora debitis, tempore, ratione eveniet nisi deleniti, quos sed suscipit animi nulla.</p>
+        <p data-jquery-mmdnd-droppable="">Soluta at vel velit error labore doloribus! Harum perferendis placeat aut, nemo voluptas magnam quas necessitatibus nulla officia temporibus eos, totam nisi porro quidem consectetur. Eos quas odio, eveniet possimus?</p>
+        <p data-jquery-mmdnd-droppable="00f">Inventore ab quia non doloribus, dolorum, perspiciatis harum pariatur. Molestias dolorum labore, voluptatem eveniet, quas totam quia beatae ea adipisci! Unde facere impedit veritatis harum voluptatem. Veritatis cum vero accusantium?</p>
+        <p data-jquery-mmdnd-droppable="0f0">Doloremque, a. Dicta quia facere, minus itaque blanditiis enim quo iste quasi suscipit soluta corporis numquam ad accusamus, veniam id consequuntur? Cumque illo qui in fugiat deleniti dolorum voluptate, hic!</p>
+        <div class="frame">
+            <iframe src="_iframe2.html" frameborder="0"></iframe>
+        </div>
+        <p data-jquery-mmdnd-droppable="f00">Necessitatibus eos ratione minus odio, facilis accusamus quidem maiores qui sint ea cum error incidunt obcaecati cumque quis quae deserunt architecto, asperiores earum laudantium cupiditate officia. Ad velit, sunt dolore?</p>
+        <p data-jquery-mmdnd-droppable="">Amet reiciendis, maxime officia. Molestiae doloribus aspernatur reiciendis blanditiis quod omnis eaque quia possimus, voluptas numquam. Voluptas aperiam, eligendi similique, laborum facilis, a minima eius eveniet mollitia necessitatibus iure quo.</p>
+        <p data-jquery-mmdnd-droppable="00f">Nisi mollitia placeat, ipsum quos quam, at incidunt nihil illo odio vero deleniti eius impedit, quia. Expedita odio consequuntur nemo labore assumenda, sapiente quos minima, mollitia numquam, illum aperiam veritatis.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Quibusdam rem nemo perferendis aliquam consectetur voluptatibus quia, illum, amet officia quam sapiente similique architecto praesentium laboriosam. Facere corporis fugiat voluptatum illum dicta soluta, maiores expedita commodi adipisci, harum distinctio?</p>
+        <p data-jquery-mmdnd-droppable="f00">Vero adipisci ea aliquid iusto quaerat fugiat ex, iste impedit necessitatibus numquam asperiores ullam ipsum, ipsa debitis. Necessitatibus debitis labore quidem totam accusamus, sint, quasi voluptas blanditiis quis repudiandae iure.</p>
+        <p data-jquery-mmdnd-droppable="">Saepe suscipit veritatis repellendus illum praesentium unde voluptates sapiente, sit tempore neque rerum exercitationem voluptas earum voluptatum explicabo iusto vero minus id fugit natus, laborum quaerat. Similique consequatur maxime ab.</p>
+        <p data-jquery-mmdnd-droppable="00f">Velit mollitia, suscipit consectetur beatae vitae obcaecati neque, voluptate excepturi facere aliquid ullam eveniet deleniti quibusdam architecto. Nostrum provident nobis distinctio mollitia ipsum vitae nisi impedit! Vero qui quae in.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Quia possimus illum minima harum excepturi iure earum. Molestias deleniti veritatis aliquid sit, accusamus, vitae architecto sequi beatae quo aut reprehenderit, aliquam praesentium suscipit expedita harum a amet ipsam nesciunt!</p>
+        <p data-jquery-mmdnd-droppable="f00">Pariatur facere debitis voluptatibus deserunt consequuntur quibusdam ab repellat animi culpa, sint impedit adipisci labore, consequatur ipsum! Quo repellendus excepturi iure, culpa molestiae corporis, fugit impedit possimus aliquid magnam debitis.</p>
+        <p data-jquery-mmdnd-droppable="">Totam, consectetur quia, eligendi voluptatum est dignissimos? Fugiat doloribus quae consectetur, nulla rerum maxime odio, vitae expedita beatae blanditiis nostrum ut quisquam consequuntur possimus hic voluptas asperiores saepe labore. Ducimus!</p>
+        <p data-jquery-mmdnd-droppable="00f">Vero nemo, sed, iure dicta saepe aut pariatur tempora quae provident minima eaque, vitae sequi possimus, amet quasi. Eos voluptatum mollitia illum iste, error architecto ut alias velit possimus delectus.</p>
+        <p data-jquery-mmdnd-droppable="0f0">Totam ex animi inventore, rem obcaecati corrupti dicta doloremque in consequuntur! Repudiandae aperiam rerum, perspiciatis iusto quod debitis deleniti quam ullam inventore praesentium vero illum pariatur, quae voluptatem at facilis!</p>
+        <p data-jquery-mmdnd-droppable="f00">Mollitia, aliquam inventore, dolores voluptates ipsam numquam obcaecati illo consequuntur facere nulla, consectetur impedit doloremque nesciunt. Nulla dolorem, consectetur, possimus alias explicabo laboriosam, aut eos delectus cumque eius obcaecati. Fugiat.</p>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(document)
+                .on("mmdnddragstart", function(e) {
+                    e.setData("foo", $(e.target).attr("data-jquery-mmdnd-draggable"));
+                    console.log("dragstart", e.target);
+                })
+                .on("mmdnddrop", function(e) {
+                    console.log("drop", e.target, e.getData("foo"));
+                })
+                .on("mmdnddragenter", function(e) {
+                    console.log("dragenter", e.target);
+                })
+                .on("mmdnddragover", function(e) {
+                    console.log("dragover", e.target);
+                })
+                .on("mmdnddragleave", function(e) {
+                    console.log("dragleave", e.target);
+                })
+                .on("mmdnddragend", function(e) {
+                    console.log("dragend", e.target);
+                });
+        </script>
+    </body>
+</html>

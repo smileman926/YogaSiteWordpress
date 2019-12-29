@@ -1,0 +1,80 @@
+.opd-connected-integrations {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-top: 50px;
+
+    .opd-connected-integration-item {
+        width: 33.3%;
+        margin-bottom: 30px;
+
+        .ops-white-box {
+            margin: 0 15px;
+            padding: 0;
+            height: 100%;
+
+            figure {
+                text-align: center;
+                padding: 20px 0;
+                background-color: #f2f6fa;
+                height: 115px;
+            }
+
+            .opd-inner {
+                padding: 30px 50px 50px;
+
+                h4 {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .ops-two-column-flex {
+                div {
+                    &:first-child {
+                        .ops-button {
+                            margin-right: 15px;
+                        }
+                    }
+
+                    &:last-child {
+                        .ops-button {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.js-disconnect-integration-connection {
+    .hover-text {
+        display: none;
+    }
+
+    &:hover .hover-text {
+        display: inline-block;
+    }
+
+    &:hover .text {
+        display: none;
+    }
+}
+
+.js-connect-integration-connection {
+    .hover-text {
+        display: none;
+    }
+
+    &:hover .hover-text {
+        display: inline-block;
+    }
+
+    &:hover .text {
+        display: none;
+    }
+}

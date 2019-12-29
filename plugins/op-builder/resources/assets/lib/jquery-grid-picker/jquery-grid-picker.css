@@ -1,0 +1,5 @@
+.jquery-grid-picker { display: none; }
+.jquery-grid-picker-widget { display: grid; grid-template-columns: repeat(auto-fit, minmax(12em, 1fr)); grid-gap: 1em; margin: 0; padding: 0; list-style-type: none; }
+.jquery-grid-picker-item { margin: 0; padding: 0; }
+.jquery-grid-picker-item-content { display: block; padding: 0.5em 1em; border: 1px solid #ccc; text-align: center; text-decoration: none; color: inherit; overflow: hidden; }
+.jquery-grid-picker-item.jquery-grid-picker-active .jquery-grid-picker-item-content { border: 1px solid #666; }

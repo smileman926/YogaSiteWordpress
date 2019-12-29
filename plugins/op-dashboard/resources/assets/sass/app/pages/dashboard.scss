@@ -1,0 +1,58 @@
+.opd-dashboard {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $color__ops-grayLight;
+    min-height: 100vh;
+    font-size: 16px;
+    color: $color__ops-blue;
+
+    @import "../default/headline";
+
+    h1 .ops-iconfont {
+        color: $color__ops-logoBlue;
+    }
+
+    p {
+        font-size: inherit;
+
+        &.opd-teaser {
+            font-size: 14px;
+            color: $color__ops-gray;
+        }
+    }
+
+    a {
+        outline: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+    }
+
+    input[type="checkbox"] {
+        &:checked:before {
+            margin: -1px 0 0 -2px;
+            width: 16px;
+        }
+    }
+    input[type="radio"] {
+        &:checked:before {
+            border-radius: 50px;
+            font-size: 24px;
+            width: 6px;
+            height: 6px;
+            margin: 4px;
+            line-height: 16px;
+        }
+    }
+}
+
+.optimizepress3_page_op-builder-create h1 .ops-iconFont {
+    color: $color__ops-logoBlue;
+}

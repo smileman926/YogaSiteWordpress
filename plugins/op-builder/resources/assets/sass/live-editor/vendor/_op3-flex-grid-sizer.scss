@@ -1,0 +1,7 @@
+.jquery-flex-grid-cell-sizer-dragging #toolbar {
+    opacity: 0 !important;
+}
+
+.jquery-flex-grid-cell-sizer-dragging #toolbar * {
+    pointer-events: none !important;
+}

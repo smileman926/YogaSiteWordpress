@@ -1,0 +1,60 @@
+.op3-element[data-op3-element-type="row"] {
+    display: flex;
+    flex-direction: column;
+    width: 1140px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 0;
+    border-width: 0;
+
+    > [data-op3-element-container] > [data-op3-children] {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$op-gutter;
+        margin-right: -$op-gutter;
+
+        // We only allow grow/shrink when wrapping is enabled
+        &[data-op3-wrap-columns="1"] > [data-op3-element-type="column"] {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        // Force basis to auto, in case the user changed flex-basis
+        // and then disabled column wrapping
+        &[data-op3-wrap-columns="0"] > [data-op3-element-type="column"] {
+            flex-basis: auto !important;
+        }
+    }
+}
+
+// 1140px is default row width,
+// so this ie related to it
+@media (max-width: $breakpoint-tablet) {
+    .op3-element[data-op3-element-type="row"] {
+        padding: 15px 30px;
+
+        .op3-element[data-op3-element-type="row"],
+        .op3-element[data-op3-element-type="featureblock"],
+        .op3-element[data-op3-element-type="testimonial"],
+        .op3-element[data-op3-element-type="numberblock"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .op3-element[data-op3-element-type="row"] {
+        padding: 15px 30px;
+
+        .op3-element[data-op3-element-type="row"],
+        .op3-element[data-op3-element-type="featureblock"],
+        .op3-element[data-op3-element-type="testimonial"],
+        .op3-element[data-op3-element-type="numberblock"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

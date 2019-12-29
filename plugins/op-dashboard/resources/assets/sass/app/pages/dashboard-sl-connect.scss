@@ -1,0 +1,28 @@
+.opd-dashboard-sl-connect {
+    text-align: center;
+    margin-top: 20px;
+
+    h1 {
+        i {
+            color: $color__ops-logoBlue;
+        }
+    }
+
+    p {
+        &.opd-teaser {
+            margin-bottom: 40px;
+        }
+    }
+
+    .ops-white-box {
+        p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .ops-button {
+            margin-top: 15px;
+        }
+    }
+}

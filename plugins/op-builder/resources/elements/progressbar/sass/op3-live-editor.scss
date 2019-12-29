@@ -1,0 +1,41 @@
+#toolbar {
+    [data-op3-element-options-type="progressbar"] {
+        [data-op3-element-options-property-name="textAlign"] {
+            [data-jquery-select-buttons-option-value="inherit"],
+            [data-jquery-select-buttons-option-value="justify"] {
+                display: none;
+            }
+        }
+
+        [data-op3-element-options-property-name="labelPlacement"] {
+            &[data-op3-element-options-property-value="hide"],
+            &[data-op3-element-options-property-value="inside"] {
+                ~ [data-op3-element-options-property-id="labelSpacingTop"],
+                ~ [data-op3-element-options-property-id="labelSpacingBottom"] {
+                    display: none;
+                }
+            }
+
+            &[data-op3-element-options-property-value="above"] {
+                ~ [data-op3-element-options-property-id="labelSpacingTop"] {
+                    display: none;
+                }
+            }
+
+            &[data-op3-element-options-property-value="below"] {
+                ~ [data-op3-element-options-property-id="labelSpacingBottom"] {
+                    display: none;
+                }
+            }
+        }
+
+        // Hidden by default, here just to conditionaly show/hide animation toggle
+        [data-op3-element-options-property-name="backgroundStripes"] {
+            display: none;
+
+            &[data-op3-element-options-property-value="none"] ~ [data-op3-element-options-property-name="animationToggle"] {
+                display: none;
+            }
+        }
+    }
+}

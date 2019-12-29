@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dragndrop test page</title>
+        <link rel="stylesheet" href="jquery-mmdnd.css" />
+        <style>
+            * { box-sizing: border-box; }
+            html, body { position: relative; margin: 0; padding: 0; color: #333; }
+            h2 { margin-top: 0; }
+            table { width: 100%; margin-top: 1em; border: 1px solid #999; }
+            td { border: 1px solid #999 }
+            .row { display: flex; padding: 1em; }
+            .column { flex: 50%; padding: 1em; }
+            .draggable { display: inline-block; padding: 0.5em 1em; background: yellow; border: 1px solid #999; border-radius: 0.25em; cursor: pointer; }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="column">
+                <h2>HTML5 drag and drop API</h2>
+                <div class="html5-dnd-api">
+                    <span class="draggable" draggable="true">Drag Me!!!</span>
+                    <table>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="column">
+                <h2>MouseMoveDragAndDrop library</h2>
+                <div class="mmdnd-lib">
+                    <span class="draggable" data-jquery-mmdnd-draggable>Drag Me!!!</span>
+                    <table>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="jquery-mmdnd.js"></script>
+        <script>
+            $(function() {
+                $(".html5-dnd-api tbody").each(function() {
+                    var cell = ""
+                        + '<div style="position: relative; height: 1.5em;">'
+                        + '<div class="droppable" style="position: absolute; width: 100%; height: 100%;"></div>'
+                        + '</div>';
+
+                    for (var i = 0; i < 200; i++) {
+                        var $tr = $("<tr />")
+                            .appendTo(this);
+                        for (j = 0; j < 10; j++) {
+                            $("<td />")
+                                .html(cell)
+                                .appendTo($tr);
+                        }
+                    }
+                });
+
+                $(".mmdnd-lib tbody").each(function() {
+                    var cell = ""
+                        + '<div style="position: relative; height: 1.5em;">'
+                        + '<div class="droppable" data-jquery-mmdnd-droppable style="position: absolute; width: 100%; height: 100%;"></div>'
+                        + '</div>';
+
+                    for (var i = 0; i < 200; i++) {
+                        var $tr = $("<tr />")
+                            .appendTo(this);
+                        for (j = 0; j < 10; j++) {
+                            $("<td />")
+                                .append(cell)
+                                .appendTo($tr);
+                        }
+                    }
+                });
+
+                $(".html5-dnd-api .draggable")
+                    .on("dragstart", function(e) {
+                        e.originalEvent.dataTransfer.setData("Text", "dummy");
+                        console.log("html5-dnd-api dragstart");
+                    })
+                    .on("dragend", function(e) {
+                        console.log("html5-dnd-api dragend");
+                    });
+                $(".html5-dnd-api table")
+                    .on("dragenter", ".droppable", function(e) {
+                        console.log("html5-dnd-api dragenter");
+                        $(e.target).css("background", "red");
+                    })
+                    .on("dragleave", ".droppable", function(e) {
+                        console.log("html5-dnd-api dragleave");
+                        $(e.target).css("background", "");
+                    })
+                    .on("dragover", ".droppable", function(e) {
+                        console.log("html5-dnd-api dragover");
+                        e.preventDefault();
+                    })
+                    .on("drop", ".droppable", function(e) {
+                        console.log("html5-dnd-api drop");
+                        e.preventDefault();
+                        $(e.target).css("background", "");
+                    });
+
+                $(".mmdnd-lib .draggable")
+                    .on("mmdnddragstart", function(e) {
+                        e.setData("Text", "dummy");
+                        console.log("mmdnd-lib dragstart");
+                    })
+                    .on("mmdnddragend", function(e) {
+                        console.log("mmdnd-lib dragend");
+                    });
+                $(".mmdnd-lib table")
+                    .on("mmdnddragenter", ".droppable", function(e) {
+                        console.log("mmdnd-lib dragenter", );
+                        $(e.target).css("background", "red");
+                    })
+                    .on("mmdnddragleave", ".droppable", function(e) {
+                        console.log("mmdnd-lib dragleave");
+                        $(e.target).css("background", "");
+                    })
+                    .on("mmdnddragover", ".droppable", function(e) {
+                        console.log("mmdnd-lib dragover");
+                        e.preventDefault();
+                    })
+                    .on("mmdnddrop", ".droppable", function(e) {
+                        console.log("mmdnd-lib drop", e.getData("Text"));
+                        $(e.target).css("background", "");
+                    });
+            });
+        </script>
+    </body>
+</html>

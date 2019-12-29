@@ -1,0 +1,54 @@
+{
+    "name": "optimizepress/integrations",
+    "description": "Integrations for OptimizePress",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Boris Strahija",
+            "email": "bstrahija@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "optimizepress/support": "^0.1.0",
+        "guzzlehttp/guzzle": "6.3.*",
+        "hashids/hashids": "^2.0",
+        "infusionsoft/php-sdk": "1.3.6",
+        "kite/ohmyemma": "^1.3",
+        "activecampaign/api-php": "~2.0",
+        "mizanur/icontact-api-php": "^2.2",
+        "meetdemio/demio-php-sdk": "^1.0",
+        "generalsoftwareinc/sendreach-php-sdk": "^3.0",
+        "mailerlite/mailerlite-api-v2-php-sdk": "^0.2.3"
+    },
+    "suggest": {
+        "tareq1988/wp-eloquent": "To use OptimizePress integration with WordPress you need to install this package"
+    },
+    "autoload": {
+        "psr-4": {
+            "OptimizePress\\Integrations\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "repositories": [
+        { "type": "composer", "url": "https://satis.influendo.com/" }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OptimizePress\\Integrations\\Bootstrap\\LaravelServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "bin-dir": "bin"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}

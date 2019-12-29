@@ -1,0 +1,28 @@
+#wpadminbar #wp-admin-bar-op3_edit_page > .ab-item::before {
+    content: "\f464";
+    top: 2px;
+}
+
+.grecaptcha-badge {
+    display: none;
+}
+
+.op3badge {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    border-radius: 5px 0 0 0;
+    box-shadow: 0 0 0 1px rgba(6, 6, 6, 0.025);
+}
+
+.post-password-form, .pmpro_content_message {
+    max-width: 700px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 9px;
+}

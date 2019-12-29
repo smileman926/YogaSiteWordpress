@@ -1,0 +1,1 @@
+<input type="{{ $input->type }}" class="{{ isset($class) ? $class : null }} form-control" placeholder="{{ $input->placeholder ?: $input->label }}" name="{{ $input->name }}" {{ $input->required ? 'required' : '' }}>

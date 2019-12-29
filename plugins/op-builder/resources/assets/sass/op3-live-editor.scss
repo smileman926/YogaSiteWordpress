@@ -1,0 +1,63 @@
+// Dependencies
+@import 'core/op3-variables';
+@import 'core/op3-core';
+@import 'core/op3-icons-base';
+@import 'core/op3-icons';
+@import 'core/op3-element-thumb';
+@import 'core/op3-block-thumb';
+
+// Live Editor styles
+@import 'live-editor/op3-live-editor-base';
+@import 'live-editor/op3-loadinfo';
+@import 'live-editor/op3-modal';
+@import 'live-editor/op3-wizard';
+@import 'live-editor/op3-wizard-export';
+@import 'live-editor/op3-wizard-integrations';
+@import 'live-editor/op3-wizard-global-elements';
+@import 'live-editor/op3-ui';
+@import 'live-editor/op3-membership';
+
+// Header
+@import 'live-editor/header/op3-header-base';
+@import 'live-editor/header/op3-devices';
+@import 'live-editor/header/op3-breadcrumbs';
+@import 'live-editor/header/op3-global-elements';
+
+// UI Elements
+@import 'live-editor/op3-frame';
+@import 'live-editor/op3-shortcuts';
+@import 'live-editor/op3-toolbar';
+@import 'live-editor/op3-context-menu';
+@import 'live-editor/op3-footer';
+
+// Sidebar base has to be included first
+// (it is ignored in the gulp
+// GulpSassGlob task)
+@import 'live-editor/sidebar/op3-sidebar-base';
+@import 'live-editor/sidebar/op3-options';
+@import 'live-editor/sidebar/*.scss';
+
+// General
+@import 'live-editor/op3-draganddrop';
+@import 'live-editor/op3-modal-serialize';
+@import 'live-editor/op3-modal-unserialize';
+@import 'live-editor/op3-font-list';
+// @import 'live-editor/op3-modal-style-picker';
+
+// Elements (default element has to be included first;
+// it is ignored in the gulp GulpSassGlob task)
+@import '../../elements/default/sass/op3-live-editor.scss';
+@import '../../elements/**/op3-live-editor.scss';
+
+// Node modules custom styles
+@import 'live-editor/vendor/op3-select2';
+@import 'live-editor/vendor/op3-colorpicker';
+@import 'live-editor/vendor/op3-flatpickr';
+@import 'live-editor/vendor/op3-alertify';
+@import 'live-editor/vendor/op3-anglepicker';
+@import 'live-editor/vendor/op3-flex-grid-sizer';
+@import 'live-editor/vendor/op3-paddingdrag';
+@import 'live-editor/vendor/op3-draggable';
+
+// General Helpers
+@import 'core/op3-helpers';

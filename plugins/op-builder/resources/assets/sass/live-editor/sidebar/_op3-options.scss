@@ -1,0 +1,940 @@
+.op3-element-options-group {
+    max-height: 42px;
+    margin: 0 -22px 4px;
+    padding: 0 22px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+
+    // When accordion is active (opened)
+    &.dropdown {
+        max-height: none;
+        min-height: 100px;
+
+        .op3-options-group-actions {
+            .op3-options-group-actions-toggle::before {
+                transform: rotate(0deg);
+            }
+
+            // Reset option group is visible only
+            // when accordion group is active
+            // to prevent accidental clicks
+            .op3-options-group-actions-reset:not(.op3-options-group-actions-reset-false) {
+                display: block;
+            }
+        }
+    }
+
+    // notes
+    .op3-options-group-notes {
+        margin: 1.5em 0 0 0;
+        padding: 0 22px;
+        font-size: 0.75em;
+        font-style: italic;
+        color: $op-light-grey;
+    }
+
+    .op3-element-options-container .op3-options-group-notes {
+        padding: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+form[data-op3-element-options-render-status]:not([data-op3-element-options-render-status="ready"]) {
+    .op3-element-options-group.dropdown {
+        > :not(.op3-options-group-header) {
+            display: none;
+        }
+
+        &::before {
+            content: "\eb8a";
+            position: absolute;
+            display: block;
+            top: calc(50% + 21px);
+            left: 50%;
+            width: 1em;
+            height: 1em;
+            margin: -0.5em 0 0 -0.5em;
+            line-height: 1em;
+            font-family: "op3-icons";
+            text-align: center;
+            color: #888;
+            animation: op3-icon-spin 2s infinite linear;
+        }
+    }
+}
+
+.op3-options-group-header {
+    padding: 13px 22px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 16px;
+    align-items: center;
+    position: relative;
+    z-index: 15; // Must be higher than property
+    cursor: default;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: #e3e7ea;
+    color: #777;
+
+    .op3-options-group-actions {
+        align-self: stretch;
+        width: 100%;
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 1;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        top: 1px;
+
+        &:hover .op3-icon { color: inherit; }
+
+        .op3-icon {
+            margin-left: 14px;
+            font-size: 16px;
+            cursor: pointer;
+            &::before { display: inline-block; }
+            // &:last-child { margin-right: 0; }
+            &:hover { color: $op-grey; }
+        }
+
+        .op3-options-group-actions-reset {
+            display: none;
+        }
+
+        .op3-options-group-actions-toggle {
+            margin-left: auto;
+            &::before { transform: rotate(180deg); }
+            .dropdown &::before { transform: none; }
+        }
+    }
+}
+
+.op3-element-options-container,
+.op3-element-options-property {
+    margin: 0;
+    padding: 22px;
+    // margin-bottom: 20px;
+    // padding-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    &:last-child {
+        margin-bottom: 0;
+        //padding-bottom: 0;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: -1px;
+        left: 22px;
+        width: calc(100% - 44px);
+        border-bottom: 1px solid #ededed;
+        border-bottom: 1px solid $op-grey-border;
+    }
+
+    > .op3-element-options-label-group,
+    > label {
+        margin: 0 0 10px;
+        color: $op-grey;
+        font-size: 12px;
+    }
+
+    .op3-element-options-label-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        label {
+            display: flex;
+        }
+
+        // Checkbox
+        label + .op3-element-options-enabled-label {
+            margin: 0 0 0 auto;
+            display: flex;
+            align-self: center;
+        }
+
+        input[type="checkbox"][disabled="disabled"],
+        input[type="checkbox"][disabled="disabled"] + .op3-element-options-checkbox-container {
+            display: none;
+        }
+    }
+
+    .op3-element-options-property-reset {
+        position: relative;
+        display: none;
+        margin-left: 0.5em;
+        font-size: 1.125em;
+        text-decoration: none;
+        color: #666;
+        z-index: 1;
+
+        .op3-icon {
+            display: block;
+        }
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    // display reset only for certain properties
+    &[data-op3-element-options-property-name="fontFamily"],
+    &[data-op3-element-options-property-name="fontWeight"],
+    &[data-op3-element-options-property-name="fontSize"] {
+        .op3-element-options-property-reset {
+            display: block;
+        }
+    }
+
+    .op3-element-options-enabled-label {
+        position: relative;
+        width: 1.75em;
+        height: 1em;
+        line-height: 1;
+        border-radius: 50px;
+        cursor: pointer;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .op3-element-options-checkbox-container {
+            background-color: #a5afb8;
+            display: block;
+            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .op3-element-options-checkbox-switch {
+            display: block;
+            border-radius: 50%;
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            z-index: 100;
+            left: 0.6em;
+            top: 0.2em;
+            transform: translateX(-50%);
+            transition: all 0.2s ease-in-out;
+            background-color: #fff;
+        }
+
+        input:checked + .op3-element-options-checkbox-container {
+            background-color: #06f;
+
+            .op3-element-options-checkbox-switch {
+                left: 1.2em;
+            }
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        padding: 10px;
+        display: flex;
+        align-self: stretch;
+        font-size: 12px;
+        text-align: left;
+        text-decoration: none;
+        color: $op-grey;
+        background: $op-white;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid $op-grey-border;
+        transition: all 0.2s ease;
+        box-shadow: inset 0 2px 0 0 rgba(241, 241, 241, 0.37);
+
+        // Range slider is currently not always showing valid numbers, which
+        // triggers this rule, so I'm disabling it for now (Zoran)
+        // &:invalid {
+        //     border-color: rgb(250, 100, 100);
+        // }
+
+        &:focus {
+            border-color: darken($op-grey-border, 10%);
+        }
+
+        /**
+         * Range Slider
+         */
+        &[data-property-type="range"] {
+            display: none;
+
+            & ~ .jquery-input-range-widget {
+                margin-top: -26px;
+                padding-top: 26px;
+
+                .jquery-input-range-slider {
+                    padding: 0;
+                    align-self: center;
+                    border: none;
+                    box-shadow: none;
+
+                    &::-webkit-slider-thumb {
+                        width: 14px;
+                        height: 14px;
+                    }
+
+                    &::-moz-range-thumb {
+                        width: 14px;
+                        height: 14px;
+                    }
+
+                    ::-ms-thumb {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+    }
+
+    button,
+    .button,
+    .jquery-colorpicker-action {
+        margin: 0;
+        padding: 9px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        align-self: stretch;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 5px;
+        outline: none;
+        color: $op-blue;
+        background: $op-white;
+        border: 1px solid $op-blue;
+        transition: all 0.1s ease;
+
+        &:hover {
+            background-color: $op-blue;
+            color: $op-white;
+        }
+
+        &.selected {
+            background-color: $op-blue;
+            border-color: $op-blue;
+            color: $op-white;
+        }
+
+        &.btn--warning {
+            color: red;
+            border-color: red;
+
+            &:hover {
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        &.siblings-lock {
+
+            .siblings-lock-text-locked { display: none; }
+            .siblings-lock-text-unlocked { display: block; }
+
+            &.selected {
+                .siblings-lock-text-locked { display: block; }
+                .siblings-lock-text-unlocked { display: none; }
+
+                &:hover {
+                    background: $op-blue;
+                    color: $op-white;
+                }
+            }
+
+            i {
+                position: relative;
+                top: 1px;
+            }
+
+            &:hover {
+                background: $op-white;
+                color: $op-blue;
+            }
+        }
+    }
+
+    > button {
+        margin-top: 1em;
+    }
+
+    textarea {
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 4em;
+        line-height: 1.5;
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        &[name="code"],
+        &[name="codeHtml"] {
+            height: 240px;
+        }
+    }
+
+    select {
+        margin: 0;
+        padding: 10px 20px 10px 10px;
+        display: block;
+        position: relative;
+        appearance: none;
+        width: 100%;
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjU2IDUxMiIgdmVyc2lvbj0iMS4xIj4KCTxwYXRoIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjMyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIGQ9Ik0gMTYsMjAwIDEyOCwzMTIgMjQwLDIwMCIgLz4KPC9zdmc+Cg==');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px) center;
+        background-size: 15px 15px;
+        background-color: #fff;
+
+        &:active {
+            background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMjU2IDUxMiIgdmVyc2lvbj0iMS4xIj4KCTxwYXRoIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjMyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIGQ9Ik0gMTYsMzEyIDEyOCwyMDAgMjQwLDMxMiIgLz4KPC9zdmc+Cg==');
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    .op3-element-options-input-group {
+        display: flex;
+    }
+
+    /**
+     * Additional stuff for range input
+     */
+    .op3-element-options-range-input {
+        width: 35%;
+        position: relative;
+    }
+
+    .op3-element-options-range-number {
+        width: 90%;
+        margin-left: auto;
+        padding: 8px 5px;
+        text-align: right;
+        font-size: 0.7em;
+    }
+
+    .op3-element-options-range-unit-group {
+        position: absolute;
+        bottom: 100%;
+        bottom: calc(100% + 10px);
+        right: 0;
+        white-space: nowrap;
+    }
+
+    .op3-element-options-range-unit-btn {
+        margin: 0 0 0 4px;
+        padding: 0;
+        width: auto;
+        background: none;
+        border: none;
+        text-decoration: none;
+        color: $op-light-grey;
+        outline: none;
+        display: inline-block;
+        font-size: 0.65em;
+        overflow: visible;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: none;
+            color: $op-grey;
+        }
+
+        &.selected {
+            background: none;
+            color: $op-blue;
+
+            &:hover {
+                cursor: default;
+            }
+        }
+
+        &:first-child:last-child {
+            pointer-events: none;
+        }
+    }
+
+    &[data-op3-element-options-property-name="id"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-name="type"] {
+        display: none;
+
+        label {
+            text-transform: capitalize;
+        }
+    }
+
+    &[data-op3-element-options-property-name="style"] {
+        display: none;
+
+        label {
+            text-transform: capitalize;
+        }
+
+        input {
+            cursor: pointer;
+        }
+    }
+
+    &[data-op3-element-options-property-name="path"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-name="backgroundColor"],
+    &[data-op3-element-options-property-name="boxShadowColor"],
+    &[data-op3-element-options-property-name="color"],
+    &[data-op3-element-options-property-name="backgroundImageStartColor"],
+    &[data-op3-element-options-property-name="backgroundImageStopColor"],
+    &[data-op3-element-options-property-name="textShadowColor"],
+    &[data-op3-element-options-property-name="borderColor"],
+    &[data-op3-element-options-property-name="borderAllColor"],
+    &[data-op3-element-options-property-name="borderTopColor"],
+    &[data-op3-element-options-property-name="borderRightColor"],
+    &[data-op3-element-options-property-name="borderBottomColor"],
+    &[data-op3-element-options-property-name="borderLeftColor"],
+    &[data-op3-element-options-property-name^="--op3-color-scheme"],
+    &[data-op3-element-options-property-name^="colorAttr"],
+    &[data-op3-element-options-property-name^="videoColor"],
+    &[data-op3-element-options-property-name^="stroke"] {
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+
+        .op3-element-options-label-group {
+            margin-bottom: 0;
+        }
+
+        label {
+            align-items: center;
+        }
+    }
+}
+
+.op3-element-options-property {
+    &-filter:not(&) {
+        padding: 22px 22px 0 22px;
+
+        .op3-element-options-label-group {
+            margin: 0 0 10px;
+            color: $op-grey;
+            font-size: 12px;
+        }
+
+        .jquery-filter-button-item {
+            font-size: 12px;
+            border-radius: 0;
+            border-color: $op-blue;
+
+            &:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+
+            &:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+
+            &.jquery-filter-button-active {
+                background: $op-blue;
+            }
+
+            &:hover:not(.jquery-filter-button-active) {
+                color: #333;
+            }
+        }
+    }
+
+    // filter libs
+    &.jquery-filter-button-content,
+    &.jquery-filter-dropdown-content {
+        display: none;
+
+        &.jquery-filter-button-active,
+        &.jquery-filter-dropdown-active {
+            display: flex;
+        }
+    }
+}
+
+// Background gradients
+.op3-element-options-property[data-op3-element-options-property-name="backgroundImageType"] {
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageAngle"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImagePosition"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value="none"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageAngle"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImagePosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"] {
+        display: flex;
+
+        &.jquery-filter-button-content:not(.jquery-filter-button-active),
+        &.jquery-filter-dropdown-content:not(.jquery-filter-dropdown-active) {
+            display: none;
+        }
+    }
+}
+
+// Some elements can have two background widgets (backgroundColor
+// and overlayColor), so we need to repeat rule (backgroundImageType
+// after backgroundImageType) to make sure the second widgt is reset
+// (displayed correctly)
+.op3-element-options-property[data-op3-element-options-property-name="backgroundImageType"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageType"] {
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageAngle"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImagePosition"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value="none"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageAngle"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    &[data-op3-element-options-property-value="linear-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImagePosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartColor"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStartPosition"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopColor"],
+    &[data-op3-element-options-property-value="radial-gradient"] ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundImageStopPosition"] {
+        display: flex;
+
+        &.jquery-filter-button-content:not(.jquery-filter-button-active),
+        &.jquery-filter-dropdown-content:not(.jquery-filter-dropdown-active) {
+            display: none;
+        }
+    }
+}
+
+// Background image
+.op3-element-options-property[data-op3-element-options-property-name="backgroundImageUrl"] {
+    ~ .op3-element-options-property-filter,
+    ~ .op3-element-options-property[data-op3-element-options-property-name="opacity100"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundPosition"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundRepeat"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundAttachment"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundSize"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="opacity100"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundPosition"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundRepeat"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundAttachment"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="backgroundSize"] {
+        display: flex;
+
+        &.jquery-filter-button-content:not(.jquery-filter-button-active),
+        &.jquery-filter-dropdown-content:not(.jquery-filter-dropdown-active) {
+            display: none;
+        }
+    }
+
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property-filter {
+        display: block;
+    }
+}
+
+// Column Gap Parent
+.op3-element-options-property[data-op3-element-options-property-name="columnGapParent"] {
+    display: none;
+
+    form[data-op3-element-options-path$="featureblockitem/image"] &,
+    form[data-op3-element-options-path$="featureblockitem/icon"] &,
+    form[data-op3-element-options-path$="testimonialitem/image"] & {
+        display: flex;
+    }
+}
+
+// Separator properties
+.op3-element-options-property[data-op3-element-options-property-name="codeHtmlSeparatorType"] {
+    ~ .op3-element-options-property[data-op3-element-options-property-name="color"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="height"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="transformScaleX"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="zIndex"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="color"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="height"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="transformScaleX"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="zIndex"] {
+        display: flex;
+
+        &.jquery-filter-button-content:not(.jquery-filter-button-active),
+        &.jquery-filter-dropdown-content:not(.jquery-filter-dropdown-active) {
+            display: none;
+        }
+    }
+}
+
+// ...repeat
+.op3-element-options-property[data-op3-element-options-property-name="codeHtmlSeparatorType"] ~ .op3-element-options-property[data-op3-element-options-property-name="codeHtmlSeparatorType"] {
+    ~ .op3-element-options-property[data-op3-element-options-property-name="color"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="height"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="transformScaleX"],
+    ~ .op3-element-options-property[data-op3-element-options-property-name="zIndex"] {
+        display: none;
+    }
+
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="color"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="height"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="transformScaleX"],
+    &[data-op3-element-options-property-value]:not([data-op3-element-options-property-value=""]) ~ .op3-element-options-property[data-op3-element-options-property-name="zIndex"] {
+        display: flex;
+
+        &.jquery-filter-button-content:not(.jquery-filter-button-active),
+        &.jquery-filter-dropdown-content:not(.jquery-filter-dropdown-active) {
+            display: none;
+        }
+    }
+}
+
+// Remove sparator when in "tabbed view"
+.op3-element-options-property[data-op3-element-options-property-name="backgroundImageType"],
+.op3-element-options-property[data-op3-element-options-property-name="backgroundImageUrl"],
+.op3-element-options-property[data-op3-element-options-property-name="codeHtmlSeparatorType"] {
+    &::before {
+        display: none;
+    }
+}
+
+// Label block
+[data-op3-element-options-property-id="delete"],
+[data-op3-element-options-property-id="linkProperties"],
+[data-op3-element-options-property-id="applyToAllSiblings"] {
+    .op3-element-options-label-group {
+        label {
+            display: block;
+            line-height: 1.5;
+        }
+    }
+
+    .op3-property-type-execute {
+        margin-top: 0;
+    }
+}
+
+[data-op3-element-options-property-id="delete"] {
+    .op3-element-options-label-group {
+        display: none;
+    }
+
+    .op3-property-type-execute {
+        color: red;
+        border-color: red;
+
+        &:hover {
+            background-color: red;
+            color: #fff;
+        }
+    }
+}
+
+// for now disabling export for common user
+// (we gona remove this rules in the future)
+//[data-op3-element-options-group-id="export"] {
+//    display: none;
+//}
+//form[data-op3-user-role="superadmin"],
+//form[data-op3-user-role="admin"],
+//form[data-op3-user-role="developer"],
+//form[data-op3-user-role="designer"] {
+//    [data-op3-element-options-group-id="export"] {
+//        display: block;
+//    }
+//}
+
+// Typography group specifics
+[data-op3-element-options-group-id="typography"] {
+    [data-op3-element-options-property-name="fontStyle"] {
+        padding-bottom: 0;
+    }
+
+    [data-op3-element-options-property-name="textTransform"],
+    [data-op3-element-options-property-name="textDecoration"],
+    [data-op3-element-options-property-name="justifyContent"],
+    [data-op3-element-options-property-name="textAlign"] {
+        padding-bottom: 0;
+        &:last-child { padding-bottom: 22px; }
+        &::before { display: none; }
+    }
+}
+
+// Buttons
+[data-op3-element-options-property-name="matchScreenWidth"],
+[data-op3-element-options-property-name="matchScreenHeight"],
+[data-op3-element-options-property-name="widthAuto"] {
+    .op3-element-options-label-group,
+    .op3-element-options-property-input {
+        display: none;
+    }
+
+    button {
+        margin: 0;
+    }
+}
+
+// Buttons attached to another property
+[data-op3-element-options-property-name="matchScreenWidth"],
+[data-op3-element-options-property-name="matchScreenHeight"] {
+    margin-top: -0.75em;
+    padding-top: 0;
+
+    &::before {
+        display: none;
+    }
+}
+
+// Correction for toolbar because property
+// wrapper don't have top and bottom
+// paddings same as in sidebar
+.op3-toolbar {
+    [data-op3-element-options-property-name="matchScreenWidth"],
+    [data-op3-element-options-property-name="matchScreenHeight"] {
+        margin-top: -0.5em;
+        margin-bottom: 0.75em;
+    }
+}
+
+// Color scheme group specifics
+[data-op3-element-options-property-name^="--op3-color-scheme"] {
+    padding-bottom: 0;
+    &:last-child { padding-bottom: 22px; }
+    &::before { display: none; }
+}
+
+// Funnels
+[data-op3-element-options-group-id="funnels"] {
+    display: none;
+}
+
+.active-op-funnels {
+    [data-op3-element-options-group-id="funnels"] {
+        display: block;
+    }
+}
+
+[data-op3-element-options-group-id="page-revisions"] {
+    ul li button {
+        margin: 0 0 0 55px;
+        padding: 2px;
+        width: 35%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 5px;
+        outline: none;
+        color: $op-blue;
+        background: $op-white;
+        border: 1px solid $op-blue;
+        transition: all 0.1s ease;
+        visibility: hidden;
+
+        &:hover {
+            background-color: $op-blue;
+            color: $op-white;
+        }
+
+        &.selected {
+            background-color: $op-blue;
+            border-color: $op-blue;
+            color: $op-white;
+        }
+    }
+}
+
+.op3-revisions-list {
+    li {
+        list-style: none;
+        font-size: 12px;
+        color: #333;
+        display: block;
+        margin-left: -17px;
+        padding: 5px 3px;
+        width: 98%;
+        border-bottom: 1px solid #eee;
+        font-weight: 700;
+    }
+
+    li:hover {
+        background-color: #eee;
+    }
+
+    li:hover button {
+        transition: visibility 0.6s;
+        visibility: visible;
+    }
+}

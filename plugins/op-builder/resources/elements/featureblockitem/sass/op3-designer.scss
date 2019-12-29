@@ -1,0 +1,15 @@
+[data-op3-force-visibility] .op3-element[data-op3-element-type="featureblockitem"] {
+    display: flex !important;
+}
+
+[data-op3-element-type="featureblockitem"] {
+    pointer-events: none;
+
+    > .op3-column-content {
+        pointer-events: all;
+
+        .op3-element[data-op3-gid]:not([data-op3-gid=""]) & {
+            pointer-events: none;
+        }
+    }
+}

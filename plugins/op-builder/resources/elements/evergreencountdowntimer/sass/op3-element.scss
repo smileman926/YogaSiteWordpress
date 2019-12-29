@@ -1,0 +1,121 @@
+[data-op3-element-type="evergreencountdowntimer"] {
+    .op3-evergreen-countdown-timer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            margin-right: 0.7em;
+
+            &:last-child {
+                margin-right: 0 !important;
+
+                .units::after {
+                    display: none;
+                }
+            }
+
+            &:first-child {
+                border: 0 !important;
+            }
+
+            &::after {
+                display: none;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 125%;
+                font-size: inherit;
+                line-height: inherit;
+                transform: translateY(-5%);
+                color: inherit;
+            }
+
+            &.sec::after {
+                display: none !important;
+            }
+
+            .digits {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                font-size: inherit;
+                border-color: currentColor;
+
+                &::after {
+                    display: none;
+                    content: "";
+                    height: 1px;
+                    width: 100%;
+                    background: #000;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                }
+            }
+
+            .units {
+                display: flex;
+                font-weight: inherit !important;
+
+                &::after {
+                    display: none;
+                }
+
+                &.sec::after {
+                    display: none !important;
+                }
+            }
+        }
+        &[data-op3-day=""],
+        &[data-op3-day="0"] {
+            .wrapper.day {
+                display: none;
+            }
+
+            &[data-op3-hr="0"] {
+                .wrapper.hr {
+                    display: none;
+                }
+
+                &[data-op3-min="0"] {
+                    .wrapper.min {
+                        display: none;
+                    }
+
+                    &[data-op3-sec="0"] {
+                        .wrapper.sec {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        // &[data-op3-day="0"][data-op3-hr="0"],
+        // &[data-op3-day=][data-op3-hr="0"] {
+        //     .wrapper.day,
+        //     .wrapper.hr {
+        //         display: none;
+        //     }
+        // }
+
+        // &[data-op3-day="0"][data-op3-hr="0"][data-op3-min="0"] {
+        //     .wrapper.day,
+        //     .wrapper.hr,
+        //     .wrapper.min {
+        //         display: none;
+        //     }
+        // }
+    }
+
+    .op3-countdown-text {
+        text-align: center;
+        white-space: pre-wrap;
+    }
+}
